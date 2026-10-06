@@ -32,6 +32,20 @@ always describe the latest released app rather than the app worktree.
   Quota-failure and delayed-event refusals have VM coverage; if storage refuses
   both writes and removal, a refusal can persist only for the current visit.
 
+## Future search and Analytics improvements
+
+Deferred by Alex on 2026-10-06; keep these for later website work.
+
+- [ ] Publish a search-focused Louppe guide, such as how to cull photos on a Mac,
+  with instructions that match the released app.
+- [ ] Add an Analytics report showing which traffic sources and landing pages
+  lead to `louppe_download` events. Treat the event as download-link intent,
+  rather than a confirmed installation, and use the separate Louppe property.
+- [ ] Recheck Search Console after Google processes the 6 October submissions.
+  Domain ownership is verified, both blog pages have accepted indexing requests,
+  and Google's live test fetches the valid sitemap successfully. The sitemap
+  report still shows "Couldn't fetch"; processing has not yet cleared that status.
+
 ## Routine maintenance
 
 - [ ] With every public app release, review requirements and feature claims.
