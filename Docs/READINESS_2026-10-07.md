@@ -2,15 +2,15 @@
 
 ## Released app
 
-Latest release: **v1.9.0**, published 26 September 2026, with signed, notarized `Louppe.zip`. Both homepage download buttons use the latest-release asset URL. Apple silicon, macOS 14, Gallery/Grid captures, and the captioned walkthrough match the release.
+Latest direct release: **[v1.10.0 (12)](https://github.com/murlexander/louppe-media-culler/releases/tag/v1.10.0)**, published 7 October 2026. Signed with Developer ID and notarized by Apple. Both homepage download buttons use the latest-release ZIP. Requires Apple silicon and macOS 14 or later.
 
-Feature details include read-only text previews, local operation, no account, direct installation, metadata filtering, and XMP handoff. No competitor superiority or unreleased 1.10 claims were added.
+Homepage features remain accurate: read-only text previews, local operation, no account, metadata filtering, and XMP handoff. Gallery/Grid captures and the captioned walkthrough are from 26 September; no homepage version notice or installation instructions were added.
 
 ## Privacy
 
 **https://louppe.eu/privacy/** has `#app` and `#website` anchors. Home, blog, and policy footers separate the policy link from **analytics choices**.
 
-Wording was checked against `PrivacyInfo.xcprivacy`, session storage, thumbnails, bookmarks, operation journals, feedback `mailto:`, RAW resources, and Sparkle settings. It covers retention after uninstall, cloud folders, the direct-download updater, and conditional Apple downloads. It does not imply unreleased RAW features are shipped.
+Wording was checked against `PrivacyInfo.xcprivacy`, session storage, thumbnails, bookmarks, operation journals, feedback `mailto:`, RAW resources, and Sparkle settings. It covers retention after uninstall, cloud folders, the direct-download updater, and conditional Apple downloads.
 
 Sources checked on 7 October:
 
@@ -43,3 +43,9 @@ Published on `main`: `a438f18c1a1ef100305f298576e5350d62b8ba2a`. [Pages deployme
 Homepage, policy, blog index, article, sitemap, consent script, keyboard script, and both stylesheets returned HTTP 200 and matched source bytes. The live footer opened the policy with the correct canonical URL, no overflow, and no Google tag under the rejected choice.
 
 Copy verification — 7 October 2026: `4398dd7` published in [Pages deployment 37626102744](https://github.com/murlexander/louppe-website/actions/runs/37626102744). All 12 tests passed; 44 distinct HTML/asset/fragment references and 2 Markdown references resolved. All 23 checked live files matched committed bytes. No fresh browser render was possible because the browser surface was unavailable. The rendering and consent checks above belong to the earlier policy update.
+
+## 1.10 release verification
+
+All six live homepages returned HTTP 200 and matched committed source bytes. Both download buttons on each page use the latest-release route, which served the exact 6,706,813-byte 1.10 ZIP.
+
+ZIP SHA-256: `3998b56e9ecea75ae076f52445d50e77b30360dc19f2be91310f1329df939953`. Public archive and update-feed signatures passed. The existing browser checks above were not repeated for this documentation update. Mac App Store approval and availability are separate.

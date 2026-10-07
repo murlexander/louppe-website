@@ -27,7 +27,7 @@ Deferred by Alex on 6 October 2026.
 ## Submission readiness
 
 - [x] Publish `/privacy/` with app, hosting, and opt-in analytics disclosures, plus a dedicated footer link.
-- [x] Align requirements, ZIP links, and text-preview copy with released 1.9.0 on 7 October 2026. Do not present 1.10 review or connected-drive work as shipped.
+- [x] Align requirements and download links with [released 1.10.0 (12)](https://github.com/murlexander/louppe-media-culler/releases/tag/v1.10.0). All six homepages match source; their latest-release links serve the verified ZIP. Existing Gallery/Grid captures and the captioned walkthrough remain accurate.
 
 ## Maintenance
 
