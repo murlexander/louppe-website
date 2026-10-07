@@ -41,3 +41,5 @@ This covers explicit opt-in and withdrawal. The browser API lacks network captur
 Published on `main`: `a438f18c1a1ef100305f298576e5350d62b8ba2a`. [Pages deployment 37619584257](https://github.com/murlexander/louppe-website/actions/runs/37619584257) succeeded.
 
 Homepage, policy, blog index, article, sitemap, consent script, keyboard script, and both stylesheets returned HTTP 200 and matched source bytes. The live footer opened the policy with the correct canonical URL, no overflow, and no Google tag under the rejected choice.
+
+Copy verification — 7 October 2026: `4398dd7` published in [Pages deployment 37626102744](https://github.com/murlexander/louppe-website/actions/runs/37626102744). All 12 tests passed; 44 distinct HTML/asset/fragment references and 2 Markdown references resolved. All 23 checked live files matched committed bytes. No fresh browser render was possible because the browser surface was unavailable. The rendering and consent checks above belong to the earlier policy update.
