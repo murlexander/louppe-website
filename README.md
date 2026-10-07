@@ -11,6 +11,7 @@ are generated locally from Markdown before publication. GitHub Pages publishes t
 ## files
 
 - `index.html` — page content and metadata
+- `privacy/index.html` — public app and website privacy policy at `/privacy/`
 - `favicon.ico`, `favicon.png` — browser icons from the app’s purple grid artwork
 - `styles.css` — the Quiet darkroom visual system and animated grain
 - `site.js` — Gallery/Grid/Demo viewer and screenshot enlargement
@@ -44,5 +45,11 @@ python3 -m http.server 8787
 
 ## blog
 
-The blog lives at `/blog/`. See [BLOG.md](BLOG.md) for drafting, local previews,
+The blog lives at `/blog/`. The generator keeps `/privacy/` in the sitemap and
+includes it in local previews. See [BLOG.md](BLOG.md) for drafting, local previews,
 and the explicit publish workflow. Drafts stay local and out of the public repo.
+
+## release-readiness review
+
+See [the 7 October 2026 verification notes](Docs/READINESS_2026-10-07.md) for
+released-feature checks, privacy-policy evidence, browser acceptance, and its limits.

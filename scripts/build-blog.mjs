@@ -66,7 +66,7 @@ for (const post of posts) {
 if (preview) {
   // Dedicated ignored output; nothing from drafts is written into deployable paths.
   await mkdir(out,{recursive:true});
-  for (const name of ['index.html','styles.css','site.js','analytics-consent.js','blog.css','favicon.ico','favicon.png','media']) await cp(resolve(root,name),resolve(out,name),{recursive:true});
+  for (const name of ['index.html','styles.css','site.js','keyboard.js','analytics-consent.js','blog.css','favicon.ico','favicon.png','media','privacy']) await cp(resolve(root,name),resolve(out,name),{recursive:true});
 }
 let previous = [];
 try { previous = JSON.parse(await readFile(resolve(out,'blog/generated-files.json'),'utf8')); } catch(error) { if(error.code !== 'ENOENT') throw error; }
@@ -76,6 +76,6 @@ for (const path of previous) {
 }
 for (const [path,content] of Object.entries(generated)) await write(path,content);
 await write('blog/generated-files.json',JSON.stringify(Object.keys(generated),null,2)+'\n');
-await write('sitemap.xml',`<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${['/','/blog/',...published.map(p=>p.path)].map(path=>`\n  <url><loc>${origin}${path}</loc></url>`).join('')}\n</urlset>\n`);
+await write('sitemap.xml',`<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${['/','/privacy/','/blog/',...published.map(p=>p.path)].map(path=>`\n  <url><loc>${origin}${path}</loc></url>`).join('')}\n</urlset>\n`);
 if(preview) await write('robots.txt','User-agent: *\nDisallow: /\n');
 console.log(`${preview?'Private preview':'Public blog'}: ${published.length} published, ${drafts.length} drafts → ${out}`);

@@ -99,6 +99,6 @@ The generator owns the sitemap; add future non-blog pages there as the site grow
 ## Keep consistent
 
 Regenerate the blog after changes to its template. When changing shared consent
-markup, update both `index.html` and `templates/blog.html`; keep the existing
+markup, update `index.html`, `templates/blog.html`, and `privacy/index.html`; keep the existing
 `analytics-consent.js` as the single behaviour owner. Bump CSS cache keys in both
 pages when changing shared styles. No article needs the landing page's `site.js`.
