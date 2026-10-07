@@ -19,3 +19,9 @@ Search changes include localized titles, descriptions, social metadata, meaningf
 - `git diff --check` passed
 
 Implementation follows [Google multilingual guidance](https://developers.google.com/search/docs/specialty/international/managing-multi-regional-sites) and [hreflang guidance](https://developers.google.com/search/docs/specialty/international/localized-versions). Indexing and traffic are not measured until publication. Inspect representative language URLs in Search Console after deployment and compare impressions, clicks, and download intent by landing page.
+
+## Language menu correction
+
+The header and main content shared the same stacking level. Main content intercepted pointer input over the dropdown, despite its links appearing visible. The header now sits above the main content; the shared stylesheet URL advances to `20261007-2`.
+
+Before the fix, all six link centers hit the hero rather than their anchors. After the fix, all six hit their anchors on every homepage at desktop and 390 × 844 widths. Pointer clicks cycled through all six languages at both widths; Spanish-to-Arabic privacy navigation retained the page. All 13 existing tests passed.

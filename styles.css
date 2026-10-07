@@ -6,6 +6,8 @@ body{margin:0;background:var(--background);color:var(--ink);position:relative;is
 body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;background-image:url("media/grain.svg?v=20260929-1");background-size:512px 512px;opacity:.12;mix-blend-mode:screen;animation:grain-shift 840ms steps(1) infinite}
 @keyframes grain-shift{0%{background-position:0 0}25%{background-position:-38px 26px}50%{background-position:26px -38px}75%{background-position:-26px -26px}100%{background-position:38px 13px}}
 .site-header,main,.site-footer{position:relative;z-index:1}
+/* Keep the open language menu above later page content for pointer input. */
+.site-header{z-index:2}
 a{color:inherit;text-underline-offset:5px;text-decoration-thickness:1px}
 a:hover{color:var(--purple-text)}
 button,summary{cursor:pointer}
