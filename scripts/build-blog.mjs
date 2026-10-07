@@ -2,6 +2,7 @@ import { readFile, writeFile, mkdir, cp, rm } from 'node:fs/promises';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { marked } from 'marked';
+import { buildLocales } from './build-locales.mjs';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const preview = process.argv.includes('--preview');
@@ -76,6 +77,6 @@ for (const path of previous) {
 }
 for (const [path,content] of Object.entries(generated)) await write(path,content);
 await write('blog/generated-files.json',JSON.stringify(Object.keys(generated),null,2)+'\n');
-await write('sitemap.xml',`<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${['/','/privacy/','/blog/',...published.map(p=>p.path)].map(path=>`\n  <url><loc>${origin}${path}</loc></url>`).join('')}\n</urlset>\n`);
+await buildLocales({ root, out, published, preview });
 if(preview) await write('robots.txt','User-agent: *\nDisallow: /\n');
 console.log(`${preview?'Private preview':'Public blog'}: ${published.length} published, ${drafts.length} drafts → ${out}`);

@@ -1,7 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://louppe.eu/</loc></url>
+  <url><loc>https://louppe.eu/es/</loc></url>
+  <url><loc>https://louppe.eu/zh/</loc></url>
+  <url><loc>https://louppe.eu/hi/</loc></url>
+  <url><loc>https://louppe.eu/pt/</loc></url>
+  <url><loc>https://louppe.eu/ar/</loc></url>
   <url><loc>https://louppe.eu/privacy/</loc></url>
+  <url><loc>https://louppe.eu/es/privacy/</loc></url>
+  <url><loc>https://louppe.eu/zh/privacy/</loc></url>
+  <url><loc>https://louppe.eu/hi/privacy/</loc></url>
+  <url><loc>https://louppe.eu/pt/privacy/</loc></url>
+  <url><loc>https://louppe.eu/ar/privacy/</loc></url>
   <url><loc>https://louppe.eu/blog/</loc></url>
+  <url><loc>https://louppe.eu/es/blog/</loc></url>
+  <url><loc>https://louppe.eu/zh/blog/</loc></url>
+  <url><loc>https://louppe.eu/hi/blog/</loc></url>
+  <url><loc>https://louppe.eu/pt/blog/</loc></url>
+  <url><loc>https://louppe.eu/ar/blog/</loc></url>
   <url><loc>https://louppe.eu/blog/a-proper-hello/</loc></url>
+  <url><loc>https://louppe.eu/es/blog/a-proper-hello/</loc></url>
+  <url><loc>https://louppe.eu/zh/blog/a-proper-hello/</loc></url>
+  <url><loc>https://louppe.eu/hi/blog/a-proper-hello/</loc></url>
+  <url><loc>https://louppe.eu/pt/blog/a-proper-hello/</loc></url>
+  <url><loc>https://louppe.eu/ar/blog/a-proper-hello/</loc></url>
 </urlset>

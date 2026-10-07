@@ -31,7 +31,7 @@ Static HTML, CSS, and JavaScript; Markdown-generated blog. Approved 26 September
 
 ## Content and controls
 
-- Header: wordmark, blog, and source links
+- Header: wordmark, blog, source links, and a native language picker that keeps the current page
 - Hero: product purpose, download, and Apple-silicon/macOS requirements
 - One viewer with lowercase Gallery/Grid/Demo controls; no autoplay
 - Gallery and Grid enlarge; Demo uses native controls and English captions
@@ -44,6 +44,8 @@ Static HTML, CSS, and JavaScript; Markdown-generated blog. Approved 26 September
 - Closing download, artist credit, contact, and support links
 - No “how it works” navigation, installation instructions, or visible release-preview notices
 - Preserve canonical/search/social metadata and latest-release URLs
+- Translate page copy, accessible labels, and interactive descriptions. Arabic pages use right-to-left flow; the physical Mac keyboard stays left-to-right
+- Language pages have distinct URLs, self-canonicals, and reciprocal language links. App screenshots and English video captions stay as captured
 - Analytics require consent; the footer control reopens it
 
 ## Assets and publishing

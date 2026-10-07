@@ -7,7 +7,9 @@
     "preview:blog": "node scripts/build-blog.mjs --preview",
     "test:blog": "node --test scripts/build-blog.test.mjs",
     "test": "node --test scripts/*.test.mjs",
-    "test:consent": "node --test scripts/analytics-consent.test.mjs"
+    "test:consent": "node --test scripts/analytics-consent.test.mjs",
+    "build": "node scripts/build-blog.mjs",
+    "test:i18n": "node --test scripts/locales.test.mjs"
   },
   "engines": {
     "node": ">=22"

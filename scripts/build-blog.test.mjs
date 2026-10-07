@@ -11,7 +11,7 @@ test('draft isolation, publication, validation and withdrawal', async () => {
   const root = await mkdtemp(resolve(tmpdir(),'louppe-blog-'));
   try {
     for (const name of ['scripts','templates','content/posts','.drafts','media','privacy']) await mkdir(resolve(root,name),{recursive:true});
-    for (const name of ['scripts/build-blog.mjs','templates/blog.html','index.html','styles.css','site.js','keyboard.js','analytics-consent.js','blog.css','favicon.ico','favicon.png','privacy/index.html']) await cp(resolve(source,name),resolve(root,name));
+    for (const name of ['scripts/build-blog.mjs','scripts/build-locales.mjs','content/translations.json','content/translation-ui-keys.json','templates/home.html','templates/privacy.html','templates/blog.html','index.html','styles.css','site.js','keyboard.js','analytics-consent.js','blog.css','favicon.ico','favicon.png','privacy/index.html']) await cp(resolve(source,name),resolve(root,name));
     await symlink(resolve(source,'node_modules'),resolve(root,'node_modules'),'dir');
     const save = (name,body) => writeFile(resolve(root,name),body);
     const load = name => readFile(resolve(root,name),'utf8');

@@ -1,11 +1,13 @@
+const siteTranslations = JSON.parse(document.getElementById('site-translations')?.textContent || '{}');
+const translateSite = value => siteTranslations[value] || value;
 const views = {
   gallery: {
     file: 'gallery-info', height: 1129,
-    alt: 'Louppe Gallery showing an apple-tree photograph, camera settings, a histogram, and RAW+JPEG information'
+    alt: translateSite('Louppe Gallery showing an apple-tree photograph, camera settings, a histogram, and RAW+JPEG information')
   },
   grid: {
     file: 'grid-overview', height: 1068,
-    alt: 'Louppe Grid showing a real shoot of street scenes, architecture, and reflections, with a photo selected in purple'
+    alt: translateSite('Louppe Grid showing a real shoot of street scenes, architecture, and reflections, with a photo selected in purple')
   }
 };
 const appImage = document.getElementById('app-image');
@@ -26,12 +28,12 @@ function selectView(name) {
     demoVideo.pause();
     currentView = name;
     const view = views[name];
-    appImage.srcset = `media/2026-09-26/${view.file}-small.webp 960w, media/2026-09-26/${view.file}.webp 1800w`;
-    appImage.src = `media/2026-09-26/${view.file}.webp`;
+    appImage.srcset = `/media/2026-09-26/${view.file}-small.webp 960w, media/2026-09-26/${view.file}.webp 1800w`;
+    appImage.src = `/media/2026-09-26/${view.file}.webp`;
     appImage.alt = view.alt;
     appImage.height = view.height;
-    imageLink.href = `media/2026-09-26/${view.file}.webp`;
-    imageLink.setAttribute('aria-label', `Enlarge ${name === 'gallery' ? 'Gallery' : 'Grid'} screenshot`);
+    imageLink.href = `/media/2026-09-26/${view.file}.webp`;
+    imageLink.setAttribute('aria-label', translateSite(`Enlarge ${name === 'gallery' ? 'Gallery' : 'Grid'} screenshot`));
   }
   document.querySelectorAll('[data-view]').forEach(button => {
     button.setAttribute('aria-pressed', String(button.dataset.view === name));
@@ -50,7 +52,7 @@ openLinkedDemo();
 
 function showImage() {
   const view = views[currentView];
-  dialogImage.src = `media/2026-09-26/${view.file}.webp`;
+  dialogImage.src = `/media/2026-09-26/${view.file}.webp`;
   dialogImage.alt = view.alt;
   dialogImage.height = view.height;
   imageDialog.showModal();

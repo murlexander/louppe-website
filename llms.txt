@@ -12,3 +12,5 @@ review media and read-only text in Gallery or Grid. mark decisions, stars, and c
 - [author](https://alex-markin.com/): artist Alex Markin
 
 Gallery, Grid, a captioned 25-second Demo, and a written walkthrough show the app in use
+
+Website languages: [English](https://louppe.eu/), [Español](https://louppe.eu/es/), [简体中文](https://louppe.eu/zh/), [हिन्दी](https://louppe.eu/hi/), [Português](https://louppe.eu/pt/), and [العربية](https://louppe.eu/ar/)

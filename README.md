@@ -37,3 +37,17 @@ See [BLOG.md](BLOG.md) for drafting and publishing. Drafts stay local. The gener
 ## Readiness evidence
 
 [7 October 2026 review](Docs/READINESS_2026-10-07.md): release alignment, privacy sources, tests, and browser coverage limits.
+
+## Languages and search
+
+Run `npm run build` after content changes; it generates the homepage, privacy policy, blog, and sitemap in English, Spanish (`/es/`), Simplified Chinese (`/zh/`), Hindi (`/hi/`), Portuguese (`/pt/`), and Arabic (`/ar/`). Arabic uses a right-to-left page with the physical Mac keyboard kept left-to-right. No language redirects or browser-language detection are used.
+
+Edit `templates/home.html` and `templates/privacy.html`, not their generated pages. Keep `content/translations.json` aligned with visible text and accessible labels; missing homepage or policy translations stop the build. `content/translation-ui-keys.json` selects translated interactive labels embedded in each homepage. App screenshots and video captions remain English; translating the website does not change the app's language.
+
+Published blog posts with complete translations get localized article URLs. New untranslated posts remain English, are labeled English on localized indexes, and receive no translated alternate links. Add their copy to the catalog and rebuild to localize them. Drafts stay in private previews. The output manifest removes withdrawn translations; blog rebuilds preserve the language sitemap.
+
+Every translated page has its own canonical URL, reciprocal `hreflang` links, an English `x-default`, localized metadata, and WebPage language data. Homepage SoftwareApplication data describes the free app without invented reviews. Search copy targets photo sorting, photo culling, and media/file management using the supported workflow and hardware requirements.
+
+`npm test` covers language discovery, links/assets, metadata, missing translations, article withdrawal, private previews, and existing consent behavior. `npm run preview:blog` includes all languages. GitHub Pages publishes only after changes are committed and pushed to `main`.
+
+After publication, use Search Console to inspect localized URLs and monitor impressions, clicks, and download intent by landing page. SEO changes do not guarantee traffic or indexing. Implementation follows [Google's multilingual guidance](https://developers.google.com/search/docs/specialty/international/managing-multi-regional-sites) and [alternate-language guidance](https://developers.google.com/search/docs/specialty/international/localized-versions).

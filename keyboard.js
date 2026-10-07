@@ -27,7 +27,9 @@
     0: 'clear stars',
   };
   for (let stars = 1; stars <= 5; stars++) {
-    review[stars] = `rate ${stars} ${stars === 1 ? 'star' : 'stars'}`;
+    review[stars] = siteTranslations['rate {count} stars']
+      ? translateSite(stars === 1 ? 'rate {count} star' : 'rate {count} stars').replace('{count}', stars)
+      : `rate ${stars} ${stars === 1 ? 'star' : 'stars'}`;
   }
   const command = {
     o: 'open a folder',
@@ -70,18 +72,18 @@
     if (!shortcuts[selectedKey]) selectedKey = Object.keys(shortcuts)[0];
     for (const button of buttons) {
       const key = button.dataset.shortcutKey;
-      const action = shortcuts[key];
+      const action = shortcuts[key] && translateSite(shortcuts[key]);
       button.disabled = !action;
       button.setAttribute('aria-pressed', String(key === selectedKey));
-      button.setAttribute('aria-label', action ? `${prefix()}${names[key] || key.toUpperCase()}: ${action}` : `${names[key] || key.toUpperCase()}: no shortcut`);
+      button.setAttribute('aria-label', action ? `${prefix()}${translateSite(names[key] || key.toUpperCase())}: ${action}` : `${translateSite(names[key] || key.toUpperCase())}: ${translateSite('no shortcut')}`);
     }
     for (const button of modifiers) {
       const name = button.dataset.modifier;
       const on = name === 'command' ? commandOn : shiftOn;
       button.setAttribute('aria-pressed', String(on));
-      button.setAttribute('aria-label', `${on ? 'Hide' : 'Show'} ${name === 'command' ? 'Command' : 'Shift'} shortcuts`);
+      button.setAttribute('aria-label', translateSite(`${on ? 'Hide' : 'Show'} ${name === 'command' ? 'Command' : 'Shift'} shortcuts`));
     }
-    const action = shortcuts[selectedKey];
+    const action = translateSite(shortcuts[selectedKey]);
     chord.textContent = `${prefix()}${glyphs[selectedKey] || selectedKey}`;
     explanation.textContent = action;
   }

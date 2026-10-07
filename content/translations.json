@@ -1,0 +1,1786 @@
+{
+  "louppe media culler — free photo, video, and audio culling for macOS": {
+    "en": "Louppe — free photo sorter, culler, and media manager for Mac",
+    "es": "Louppe — clasificador de fotos y gestor multimedia gratis para Mac",
+    "zh-Hans": "Louppe — Mac 免费照片筛选、排序与媒体管理软件",
+    "hi": "Louppe — Mac के लिए मुफ़्त फ़ोटो छँटाई और मीडिया प्रबंधन सॉफ़्टवेयर",
+    "pt": "Louppe — seleção de fotos e gestão de mídia grátis para Mac",
+    "ar": "Louppe — برنامج مجاني لفرز الصور وإدارة الوسائط على Mac"
+  },
+  "free photo, video, and audio culling for macOS. review, rate, organize, and export locally with Louppe.": {
+    "en": "free photo sorting, culling, and media management software for Mac. review, rate, organize, and export photos, video, and audio locally with Louppe.",
+    "es": "software gratuito para seleccionar y ordenar fotos, vídeos y audio en Mac. revisa, puntúa, organiza y exporta archivos localmente con Louppe.",
+    "zh-Hans": "Mac 免费照片筛选与媒体管理软件。使用 Louppe 在本机查看、评分、排序、整理并导出照片、视频和音频。",
+    "hi": "Mac पर फ़ोटो, वीडियो और ऑडियो छाँटने का मुफ़्त सॉफ़्टवेयर। Louppe से अपनी फ़ाइलें स्थानीय रूप से देखें, रेट करें, व्यवस्थित करें और निर्यात करें।",
+    "pt": "software gratuito para selecionar e organizar fotos, vídeos e áudio no Mac. revise, avalie, ordene e exporte arquivos localmente com o Louppe.",
+    "ar": "برنامج مجاني لفرز الصور والفيديو والصوت وتنظيمها على Mac. راجع الملفات وقيّمها ورتّبها وصدّرها محليًا باستخدام Louppe."
+  },
+  "Louppe Media Culler Gallery with a photograph and its information panel": {
+    "en": "Louppe Media Culler Gallery with a photograph and its information panel",
+    "es": "galería de Louppe Media Culler con una fotografía y su panel de información",
+    "zh-Hans": "Louppe Media Culler 图库中的照片与信息面板",
+    "hi": "Louppe Media Culler की गैलरी में एक फ़ोटो और उसका जानकारी पैनल",
+    "pt": "galeria do Louppe Media Culler com uma foto e seu painel de informações",
+    "ar": "معرض Louppe Media Culler يعرض صورة ولوحة معلوماتها"
+  },
+  "skip to content": {
+    "en": "skip to content",
+    "es": "ir al contenido",
+    "zh-Hans": "跳至正文",
+    "hi": "मुख्य सामग्री पर जाएँ",
+    "pt": "pular para o conteúdo",
+    "ar": "انتقل إلى المحتوى"
+  },
+  "Louppe home": {
+    "en": "Louppe home",
+    "es": "inicio de Louppe",
+    "zh-Hans": "Louppe 首页",
+    "hi": "Louppe का मुख्य पृष्ठ",
+    "pt": "início do Louppe",
+    "ar": "صفحة Louppe الرئيسية"
+  },
+  "Main navigation": {
+    "en": "Main navigation",
+    "es": "navegación principal",
+    "zh-Hans": "主导航",
+    "hi": "मुख्य नेविगेशन",
+    "pt": "navegação principal",
+    "ar": "التنقل الرئيسي"
+  },
+  "blog": {
+    "en": "blog",
+    "es": "blog",
+    "zh-Hans": "博客",
+    "hi": "ब्लॉग",
+    "pt": "blog",
+    "ar": "المدونة"
+  },
+  "open source": {
+    "en": "open source",
+    "es": "código abierto",
+    "zh-Hans": "开源",
+    "hi": "ओपन सोर्स",
+    "pt": "código aberto",
+    "ar": "مفتوح المصدر"
+  },
+  "review your": {
+    "en": "sort photos",
+    "es": "ordena fotos",
+    "zh-Hans": "照片排序",
+    "hi": "फ़ोटो छाँटें",
+    "pt": "organize fotos",
+    "ar": "افرز الصور"
+  },
+  "media": {
+    "en": "and cull media",
+    "es": "y selecciona tus medios",
+    "zh-Hans": "与媒体筛选",
+    "hi": "और मीडिया चुनें",
+    "pt": "e selecione sua mídia",
+    "ar": "واختر وسائطك"
+  },
+  "a free photo, video, and audio culler for Mac": {
+    "en": "review, rate, and organize photos, video, and audio locally on macOS",
+    "es": "selecciona, puntúa y organiza fotos, vídeos y audio localmente en macOS",
+    "zh-Hans": "在 macOS 本机筛选、评分并整理照片、视频和音频",
+    "hi": "macOS पर फ़ोटो, वीडियो और ऑडियो स्थानीय रूप से चुनें, रेट करें और व्यवस्थित करें",
+    "pt": "selecione, avalie e organize fotos, vídeos e áudio localmente no macOS",
+    "ar": "اختر الصور والفيديو والصوت وقيّمها ونظّمها محليًا على macOS"
+  },
+  "download for Mac": {
+    "en": "download for Mac",
+    "es": "descargar para Mac",
+    "zh-Hans": "下载 Mac 版",
+    "hi": "Mac के लिए डाउनलोड करें",
+    "pt": "baixar para Mac",
+    "ar": "تنزيل لـ Mac"
+  },
+  "Apple silicon": {
+    "en": "Apple silicon",
+    "es": "Apple silicon",
+    "zh-Hans": "Apple 芯片",
+    "hi": "Apple silicon",
+    "pt": "Apple silicon",
+    "ar": "Apple silicon"
+  },
+  "macOS 14 or later": {
+    "en": "macOS 14 or later",
+    "es": "macOS 14 o posterior",
+    "zh-Hans": "macOS 14 或更新版本",
+    "hi": "macOS 14 या बाद का संस्करण",
+    "pt": "macOS 14 ou posterior",
+    "ar": "macOS 14 أو أحدث"
+  },
+  "install with Homebrew": {
+    "en": "install with Homebrew",
+    "es": "instalar con Homebrew",
+    "zh-Hans": "通过 Homebrew 安装",
+    "hi": "Homebrew से इंस्टॉल करें",
+    "pt": "instalar com Homebrew",
+    "ar": "التثبيت عبر Homebrew"
+  },
+  "See Louppe in use": {
+    "en": "See Louppe in use",
+    "es": "mira Louppe en acción",
+    "zh-Hans": "查看 Louppe 的使用方式",
+    "hi": "Louppe को काम करते देखें",
+    "pt": "veja o Louppe em uso",
+    "ar": "شاهد Louppe أثناء الاستخدام"
+  },
+  "Choose an app view": {
+    "en": "Choose an app view",
+    "es": "elige una vista de la app",
+    "zh-Hans": "选择应用视图",
+    "hi": "ऐप का दृश्य चुनें",
+    "pt": "escolha uma visualização do app",
+    "ar": "اختر طريقة عرض التطبيق"
+  },
+  "gallery": {
+    "en": "gallery",
+    "es": "galería",
+    "zh-Hans": "图库",
+    "hi": "गैलरी",
+    "pt": "galeria",
+    "ar": "المعرض"
+  },
+  "grid": {
+    "en": "grid",
+    "es": "cuadrícula",
+    "zh-Hans": "网格",
+    "hi": "ग्रिड",
+    "pt": "grade",
+    "ar": "الشبكة"
+  },
+  "demo": {
+    "en": "demo",
+    "es": "demo",
+    "zh-Hans": "演示",
+    "hi": "डेमो",
+    "pt": "demo",
+    "ar": "عرض توضيحي"
+  },
+  "Enlarge Gallery screenshot": {
+    "en": "Enlarge Gallery screenshot",
+    "es": "ampliar la captura de la galería",
+    "zh-Hans": "放大图库截图",
+    "hi": "गैलरी का स्क्रीनशॉट बड़ा करें",
+    "pt": "ampliar a captura da galeria",
+    "ar": "تكبير لقطة المعرض"
+  },
+  "Louppe Gallery showing an apple-tree photograph, camera settings, a histogram, and RAW+JPEG information": {
+    "en": "Louppe Gallery showing an apple-tree photograph, camera settings, a histogram, and RAW+JPEG information",
+    "es": "galería de Louppe con una foto de un manzano, ajustes de cámara, histograma e información RAW+JPEG",
+    "zh-Hans": "Louppe 图库显示苹果树照片、相机参数、直方图和 RAW+JPEG 信息",
+    "hi": "Louppe की गैलरी में सेब के पेड़ की फ़ोटो, कैमरा सेटिंग, हिस्टोग्राम और RAW+JPEG जानकारी",
+    "pt": "galeria do Louppe com uma foto de macieira, ajustes da câmera, histograma e informações RAW+JPEG",
+    "ar": "معرض Louppe يعرض صورة لشجرة تفاح وإعدادات الكاميرا والمدرج التكراري ومعلومات RAW+JPEG"
+  },
+  "Louppe review walkthrough with English captions": {
+    "en": "Louppe review walkthrough with English captions",
+    "es": "recorrido de revisión de Louppe con subtítulos en inglés",
+    "zh-Hans": "Louppe 筛选流程演示，附英文字幕",
+    "hi": "अंग्रेज़ी कैप्शन के साथ Louppe की समीक्षा प्रक्रिया",
+    "pt": "passo a passo do Louppe com legendas em inglês",
+    "ar": "شرح مراجعة الملفات في Louppe مع ترجمة نصية بالإنجليزية"
+  },
+  "your browser does not support video playback": {
+    "en": "your browser does not support video playback",
+    "es": "tu navegador no admite la reproducción de vídeo",
+    "zh-Hans": "您的浏览器不支持视频播放",
+    "hi": "आपका ब्राउज़र वीडियो चलाने का समर्थन नहीं करता",
+    "pt": "seu navegador não suporta a reprodução de vídeo",
+    "ar": "متصفحك لا يدعم تشغيل الفيديو"
+  },
+  "read the walkthrough": {
+    "en": "read the walkthrough",
+    "es": "leer el recorrido",
+    "zh-Hans": "阅读操作说明",
+    "hi": "प्रक्रिया पढ़ें",
+    "pt": "ler o passo a passo",
+    "ar": "اقرأ خطوات الاستخدام"
+  },
+  "open a folder or memory card. Gallery shows one photo at a time": {
+    "en": "open a folder or memory card. Gallery shows one photo at a time",
+    "es": "abre una carpeta o tarjeta de memoria. la galería muestra una foto a la vez",
+    "zh-Hans": "打开文件夹或存储卡。图库一次显示一张照片",
+    "hi": "कोई फ़ोल्डर या मेमोरी कार्ड खोलें। गैलरी एक बार में एक फ़ोटो दिखाती है",
+    "pt": "abra uma pasta ou cartão de memória. a galeria mostra uma foto por vez",
+    "ar": "افتح مجلدًا أو بطاقة ذاكرة. يعرض المعرض صورة واحدة في كل مرة"
+  },
+  "press": {
+    "en": "press",
+    "es": "pulsa",
+    "zh-Hans": "按",
+    "hi": "कुंजी",
+    "pt": "pressione",
+    "ar": "اضغط"
+  },
+  "to switch to Grid and compare the items": {
+    "en": "to switch to Grid and compare the items",
+    "es": "para cambiar a la cuadrícula y comparar los elementos",
+    "zh-Hans": "切换到网格并比较项目",
+    "hi": "दबाकर ग्रिड पर जाएँ और आइटम की तुलना करें",
+    "pt": "para mudar para a grade e comparar os itens",
+    "ar": "للانتقال إلى الشبكة ومقارنة العناصر"
+  },
+  "to inspect a photo at 100%": {
+    "en": "to inspect a photo at 100%",
+    "es": "para examinar una foto al 100%",
+    "zh-Hans": "以 100% 比例检查照片",
+    "hi": "दबाकर फ़ोटो को 100% आकार में देखें",
+    "pt": "para examinar uma foto a 100%",
+    "ar": "لفحص الصورة بنسبة 100%"
+  },
+  "mark yes with": {
+    "en": "mark yes with",
+    "es": "marca sí con",
+    "zh-Hans": "标记保留请按",
+    "hi": "रखने के लिए दबाएँ",
+    "pt": "marque sim com",
+    "ar": "لتحديد الاحتفاظ اضغط"
+  },
+  "or no with": {
+    "en": "or no with",
+    "es": "o no con",
+    "zh-Hans": "，标记舍弃请按",
+    "hi": "और न रखने के लिए",
+    "pt": "ou não com",
+    "ar": "وللاستبعاد اضغط"
+  },
+  ". stars and color labels are separate decisions": {
+    "en": ". stars and color labels are separate decisions",
+    "es": ". las estrellas y las etiquetas de color son decisiones independientes",
+    "zh-Hans": "。星级和颜色标签单独设置",
+    "hi": "। सितारे और रंग लेबल अलग से तय किए जाते हैं",
+    "pt": ". as estrelas e as etiquetas de cor são decisões independentes",
+    "ar": ". النجوم والتصنيفات اللونية اختيارات مستقلة"
+  },
+  "filter to yes to see your keepers": {
+    "en": "filter to yes to see your keepers",
+    "es": "filtra por sí para ver lo que has elegido conservar",
+    "zh-Hans": "筛选已标记保留的项目",
+    "hi": "रखने के लिए चुनी गई फ़ाइलें देखने के लिए फ़िल्टर करें",
+    "pt": "filtre por sim para ver o que escolheu manter",
+    "ar": "رشّح الملفات المحددة للاحتفاظ لعرض اختياراتك"
+  },
+  "open Export to preview the copy: 7 items, 14 RAW+JPEG files. originals stay at the source": {
+    "en": "open Export to preview the copy: 7 items, 14 RAW+JPEG files. originals stay at the source",
+    "es": "abre Export para previsualizar la copia: 7 elementos, 14 archivos RAW+JPEG. los originales se quedan en su ubicación",
+    "zh-Hans": "打开 Export 预览复制结果：7 个项目，14 个 RAW+JPEG 文件。原始文件保留在源位置",
+    "hi": "Export खोलकर कॉपी का पूर्वावलोकन देखें: 7 आइटम, 14 RAW+JPEG फ़ाइलें। मूल फ़ाइलें अपने स्थान पर रहती हैं",
+    "pt": "abra Export para ver a prévia da cópia: 7 itens, 14 arquivos RAW+JPEG. os originais ficam na origem",
+    "ar": "افتح Export لمعاينة النسخ: 7 عناصر و14 ملف RAW+JPEG. تبقى الملفات الأصلية في مكانها"
+  },
+  "From folder to keepers": {
+    "en": "From folder to keepers",
+    "es": "de la carpeta a tus archivos elegidos",
+    "zh-Hans": "从文件夹到精选文件",
+    "hi": "फ़ोल्डर से चुनी गई फ़ाइलों तक",
+    "pt": "da pasta aos arquivos escolhidos",
+    "ar": "من المجلد إلى الملفات المختارة"
+  },
+  "start with a folder": {
+    "en": "start with a folder",
+    "es": "empieza con una carpeta",
+    "zh-Hans": "从文件夹开始",
+    "hi": "फ़ोल्डर से शुरू करें",
+    "pt": "comece com uma pasta",
+    "ar": "ابدأ بمجلد"
+  },
+  "open photos, video, and audio without a catalog import": {
+    "en": "open photos, video, and audio without a catalog import",
+    "es": "abre fotos, vídeos y audio sin importarlos a un catálogo",
+    "zh-Hans": "无需导入目录，直接打开照片、视频和音频",
+    "hi": "कैटलॉग में आयात किए बिना फ़ोटो, वीडियो और ऑडियो खोलें",
+    "pt": "abra fotos, vídeos e áudio sem importar para um catálogo",
+    "ar": "افتح الصور والفيديو والصوت دون استيرادها إلى كتالوج"
+  },
+  "make your choices": {
+    "en": "make your choices",
+    "es": "elige qué conservar",
+    "zh-Hans": "选择要保留的文件",
+    "hi": "अपनी पसंद चुनें",
+    "pt": "escolha o que manter",
+    "ar": "اختر ما تريد الاحتفاظ به"
+  },
+  "mark yes or no, add stars and color labels": {
+    "en": "mark yes or no, add stars and color labels",
+    "es": "marca sí o no, añade estrellas y etiquetas de color",
+    "zh-Hans": "标记保留或舍弃，添加星级和颜色标签",
+    "hi": "रखना है या नहीं तय करें, सितारे और रंग लेबल जोड़ें",
+    "pt": "marque sim ou não, adicione estrelas e etiquetas de cor",
+    "ar": "حدّد الاحتفاظ أو الاستبعاد وأضف النجوم والتصنيفات اللونية"
+  },
+  "take your keepers": {
+    "en": "take your keepers",
+    "es": "llévate tus archivos elegidos",
+    "zh-Hans": "导出精选文件",
+    "hi": "चुनी गई फ़ाइलें निर्यात करें",
+    "pt": "exporte os arquivos escolhidos",
+    "ar": "صدّر ملفاتك المختارة"
+  },
+  "export copies by default. originals stay in place": {
+    "en": "export copies by default. originals stay in place",
+    "es": "la exportación copia por defecto. los originales se quedan en su sitio",
+    "zh-Hans": "默认导出副本。原始文件保留在原位置",
+    "hi": "निर्यात डिफ़ॉल्ट रूप से कॉपी करता है। मूल फ़ाइलें अपने स्थान पर रहती हैं",
+    "pt": "a exportação copia por padrão. os originais ficam no lugar",
+    "ar": "التصدير ينسخ الملفات افتراضيًا. تبقى الملفات الأصلية في مكانها"
+  },
+  "review with": {
+    "en": "review with",
+    "es": "revisa con",
+    "zh-Hans": "使用键盘",
+    "hi": "समीक्षा करें",
+    "pt": "revise com",
+    "ar": "راجع باستخدام"
+  },
+  "the keyboard": {
+    "en": "the keyboard",
+    "es": "el teclado",
+    "zh-Hans": "进行筛选",
+    "hi": "कीबोर्ड से",
+    "pt": "o teclado",
+    "ar": "لوحة المفاتيح"
+  },
+  "choose a key. try ⌘ for more shortcuts": {
+    "en": "choose a key. try ⌘ for more shortcuts",
+    "es": "elige una tecla. prueba ⌘ para ver más atajos",
+    "zh-Hans": "选择按键。试试 ⌘ 查看更多快捷键",
+    "hi": "कोई कुंजी चुनें। और शॉर्टकट के लिए ⌘ आज़माएँ",
+    "pt": "escolha uma tecla. experimente ⌘ para mais atalhos",
+    "ar": "اختر مفتاحًا. جرّب ⌘ لعرض مزيد من الاختصارات"
+  },
+  "Interactive Mac keyboard": {
+    "en": "Interactive Mac keyboard",
+    "es": "teclado Mac interactivo",
+    "zh-Hans": "交互式 Mac 键盘",
+    "hi": "इंटरैक्टिव Mac कीबोर्ड",
+    "pt": "teclado Mac interativo",
+    "ar": "لوحة مفاتيح Mac تفاعلية"
+  },
+  "Explore Louppe shortcuts": {
+    "en": "Explore Louppe shortcuts",
+    "es": "explora los atajos de Louppe",
+    "zh-Hans": "探索 Louppe 快捷键",
+    "hi": "Louppe के शॉर्टकट देखें",
+    "pt": "explore os atalhos do Louppe",
+    "ar": "استكشف اختصارات Louppe"
+  },
+  "Show Shift shortcuts": {
+    "en": "Show Shift shortcuts",
+    "es": "mostrar atajos con Shift",
+    "zh-Hans": "显示 Shift 快捷键",
+    "hi": "Shift शॉर्टकट दिखाएँ",
+    "pt": "mostrar atalhos com Shift",
+    "ar": "عرض اختصارات Shift"
+  },
+  "Show Command shortcuts": {
+    "en": "Show Command shortcuts",
+    "es": "mostrar atajos con Command",
+    "zh-Hans": "显示 Command 快捷键",
+    "hi": "Command शॉर्टकट दिखाएँ",
+    "pt": "mostrar atalhos com Command",
+    "ar": "عرض اختصارات Command"
+  },
+  "mark yes": {
+    "en": "mark yes",
+    "es": "marcar sí",
+    "zh-Hans": "标记保留",
+    "hi": "रखने के लिए चुनें",
+    "pt": "marcar sim",
+    "ar": "تحديد الاحتفاظ"
+  },
+  "review tools": {
+    "en": "review tools",
+    "es": "herramientas de revisión",
+    "zh-Hans": "筛选工具",
+    "hi": "समीक्षा के उपकरण",
+    "pt": "ferramentas de revisão",
+    "ar": "أدوات المراجعة"
+  },
+  "and file actions": {
+    "en": "and file actions",
+    "es": "y acciones sobre archivos",
+    "zh-Hans": "与文件操作",
+    "hi": "और फ़ाइल कार्रवाइयाँ",
+    "pt": "e ações de arquivos",
+    "ar": "وإجراءات الملفات"
+  },
+  "photos, video, audio, and text": {
+    "en": "photos, video, audio, and text",
+    "es": "fotos, vídeos, audio y texto",
+    "zh-Hans": "照片、视频、音频和文本",
+    "hi": "फ़ोटो, वीडियो, ऑडियो और टेक्स्ट",
+    "pt": "fotos, vídeos, áudio e texto",
+    "ar": "الصور والفيديو والصوت والنصوص"
+  },
+  "review photos and play video and audio in Gallery, with keyboard playback controls": {
+    "en": "review photos and play video and audio in Gallery, with keyboard playback controls",
+    "es": "revisa fotos y reproduce vídeos y audio en la galería, con controles de reproducción por teclado",
+    "zh-Hans": "在图库查看照片、播放视频和音频，并用键盘控制播放",
+    "hi": "गैलरी में फ़ोटो देखें और वीडियो व ऑडियो चलाएँ, कीबोर्ड से प्लेबैक नियंत्रित करें",
+    "pt": "revise fotos e reproduza vídeos e áudio na galeria, com controles de reprodução pelo teclado",
+    "ar": "راجع الصور وشغّل الفيديو والصوت في المعرض مع التحكم بالتشغيل من لوحة المفاتيح"
+  },
+  "common camera RAW files, JPEG, TIFF, PNG, HEIC, WebP, and AVIF are supported. optionally group matching RAW+JPEG files as one review item, with separate decisions, stars, and color labels": {
+    "en": "common camera RAW files, JPEG, TIFF, PNG, HEIC, WebP, and AVIF are supported. optionally group matching RAW+JPEG files as one review item, with separate decisions, stars, and color labels",
+    "es": "admite archivos RAW de cámaras habituales, JPEG, TIFF, PNG, HEIC, WebP y AVIF. puedes agrupar pares RAW+JPEG como un solo elemento, con decisiones, estrellas y etiquetas de color independientes",
+    "zh-Hans": "支持常见相机 RAW、JPEG、TIFF、PNG、HEIC、WebP 和 AVIF。可将匹配的 RAW+JPEG 合并显示为一个项目，并分别设置保留决定、星级和颜色标签",
+    "hi": "सामान्य कैमरा RAW फ़ाइलें, JPEG, TIFF, PNG, HEIC, WebP और AVIF समर्थित हैं। चाहें तो मिलते RAW+JPEG को एक समीक्षा आइटम में रखें, हर फ़ाइल के लिए अलग निर्णय, सितारे और रंग लेबल बनाए रखें",
+    "pt": "aceita arquivos RAW de câmeras comuns, JPEG, TIFF, PNG, HEIC, WebP e AVIF. agrupe pares RAW+JPEG em um só item, com decisões, estrelas e etiquetas de cor independentes",
+    "ar": "يدعم ملفات RAW الشائعة للكاميرات وJPEG وTIFF وPNG وHEIC وWebP وAVIF. يمكنك جمع ملفات RAW+JPEG المتطابقة في عنصر مراجعة واحد مع قرارات ونجوم وتصنيفات لونية مستقلة"
+  },
+  "read text, Markdown, and structured files alongside your media. text previews are read-only, with selectable text and clickable web and email links": {
+    "en": "read text, Markdown, and structured files alongside your media. text previews are read-only, with selectable text and clickable web and email links",
+    "es": "lee texto, Markdown y archivos estructurados junto a tus medios. las vistas de texto son de solo lectura, con texto seleccionable y enlaces web y de correo",
+    "zh-Hans": "可在媒体旁阅读文本、Markdown 和结构化文件。文本预览只读，支持选择文本及打开网页和电子邮件链接",
+    "hi": "अपने मीडिया के साथ टेक्स्ट, Markdown और संरचित फ़ाइलें पढ़ें। टेक्स्ट पूर्वावलोकन केवल पढ़ने के लिए है, जिसमें टेक्स्ट चुन सकते हैं और वेब व ईमेल लिंक खोल सकते हैं",
+    "pt": "leia texto, Markdown e arquivos estruturados junto à mídia. as prévias de texto são somente leitura, com texto selecionável e links da web e de email",
+    "ar": "اقرأ النصوص وMarkdown والملفات المنظمة بجانب وسائطك. معاينات النصوص للقراءة فقط مع إمكانية تحديد النص وفتح روابط الويب والبريد"
+  },
+  "zoom and compare": {
+    "en": "zoom and compare",
+    "es": "amplía y compara",
+    "zh-Hans": "放大与比较",
+    "hi": "ज़ूम करें और तुलना करें",
+    "pt": "amplie e compare",
+    "ar": "كبّر وقارن"
+  },
+  "inspect at 100%, check the histogram and clipping, or use a phone-sized preview. optional cues flag high ISO, slow shutter speeds, and dark or bright areas": {
+    "en": "inspect at 100%, check the histogram and clipping, or use a phone-sized preview. optional cues flag high ISO, slow shutter speeds, and dark or bright areas",
+    "es": "examina al 100%, revisa el histograma y las zonas recortadas, o usa una vista de tamaño móvil. las señales opcionales indican ISO alto, velocidades lentas y zonas oscuras o claras",
+    "zh-Hans": "以 100% 比例检查照片，查看直方图和高光或暗部溢出，或使用手机尺寸预览。可选提示标出高 ISO、慢快门和过暗或过亮区域",
+    "hi": "100% आकार में देखें, हिस्टोग्राम और क्लिपिंग जाँचें या फ़ोन के आकार का पूर्वावलोकन देखें। वैकल्पिक संकेत ऊँचे ISO, धीमे शटर और गहरे या चमकीले हिस्से दिखाते हैं",
+    "pt": "examine a 100%, confira o histograma e o recorte de tons, ou use uma prévia do tamanho de um celular. indicadores opcionais apontam ISO alto, obturador lento e áreas escuras ou claras",
+    "ar": "افحص بنسبة 100% وتحقّق من المدرج التكراري وقصّ درجات الإضاءة أو استخدم معاينة بحجم الهاتف. تشير التنبيهات الاختيارية إلى ISO مرتفع وسرعات غالق بطيئة ومناطق داكنة أو ساطعة"
+  },
+  "find exact duplicates, likely similar photos, and capture bursts locally on your Mac. analysis never changes ratings or files automatically": {
+    "en": "find exact duplicates, likely similar photos, and capture bursts locally on your Mac. analysis never changes ratings or files automatically",
+    "es": "encuentra duplicados exactos, fotos posiblemente similares y ráfagas localmente en tu Mac. el análisis nunca cambia puntuaciones ni archivos automáticamente",
+    "zh-Hans": "在 Mac 本机查找完全重复文件、可能相似的照片和连拍组。分析不会自动修改评分或文件",
+    "hi": "अपने Mac पर हूबहू डुप्लिकेट, संभावित समान फ़ोटो और बर्स्ट स्थानीय रूप से खोजें। विश्लेषण रेटिंग या फ़ाइलें अपने आप नहीं बदलता",
+    "pt": "encontre duplicados exatos, fotos possivelmente semelhantes e sequências de captura localmente no Mac. a análise nunca altera avaliações ou arquivos automaticamente",
+    "ar": "اعثر محليًا على Mac على النسخ المتطابقة والصور المحتمل تشابهها ومجموعات التصوير المتتابع. لا يغيّر التحليل التقييمات أو الملفات تلقائيًا"
+  },
+  "filter, sort, and organise": {
+    "en": "filter, sort, and organise",
+    "es": "filtra, ordena y organiza",
+    "zh-Hans": "筛选、排序与整理",
+    "hi": "फ़िल्टर करें, क्रम दें और व्यवस्थित करें",
+    "pt": "filtre, ordene e organize",
+    "ar": "رشّح ورتّب ونظّم"
+  },
+  "filter by decisions, stars, labels, dates, folders, camera details, and file types. decisions save automatically for your next session": {
+    "en": "filter by decisions, stars, labels, dates, folders, camera details, and file types. decisions save automatically for your next session",
+    "es": "filtra por decisiones, estrellas, etiquetas, fechas, carpetas, datos de cámara y tipos de archivo. tus decisiones se guardan automáticamente para la próxima sesión",
+    "zh-Hans": "按保留决定、星级、标签、日期、文件夹、相机信息和文件类型筛选。决定自动保存，下次继续使用",
+    "hi": "निर्णय, सितारे, लेबल, तारीख, फ़ोल्डर, कैमरा जानकारी और फ़ाइल प्रकार से फ़िल्टर करें। अगले सत्र के लिए निर्णय अपने आप सहेजे जाते हैं",
+    "pt": "filtre por decisões, estrelas, etiquetas, datas, pastas, dados da câmera e tipos de arquivo. as decisões são salvas automaticamente para a próxima sessão",
+    "ar": "رشّح حسب القرارات والنجوم والتصنيفات والتواريخ والمجلدات وبيانات الكاميرا وأنواع الملفات. تُحفظ قراراتك تلقائيًا للجلسة التالية"
+  },
+  "Organize Source Folder previews a folder structure before moving files. Rename Files previews new names and keeps recognised RAW+JPEG/XMP families together. both support undo during the open session": {
+    "en": "Organize Source Folder previews a folder structure before moving files. Rename Files previews new names and keeps recognised RAW+JPEG/XMP families together. both support undo during the open session",
+    "es": "Organize Source Folder previsualiza la estructura antes de mover archivos. Rename Files previsualiza los nombres y mantiene juntas las familias RAW+JPEG/XMP reconocidas. ambas acciones permiten deshacer durante la sesión abierta",
+    "zh-Hans": "Organize Source Folder 在移动文件前预览文件夹结构。Rename Files 预览新名称，并将识别出的 RAW+JPEG/XMP 文件组一同处理。两者均可在当前会话中撤销",
+    "hi": "Organize Source Folder फ़ाइलें ले जाने से पहले फ़ोल्डर संरचना दिखाता है। Rename Files नए नाम दिखाता है और पहचाने गए RAW+JPEG/XMP समूहों को साथ रखता है। खुले सत्र में दोनों कार्रवाइयाँ पूर्ववत कर सकते हैं",
+    "pt": "Organize Source Folder mostra a estrutura antes de mover arquivos. Rename Files mostra os novos nomes e mantém juntas as famílias RAW+JPEG/XMP reconhecidas. ambas permitem desfazer durante a sessão aberta",
+    "ar": "يعرض Organize Source Folder بنية المجلد قبل نقل الملفات. يعاين Rename Files الأسماء الجديدة ويحافظ على مجموعات RAW+JPEG/XMP المعروفة معًا. يمكن التراجع عن الإجراءين أثناء الجلسة المفتوحة"
+  },
+  "export and clean up": {
+    "en": "export and clean up",
+    "es": "exporta y limpia",
+    "zh-Hans": "导出与清理",
+    "hi": "निर्यात करें और सफ़ाई करें",
+    "pt": "exporte e limpe",
+    "ar": "صدّر ونظّف"
+  },
+  "export copies by default. you can also choose Move on the same drive, route copies to multiple folders, or write XMP sidecars for compatible editing apps": {
+    "en": "export copies by default. you can also choose Move on the same drive, route copies to multiple folders, or write XMP sidecars for compatible editing apps",
+    "es": "la exportación copia por defecto. también puedes elegir Move en la misma unidad, copiar a varias carpetas o escribir archivos auxiliares XMP para editores compatibles",
+    "zh-Hans": "默认导出副本。也可选择同一磁盘内的 Move、将副本分送到多个文件夹，或写入兼容编辑软件的 XMP 附属文件",
+    "hi": "निर्यात डिफ़ॉल्ट रूप से कॉपी करता है। उसी ड्राइव पर Move चुन सकते हैं, कई फ़ोल्डरों में कॉपी भेज सकते हैं या संगत संपादन ऐप के लिए XMP साइडकार लिख सकते हैं",
+    "pt": "a exportação copia por padrão. também é possível escolher Move na mesma unidade, enviar cópias a várias pastas ou gravar arquivos auxiliares XMP para editores compatíveis",
+    "ar": "التصدير ينسخ الملفات افتراضيًا. يمكنك اختيار Move على القرص نفسه أو إرسال نسخ إلى مجلدات متعددة أو كتابة ملفات XMP جانبية لتطبيقات التحرير المتوافقة"
+  },
+  "marking no does not trash a file. Clean Up is a separate action that sends unwanted files to the macOS Trash. undo is available during the open session while the files remain in Trash": {
+    "en": "marking no does not trash a file. Clean Up is a separate action that sends unwanted files to the macOS Trash. undo is available during the open session while the files remain in Trash",
+    "es": "marcar no no envía el archivo a la papelera. Clean Up es una acción independiente que envía archivos no deseados a la papelera de macOS. puedes deshacer durante la sesión abierta mientras sigan en la papelera",
+    "zh-Hans": "标记舍弃不会将文件移入废纸篓。Clean Up 是独立操作，将不需要的文件移入 macOS 废纸篓。当前会话中，只要文件仍在废纸篓，就可撤销",
+    "hi": "न रखने के लिए चिह्नित करने से फ़ाइल ट्रैश में नहीं जाती। Clean Up अलग कार्रवाई है जो अनचाही फ़ाइलें macOS ट्रैश में भेजती है। खुले सत्र में, फ़ाइलें ट्रैश में रहने तक इसे पूर्ववत कर सकते हैं",
+    "pt": "marcar não não envia o arquivo à lixeira. Clean Up é uma ação separada que envia arquivos indesejados à lixeira do macOS. é possível desfazer durante a sessão aberta enquanto os arquivos estiverem na lixeira",
+    "ar": "تحديد الاستبعاد لا ينقل الملف إلى سلة المهملات. Clean Up إجراء مستقل يرسل الملفات غير المرغوبة إلى سلة macOS. يمكنك التراجع أثناء الجلسة المفتوحة ما دامت الملفات في السلة"
+  },
+  "local, free, and open source": {
+    "en": "local, free, and open source",
+    "es": "local, gratis y de código abierto",
+    "zh-Hans": "本机运行、免费与开源",
+    "hi": "स्थानीय, मुफ़्त और ओपन सोर्स",
+    "pt": "local, grátis e de código aberto",
+    "ar": "محلي ومجاني ومفتوح المصدر"
+  },
+  "Louppe processes your media locally, with no account or app analytics. the direct download runs without Homebrew, and the app is free and open source under the MIT License": {
+    "en": "Louppe processes your media locally, with no account or app analytics. the direct download runs without Homebrew, and the app is free and open source under the MIT License",
+    "es": "Louppe procesa tus medios localmente, sin cuentas ni analítica de la app. la descarga directa funciona sin Homebrew. la app es gratuita y de código abierto bajo la licencia MIT",
+    "zh-Hans": "Louppe 在本机处理媒体，无需账号，也不收集应用使用分析。直接下载版无需 Homebrew。应用免费，并以 MIT 许可证开源",
+    "hi": "Louppe मीडिया को स्थानीय रूप से प्रोसेस करता है, बिना खाते या ऐप एनालिटिक्स के। सीधे डाउनलोड वाला संस्करण Homebrew के बिना चलता है। ऐप मुफ़्त है और MIT लाइसेंस के तहत ओपन सोर्स है",
+    "pt": "o Louppe processa a mídia localmente, sem conta nem análise de uso do app. o download direto funciona sem Homebrew. o app é gratuito e de código aberto sob a licença MIT",
+    "ar": "يعالج Louppe وسائطك محليًا دون حساب أو تحليلات استخدام للتطبيق. يعمل التنزيل المباشر دون Homebrew والتطبيق مجاني ومفتوح المصدر بترخيص MIT"
+  },
+  "review with the keyboard or VoiceOver": {
+    "en": "review with the keyboard or VoiceOver",
+    "es": "revisa con el teclado o VoiceOver",
+    "zh-Hans": "使用键盘或 VoiceOver 进行筛选",
+    "hi": "कीबोर्ड या VoiceOver से समीक्षा करें",
+    "pt": "revise com o teclado ou VoiceOver",
+    "ar": "راجع باستخدام لوحة المفاتيح أو VoiceOver"
+  },
+  "explore the source code": {
+    "en": "explore the source code",
+    "es": "explorar el código fuente",
+    "zh-Hans": "查看源代码",
+    "hi": "सोर्स कोड देखें",
+    "pt": "explorar o código-fonte",
+    "ar": "استكشف الشفرة المصدرية"
+  },
+  "app privacy policy": {
+    "en": "app privacy policy",
+    "es": "privacidad de la app",
+    "zh-Hans": "应用隐私政策",
+    "hi": "ऐप की गोपनीयता नीति",
+    "pt": "privacidade do app",
+    "ar": "سياسة خصوصية التطبيق"
+  },
+  "download Louppe": {
+    "en": "download Louppe",
+    "es": "descarga Louppe",
+    "zh-Hans": "下载 Louppe",
+    "hi": "Louppe डाउनलोड करें",
+    "pt": "baixe o Louppe",
+    "ar": "نزّل Louppe"
+  },
+  "for Mac": {
+    "en": "for Mac",
+    "es": "para Mac",
+    "zh-Hans": "Mac 版",
+    "hi": "Mac के लिए",
+    "pt": "para Mac",
+    "ar": "لـ Mac"
+  },
+  "made by an artist": {
+    "en": "made by an artist",
+    "es": "creado por un artista",
+    "zh-Hans": "由艺术家制作",
+    "hi": "एक कलाकार की रचना",
+    "pt": "feito por um artista",
+    "ar": "من صنع فنان"
+  },
+  "an independent project by": {
+    "en": "an independent project by",
+    "es": "un proyecto independiente de",
+    "zh-Hans": "独立项目，作者为",
+    "hi": "यह स्वतंत्र परियोजना है, निर्माता",
+    "pt": "um projeto independente de",
+    "ar": "مشروع مستقل من"
+  },
+  "contact": {
+    "en": "contact",
+    "es": "contactar con Alex",
+    "zh-Hans": "联系 Alex",
+    "hi": "Alex से संपर्क करें",
+    "pt": "fale com Alex",
+    "ar": "تواصل مع Alex"
+  },
+  "support the author": {
+    "en": "support the author",
+    "es": "apoya al autor",
+    "zh-Hans": "支持作者",
+    "hi": "निर्माता का समर्थन करें",
+    "pt": "apoie o autor",
+    "ar": "ادعم المؤلف"
+  },
+  "Footer navigation": {
+    "en": "Footer navigation",
+    "es": "navegación del pie de página",
+    "zh-Hans": "页脚导航",
+    "hi": "फ़ुटर नेविगेशन",
+    "pt": "navegação do rodapé",
+    "ar": "التنقل في تذييل الصفحة"
+  },
+  "release notes": {
+    "en": "release notes",
+    "es": "notas de versiones",
+    "zh-Hans": "版本说明",
+    "hi": "रिलीज़ नोट्स",
+    "pt": "notas de versão",
+    "ar": "ملاحظات الإصدارات"
+  },
+  "source code": {
+    "en": "source code",
+    "es": "código fuente",
+    "zh-Hans": "源代码",
+    "hi": "सोर्स कोड",
+    "pt": "código-fonte",
+    "ar": "الشفرة المصدرية"
+  },
+  "privacy policy": {
+    "en": "privacy policy",
+    "es": "política de privacidad",
+    "zh-Hans": "隐私政策",
+    "hi": "गोपनीयता नीति",
+    "pt": "política de privacidade",
+    "ar": "سياسة الخصوصية"
+  },
+  "analytics choices": {
+    "en": "analytics choices",
+    "es": "preferencias de analítica",
+    "zh-Hans": "分析选项",
+    "hi": "एनालिटिक्स विकल्प",
+    "pt": "preferências de análise",
+    "ar": "خيارات التحليلات"
+  },
+  "Full-size app screenshot": {
+    "en": "Full-size app screenshot",
+    "es": "captura de la app a tamaño completo",
+    "zh-Hans": "应用原尺寸截图",
+    "hi": "ऐप का पूर्ण आकार स्क्रीनशॉट",
+    "pt": "captura do app em tamanho completo",
+    "ar": "لقطة التطبيق بالحجم الكامل"
+  },
+  "Close full-size screenshot": {
+    "en": "Close full-size screenshot",
+    "es": "cerrar la captura ampliada",
+    "zh-Hans": "关闭放大的截图",
+    "hi": "पूर्ण आकार स्क्रीनशॉट बंद करें",
+    "pt": "fechar a captura ampliada",
+    "ar": "إغلاق اللقطة المكبّرة"
+  },
+  "close": {
+    "en": "close",
+    "es": "cerrar",
+    "zh-Hans": "关闭",
+    "hi": "बंद करें",
+    "pt": "fechar",
+    "ar": "إغلاق"
+  },
+  "Full-size Louppe Gallery screenshot": {
+    "en": "Full-size Louppe Gallery screenshot",
+    "es": "captura de la galería de Louppe a tamaño completo",
+    "zh-Hans": "Louppe 图库原尺寸截图",
+    "hi": "Louppe की गैलरी का पूर्ण आकार स्क्रीनशॉट",
+    "pt": "captura da galeria do Louppe em tamanho completo",
+    "ar": "لقطة معرض Louppe بالحجم الكامل"
+  },
+  "optional website analytics": {
+    "en": "optional website analytics",
+    "es": "analítica opcional del sitio",
+    "zh-Hans": "可选的网站访问分析",
+    "hi": "वैकल्पिक वेबसाइट एनालिटिक्स",
+    "pt": "análise opcional do site",
+    "ar": "تحليلات اختيارية للموقع"
+  },
+  "Alex Markin uses Google Analytics (Google LLC) to count visits. with consent, Google receives page views and browser/device data via cookies. withdraw anytime": {
+    "en": "Alex Markin uses Google Analytics (Google LLC) to count visits. with consent, Google receives page views and browser/device data via cookies. withdraw anytime",
+    "es": "Alex Markin usa Google Analytics (Google LLC) para contar visitas. con tu consentimiento, Google recibe páginas vistas y datos del navegador y dispositivo mediante cookies. puedes retirarlo en cualquier momento",
+    "zh-Hans": "Alex Markin 使用 Google Analytics（Google LLC）统计访问量。经您同意，Google 会通过 Cookie 接收页面浏览记录及浏览器和设备数据。您可随时撤回同意",
+    "hi": "Alex Markin विज़िट गिनने के लिए Google Analytics (Google LLC) इस्तेमाल करते हैं। सहमति देने पर Google को कुकी के ज़रिए पेज व्यू और ब्राउज़र व डिवाइस डेटा मिलता है। कभी भी सहमति वापस लें",
+    "pt": "Alex Markin usa o Google Analytics (Google LLC) para contar visitas. com seu consentimento, o Google recebe visualizações de página e dados do navegador e dispositivo por cookies. retire o consentimento a qualquer momento",
+    "ar": "يستخدم Alex Markin خدمة Google Analytics التابعة لـ Google LLC لحساب الزيارات. بموافقتك تتلقى Google مشاهدات الصفحات وبيانات المتصفح والجهاز عبر ملفات تعريف الارتباط. يمكنك سحب الموافقة في أي وقت"
+  },
+  "more details": {
+    "en": "more details",
+    "es": "más detalles",
+    "zh-Hans": "更多详情",
+    "hi": "और जानकारी",
+    "pt": "mais detalhes",
+    "ar": "مزيد من التفاصيل"
+  },
+  "and": {
+    "en": "and",
+    "es": "y",
+    "zh-Hans": "和",
+    "hi": "और",
+    "pt": "e",
+    "ar": "و"
+  },
+  "cookies last 30 days; your choice lasts 180 days. withdraw through “analytics choices” in the footer to clear cookies": {
+    "en": "cookies last 30 days; your choice lasts 180 days. withdraw through “analytics choices” in the footer to clear cookies",
+    "es": "las cookies duran 30 días; tu elección dura 180 días. retira tu consentimiento en «preferencias de analítica» del pie de página para borrar las cookies",
+    "zh-Hans": "Cookie 保留 30 天；您的选择保留 180 天。在页脚的“分析选项”撤回同意即可清除 Cookie",
+    "hi": "कुकी 30 दिन और आपका विकल्प 180 दिन रहता है। कुकी हटाने के लिए फ़ुटर के “एनालिटिक्स विकल्प” से सहमति वापस लें",
+    "pt": "os cookies duram 30 dias; sua escolha dura 180 dias. retire o consentimento em “preferências de análise” no rodapé para limpar os cookies",
+    "ar": "تستمر ملفات تعريف الارتباط 30 يومًا ويستمر اختيارك 180 يومًا. اسحب الموافقة من «خيارات التحليلات» في التذييل لمسح الملفات"
+  },
+  "GitHub Pages hosts this site and receives page requests.": {
+    "en": "GitHub Pages hosts this site and receives page requests.",
+    "es": "GitHub Pages aloja este sitio y recibe solicitudes de páginas.",
+    "zh-Hans": "本网站由 GitHub Pages 托管，该服务会接收页面请求。",
+    "hi": "GitHub Pages इस साइट को होस्ट करता है और पेज अनुरोध प्राप्त करता है।",
+    "pt": "GitHub Pages hospeda este site e recebe solicitações de páginas.",
+    "ar": "يستضيف GitHub Pages هذا الموقع ويتلقى طلبات الصفحات."
+  },
+  "website privacy policy": {
+    "en": "website privacy policy",
+    "es": "privacidad del sitio",
+    "zh-Hans": "网站隐私政策",
+    "hi": "वेबसाइट की गोपनीयता नीति",
+    "pt": "privacidade do site",
+    "ar": "سياسة خصوصية الموقع"
+  },
+  "Google privacy policy": {
+    "en": "Google privacy policy",
+    "es": "privacidad de Google",
+    "zh-Hans": "Google 隐私政策",
+    "hi": "Google की गोपनीयता नीति",
+    "pt": "privacidade do Google",
+    "ar": "سياسة خصوصية Google"
+  },
+  "no analytics": {
+    "en": "no analytics",
+    "es": "sin analítica",
+    "zh-Hans": "不允许分析",
+    "hi": "एनालिटिक्स नहीं",
+    "pt": "sem análise",
+    "ar": "دون تحليلات"
+  },
+  "allow analytics": {
+    "en": "allow analytics",
+    "es": "permitir analítica",
+    "zh-Hans": "允许分析",
+    "hi": "एनालिटिक्स की अनुमति दें",
+    "pt": "permitir análise",
+    "ar": "السماح بالتحليلات"
+  },
+  "privacy policy — Louppe": {
+    "en": "privacy policy — Louppe",
+    "es": "política de privacidad — Louppe",
+    "zh-Hans": "隐私政策 — Louppe",
+    "hi": "गोपनीयता नीति — Louppe",
+    "pt": "política de privacidade — Louppe",
+    "ar": "سياسة الخصوصية — Louppe"
+  },
+  "Local app data and optional website analytics in Louppe.": {
+    "en": "Local app data and optional website analytics in Louppe.",
+    "es": "datos locales de la app y analítica opcional del sitio de Louppe.",
+    "zh-Hans": "Louppe 的本地应用数据与可选网站分析。",
+    "hi": "Louppe में स्थानीय ऐप डेटा और वैकल्पिक वेबसाइट एनालिटिक्स।",
+    "pt": "dados locais do app e análise opcional do site do Louppe.",
+    "ar": "بيانات التطبيق المحلية وتحليلات الموقع الاختيارية في Louppe."
+  },
+  "Louppe reviews media locally. website analytics are optional": {
+    "en": "Louppe reviews media locally. website analytics are optional",
+    "es": "Louppe revisa tus medios localmente. la analítica del sitio es opcional",
+    "zh-Hans": "Louppe 在本机筛选媒体。网站分析为可选功能",
+    "hi": "Louppe मीडिया की समीक्षा स्थानीय रूप से करता है। वेबसाइट एनालिटिक्स वैकल्पिक है",
+    "pt": "o Louppe revisa a mídia localmente. a análise do site é opcional",
+    "ar": "يراجع Louppe الوسائط محليًا. تحليلات الموقع اختيارية"
+  },
+  "updated 7 October 2026 · Alex Markin ·": {
+    "en": "updated 7 October 2026 · Alex Markin ·",
+    "es": "actualizado el 7 de octubre de 2026 · Alex Markin ·",
+    "zh-Hans": "更新于 2026 年 10 月 7 日 · Alex Markin ·",
+    "hi": "अपडेट: 7 अक्टूबर 2026 · Alex Markin ·",
+    "pt": "atualizado em 7 de outubro de 2026 · Alex Markin ·",
+    "ar": "آخر تحديث 7 أكتوبر 2026 · Alex Markin ·"
+  },
+  "the Louppe app": {
+    "en": "the Louppe app",
+    "es": "la app Louppe",
+    "zh-Hans": "Louppe 应用",
+    "hi": "Louppe ऐप",
+    "pt": "o app Louppe",
+    "ar": "تطبيق Louppe"
+  },
+  "Alex Markin makes Louppe, an independent macOS app. it has no account, advertising, app analytics, or tracking SDK. the app sends Alex no media, review decisions, or usage history": {
+    "en": "Alex Markin makes Louppe, an independent macOS app. it has no account, advertising, app analytics, or tracking SDK. the app sends Alex no media, review decisions, or usage history",
+    "es": "Alex Markin crea Louppe, una app independiente para macOS. no tiene cuentas, publicidad, analítica de uso ni SDK de seguimiento. la app no envía a Alex medios, decisiones de revisión ni historial de uso",
+    "zh-Hans": "Alex Markin 制作了独立 macOS 应用 Louppe。它没有账号、广告、应用分析或跟踪 SDK。应用不会向 Alex 发送媒体、筛选决定或使用历史",
+    "hi": "Alex Markin स्वतंत्र macOS ऐप Louppe बनाते हैं। इसमें खाता, विज्ञापन, ऐप एनालिटिक्स या ट्रैकिंग SDK नहीं है। ऐप Alex को मीडिया, समीक्षा निर्णय या उपयोग का इतिहास नहीं भेजता",
+    "pt": "Alex Markin cria o Louppe, um app independente para macOS. não há conta, publicidade, análise de uso do app ou SDK de rastreamento. o app não envia a Alex mídia, decisões de revisão ou histórico de uso",
+    "ar": "يصنع Alex Markin تطبيق Louppe المستقل لـ macOS. لا يتضمن حسابات أو إعلانات أو تحليلات استخدام أو أدوات تتبع. لا يرسل التطبيق إلى Alex وسائطك أو قرارات المراجعة أو سجل الاستخدام"
+  },
+  "your files and review data": {
+    "en": "your files and review data",
+    "es": "tus archivos y datos de revisión",
+    "zh-Hans": "您的文件与筛选数据",
+    "hi": "आपकी फ़ाइलें और समीक्षा डेटा",
+    "pt": "seus arquivos e dados de revisão",
+    "ar": "ملفاتك وبيانات المراجعة"
+  },
+  "Louppe reads chosen folders for previews, playback, metadata, and review. duplicate and similarity analysis runs on your Mac. no media is uploaded to Alex or a cloud analysis service": {
+    "en": "Louppe reads chosen folders for previews, playback, metadata, and review. duplicate and similarity analysis runs on your Mac. no media is uploaded to Alex or a cloud analysis service",
+    "es": "Louppe lee las carpetas elegidas para previsualizar, reproducir, consultar metadatos y revisar. el análisis de duplicados y similitud se ejecuta en tu Mac. no se suben medios a Alex ni a servicios de análisis en la nube",
+    "zh-Hans": "Louppe 读取选定文件夹用于预览、播放、元数据和筛选。重复和相似性分析在您的 Mac 上运行。媒体不会上传给 Alex 或云端分析服务",
+    "hi": "Louppe पूर्वावलोकन, प्लेबैक, मेटाडेटा और समीक्षा के लिए चुने गए फ़ोल्डर पढ़ता है। डुप्लिकेट और समानता का विश्लेषण आपके Mac पर होता है। मीडिया Alex या क्लाउड विश्लेषण सेवा पर अपलोड नहीं होता",
+    "pt": "o Louppe lê as pastas escolhidas para prévias, reprodução, metadados e revisão. a análise de duplicados e semelhança roda no seu Mac. nenhuma mídia é enviada a Alex ou a um serviço de análise na nuvem",
+    "ar": "يقرأ Louppe المجلدات المختارة للمعاينة والتشغيل والبيانات الوصفية والمراجعة. يعمل تحليل التكرار والتشابه على جهاز Mac. لا تُرفع الوسائط إلى Alex أو إلى خدمة تحليل سحابية"
+  },
+  "decisions, star ratings, color labels, filenames, and file identities are saved in": {
+    "en": "decisions, star ratings, color labels, filenames, and file identities are saved in",
+    "es": "las decisiones, estrellas, etiquetas de color, nombres e identidades de archivos se guardan en",
+    "zh-Hans": "保留决定、星级、颜色标签、文件名和文件标识保存在",
+    "hi": "निर्णय, स्टार रेटिंग, रंग लेबल, फ़ाइल नाम और फ़ाइल पहचान सहेजे जाते हैं",
+    "pt": "decisões, estrelas, etiquetas de cor, nomes e identidades dos arquivos são salvos em",
+    "ar": "تُحفظ القرارات والنجوم والتصنيفات اللونية وأسماء الملفات ومعرّفاتها في"
+  },
+  "in the opened folder, with a backup in Louppe’s Application Support data. XMP sidecars and exports go to chosen locations": {
+    "en": "in the opened folder, with a backup in Louppe’s Application Support data. XMP sidecars and exports go to chosen locations",
+    "es": "en la carpeta abierta, con una copia de seguridad en los datos de Application Support de Louppe. los archivos auxiliares XMP y las exportaciones van a las ubicaciones elegidas",
+    "zh-Hans": "，位于打开的文件夹中，并在 Louppe 的 Application Support 数据中备份。XMP 附属文件和导出文件写入选定位置",
+    "hi": "में, खुले फ़ोल्डर में, और Louppe के Application Support डेटा में बैकअप रखा जाता है। XMP साइडकार और निर्यात चुने हुए स्थानों पर जाते हैं",
+    "pt": "na pasta aberta, com um backup nos dados de Application Support do Louppe. arquivos auxiliares XMP e exportações vão aos locais escolhidos",
+    "ar": "داخل المجلد المفتوح مع نسخة احتياطية في بيانات Application Support الخاصة بـ Louppe. تُكتب ملفات XMP الجانبية والتصديرات في الأماكن المختارة"
+  },
+  "preferences and recent folder paths stay local. sandboxed builds retain macOS access bookmarks for chosen folders. thumbnail caches speed up review. local operation journals record paths and progress for recovery; destination access is retained while interrupted work may need it": {
+    "en": "preferences and recent folder paths stay local. sandboxed builds retain macOS access bookmarks for chosen folders. thumbnail caches speed up review. local operation journals record paths and progress for recovery; destination access is retained while interrupted work may need it",
+    "es": "las preferencias y rutas recientes de carpetas permanecen locales. las versiones con sandbox conservan permisos de acceso de macOS para las carpetas elegidas. las cachés de miniaturas agilizan la revisión. los registros locales de operaciones guardan rutas y progreso para la recuperación; el acceso al destino se conserva mientras un trabajo interrumpido pueda necesitarlo",
+    "zh-Hans": "偏好设置和最近的文件夹路径保留在本机。沙盒版本保存选定文件夹的 macOS 访问书签。缩略图缓存加快筛选。本地操作日志记录路径和进度以便恢复；中断的任务可能需要访问目标位置时，会保留相关权限",
+    "hi": "पसंद और हाल के फ़ोल्डर पथ स्थानीय रहते हैं। सैंडबॉक्स वाले संस्करण चुने गए फ़ोल्डर के macOS एक्सेस बुकमार्क रखते हैं। थंबनेल कैश समीक्षा तेज़ करता है। स्थानीय ऑपरेशन जर्नल रिकवरी के लिए पथ और प्रगति दर्ज करते हैं; रुके काम को ज़रूरत होने तक गंतव्य का एक्सेस रखा जाता है",
+    "pt": "preferências e caminhos recentes ficam locais. versões em sandbox mantêm marcadores de acesso do macOS para as pastas escolhidas. caches de miniaturas aceleram a revisão. registros locais de operações guardam caminhos e progresso para recuperação; o acesso ao destino é mantido enquanto um trabalho interrompido precisar dele",
+    "ar": "تبقى التفضيلات ومسارات المجلدات الأخيرة محلية. تحتفظ الإصدارات المعزولة بإشارات وصول macOS للمجلدات المختارة. تسرّع ذاكرة الصور المصغّرة المراجعة. تسجّل سجلات العمليات المحلية المسارات والتقدم للاستعادة وتحتفظ بإذن الوصول إلى الوجهة ما دام العمل المتوقف قد يحتاج إليه"
+  },
+  "retention and your control": {
+    "en": "retention and your control",
+    "es": "conservación y control",
+    "zh-Hans": "数据保留与控制",
+    "hi": "डेटा रखना और आपका नियंत्रण",
+    "pt": "retenção e seu controle",
+    "ar": "الاحتفاظ بالبيانات وتحكمك بها"
+  },
+  "session sidecars, backups, preferences, and cached previews may survive closing or uninstalling Louppe. sidecars and exports remain until you remove them. deleting local app data through macOS may erase review decisions or recovery information. Louppe prunes thumbnails and removes completed operation journals": {
+    "en": "session sidecars, backups, preferences, and cached previews may survive closing or uninstalling Louppe. sidecars and exports remain until you remove them. deleting local app data through macOS may erase review decisions or recovery information. Louppe prunes thumbnails and removes completed operation journals",
+    "es": "los archivos de sesión, copias de seguridad, preferencias y cachés pueden permanecer tras cerrar o desinstalar Louppe. los archivos auxiliares y las exportaciones permanecen hasta que los borres. borrar datos locales mediante macOS puede eliminar decisiones o información de recuperación. Louppe depura miniaturas y elimina registros de operaciones terminadas",
+    "zh-Hans": "关闭或卸载 Louppe 后，会话附属文件、备份、偏好设置和预览缓存可能仍然保留。附属文件和导出文件保留到您手动删除。通过 macOS 删除本地应用数据可能清除筛选决定或恢复信息。Louppe 会清理缩略图并移除已完成操作的日志",
+    "hi": "Louppe बंद या अनइंस्टॉल करने के बाद भी सत्र साइडकार, बैकअप, पसंद और कैश पूर्वावलोकन रह सकते हैं। साइडकार और निर्यात तब तक रहते हैं जब तक आप हटाएँ। macOS से स्थानीय ऐप डेटा हटाने पर समीक्षा निर्णय या रिकवरी जानकारी मिट सकती है। Louppe थंबनेल छाँटता है और पूर्ण ऑपरेशन जर्नल हटाता है",
+    "pt": "arquivos de sessão, backups, preferências e prévias em cache podem permanecer após fechar ou desinstalar o Louppe. arquivos auxiliares e exportações ficam até você removê-los. apagar dados locais pelo macOS pode eliminar decisões ou informações de recuperação. o Louppe limpa miniaturas e remove registros de operações concluídas",
+    "ar": "قد تبقى ملفات الجلسات الجانبية والنسخ الاحتياطية والتفضيلات والمعاينات المخزنة بعد إغلاق Louppe أو إزالته. تبقى الملفات الجانبية والتصديرات حتى تحذفها. قد يؤدي حذف بيانات التطبيق المحلية عبر macOS إلى فقد قرارات المراجعة أو معلومات الاستعادة. ينظّف Louppe الصور المصغّرة ويحذف سجلات العمليات المكتملة"
+  },
+  "export copies files by default. moving, renaming, organizing, writing XMP, and sending files to Trash require your chosen actions. cloud or shared-folder services may sync files and sidecars under their own settings and privacy policies": {
+    "en": "export copies files by default. moving, renaming, organizing, writing XMP, and sending files to Trash require your chosen actions. cloud or shared-folder services may sync files and sidecars under their own settings and privacy policies",
+    "es": "la exportación copia por defecto. mover, renombrar, organizar, escribir XMP y enviar archivos a la papelera requieren acciones elegidas por ti. los servicios de carpetas compartidas o en la nube pueden sincronizar archivos y datos auxiliares según sus propias preferencias y políticas",
+    "zh-Hans": "默认导出副本。移动、重命名、整理、写入 XMP 和移入废纸篓都需由您选择执行。云端或共享文件夹服务可能按其自身设置和隐私政策同步文件及附属文件",
+    "hi": "निर्यात डिफ़ॉल्ट रूप से कॉपी करता है। ले जाना, नाम बदलना, व्यवस्थित करना, XMP लिखना और ट्रैश में भेजना आपकी चुनी हुई कार्रवाइयों से होता है। क्लाउड या साझा फ़ोल्डर सेवाएँ अपनी सेटिंग और गोपनीयता नीति के अनुसार फ़ाइलें और साइडकार सिंक कर सकती हैं",
+    "pt": "a exportação copia por padrão. mover, renomear, organizar, gravar XMP e enviar à lixeira exigem ações escolhidas por você. serviços de nuvem ou pastas compartilhadas podem sincronizar arquivos e dados auxiliares conforme suas próprias configurações e políticas",
+    "ar": "التصدير ينسخ الملفات افتراضيًا. يتطلب النقل وإعادة التسمية والتنظيم وكتابة XMP والإرسال إلى السلة إجراءات تختارها أنت. قد تزامن خدمات السحابة والمجلدات المشتركة الملفات والملفات الجانبية وفق إعداداتها وسياسات خصوصيتها"
+  },
+  "updates and Apple resources": {
+    "en": "updates and Apple resources",
+    "es": "actualizaciones y recursos de Apple",
+    "zh-Hans": "更新与 Apple 资源",
+    "hi": "अपडेट और Apple संसाधन",
+    "pt": "atualizações e recursos da Apple",
+    "ar": "التحديثات وموارد Apple"
+  },
+  "the direct-download app uses Sparkle to check for and download GitHub releases. the host receives connection information, including your IP address. Sparkle system profiling is disabled. turn off automatic checks in Louppe’s Updates settings. Mac App Store builds use Apple updates without Sparkle": {
+    "en": "the direct-download app uses Sparkle to check for and download GitHub releases. the host receives connection information, including your IP address. Sparkle system profiling is disabled. turn off automatic checks in Louppe’s Updates settings. Mac App Store builds use Apple updates without Sparkle",
+    "es": "la descarga directa usa Sparkle para buscar y descargar versiones de GitHub. el servidor recibe datos de conexión, incluida tu IP. el perfilado del sistema de Sparkle está desactivado. puedes desactivar las comprobaciones automáticas en Updates de Louppe. las versiones de Mac App Store usan actualizaciones de Apple sin Sparkle",
+    "zh-Hans": "直接下载版使用 Sparkle 检查和下载 GitHub 版本。服务器会收到包括 IP 地址在内的连接信息。Sparkle 系统信息统计已禁用。可在 Louppe 的 Updates 设置中关闭自动检查。Mac App Store 版本通过 Apple 更新，不使用 Sparkle",
+    "hi": "सीधे डाउनलोड वाला ऐप GitHub रिलीज़ जाँचने और डाउनलोड करने के लिए Sparkle इस्तेमाल करता है। होस्ट को आपके IP पते सहित कनेक्शन जानकारी मिलती है। Sparkle सिस्टम प्रोफ़ाइलिंग बंद है। Louppe की Updates सेटिंग में स्वतः जाँच बंद करें। Mac App Store संस्करण Sparkle के बिना Apple अपडेट इस्तेमाल करते हैं",
+    "pt": "o download direto usa Sparkle para verificar e baixar versões do GitHub. o servidor recebe dados de conexão, incluindo seu IP. a coleta de perfil do sistema do Sparkle está desativada. desative verificações automáticas em Updates no Louppe. versões da Mac App Store usam atualizações da Apple sem Sparkle",
+    "ar": "يستخدم التطبيق المنزّل مباشرة Sparkle للتحقق من إصدارات GitHub وتنزيلها. تتلقى جهة الاستضافة معلومات الاتصال بما فيها عنوان IP. جمع معلومات النظام في Sparkle معطّل. يمكنك إيقاف التحقق التلقائي في إعدادات Updates. تستخدم إصدارات Mac App Store تحديثات Apple دون Sparkle"
+  },
+  "if a selected Apple RAW decoder needs model resources, macOS may download them from Apple. decoding stays local. Apple manages downloads under": {
+    "en": "if a selected Apple RAW decoder needs model resources, macOS may download them from Apple. decoding stays local. Apple manages downloads under",
+    "es": "si un decodificador RAW de Apple elegido necesita recursos del modelo, macOS puede descargarlos de Apple. la decodificación sigue siendo local. Apple gestiona las descargas según",
+    "zh-Hans": "若选定的 Apple RAW 解码器需要机型资源，macOS 可能从 Apple 下载。解码仍在本机进行。Apple 根据以下政策管理下载：",
+    "hi": "यदि चुने गए Apple RAW डिकोडर को मॉडल संसाधन चाहिए, तो macOS उन्हें Apple से डाउनलोड कर सकता है। डिकोडिंग स्थानीय रहती है। डाउनलोड पर लागू होती है",
+    "pt": "se um decodificador RAW da Apple precisar de recursos de modelo, o macOS poderá baixá-los da Apple. a decodificação permanece local. a Apple gerencia os downloads conforme",
+    "ar": "إذا احتاج مفكك RAW المختار من Apple إلى موارد الطراز فقد ينزّلها macOS من Apple. يبقى فك الترميز محليًا. تدير Apple التنزيلات وفق"
+  },
+  "Apple’s privacy policy": {
+    "en": "Apple’s privacy policy",
+    "es": "la política de privacidad de Apple",
+    "zh-Hans": "Apple 隐私政策",
+    "hi": "Apple की गोपनीयता नीति",
+    "pt": "a política de privacidade da Apple",
+    "ar": "سياسة خصوصية Apple"
+  },
+  "contacting Alex": {
+    "en": "contacting Alex",
+    "es": "contactar con Alex",
+    "zh-Hans": "联系 Alex",
+    "hi": "Alex से संपर्क",
+    "pt": "contato com Alex",
+    "ar": "التواصل مع Alex"
+  },
+  "contact and feedback links open your email app. sending is your choice. Alex receives your address, message, and chosen attachments to respond and investigate. email providers handle delivery": {
+    "en": "contact and feedback links open your email app. sending is your choice. Alex receives your address, message, and chosen attachments to respond and investigate. email providers handle delivery",
+    "es": "los enlaces de contacto y comentarios abren tu app de correo. tú decides si envías. Alex recibe tu dirección, mensaje y archivos adjuntos elegidos para responder e investigar. los proveedores de correo gestionan la entrega",
+    "zh-Hans": "联系和反馈链接会打开您的邮件应用。是否发送由您决定。Alex 会收到您的地址、消息和所选附件用于回复及调查。邮件服务商负责传递",
+    "hi": "संपर्क और प्रतिक्रिया लिंक आपका ईमेल ऐप खोलते हैं। भेजना आपका निर्णय है। जवाब देने और जाँच करने के लिए Alex को आपका पता, संदेश और चुने गए अटैचमेंट मिलते हैं। ईमेल प्रदाता डिलीवरी संभालते हैं",
+    "pt": "links de contato e feedback abrem seu app de email. enviar é sua escolha. Alex recebe seu endereço, mensagem e anexos escolhidos para responder e investigar. provedores de email cuidam da entrega",
+    "ar": "تفتح روابط التواصل والملاحظات تطبيق بريدك. الإرسال اختيارك. يتلقى Alex عنوانك ورسالتك والمرفقات المختارة للرد والتحقق. يتولى مزودو البريد التسليم"
+  },
+  "correspondence is kept for follow-up and resolution. contact": {
+    "en": "correspondence is kept for follow-up and resolution. contact",
+    "es": "se conserva la correspondencia para seguimiento y resolución. escribe a",
+    "zh-Hans": "通信会保留用于跟进和解决问题。联系",
+    "hi": "फ़ॉलो-अप और समाधान के लिए पत्राचार रखा जाता है। संपर्क करें",
+    "pt": "as mensagens são mantidas para acompanhamento e resolução. escreva para",
+    "ar": "تُحفظ المراسلات للمتابعة وحل المشكلات. تواصل عبر"
+  },
+  "to ask about, correct, or request deletion of information you sent. include only attachments you want to share": {
+    "en": "to ask about, correct, or request deletion of information you sent. include only attachments you want to share",
+    "es": "para consultar, corregir o solicitar la eliminación de información que enviaste. incluye solo los adjuntos que quieras compartir",
+    "zh-Hans": "，咨询、更正或申请删除您发送的信息。仅附上您愿意分享的文件",
+    "hi": "पर, भेजी गई जानकारी के बारे में पूछने, उसे ठीक कराने या मिटाने का अनुरोध करने के लिए। केवल वे अटैचमेंट शामिल करें जिन्हें साझा करना चाहते हैं",
+    "pt": "para consultar, corrigir ou pedir a exclusão de informações enviadas. inclua apenas anexos que queira compartilhar",
+    "ar": "للاستفسار عن معلومات أرسلتها أو تصحيحها أو طلب حذفها. أرفق فقط ما ترغب في مشاركته"
+  },
+  "the louppe.eu website": {
+    "en": "the louppe.eu website",
+    "es": "el sitio louppe.eu",
+    "zh-Hans": "louppe.eu 网站",
+    "hi": "louppe.eu वेबसाइट",
+    "pt": "o site louppe.eu",
+    "ar": "موقع louppe.eu"
+  },
+  "GitHub Pages receives page requests and": {
+    "en": "GitHub Pages receives page requests and",
+    "es": "GitHub Pages recibe solicitudes de páginas y",
+    "zh-Hans": "GitHub Pages 接收页面请求，并",
+    "hi": "GitHub Pages पेज अनुरोध प्राप्त करता है और",
+    "pt": "GitHub Pages recebe solicitações de páginas e",
+    "ar": "يتلقى GitHub Pages طلبات الصفحات و"
+  },
+  "logs visitors’ IP addresses for security": {
+    "en": "logs visitors’ IP addresses for security",
+    "es": "registra las IP de visitantes por seguridad",
+    "zh-Hans": "为安全目的记录访客 IP 地址",
+    "hi": "सुरक्षा के लिए विज़िटर के IP पते लॉग करता है",
+    "pt": "registra IPs de visitantes por segurança",
+    "ar": "يسجّل عناوين IP للزوار لأغراض الأمان"
+  },
+  ", even without analytics consent. see": {
+    "en": ", even without analytics consent. see",
+    "es": ", incluso sin consentimiento para analítica. consulta",
+    "zh-Hans": "，即使未同意分析也如此。请查看",
+    "hi": ", भले ही एनालिटिक्स की सहमति न हो। देखें",
+    "pt": ", mesmo sem consentimento para análise. consulte",
+    "ar": "حتى دون موافقة على التحليلات. راجع"
+  },
+  "GitHub’s privacy statement": {
+    "en": "GitHub’s privacy statement",
+    "es": "la declaración de privacidad de GitHub",
+    "zh-Hans": "GitHub 隐私声明",
+    "hi": "GitHub का गोपनीयता वक्तव्य",
+    "pt": "a declaração de privacidade do GitHub",
+    "ar": "بيان خصوصية GitHub"
+  },
+  "for its retention and processing practices": {
+    "en": "for its retention and processing practices",
+    "es": "para conocer sus prácticas de conservación y tratamiento",
+    "zh-Hans": "，了解其保留和处理方式",
+    "hi": "में डेटा रखने और प्रोसेस करने के तरीके",
+    "pt": "para saber como os dados são mantidos e tratados",
+    "ar": "لمعرفة ممارسات الاحتفاظ بالبيانات ومعالجتها"
+  },
+  "Google Analytics loads only after “allow analytics” on the HTTPS production site. it measures page views, referring pages, browser and device information, approximate location, and download-link clicks. clicks record intent, not installation or app activity. Google signals and advertising personalization are disabled": {
+    "en": "Google Analytics loads only after “allow analytics” on the HTTPS production site. it measures page views, referring pages, browser and device information, approximate location, and download-link clicks. clicks record intent, not installation or app activity. Google signals and advertising personalization are disabled",
+    "es": "Google Analytics solo se carga tras elegir «permitir analítica» en el sitio de producción HTTPS. mide páginas vistas, páginas de origen, navegador y dispositivo, ubicación aproximada y clics de descarga. los clics reflejan intención, no instalaciones ni actividad de la app. Google signals y la personalización publicitaria están desactivados",
+    "zh-Hans": "仅在 HTTPS 正式网站选择“允许分析”后加载 Google Analytics。它统计页面浏览、来源页面、浏览器及设备信息、大致位置和下载链接点击。点击代表下载意向，并非安装或应用活动。Google signals 和广告个性化已禁用",
+    "hi": "HTTPS लाइव साइट पर “एनालिटिक्स की अनुमति दें” चुनने के बाद ही Google Analytics लोड होता है। यह पेज व्यू, रेफ़रिंग पेज, ब्राउज़र और डिवाइस जानकारी, अनुमानित स्थान और डाउनलोड लिंक क्लिक मापता है। क्लिक इरादा दर्शाते हैं, इंस्टॉलेशन या ऐप गतिविधि नहीं। Google signals और विज्ञापन वैयक्तिकरण बंद हैं",
+    "pt": "o Google Analytics só carrega após “permitir análise” no site de produção HTTPS. mede visualizações, páginas de origem, navegador e dispositivo, localização aproximada e cliques de download. cliques indicam intenção, não instalação ou atividade do app. Google signals e personalização de anúncios estão desativados",
+    "ar": "لا تُحمّل Google Analytics إلا بعد اختيار «السماح بالتحليلات» على الموقع الفعلي عبر HTTPS. تقيس مشاهدات الصفحات وصفحات الإحالة وبيانات المتصفح والجهاز والموقع التقريبي ونقرات التنزيل. تعبّر النقرات عن نية التنزيل لا التثبيت أو نشاط التطبيق. ميزتا Google signals وتخصيص الإعلانات معطّلتان"
+  },
+  "Google receives analytics requests under": {
+    "en": "Google receives analytics requests under",
+    "es": "Google recibe solicitudes de analítica según",
+    "zh-Hans": "Google 接收分析请求，适用",
+    "hi": "Google को एनालिटिक्स अनुरोध मिलते हैं, जिन पर लागू है",
+    "pt": "o Google recebe solicitações de análise conforme",
+    "ar": "تتلقى Google طلبات التحليلات وفق"
+  },
+  "Google’s privacy policy": {
+    "en": "Google’s privacy policy",
+    "es": "la política de privacidad de Google",
+    "zh-Hans": "Google 隐私政策",
+    "hi": "Google की गोपनीयता नीति",
+    "pt": "a política de privacidade do Google",
+    "ar": "سياسة خصوصية Google"
+  },
+  ".": {
+    "en": ".",
+    "es": ".",
+    "zh-Hans": "。",
+    "hi": "।",
+    "pt": ".",
+    "ar": "."
+  },
+  "cookies expire after 30 days without renewal. your choice lasts 180 days in browser local storage. if storage is unavailable, it may last only for this visit": {
+    "en": "cookies expire after 30 days without renewal. your choice lasts 180 days in browser local storage. if storage is unavailable, it may last only for this visit",
+    "es": "las cookies caducan tras 30 días sin renovación. tu elección dura 180 días en el almacenamiento local del navegador. si no está disponible, puede durar solo esta visita",
+    "zh-Hans": "Cookie 在未续期的情况下于 30 天后过期。您的选择在浏览器本地存储中保留 180 天。存储不可用时，选择可能仅在本次访问有效",
+    "hi": "कुकी नवीनीकरण के बिना 30 दिन बाद समाप्त होती हैं। आपका विकल्प ब्राउज़र के स्थानीय स्टोरेज में 180 दिन रहता है। स्टोरेज उपलब्ध न हो तो यह केवल इस विज़िट तक रह सकता है",
+    "pt": "os cookies expiram após 30 dias sem renovação. sua escolha dura 180 dias no armazenamento local do navegador. se ele estiver indisponível, a escolha pode durar apenas esta visita",
+    "ar": "تنتهي ملفات تعريف الارتباط بعد 30 يومًا دون تجديد. يستمر اختيارك 180 يومًا في التخزين المحلي للمتصفح. إذا لم يتوفر التخزين فقد يستمر الاختيار لهذه الزيارة فقط"
+  },
+  "reject or withdraw anytime through “analytics choices” in the footer. withdrawal stops collection across open Louppe website tabs and clears analytics cookies. withdrawal does not delete data already received by Google. local previews do not load analytics": {
+    "en": "reject or withdraw anytime through “analytics choices” in the footer. withdrawal stops collection across open Louppe website tabs and clears analytics cookies. withdrawal does not delete data already received by Google. local previews do not load analytics",
+    "es": "rechaza o retira tu consentimiento en cualquier momento desde «preferencias de analítica» en el pie de página. se detiene la recopilación en las pestañas abiertas de Louppe y se borran las cookies. no se eliminan datos ya recibidos por Google. las vistas previas locales no cargan analítica",
+    "zh-Hans": "可随时通过页脚的“分析选项”拒绝或撤回同意。撤回会停止所有已打开 Louppe 网站标签页的数据收集并清除分析 Cookie，但不会删除 Google 已收到的数据。本地预览不加载分析",
+    "hi": "फ़ुटर के “एनालिटिक्स विकल्प” से कभी भी मना करें या सहमति वापस लें। इससे खुले Louppe वेबसाइट टैब में संग्रह रुकता है और एनालिटिक्स कुकी हटती हैं। Google को पहले मिले डेटा नहीं मिटते। स्थानीय पूर्वावलोकन एनालिटिक्स लोड नहीं करते",
+    "pt": "rejeite ou retire o consentimento a qualquer momento em “preferências de análise” no rodapé. a coleta para nas abas abertas do Louppe e os cookies são limpos. dados já recebidos pelo Google não são apagados. prévias locais não carregam análise",
+    "ar": "ارفض أو اسحب الموافقة في أي وقت من «خيارات التحليلات» في التذييل. يتوقف جمع البيانات في جميع تبويبات موقع Louppe المفتوحة وتُمسح ملفات التحليلات. لا تُحذف البيانات التي تلقتها Google سابقًا. لا تُحمّل التحليلات في المعاينات المحلية"
+  },
+  "downloads, source links, and donations use external services with their own privacy policies. this site has no account, media upload, or contact form": {
+    "en": "downloads, source links, and donations use external services with their own privacy policies. this site has no account, media upload, or contact form",
+    "es": "las descargas, enlaces de código y donaciones usan servicios externos con sus propias políticas de privacidad. este sitio no tiene cuentas, subida de medios ni formulario de contacto",
+    "zh-Hans": "下载、源代码链接和捐赠使用外部服务，适用各自的隐私政策。本网站没有账号、媒体上传或联系表单",
+    "hi": "डाउनलोड, सोर्स लिंक और दान बाहरी सेवाओं का उपयोग करते हैं जिनकी अपनी गोपनीयता नीतियाँ हैं। इस साइट पर खाता, मीडिया अपलोड या संपर्क फ़ॉर्म नहीं है",
+    "pt": "downloads, links de código e doações usam serviços externos com suas próprias políticas de privacidade. este site não tem conta, envio de mídia ou formulário de contato",
+    "ar": "تستخدم التنزيلات وروابط الشفرة والتبرعات خدمات خارجية لها سياسات خصوصية خاصة. لا يتضمن الموقع حسابات أو رفع وسائط أو نموذج تواصل"
+  },
+  "questions and changes": {
+    "en": "questions and changes",
+    "es": "preguntas y cambios",
+    "zh-Hans": "问题与变更",
+    "hi": "सवाल और बदलाव",
+    "pt": "perguntas e mudanças",
+    "ar": "الأسئلة والتغييرات"
+  },
+  "send privacy questions or requests to": {
+    "en": "send privacy questions or requests to",
+    "es": "envía preguntas o solicitudes de privacidad a",
+    "zh-Hans": "将隐私问题或请求发送至",
+    "hi": "गोपनीयता के सवाल या अनुरोध भेजें",
+    "pt": "envie perguntas ou pedidos sobre privacidade para",
+    "ar": "أرسل أسئلة الخصوصية أو طلباتها إلى"
+  },
+  ". changes to privacy practices will appear here with a revised date": {
+    "en": ". changes to privacy practices will appear here with a revised date",
+    "es": ". los cambios de privacidad aparecerán aquí con una fecha actualizada",
+    "zh-Hans": "。隐私实践的变更会在此公布，并更新日期",
+    "hi": "पर। गोपनीयता संबंधी बदलाव यहाँ नई तारीख के साथ दिखेंगे",
+    "pt": ". mudanças nas práticas de privacidade aparecerão aqui com a data atualizada",
+    "ar": ". ستظهر تغييرات ممارسات الخصوصية هنا مع تاريخ محدّث"
+  },
+  "blog — Louppe": {
+    "en": "blog — Louppe",
+    "es": "blog — Louppe",
+    "zh-Hans": "博客 — Louppe",
+    "hi": "ब्लॉग — Louppe",
+    "pt": "blog — Louppe",
+    "ar": "المدونة — Louppe"
+  },
+  "Louppe development and release notes by Alex Markin.": {
+    "en": "Louppe development and release notes by Alex Markin.",
+    "es": "desarrollo y notas de versiones de Louppe por Alex Markin.",
+    "zh-Hans": "Alex Markin 撰写的 Louppe 开发及版本说明。",
+    "hi": "Alex Markin के Louppe विकास और रिलीज़ नोट्स।",
+    "pt": "desenvolvimento e notas de versão do Louppe por Alex Markin.",
+    "ar": "ملاحظات تطوير Louppe وإصداراته بقلم Alex Markin."
+  },
+  "notes on Louppe": {
+    "en": "notes on Louppe",
+    "es": "notas sobre Louppe",
+    "zh-Hans": "Louppe 笔记",
+    "hi": "Louppe पर नोट्स",
+    "pt": "notas sobre o Louppe",
+    "ar": "ملاحظات حول Louppe"
+  },
+  "development and release notes": {
+    "en": "development and release notes",
+    "es": "desarrollo y notas de versiones",
+    "zh-Hans": "开发与版本说明",
+    "hi": "विकास और रिलीज़ नोट्स",
+    "pt": "desenvolvimento e notas de versão",
+    "ar": "ملاحظات التطوير والإصدارات"
+  },
+  "Louppe becoming a real thing: introducing 1.9": {
+    "en": "Louppe becoming a real thing: introducing 1.9",
+    "es": "Louppe empieza a tomar forma: llega la versión 1.9",
+    "zh-Hans": "Louppe 逐渐成形：介绍 1.9 版",
+    "hi": "Louppe आकार ले रहा है: पेश है 1.9",
+    "pt": "Louppe tomando forma: apresentando a versão 1.9",
+    "ar": "Louppe يتحول إلى مشروع فعلي: تقديم الإصدار 1.9"
+  },
+  "Clearer controls and an easier start for photo, video, and audio culling in Louppe 1.9": {
+    "en": "Clearer controls and an easier start for photo, video, and audio culling in Louppe 1.9",
+    "es": "controles más claros y un comienzo más sencillo para seleccionar fotos, vídeos y audio en Louppe 1.9",
+    "zh-Hans": "Louppe 1.9 带来更清晰的控件，让照片、视频和音频筛选更易上手",
+    "hi": "Louppe 1.9 में फ़ोटो, वीडियो और ऑडियो छाँटने के लिए स्पष्ट नियंत्रण और आसान शुरुआत",
+    "pt": "controles mais claros e um início mais simples para selecionar fotos, vídeos e áudio no Louppe 1.9",
+    "ar": "عناصر تحكم أوضح وبداية أسهل لفرز الصور والفيديو والصوت في Louppe 1.9"
+  },
+  "Louppe becoming a real thing: introducing 1.9 — Louppe": {
+    "en": "Louppe becoming a real thing: introducing 1.9 — Louppe",
+    "es": "Louppe empieza a tomar forma: llega la versión 1.9 — Louppe",
+    "zh-Hans": "Louppe 逐渐成形：介绍 1.9 版 — Louppe",
+    "hi": "Louppe आकार ले रहा है: पेश है 1.9 — Louppe",
+    "pt": "Louppe tomando forma: apresentando a versão 1.9 — Louppe",
+    "ar": "Louppe يتحول إلى مشروع فعلي: تقديم الإصدار 1.9 — Louppe"
+  },
+  "all notes": {
+    "en": "all notes",
+    "es": "todas las notas",
+    "zh-Hans": "所有笔记",
+    "hi": "सभी नोट्स",
+    "pt": "todas as notas",
+    "ar": "جميع الملاحظات"
+  },
+  "Louppe started as a pet project for my own use. Then the download count started climbing. For 1.9, I focused on making the first session easier": {
+    "en": "Louppe started as a pet project for my own use. Then the download count started climbing. For 1.9, I focused on making the first session easier",
+    "es": "Louppe empezó como un pequeño proyecto para mi propio uso. Después, las descargas empezaron a subir. Para la versión 1.9, me centré en facilitar la primera sesión",
+    "zh-Hans": "Louppe 最初只是我为自己做的小项目。后来，下载量开始增长。到了 1.9 版，我把重点放在让第一次使用更容易上",
+    "hi": "Louppe मेरी अपनी ज़रूरत का छोटा प्रोजेक्ट था। फिर डाउनलोड बढ़ने लगे। 1.9 में मैंने पहला सत्र आसान बनाने पर ध्यान दिया",
+    "pt": "O Louppe começou como um projeto pessoal para meu próprio uso. Depois, os downloads começaram a subir. Para a versão 1.9, foquei em facilitar a primeira sessão",
+    "ar": "بدأ Louppe مشروعًا شخصيًا لاستخدامي. ثم بدأت التنزيلات ترتفع. في الإصدار 1.9 ركّزت على تسهيل الجلسة الأولى"
+  },
+  "a place to make your choices": {
+    "en": "a place to make your choices",
+    "es": "un lugar para elegir",
+    "zh-Hans": "做出选择的地方",
+    "hi": "अपनी पसंद चुनने की जगह",
+    "pt": "um lugar para fazer suas escolhas",
+    "ar": "مكان لاتخاذ اختياراتك"
+  },
+  "Louppe is a free media culler for Mac. Open a folder, decide what to keep, and export those files": {
+    "en": "Louppe is a free media culler for Mac. Open a folder, decide what to keep, and export those files",
+    "es": "Louppe es un selector multimedia gratuito para Mac. Abre una carpeta, decide qué conservar y exporta esos archivos",
+    "zh-Hans": "Louppe 是 Mac 上免费的媒体筛选工具。打开文件夹，决定保留哪些内容，再导出这些文件",
+    "hi": "Louppe Mac के लिए मुफ़्त मीडिया छँटाई ऐप है। फ़ोल्डर खोलें, तय करें क्या रखना है और वे फ़ाइलें निर्यात करें",
+    "pt": "O Louppe é um seletor de mídia gratuito para Mac. Abra uma pasta, decida o que manter e exporte esses arquivos",
+    "ar": "Louppe برنامج مجاني لفرز الوسائط على Mac. افتح مجلدًا وحدّد ما تريد الاحتفاظ به ثم صدّر تلك الملفات"
+  },
+  "Review one item at a time or use a grid (kinda a contact sheet). Mark yes or no, add stars and colour labels, and export your choices. There's no catalogue import. Your media stays on your Mac, and export makes copies by default": {
+    "en": "Review one item at a time or use a grid (kinda a contact sheet). Mark yes or no, add stars and colour labels, and export your choices. There's no catalogue import. Your media stays on your Mac, and export makes copies by default",
+    "es": "Revisa un elemento a la vez o usa la cuadrícula, como una hoja de contactos. Marca sí o no, añade estrellas y etiquetas de color y exporta tus elecciones. No hay importación a un catálogo. Tus medios se quedan en tu Mac y la exportación copia por defecto",
+    "zh-Hans": "逐个查看项目，或使用网格（有点像接触印相表）。标记保留或舍弃，添加星级和颜色标签，然后导出选择。无需导入目录。媒体留在您的 Mac 上，默认导出副本",
+    "hi": "एक समय में एक आइटम देखें या ग्रिड इस्तेमाल करें, कुछ कॉन्टैक्ट शीट जैसा। रखना है या नहीं तय करें, सितारे और रंग लेबल जोड़ें और पसंद निर्यात करें। कैटलॉग आयात नहीं है। मीडिया आपके Mac पर रहता है और निर्यात डिफ़ॉल्ट रूप से कॉपी करता है",
+    "pt": "Revise um item por vez ou use a grade, meio que uma folha de contatos. Marque sim ou não, adicione estrelas e etiquetas de cor e exporte suas escolhas. Não há importação para catálogo. A mídia fica no seu Mac e a exportação copia por padrão",
+    "ar": "راجع عنصرًا واحدًا في كل مرة أو استخدم الشبكة، كأنها لوحة صور مصغّرة. حدّد الاحتفاظ أو الاستبعاد وأضف النجوم والتصنيفات اللونية ثم صدّر اختياراتك. لا يوجد استيراد إلى كتالوج. تبقى الوسائط على Mac والتصدير ينسخ افتراضيًا"
+  },
+  "As an interdisciplinary artist, I wanted to review photos, video, and audio in one place. Version 1.9 adds read-only text previews. I hope to expand those so sorting through prose gets easier too": {
+    "en": "As an interdisciplinary artist, I wanted to review photos, video, and audio in one place. Version 1.9 adds read-only text previews. I hope to expand those so sorting through prose gets easier too",
+    "es": "Como artista interdisciplinar, quería revisar fotos, vídeos y audio en un mismo lugar. La versión 1.9 añade vistas de texto de solo lectura. Espero ampliarlas para que también sea más fácil ordenar textos",
+    "zh-Hans": "作为跨学科艺术家，我希望在同一个地方筛选照片、视频和音频。1.9 版增加了只读文本预览。我希望继续扩展它，让整理文字也更容易",
+    "hi": "एक अंतर्विषयक कलाकार के तौर पर मैं फ़ोटो, वीडियो और ऑडियो एक जगह देखना चाहता था। संस्करण 1.9 में केवल पढ़ने के लिए टेक्स्ट पूर्वावलोकन हैं। मैं उन्हें आगे बढ़ाना चाहता हूँ ताकि गद्य छाँटना भी आसान हो",
+    "pt": "Como artista interdisciplinar, queria revisar fotos, vídeos e áudio em um só lugar. A versão 1.9 adiciona prévias de texto somente leitura. Espero expandi-las para facilitar a organização de textos também",
+    "ar": "بصفتي فنانًا متعدد التخصصات أردت مراجعة الصور والفيديو والصوت في مكان واحد. يضيف الإصدار 1.9 معاينات نصوص للقراءة فقط. آمل توسيعها لتسهيل فرز الكتابات أيضًا"
+  },
+  "I see Louppe becoming a home for media archives, sort of a media-oriented Finder. I have some crazy ideas — just look at Brian Eno's": {
+    "en": "I see Louppe becoming a home for media archives, sort of a media-oriented Finder. I have some crazy ideas — just look at Brian Eno's",
+    "es": "Veo Louppe como un futuro hogar para archivos multimedia, una especie de Finder orientado a medios. Tengo algunas ideas locas: ¡mira el",
+    "zh-Hans": "我希望 Louppe 逐渐成为媒体档案的家，有点像面向媒体的 Finder。我有一些疯狂的想法——看看 Brian Eno 的",
+    "hi": "मैं Louppe को मीडिया संग्रह का घर बनते देखता हूँ, मीडिया केंद्रित Finder जैसा। कुछ अजीब विचार हैं — Brian Eno का",
+    "pt": "Vejo o Louppe se tornando uma casa para arquivos de mídia, uma espécie de Finder voltado para mídia. Tenho umas ideias malucas — veja o",
+    "ar": "أرى Louppe يتحول إلى موطن لأرشيفات الوسائط، أشبه بـ Finder مخصص لها. لدي أفكار مجنونة، انظر إلى"
+  },
+  "archive": {
+    "en": "archive",
+    "es": "archivo de Brian Eno",
+    "zh-Hans": "档案",
+    "hi": "संग्रह",
+    "pt": "arquivo de Brian Eno",
+    "ar": "أرشيف Brian Eno"
+  },
+  "and its random loops of material!": {
+    "en": "and its random loops of material!",
+    "es": "y sus bucles aleatorios de material!",
+    "zh-Hans": "和那些素材的随机循环！",
+    "hi": "और सामग्री के उसके बेतरतीब लूप देखें!",
+    "pt": "e seus loops aleatórios de material!",
+    "ar": "وحلقاته العشوائية من المواد!"
+  },
+  "For now, I just want cleaner archives": {
+    "en": "For now, I just want cleaner archives",
+    "es": "Por ahora, solo quiero archivos más ordenados",
+    "zh-Hans": "目前，我只想让档案更整洁",
+    "hi": "फ़िलहाल, मैं बस साफ़-सुथरे संग्रह चाहता हूँ",
+    "pt": "Por enquanto, só quero arquivos mais organizados",
+    "ar": "حاليًا أريد فقط أرشيفات أكثر ترتيبًا"
+  },
+  "Try Louppe": {
+    "en": "Try Louppe",
+    "es": "Prueba Louppe",
+    "zh-Hans": "试用 Louppe",
+    "hi": "Louppe आज़माएँ",
+    "pt": "Experimente o Louppe",
+    "ar": "جرّب Louppe"
+  },
+  "an easier first session": {
+    "en": "an easier first session",
+    "es": "una primera sesión más sencilla",
+    "zh-Hans": "更容易的第一次使用",
+    "hi": "आसान पहला सत्र",
+    "pt": "uma primeira sessão mais fácil",
+    "ar": "جلسة أولى أسهل"
+  },
+  "There's a Help window, searchable keyboard shortcuts, and dismissible review tips. I've reorganised the command palette to help you find actions without knowing their names": {
+    "en": "There's a Help window, searchable keyboard shortcuts, and dismissible review tips. I've reorganised the command palette to help you find actions without knowing their names",
+    "es": "Hay una ventana de ayuda, atajos de teclado que puedes buscar y consejos de revisión que puedes cerrar. He reorganizado la paleta de comandos para encontrar acciones sin saber sus nombres",
+    "zh-Hans": "现在有帮助窗口、可搜索的键盘快捷键和可关闭的筛选提示。我也重新整理了命令面板，让您不知道操作名称也能找到它",
+    "hi": "एक Help विंडो, खोजने योग्य कीबोर्ड शॉर्टकट और बंद किए जा सकने वाले समीक्षा सुझाव हैं। मैंने कमांड पैलेट फिर से व्यवस्थित किया है ताकि नाम जाने बिना कार्रवाइयाँ मिल सकें",
+    "pt": "Há uma janela de ajuda, atalhos pesquisáveis e dicas de revisão que podem ser dispensadas. Reorganizei a paleta de comandos para encontrar ações sem saber seus nomes",
+    "ar": "توجد نافذة مساعدة واختصارات لوحة مفاتيح قابلة للبحث ونصائح مراجعة يمكن إخفاؤها. أعدت تنظيم لوحة الأوامر لتجد الإجراءات دون معرفة أسمائها"
+  },
+  "Filters show what's active and how to return to all files. Export makes the selection and copy or move choices clearer": {
+    "en": "Filters show what's active and how to return to all files. Export makes the selection and copy or move choices clearer",
+    "es": "Los filtros muestran qué está activo y cómo volver a todos los archivos. La exportación aclara la selección y las opciones de copiar o mover",
+    "zh-Hans": "筛选器显示当前启用的条件，以及如何回到所有文件。导出功能更清楚地呈现所选内容和复制或移动的选项",
+    "hi": "फ़िल्टर दिखाते हैं कि क्या सक्रिय है और सभी फ़ाइलों पर कैसे लौटें। निर्यात में चयन और कॉपी या ले जाने के विकल्प अधिक स्पष्ट हैं",
+    "pt": "Os filtros mostram o que está ativo e como voltar a todos os arquivos. A exportação deixa mais claras a seleção e as opções de copiar ou mover",
+    "ar": "توضح المرشّحات ما هو نشط وكيف تعود إلى جميع الملفات. ويوضح التصدير التحديد وخيارات النسخ أو النقل"
+  },
+  "Other changes include a smaller start window with folder drop, quieter save feedback, a photo zoom slider, and pinch-to-zoom": {
+    "en": "Other changes include a smaller start window with folder drop, quieter save feedback, a photo zoom slider, and pinch-to-zoom",
+    "es": "Otros cambios incluyen una ventana inicial más pequeña donde soltar carpetas, avisos de guardado más discretos, un deslizador de zoom y zoom con los dedos",
+    "zh-Hans": "其他变化包括可拖入文件夹的更小启动窗口、更安静的保存提示、照片缩放滑块和双指缩放",
+    "hi": "अन्य बदलावों में फ़ोल्डर ड्रॉप वाली छोटी शुरुआत विंडो, कम ध्यान खींचने वाले सेव संकेत, फ़ोटो ज़ूम स्लाइडर और पिंच ज़ूम हैं",
+    "pt": "Outras mudanças incluem uma janela inicial menor com arrastar de pastas, avisos de salvamento mais discretos, um controle de zoom e zoom com os dedos",
+    "ar": "تشمل التغييرات الأخرى نافذة بدء أصغر لإسقاط المجلدات ومؤشرات حفظ أقل إزعاجًا وشريط تكبير الصور والتكبير بإصبعين"
+  },
+  "I want fewer moments where you have to stop and figure out what the app is asking": {
+    "en": "I want fewer moments where you have to stop and figure out what the app is asking",
+    "es": "Quiero que haya menos momentos en los que tengas que parar para entender qué pide la app",
+    "zh-Hans": "我希望减少那些需要停下来琢磨应用在问什么的时刻",
+    "hi": "मैं चाहता हूँ कि ऐप क्या पूछ रहा है, यह समझने के लिए आपको कम रुकना पड़े",
+    "pt": "Quero menos momentos em que você precisa parar para entender o que o app está pedindo",
+    "ar": "أريد تقليل اللحظات التي تضطر فيها للتوقف لفهم ما يطلبه التطبيق"
+  },
+  "tell me where you get stuck": {
+    "en": "tell me where you get stuck",
+    "es": "cuéntame dónde te atascas",
+    "zh-Hans": "告诉我您卡在哪里",
+    "hi": "बताएँ कहाँ अटकते हैं",
+    "pt": "conte onde você trava",
+    "ar": "أخبرني أين تتعثر"
+  },
+  "Louppe 1.9 is available now. Review works offline, with no account or app telemetry. The source is open, and the": {
+    "en": "Louppe 1.9 is available now. Review works offline, with no account or app telemetry. The source is open, and the",
+    "es": "Louppe 1.9 ya está disponible. La revisión funciona sin conexión, sin cuentas ni telemetría de la app. El código es abierto y la",
+    "zh-Hans": "Louppe 1.9 现已推出。筛选可离线完成，无需账号，也没有应用遥测。代码已开源，且",
+    "hi": "Louppe 1.9 अब उपलब्ध है। समीक्षा ऑफ़लाइन होती है, बिना खाते या ऐप टेलीमेट्री के। सोर्स खुला है और",
+    "pt": "O Louppe 1.9 já está disponível. A revisão funciona offline, sem conta ou telemetria do app. O código é aberto e a",
+    "ar": "Louppe 1.9 متاح الآن. تعمل المراجعة دون اتصال أو حساب أو قياس استخدام للتطبيق. الشفرة مفتوحة وتوضح"
+  },
+  "explains local data and update requests": {
+    "en": "explains local data and update requests",
+    "es": "explica los datos locales y las solicitudes de actualización",
+    "zh-Hans": "说明了本地数据和更新请求",
+    "hi": "स्थानीय डेटा और अपडेट अनुरोध समझाती है",
+    "pt": " explica os dados locais e as solicitações de atualização",
+    "ar": "البيانات المحلية وطلبات التحديث"
+  },
+  "Give it a try. What wasn't obvious? What did you expect to happen?": {
+    "en": "Give it a try. What wasn't obvious? What did you expect to happen?",
+    "es": "Pruébalo. ¿Qué no estaba claro? ¿Qué esperabas que pasara?",
+    "zh-Hans": "试试看。哪些地方不够清楚？您原本期望会发生什么？",
+    "hi": "आज़माएँ। क्या स्पष्ट नहीं था? क्या होने की उम्मीद थी?",
+    "pt": "Experimente. O que não ficou claro? O que você esperava que acontecesse?",
+    "ar": "جرّبه. ما الذي لم يكن واضحًا؟ وما الذي توقعت حدوثه؟"
+  },
+  "Send me a note": {
+    "en": "Send me a note",
+    "es": "Escríbeme",
+    "zh-Hans": "给我留言",
+    "hi": "मुझे लिखें",
+    "pt": "Me mande uma mensagem",
+    "ar": "اكتب لي"
+  },
+  "— it comes straight to me": {
+    "en": "— it comes straight to me",
+    "es": ": me llega directamente",
+    "zh-Hans": "——消息会直接到我这里",
+    "hi": "— संदेश सीधे मुझे मिलता है",
+    "pt": "— chega direto a mim",
+    "ar": "— تصل رسالتك إليّ مباشرة"
+  },
+  "My other work is at": {
+    "en": "My other work is at",
+    "es": "Mis otros proyectos están en",
+    "zh-Hans": "我的其他作品在",
+    "hi": "मेरा अन्य काम यहाँ है",
+    "pt": "Meu outro trabalho está em",
+    "ar": "أعمالي الأخرى على"
+  },
+  "languages": {
+    "en": "languages",
+    "es": "idiomas",
+    "zh-Hans": "语言",
+    "hi": "भाषाएँ",
+    "pt": "idiomas",
+    "ar": "اللغات"
+  },
+  "mark no": {
+    "en": "mark no",
+    "es": "marcar no",
+    "zh-Hans": "标记舍弃",
+    "hi": "न रखने के लिए चुनें",
+    "pt": "marcar não",
+    "ar": "تحديد الاستبعاد"
+  },
+  "Gallery / Grid": {
+    "en": "Gallery / Grid",
+    "es": "galería / cuadrícula",
+    "zh-Hans": "图库 / 网格",
+    "hi": "गैलरी / ग्रिड",
+    "pt": "galeria / grade",
+    "ar": "المعرض / الشبكة"
+  },
+  "play / pause video or audio. next photo or text": {
+    "en": "play / pause video or audio. next photo or text",
+    "es": "reproducir / pausar vídeo o audio. siguiente foto o texto",
+    "zh-Hans": "播放 / 暂停视频或音频。下一张照片或文本",
+    "hi": "वीडियो या ऑडियो चलाएँ / रोकें। अगली फ़ोटो या टेक्स्ट",
+    "pt": "reproduzir / pausar vídeo ou áudio. próxima foto ou texto",
+    "ar": "تشغيل / إيقاف الفيديو أو الصوت. الصورة أو النص التالي"
+  },
+  "play / pause": {
+    "en": "play / pause",
+    "es": "reproducir / pausar",
+    "zh-Hans": "播放 / 暂停",
+    "hi": "चलाएँ / रोकें",
+    "pt": "reproduzir / pausar",
+    "ar": "تشغيل / إيقاف مؤقت"
+  },
+  "previous item": {
+    "en": "previous item",
+    "es": "elemento anterior",
+    "zh-Hans": "上一个项目",
+    "hi": "पिछला आइटम",
+    "pt": "item anterior",
+    "ar": "العنصر السابق"
+  },
+  "next item": {
+    "en": "next item",
+    "es": "siguiente elemento",
+    "zh-Hans": "下一个项目",
+    "hi": "अगला आइटम",
+    "pt": "próximo item",
+    "ar": "العنصر التالي"
+  },
+  "previous / seek −0.5s": {
+    "en": "previous / seek −0.5s",
+    "es": "anterior / retroceder 0,5 s",
+    "zh-Hans": "上一个 / 后退 0.5 秒",
+    "hi": "पिछला / 0.5 सेकंड पीछे",
+    "pt": "anterior / voltar 0,5 s",
+    "ar": "السابق / رجوع 0.5 ثانية"
+  },
+  "next / seek +0.5s": {
+    "en": "next / seek +0.5s",
+    "es": "siguiente / avanzar 0,5 s",
+    "zh-Hans": "下一个 / 前进 0.5 秒",
+    "hi": "अगला / 0.5 सेकंड आगे",
+    "pt": "próximo / avançar 0,5 s",
+    "ar": "التالي / تقدم 0.5 ثانية"
+  },
+  "previous item / row": {
+    "en": "previous item / row",
+    "es": "elemento / fila anterior",
+    "zh-Hans": "上一个项目 / 上一行",
+    "hi": "पिछला आइटम / पंक्ति",
+    "pt": "item / linha anterior",
+    "ar": "العنصر / الصف السابق"
+  },
+  "next item / row": {
+    "en": "next item / row",
+    "es": "siguiente elemento / fila",
+    "zh-Hans": "下一个项目 / 下一行",
+    "hi": "अगला आइटम / पंक्ति",
+    "pt": "próximo item / linha",
+    "ar": "العنصر / الصف التالي"
+  },
+  "100% zoom": {
+    "en": "100% zoom",
+    "es": "zoom al 100%",
+    "zh-Hans": "100% 缩放",
+    "hi": "100% ज़ूम",
+    "pt": "zoom a 100%",
+    "ar": "تكبير 100%"
+  },
+  "phone-sized preview": {
+    "en": "phone-sized preview",
+    "es": "vista de tamaño móvil",
+    "zh-Hans": "手机尺寸预览",
+    "hi": "फ़ोन के आकार का पूर्वावलोकन",
+    "pt": "prévia do tamanho de um celular",
+    "ar": "معاينة بحجم الهاتف"
+  },
+  "show / hide clipping": {
+    "en": "show / hide clipping",
+    "es": "mostrar / ocultar recorte de tonos",
+    "zh-Hans": "显示 / 隐藏溢出区域",
+    "hi": "क्लिपिंग दिखाएँ / छिपाएँ",
+    "pt": "mostrar / ocultar recorte de tons",
+    "ar": "إظهار / إخفاء قصّ درجات الإضاءة"
+  },
+  "show / hide thumbnails": {
+    "en": "show / hide thumbnails",
+    "es": "mostrar / ocultar miniaturas",
+    "zh-Hans": "显示 / 隐藏缩略图",
+    "hi": "थंबनेल दिखाएँ / छिपाएँ",
+    "pt": "mostrar / ocultar miniaturas",
+    "ar": "إظهار / إخفاء الصور المصغّرة"
+  },
+  "show / hide info": {
+    "en": "show / hide info",
+    "es": "mostrar / ocultar información",
+    "zh-Hans": "显示 / 隐藏信息",
+    "hi": "जानकारी दिखाएँ / छिपाएँ",
+    "pt": "mostrar / ocultar informações",
+    "ar": "إظهار / إخفاء المعلومات"
+  },
+  "open Export": {
+    "en": "open Export",
+    "es": "abrir Export",
+    "zh-Hans": "打开 Export",
+    "hi": "Export खोलें",
+    "pt": "abrir Export",
+    "ar": "فتح Export"
+  },
+  "clear all decisions": {
+    "en": "clear all decisions",
+    "es": "borrar todas las decisiones",
+    "zh-Hans": "清除所有决定",
+    "hi": "सभी निर्णय हटाएँ",
+    "pt": "limpar todas as decisões",
+    "ar": "مسح جميع القرارات"
+  },
+  "undo last action": {
+    "en": "undo last action",
+    "es": "deshacer la última acción",
+    "zh-Hans": "撤销上一步操作",
+    "hi": "पिछली कार्रवाई पूर्ववत करें",
+    "pt": "desfazer a última ação",
+    "ar": "التراجع عن الإجراء الأخير"
+  },
+  "cancel / deselect": {
+    "en": "cancel / deselect",
+    "es": "cancelar / quitar selección",
+    "zh-Hans": "取消 / 取消选择",
+    "hi": "रद्द करें / चयन हटाएँ",
+    "pt": "cancelar / desmarcar",
+    "ar": "إلغاء / إلغاء التحديد"
+  },
+  "clear stars": {
+    "en": "clear stars",
+    "es": "quitar estrellas",
+    "zh-Hans": "清除星级",
+    "hi": "सितारे हटाएँ",
+    "pt": "limpar estrelas",
+    "ar": "مسح النجوم"
+  },
+  "rate {count} stars": {
+    "en": "rate {count} stars",
+    "es": "puntuar con {count} estrellas",
+    "zh-Hans": "评为 {count} 星",
+    "hi": "{count} सितारे दें",
+    "pt": "avaliar com {count} estrelas",
+    "ar": "عدد النجوم: {count}"
+  },
+  "open a folder": {
+    "en": "open a folder",
+    "es": "abrir una carpeta",
+    "zh-Hans": "打开文件夹",
+    "hi": "फ़ोल्डर खोलें",
+    "pt": "abrir uma pasta",
+    "ar": "فتح مجلد"
+  },
+  "rescan folder": {
+    "en": "rescan folder",
+    "es": "volver a explorar la carpeta",
+    "zh-Hans": "重新扫描文件夹",
+    "hi": "फ़ोल्डर दोबारा स्कैन करें",
+    "pt": "verificar a pasta novamente",
+    "ar": "إعادة فحص المجلد"
+  },
+  "filter / search": {
+    "en": "filter / search",
+    "es": "filtrar / buscar",
+    "zh-Hans": "筛选 / 搜索",
+    "hi": "फ़िल्टर / खोज",
+    "pt": "filtrar / buscar",
+    "ar": "ترشيح / بحث"
+  },
+  "command palette": {
+    "en": "command palette",
+    "es": "paleta de comandos",
+    "zh-Hans": "命令面板",
+    "hi": "कमांड पैलेट",
+    "pt": "paleta de comandos",
+    "ar": "لوحة الأوامر"
+  },
+  "select all visible": {
+    "en": "select all visible",
+    "es": "seleccionar todos los visibles",
+    "zh-Hans": "选择所有可见项目",
+    "hi": "सभी दिख रहे आइटम चुनें",
+    "pt": "selecionar todos os visíveis",
+    "ar": "تحديد جميع العناصر الظاهرة"
+  },
+  "smaller thumbnails": {
+    "en": "smaller thumbnails",
+    "es": "miniaturas más pequeñas",
+    "zh-Hans": "缩小缩略图",
+    "hi": "छोटे थंबनेल",
+    "pt": "miniaturas menores",
+    "ar": "صور مصغّرة أصغر"
+  },
+  "larger thumbnails": {
+    "en": "larger thumbnails",
+    "es": "miniaturas más grandes",
+    "zh-Hans": "放大缩略图",
+    "hi": "बड़े थंबनेल",
+    "pt": "miniaturas maiores",
+    "ar": "صور مصغّرة أكبر"
+  },
+  "move to Trash": {
+    "en": "move to Trash",
+    "es": "enviar a la papelera",
+    "zh-Hans": "移入废纸篓",
+    "hi": "ट्रैश में भेजें",
+    "pt": "mover para a lixeira",
+    "ar": "نقل إلى سلة المهملات"
+  },
+  "slower / previous": {
+    "en": "slower / previous",
+    "es": "más lento / anterior",
+    "zh-Hans": "减速 / 上一个",
+    "hi": "धीमा / पिछला",
+    "pt": "mais lento / anterior",
+    "ar": "أبطأ / السابق"
+  },
+  "faster / next": {
+    "en": "faster / next",
+    "es": "más rápido / siguiente",
+    "zh-Hans": "加速 / 下一个",
+    "hi": "तेज़ / अगला",
+    "pt": "mais rápido / próximo",
+    "ar": "أسرع / التالي"
+  },
+  "seek back 5 seconds": {
+    "en": "seek back 5 seconds",
+    "es": "retroceder 5 segundos",
+    "zh-Hans": "后退 5 秒",
+    "hi": "5 सेकंड पीछे जाएँ",
+    "pt": "voltar 5 segundos",
+    "ar": "رجوع 5 ثوانٍ"
+  },
+  "seek ahead 5 seconds": {
+    "en": "seek ahead 5 seconds",
+    "es": "avanzar 5 segundos",
+    "zh-Hans": "前进 5 秒",
+    "hi": "5 सेकंड आगे जाएँ",
+    "pt": "avançar 5 segundos",
+    "ar": "تقدم 5 ثوانٍ"
+  },
+  "select to first item": {
+    "en": "select to first item",
+    "es": "seleccionar hasta el primero",
+    "zh-Hans": "选择至第一个项目",
+    "hi": "पहले आइटम तक चुनें",
+    "pt": "selecionar até o primeiro item",
+    "ar": "تحديد حتى العنصر الأول"
+  },
+  "select to last item": {
+    "en": "select to last item",
+    "es": "seleccionar hasta el último",
+    "zh-Hans": "选择至最后一个项目",
+    "hi": "आखिरी आइटम तक चुनें",
+    "pt": "selecionar até o último item",
+    "ar": "تحديد حتى العنصر الأخير"
+  },
+  "no shortcut": {
+    "en": "no shortcut",
+    "es": "sin atajo",
+    "zh-Hans": "无快捷键",
+    "hi": "कोई शॉर्टकट नहीं",
+    "pt": "sem atalho",
+    "ar": "لا يوجد اختصار"
+  },
+  "Hide Command shortcuts": {
+    "en": "Hide Command shortcuts",
+    "es": "ocultar atajos con Command",
+    "zh-Hans": "隐藏 Command 快捷键",
+    "hi": "Command शॉर्टकट छिपाएँ",
+    "pt": "ocultar atalhos com Command",
+    "ar": "إخفاء اختصارات Command"
+  },
+  "Hide Shift shortcuts": {
+    "en": "Hide Shift shortcuts",
+    "es": "ocultar atajos con Shift",
+    "zh-Hans": "隐藏 Shift 快捷键",
+    "hi": "Shift शॉर्टकट छिपाएँ",
+    "pt": "ocultar atalhos com Shift",
+    "ar": "إخفاء اختصارات Shift"
+  },
+  "Space": {
+    "en": "Space",
+    "es": "espacio",
+    "zh-Hans": "空格",
+    "hi": "स्पेस",
+    "pt": "espaço",
+    "ar": "المسافة"
+  },
+  "Tab": {
+    "en": "Tab",
+    "es": "tabulador",
+    "zh-Hans": "Tab",
+    "hi": "Tab",
+    "pt": "tabulação",
+    "ar": "Tab"
+  },
+  "Escape": {
+    "en": "Escape",
+    "es": "Escape",
+    "zh-Hans": "Escape",
+    "hi": "Escape",
+    "pt": "Escape",
+    "ar": "Escape"
+  },
+  "Delete": {
+    "en": "Delete",
+    "es": "borrar",
+    "zh-Hans": "删除",
+    "hi": "हटाएँ",
+    "pt": "excluir",
+    "ar": "حذف"
+  },
+  "Left arrow": {
+    "en": "Left arrow",
+    "es": "flecha izquierda",
+    "zh-Hans": "左方向键",
+    "hi": "बायाँ तीर",
+    "pt": "seta esquerda",
+    "ar": "السهم الأيسر"
+  },
+  "Right arrow": {
+    "en": "Right arrow",
+    "es": "flecha derecha",
+    "zh-Hans": "右方向键",
+    "hi": "दायाँ तीर",
+    "pt": "seta direita",
+    "ar": "السهم الأيمن"
+  },
+  "Up arrow": {
+    "en": "Up arrow",
+    "es": "flecha arriba",
+    "zh-Hans": "上方向键",
+    "hi": "ऊपर का तीर",
+    "pt": "seta para cima",
+    "ar": "السهم العلوي"
+  },
+  "Down arrow": {
+    "en": "Down arrow",
+    "es": "flecha abajo",
+    "zh-Hans": "下方向键",
+    "hi": "नीचे का तीर",
+    "pt": "seta para baixo",
+    "ar": "السهم السفلي"
+  },
+  "Plus": {
+    "en": "Plus",
+    "es": "más",
+    "zh-Hans": "加号",
+    "hi": "जोड़",
+    "pt": "mais",
+    "ar": "زائد"
+  },
+  "Louppe Grid showing a real shoot of street scenes, architecture, and reflections, with a photo selected in purple": {
+    "en": "Louppe Grid showing a real shoot of street scenes, architecture, and reflections, with a photo selected in purple",
+    "es": "cuadrícula de Louppe con escenas urbanas, arquitectura y reflejos, y una foto seleccionada en morado",
+    "zh-Hans": "Louppe 网格显示真实拍摄的街景、建筑和倒影，其中一张照片以紫色选中",
+    "hi": "Louppe के ग्रिड में सड़क के दृश्य, वास्तुकला और प्रतिबिंब, जिसमें एक फ़ोटो बैंगनी में चुनी गई है",
+    "pt": "grade do Louppe com cenas de rua, arquitetura e reflexos, e uma foto selecionada em roxo",
+    "ar": "شبكة Louppe تعرض مشاهد شوارع وعمارة وانعكاسات مع صورة محددة بالأرجواني"
+  },
+  "Enlarge Grid screenshot": {
+    "en": "Enlarge Grid screenshot",
+    "es": "ampliar la captura de la cuadrícula",
+    "zh-Hans": "放大网格截图",
+    "hi": "ग्रिड का स्क्रीनशॉट बड़ा करें",
+    "pt": "ampliar a captura da grade",
+    "ar": "تكبير لقطة الشبكة"
+  },
+  "photo sorting and media management": {
+    "en": "photo sorting and media management",
+    "es": "clasificación de fotos y gestión multimedia",
+    "zh-Hans": "照片排序与媒体管理",
+    "hi": "फ़ोटो छँटाई और मीडिया प्रबंधन",
+    "pt": "organização de fotos e gestão de mídia",
+    "ar": "فرز الصور وإدارة الوسائط"
+  },
+  "choose photos before editing": {
+    "en": "choose photos before editing",
+    "es": "selecciona fotos antes de editarlas",
+    "zh-Hans": "编辑前筛选照片",
+    "hi": "संपादन से पहले फ़ोटो चुनें",
+    "pt": "selecione fotos antes de editar",
+    "ar": "اختر الصور قبل التحرير"
+  },
+  "use Louppe as a photo sorter and culler: compare RAW+JPEG photos, rate your choices, and export the keepers for editing": {
+    "en": "use Louppe as a photo sorter and culler: compare RAW+JPEG photos, rate your choices, and export the keepers for editing",
+    "es": "usa Louppe para clasificar y seleccionar fotos: compara pares RAW+JPEG, puntúa tus elecciones y exporta las fotos elegidas para editarlas",
+    "zh-Hans": "使用 Louppe 进行照片排序与筛选：比较 RAW+JPEG 照片，为选择评分，并导出精选照片进行编辑",
+    "hi": "फ़ोटो छाँटने और चुनने के लिए Louppe इस्तेमाल करें: RAW+JPEG की तुलना करें, पसंद को रेट करें और संपादन के लिए चुनी गई फ़ोटो निर्यात करें",
+    "pt": "use o Louppe para organizar e selecionar fotos: compare RAW+JPEG, avalie suas escolhas e exporte as fotos selecionadas para editar",
+    "ar": "استخدم Louppe لفرز الصور واختيارها: قارن صور RAW+JPEG وقيّم اختياراتك وصدّر الصور المختارة للتحرير"
+  },
+  "manage mixed media folders": {
+    "en": "manage mixed media folders",
+    "es": "gestiona carpetas multimedia",
+    "zh-Hans": "管理混合媒体文件夹",
+    "hi": "मिश्रित मीडिया फ़ोल्डर सँभालें",
+    "pt": "gerencie pastas de mídia",
+    "ar": "أدر مجلدات الوسائط المتنوعة"
+  },
+  "sort photos, video, and audio by dates, ratings, and file details. preview folder organization and filenames before applying changes": {
+    "en": "sort photos, video, and audio by dates, ratings, and file details. preview folder organization and filenames before applying changes",
+    "es": "ordena fotos, vídeos y audio por fechas, puntuaciones y datos de archivo. previsualiza la organización de carpetas y los nombres antes de aplicar cambios",
+    "zh-Hans": "按日期、评分和文件信息排序照片、视频和音频。应用更改前预览文件夹整理结果和文件名",
+    "hi": "फ़ोटो, वीडियो और ऑडियो को तारीख, रेटिंग और फ़ाइल जानकारी से क्रम दें। बदलाव लागू करने से पहले फ़ोल्डर व्यवस्था और फ़ाइल नामों का पूर्वावलोकन देखें",
+    "pt": "ordene fotos, vídeos e áudio por datas, avaliações e detalhes de arquivo. veja a organização de pastas e os nomes antes de aplicar mudanças",
+    "ar": "رتّب الصور والفيديو والصوت حسب التواريخ والتقييمات وتفاصيل الملفات. عاين تنظيم المجلدات وأسماء الملفات قبل تطبيق التغييرات"
+  },
+  "review on your Mac": {
+    "en": "review on your Mac",
+    "es": "selecciona en tu Mac",
+    "zh-Hans": "在 Mac 本机筛选",
+    "hi": "अपने Mac पर समीक्षा करें",
+    "pt": "revise no seu Mac",
+    "ar": "راجع على جهاز Mac"
+  },
+  "Louppe is a local review and file-management app for Apple silicon Macs. it does not edit photos; export your choices to a compatible editor": {
+    "en": "Louppe is a local review and file-management app for Apple silicon Macs. it does not edit photos; export your choices to a compatible editor",
+    "es": "Louppe es una app local de revisión y gestión de archivos para Mac con Apple silicon. no edita fotos; exporta tu selección a un editor compatible",
+    "zh-Hans": "Louppe 是适用于 Apple 芯片 Mac 的本机筛选与文件管理应用。它不编辑照片；请将选择导出至兼容编辑软件",
+    "hi": "Louppe Apple silicon Mac के लिए स्थानीय समीक्षा और फ़ाइल प्रबंधन ऐप है। यह फ़ोटो संपादित नहीं करता; अपनी पसंद संगत संपादक में निर्यात करें",
+    "pt": "o Louppe é um app local de revisão e gestão de arquivos para Macs com Apple silicon. não edita fotos; exporte suas escolhas para um editor compatível",
+    "ar": "Louppe تطبيق محلي للمراجعة وإدارة الملفات لأجهزة Mac بمعالجات Apple silicon. لا يحرّر الصور؛ صدّر اختياراتك إلى محرّر متوافق"
+  },
+  "no posts yet": {
+    "en": "no posts yet",
+    "es": "todavía no hay publicaciones",
+    "zh-Hans": "暂无文章",
+    "hi": "अभी कोई पोस्ट नहीं",
+    "pt": "ainda não há publicações",
+    "ar": "لا توجد مقالات بعد"
+  },
+  "notes will appear here": {
+    "en": "notes will appear here",
+    "es": "las notas aparecerán aquí",
+    "zh-Hans": "笔记将显示在这里",
+    "hi": "नोट्स यहाँ दिखेंगे",
+    "pt": "as notas aparecerão aqui",
+    "ar": "ستظهر الملاحظات هنا"
+  },
+  "explore Louppe": {
+    "en": "explore Louppe",
+    "es": "descubre Louppe",
+    "zh-Hans": "探索 Louppe",
+    "hi": "Louppe देखें",
+    "pt": "conheça o Louppe",
+    "ar": "استكشف Louppe"
+  },
+  "rate {count} star": {
+    "en": "rate {count} star",
+    "es": "puntuar con {count} estrella",
+    "zh-Hans": "评为 {count} 星",
+    "hi": "{count} सितारा दें",
+    "pt": "avaliar com {count} estrela",
+    "ar": "عدد النجوم: {count}"
+  }
+}
