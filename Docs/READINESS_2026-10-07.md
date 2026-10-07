@@ -64,5 +64,11 @@ result is claimed.
 
 ## Publication
 
-Changes prepared and verified locally. Deployment and public `/privacy/`
-availability must be confirmed after the authorized `main` push.
+Published from `main` in commit `a438f18c1a1ef100305f298576e5350d62b8ba2a`.
+[GitHub Pages deployment 37619584257](https://github.com/murlexander/louppe-website/actions/runs/37619584257) succeeded.
+
+The live homepage, `/privacy/`, blog index, article, sitemap, consent script,
+keyboard script, and both stylesheets each returned HTTP 200 and matched the
+local source byte for byte. The production footer opened the live policy,
+with the correct canonical URL, no horizontal overflow, and no Google tag
+under the final rejected analytics choice.
