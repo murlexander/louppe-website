@@ -1,11 +1,7 @@
-# Selected public Louppe media
+# Public Louppe media
 
-Captured 26 September 2026 in the native macOS app, version 1.9.0 (11).
-This is a preview interface; the current published download is version 1.8.0.
+Captured 26 September 2026 in native Louppe 1.9.0 (11). At capture time, the published download was 1.8.0.
 
-The landing page uses Gallery with Information, Grid, and an optional 25-second
-walkthrough. Small and large WebP derivatives retain the full captured framing.
-The silent walkthrough is assembled from real captures, not a live recording;
-English captions and a written equivalent are provided on the page.
+The homepage uses Gallery with Information, Grid, and a 25-second walkthrough. Both WebP sizes preserve the full frame. The silent walkthrough combines real captures; it is not a live recording. English captions and a written equivalent accompany it.
 
-Original shoot files and future App Store candidates are not included here.
+Original shoots and future App Store candidates stay outside this repo.

@@ -56,8 +56,8 @@ function callToAction(post) {
 function byline() {
   return `<div class="post-meta"><a href="https://alex-markin.com/" rel="author">Alex Markin</a></div>`;
 }
-const listing = posts.length ? `<ol class="post-list">${posts.map(post => `<li><h2><a href="${post.path}">${escape(post.title)}</a></h2><p>${escape(post.description)}</p></li>`).join('')}</ol>` : `<section class="blog-empty"><h2>a first note is on its way</h2><p>I'm working on an introduction to Louppe and what I'm changing for 1.9</p><a href="/">explore Louppe</a></section>`;
-const index = page({title:'blog',description:'Notes on making Louppe, new releases, and finding what you want to keep. By Alex Markin.',path:'/blog/',content:`<header class="blog-heading"><h1>notes on Louppe</h1><p>on making a small app, and finding what to keep</p></header>${listing}`});
+const listing = posts.length ? `<ol class="post-list">${posts.map(post => `<li><h2><a href="${post.path}">${escape(post.title)}</a></h2><p>${escape(post.description)}</p></li>`).join('')}</ol>` : `<section class="blog-empty"><h2>no posts yet</h2><p>notes will appear here</p><a href="/">explore Louppe</a></section>`;
+const index = page({title:'blog',description:'Louppe development and release notes by Alex Markin.',path:'/blog/',content:`<header class="blog-heading"><h1>notes on Louppe</h1><p>development and release notes</p></header>${listing}`});
 const generated = {'blog/index.html':index};
 for (const post of posts) {
   generated[`blog/${post.slug}/index.html`] = page({title:post.title,description:post.description,path:post.path,post,content:`<a class="article-back" href="/blog/">all notes</a><article><header class="post-header"><h1>${escape(post.title)}</h1><p class="post-deck">${escape(post.description)}</p><div class="article-author">${byline()}</div></header><div class="article-body">${post.html}</div>${callToAction(post)}</article>`});

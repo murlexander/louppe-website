@@ -1,40 +1,23 @@
 # Blog publishing
 
-## Decision
+Static Markdown posts live at **https://louppe.eu/blog/**, with permanent `/blog/<slug>/` URLs. [Marked](https://marked.js.org/) runs locally to generate HTML; it never runs in visitors' browsers. GitHub Pages serves [static files](https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages) without a backend, database, or admin login.
 
-Keep the blog at **https://louppe.eu/blog/** on the existing GitHub Pages site.
-Use `/blog/<slug>/` for permanent article URLs. A quiet `blog` link lives in the
-header and footer; the app download remains the landing page's main action.
-
-There is no running backend, database, or admin login. Authored Markdown and a
-small metadata list are turned into static HTML before publication. Git stores
-published revisions. This keeps the existing host, domain, and deployment, and
-adds one development dependency, [Marked](https://marked.js.org/). It never runs
-in the visitor's browser. GitHub Pages is designed for
-[static HTML, CSS, and JavaScript](https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages).
-
-A CMS is unnecessary for one author and occasional posts. Revisit that decision
-if multiple people need a browser editor, scheduled publishing, or editorial roles.
-RSS, comments, subscriptions, and newsletters are deliberately out of scope for now.
+Keep the current workflow for one author. Reconsider a CMS if browser editing, scheduling, or editorial roles are needed. RSS, comments, subscriptions, and newsletters are out of scope.
 
 ## Files
 
-- `content/posts.json`: published metadata, newest dates first in generated output
-- `content/posts/<file>.md`: published article text, edited as ordinary Markdown
-- `templates/blog.html`: shared page shell and privacy controls
-- `blog.css`: reading layout, alongside the landing page's shared styles
-- `scripts/build-blog.mjs`: generator for article pages, index, and sitemap
-- `blog/`: generated, committed public pages; do not edit them directly
-- `.drafts/`: local, gitignored article drafts and a separate `posts.json`
-- `_preview/`: local, gitignored copy of the site with drafts included
+- `content/posts.json`: published metadata, sorted newest first
+- `content/posts/<file>.md`: published articles
+- `templates/blog.html`: shared shell and privacy controls
+- `blog.css`: article styles, alongside shared `styles.css`
+- `scripts/build-blog.mjs`: article, index, and sitemap generator
+- `blog/`: generated public pages; commit them, but edit their sources
+- `.drafts/`: gitignored drafts and their `posts.json`
+- `_preview/`: gitignored site preview with drafts
 
-Published Markdown is trusted author content, not visitor input. Never feed user
-submissions into this renderer. Public source files are readable in the public
-repository, so drafts must remain in `.drafts/` until publication is approved.
-Noindex is only a secondary precaution: keeping drafts out of Git is what prevents
-publication. Back up valuable drafts separately; Git does not back them up.
+Render trusted author content only, never visitor submissions. Public source is readable: keep unapproved drafts in `.drafts/` and back them up separately. Noindex does not replace keeping drafts out of Git.
 
-## Local writing and preview
+## Write and preview
 
 ```sh
 npm ci
@@ -42,17 +25,15 @@ npm run preview:blog
 python3 -m http.server 8766 --bind 127.0.0.1 --directory _preview
 ```
 
-Open `http://127.0.0.1:8766/blog/`. Preview pages are noindex and cannot load production analytics. They have no
-visible preview notices, so the layout matches the public site. Drafts never enter the sitemap.
-The approved 1.9 introduction is published at `/blog/a-proper-hello/`.
+Open `http://127.0.0.1:8766/blog/`. Previews are noindex, have no visible draft notices, and cannot load production analytics. Drafts stay out of the sitemap. The published 1.9 introduction is at `/blog/a-proper-hello/`.
 
-Each metadata record contains:
+Metadata example:
 
 ```json
 {
   "slug": "a-permanent-slug",
   "title": "An article title",
-  "description": "A short introduction for the index and sharing previews",
+  "description": "A short subtitle for the index and sharing previews",
   "file": "article.md",
   "status": "draft",
   "cta": {
@@ -62,43 +43,22 @@ Each metadata record contains:
 }
 ```
 
-The shared article layout has one Alex Markin byline below the subtitle at the top,
-linked to https://alex-markin.com/. Author links turn purple on hover and keyboard focus.
-A centered call-to-action button without small print closes the article.
-**Every article must contain at least two calls to action.** Put `<!-- try-louppe -->`
-on its own line at a natural pause around the middle of the Markdown. The generator
-renders it as a centered Try Louppe button using the post's CTA metadata and always
-adds another at the end of the article. Builds fail if the in-article marker is missing or
-has no article text before or after it. Additional markers are supported when useful.
+Use a descriptive subtitle and one Alex Markin byline beneath it, linked to https://alex-markin.com/. Author links turn purple on hover and focus.
 
-The body uses natural
-sentence case and contractions, while retaining the site's punctuation preference:
-periods between sentences, none at the ends of headings or paragraphs. Always use
-Oxford commas in lists of three or more items, including titles, subtitles, and metadata.
+Every article needs at least two centered **Try Louppe** buttons without small print. Put `<!-- try-louppe -->` on its own line between body sections; the generator adds the final button. Missing markers or empty sections fail the build. More markers are supported.
+
+Use natural sentence case, contractions, and Oxford commas. Omit trailing periods in headings and paragraphs; use periods between sentences.
 
 ## Publish an approved article
 
-1. Review the wording and check release claims against the published app. The
-   1.9 introduction was approved for immediate publication by the owner on
-   2026-09-26 with the launch wording intact.
-2. Copy the approved Markdown into `content/posts/` and its record into
-   `content/posts.json`. Set `status` to `published` and add the actual publication
-   `date` in `YYYY-MM-DD` form. Remove the local draft record to avoid duplicate slugs.
-3. Run `npm run build:blog` and `npm run test:blog`. Check the resulting pages.
-   Invalid dates and incomplete metadata fail the build. The date is an editorial
-   label; publication is controlled by the explicit status, not scheduled by date.
-4. Commit only the intended source, generated `blog/` files, and `sitemap.xml` on
-   `main`, then push. GitHub Pages continues to serve static files via `.nojekyll`.
-5. Confirm the Pages build and live article and links.
+1. Check wording against the released app. Alex approved the 1.9 introduction on 26 September 2026.
+2. Copy Markdown to `content/posts/` and metadata to `content/posts.json`. Set `status` to `published` and add the actual `YYYY-MM-DD` publication date. Remove its draft record to avoid duplicate slugs.
+3. Run `npm run build:blog` and `npm run test:blog`, then inspect the pages. Invalid dates or incomplete metadata fail. Status controls publication; dates do not schedule it.
+4. Commit source, generated `blog/` files, and `sitemap.xml` on `main`, then push. Pages serves them through `.nojekyll`; GitHub does not rebuild the blog.
+5. Confirm deployment, the live article, and its links.
 
-The build step runs locally before committing; GitHub does not install Node or
-rebuild the blog. Publishing remains explicit. Generated-file tracking removes
-stale article HTML if an approved article is withdrawn from the content list.
-The generator owns the sitemap; add future non-blog pages there as the site grows.
+The generated-file manifest removes stale HTML when a post is withdrawn. The generator owns the sitemap; add future pages there.
 
-## Keep consistent
+## Shared changes
 
-Regenerate the blog after changes to its template. When changing shared consent
-markup, update `index.html`, `templates/blog.html`, and `privacy/index.html`; keep the existing
-`analytics-consent.js` as the single behaviour owner. Bump CSS cache keys in both
-pages when changing shared styles. No article needs the landing page's `site.js`.
+Regenerate after template edits. Update consent markup in `index.html`, `templates/blog.html`, and `privacy/index.html` together; `analytics-consent.js` owns behavior. Bump dated CSS/JavaScript cache keys wherever changed assets are loaded. Blog pages do not need `site.js`.

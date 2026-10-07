@@ -1,74 +1,43 @@
 # Website readiness — 7 October 2026
 
-## Released app alignment
+## Released app
 
-GitHub’s latest release was **v1.9.0**, published 26 September 2026, with the
-signed, notarized `Louppe.zip`. Both landing-page download buttons use its
-latest-release asset URL. Apple silicon and macOS 14 requirements match the
-release. Gallery and Grid captures and the captioned walkthrough match the
-released 1.9 interface.
+Latest release: **v1.9.0**, published 26 September 2026, with signed, notarized `Louppe.zip`. Both homepage download buttons use the latest-release asset URL. Apple silicon, macOS 14, Gallery/Grid captures, and the captioned walkthrough match the release.
 
-The feature-details disclosure now includes released read-only text previews.
-Local operation, no account, direct installation without Homebrew, metadata
-filtering, and XMP handoff are described in existing sections. No competitor
-superiority claims or unreleased 1.10 workflow features were added.
+Feature details include read-only text previews, local operation, no account, direct installation, metadata filtering, and XMP handoff. No competitor superiority or unreleased 1.10 claims were added.
 
-## Privacy policy
+## Privacy
 
-The durable public route is **https://louppe.eu/privacy/**, with `#app` and
-`#website` anchors. Footer links open the policy; a separate **analytics choices**
-button reopens consent. Blog and policy pages use the same controls.
+**https://louppe.eu/privacy/** has `#app` and `#website` anchors. Home, blog, and policy footers separate the policy link from **analytics choices**.
 
-App wording was checked against `PrivacyInfo.xcprivacy`, session persistence,
-thumbnail caches, security-scoped bookmarks, file-operation journals, the
-feedback `mailto:` link, the RAW resource-download path, and Sparkle settings.
-It explains local retention and cloud-synced folders, rather than suggesting
-that uninstalling removes all saved data. The direct-download updater is
-disclosed separately from app analytics and the App Store product. Conditional
-Apple-resource wording does not advertise an unreleased RAW feature as shipped.
+Wording was checked against `PrivacyInfo.xcprivacy`, session storage, thumbnails, bookmarks, operation journals, feedback `mailto:`, RAW resources, and Sparkle settings. It covers retention after uninstall, cloud folders, the direct-download updater, and conditional Apple downloads. It does not imply unreleased RAW features are shipped.
 
 Sources checked on 7 October:
 
-- [Apple app privacy details](https://developer.apple.com/app-store/app-privacy-details/): on-device processing is not data collected by the developer
-- The selected Xcode SDK’s `CIRAWFilter.h`: downloads on-demand decoder resources
-- [Sparkle system profiling](https://sparkle-project.org/documentation/system-profiling/): optional profiling requires explicit enablement; Louppe does not enable it
-- [GitHub Pages data collection](https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages#data-collection): visitor IP addresses are logged for security
-- [GitHub privacy statement](https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement), [Google privacy policy](https://policies.google.com/privacy), and [Apple privacy policy](https://www.apple.com/legal/privacy/)
+- [Apple app privacy details](https://developer.apple.com/app-store/app-privacy-details/): on-device processing is not developer data collection
+- Selected Xcode SDK `CIRAWFilter.h`: on-demand decoder downloads
+- [Sparkle system profiling](https://sparkle-project.org/documentation/system-profiling/): requires enablement; Louppe leaves it off
+- [GitHub Pages data collection](https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages#data-collection): security IP logging
+- [GitHub privacy](https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement), [Google privacy](https://policies.google.com/privacy), and [Apple privacy](https://www.apple.com/legal/privacy/)
 
 ## Validation
 
 - `npm run build:blog` passed
-- `npm test` passed all 12 tests, including all 11 consent regressions
-- The blog-generation regression also checks the privacy sitemap entry and preview copy, and verifies that the preview includes the keyboard script
-- All 61 local page, asset, and fragment references resolved across the four public HTML pages
-- Local browser rendering checked at the normal desktop viewport and 390×844; the landing page and policy have no horizontal overflow
-- The privacy footer link opened the policy, the new text disclosure expanded, and local previews contained no Google tag
+- `npm test`: all 12 tests passed, including 11 consent regressions
+- Generator tests cover the privacy sitemap entry, preview policy, and keyboard script
+- All 61 local page, asset, and fragment references resolved across four HTML pages
+- Desktop and 390×844 rendering: no homepage or policy overflow
+- Footer policy link and text disclosure worked; previews had no Google tag
 - `git diff --check` passed
 
-## WEB-AUD-01 browser acceptance
+## WEB-AUD-01 coverage
 
-Two real production tabs at `/` and `/blog/` initially showed no Google tag
-under the existing rejected choice. Choosing **allow analytics** in the first
-tab added the production `G-9P9KKLZ5BN` tag to both tabs. Choosing **no analytics**
-then reloaded both tabs, and each document contained only its first-party
-scripts. The final saved production choice is rejected.
+Two production tabs, `/` and `/blog/`, started without a Google tag under the saved rejected choice. **Allow analytics** added `G-9P9KKLZ5BN` to both. **No analytics** reloaded both with only first-party scripts. The final saved choice is rejected.
 
-This verifies real-tab reconciliation for explicit opt-in and withdrawal. It
-does **not** complete every WEB-AUD-01 acceptance condition. The browser tool
-exposes DOM state but no network capture or interception; resource timing is
-unavailable in its read-only page scope. It also cannot mutate storage or
-hold the tag request to force expiry, removal, or the rejection-during-loading
-race. Those cases remain covered by the existing VM regressions and are still
-listed for full real-browser acceptance in the backlog. No unobserved network
-result is claimed.
+This covers explicit opt-in and withdrawal. The browser API lacks network capture, interception, resource timing, and mutable storage. Forced expiry, removal, and rejection during tag loading remain VM-tested and await real-browser acceptance. No network result is claimed.
 
 ## Publication
 
-Published from `main` in commit `a438f18c1a1ef100305f298576e5350d62b8ba2a`.
-[GitHub Pages deployment 37619584257](https://github.com/murlexander/louppe-website/actions/runs/37619584257) succeeded.
+Published on `main`: `a438f18c1a1ef100305f298576e5350d62b8ba2a`. [Pages deployment 37619584257](https://github.com/murlexander/louppe-website/actions/runs/37619584257) succeeded.
 
-The live homepage, `/privacy/`, blog index, article, sitemap, consent script,
-keyboard script, and both stylesheets each returned HTTP 200 and matched the
-local source byte for byte. The production footer opened the live policy,
-with the correct canonical URL, no horizontal overflow, and no Google tag
-under the final rejected analytics choice.
+Homepage, policy, blog index, article, sitemap, consent script, keyboard script, and both stylesheets returned HTTP 200 and matched source bytes. The live footer opened the policy with the correct canonical URL, no overflow, and no Google tag under the rejected choice.

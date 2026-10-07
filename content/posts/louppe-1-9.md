@@ -1,39 +1,35 @@
-Louppe started as a pet project for my personal use. Somewhere along the way it turned into an actual app; I saw downloads count climbing. For 1.9, I focused on making it easier to find your way around from the first session
-
-So let me introduce Louppe
+Louppe started as a pet project for my own use. Then the download count started climbing. For 1.9, I focused on making the first session easier
 
 ## a place to make your choices
 
-Louppe is a free media culler for Mac. You open a folder, go through what's in it, decide what you want to keep, and take those files into whatever comes next
+Louppe is a free media culler for Mac. Open a folder, decide what to keep, and export those files
 
-You can review one item at a time or look through a grid (kinda a contact sheet), mark yes or no, add stars and colour labels, and export your choices. You don't need to import everything into a catalogue first. Your media stays on your Mac, and exporting makes copies by default
+Review one item at a time or use a grid (kinda a contact sheet). Mark yes or no, add stars and colour labels, and export your choices. There's no catalogue import. Your media stays on your Mac, and export makes copies by default
 
-As an interdisciplinary artist, I wanted to make culling different file types seamless and easy. As of now, Louppe supports photos, video, and audio. V.1.9 add a read-only text files support, which i hope to expand in the future, so sorting through your prose becomes easier too.
+As an interdisciplinary artist, I wanted to review photos, video, and audio in one place. Version 1.9 adds read-only text previews. I hope to expand those so sorting through prose gets easier too
 
-In the future, i see Louppe becoming a home for all media archives – sort of a media oriented Finder or something. Have some crazy ideas in my mind (eg just look at Brian Eno's [archive](https://youtu.be/nR4JAonAR4g?si=zvuMI5oXIDwJOmpl&t=1553) with those crazy randomization looping of material)!
+I see Louppe becoming a home for media archives, sort of a media-oriented Finder. I have some crazy ideas — just look at Brian Eno's [archive](https://youtu.be/nR4JAonAR4g?si=zvuMI5oXIDwJOmpl&t=1553) and its random loops of material!
 
-But that's future stuff. For now, Louppe's just meant to make your archives slightly cleaner.
+For now, I just want cleaner archives
 
 <!-- try-louppe -->
 
-## making the first few minutes easier
+## an easier first session
 
-A lot of the work in 1.9 is about helping the app explain itself
+There's a Help window, searchable keyboard shortcuts, and dismissible review tips. I've reorganised the command palette to help you find actions without knowing their names
 
-There's a proper Help window now, searchable keyboard shortcuts, and review tips you can dismiss once you don't need them. I've also reorganised the command palette so it's easier to find an action without already knowing its exact name
+Filters show what's active and how to return to all files. Export makes the selection and copy or move choices clearer
 
-Filters are clearer too. It should be easier to see what's active, understand why you're looking at a smaller set of files, and get back to everything. The export choices are more explicit, especially which items you've selected and what you're about to copy or move
+Other changes include a smaller start window with folder drop, quieter save feedback, a photo zoom slider, and pinch-to-zoom
 
-Some of the changes are small: a more compact start window, a folder you can drop straight into it, and quieter save feedback. Others make reviewing feel more natural, like a zoom slider and pinch-to-zoom for photos
+I want fewer moments where you have to stop and figure out what the app is asking
 
-I don't expect one update to make everything obvious. But I want fewer moments where you have to stop and work out what the app is asking you to do
+## tell me where you get stuck
 
-## give it a go, and tell me where you get stuck
+Louppe 1.9 is available now. Review works offline, with no account or app telemetry. The source is open, and the [privacy policy](/privacy/#app) explains local data and update requests
 
-Louppe 1.9 is available now. Give it a try, and I'd love to hear how it feels when you open it for the first time. Louppe is open source and secure: there's no account to create, no internet connection, and the app has no telemetry. So if something feels confusing, a message from you is much more useful than me guessing how your first session went
-
-What wasn't obvious? What did you expect to happen? What would make you want to use it again?
+Give it a try. What wasn't obvious? What did you expect to happen?
 
 [Send me a note](mailto:a@alex-markin.com) — it comes straight to me
 
-And if you're curious about the person behind the app, you'll find my other work at [alex-markin.com](https://alex-markin.com/)
+My other work is at [alex-markin.com](https://alex-markin.com/)

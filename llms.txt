@@ -1,16 +1,14 @@
 # louppe media culler
 
-> a free, open-source, local, keyboard-first photo, video, and audio culler for macOS. the app itself is named Louppe.
+> free, open-source photo, video, and audio culling for macOS. the app is named Louppe
 
-review photos, video, audio, and read-only text in Gallery or Grid with decisions, stars, color labels, filters, and selection. analyze exact duplicates, likely similar photos, and capture bursts locally. group RAW+JPEG pairs, inspect at 100%, and play video or audio. clean up to macOS Trash, organize folders, then copy or move your keepers. route copies to multiple folders and use XMP sidecars for portable metadata.
+review media and read-only text in Gallery or Grid. mark decisions, stars, and color labels; filter and select files. find duplicates, similar photos, and bursts locally. group RAW+JPEG pairs, inspect at 100%, and play video or audio. organize folders, clean up to macOS Trash, copy or move files, route copies, and write XMP sidecars
 
-- [website](https://louppe.eu/): product overview, features, and download
+- [website](https://louppe.eu/): features and download
 - [download](https://github.com/murlexander/louppe-media-culler/releases): macOS releases
-- [source code](https://github.com/murlexander/louppe-media-culler): application source
-- [author](https://alex-markin.com/): alex markin
+- [source](https://github.com/murlexander/louppe-media-culler): application code
+- [blog](https://louppe.eu/blog/): development and release notes
+- [privacy](https://louppe.eu/privacy/): app data and optional website analytics
+- [author](https://alex-markin.com/): artist Alex Markin
 
-The website presents Gallery, Grid, and a captioned 25-second Demo in one media viewer. A written walkthrough is available with the Demo. Created by artist Alex Markin.
-
-- [blog](https://louppe.eu/blog/): notes on making Louppe and new releases, by Alex Markin
-
-- [privacy policy](https://louppe.eu/privacy/): local app data, optional website analytics, and privacy contact
+Gallery, Grid, a captioned 25-second Demo, and a written walkthrough show the app in use

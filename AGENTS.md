@@ -1,9 +1,9 @@
-Read DESIGN-SYSTEM.md before any UI change.
+Read DESIGN-SYSTEM.md before UI changes.
 
-Commit and push directly to `main` unless the user explicitly requests a different branch.
+Commit and push directly to `main` unless Alex requests another branch.
 
-Use Oxford commas in every list of three or more items across all website copy, blog articles, captions, metadata, and documentation.
+Keep public copy and internal docs short, concrete, and free of slogans or filler. Preserve factual disclosures, technical rules, and the blog author's voice. Use Oxford commas in lists of three or more items, including captions and metadata.
 
-## Louppe project location
+## Project location
 
-Shared project layout and materials are documented in `../AGENTS.md` and `../README.md`. Use `/Users/alexander_markin/Documents/code/louppe/` for application work; personal notes and CAS logs stay in Obsidian.
+Read `../AGENTS.md` and `../README.md` for the shared layout. App work belongs in `/Users/alexander_markin/Documents/code/louppe/app/`. Keep engineering docs with each repository; personal notes and CAS logs stay in Obsidian.
