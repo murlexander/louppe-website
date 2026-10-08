@@ -11,7 +11,7 @@ test('draft isolation, publication, validation and withdrawal', async () => {
   const root = await mkdtemp(resolve(tmpdir(),'louppe-blog-'));
   try {
     for (const name of ['scripts','templates','content/posts','.drafts','media','privacy']) await mkdir(resolve(root,name),{recursive:true});
-    for (const name of ['scripts/build-blog.mjs','scripts/build-locales.mjs','content/translations.json','content/translation-ui-keys.json','templates/home.html','templates/privacy.html','templates/blog.html','index.html','styles.css','site.js','keyboard.js','analytics-consent.js','blog.css','favicon.ico','favicon.png','privacy/index.html']) await cp(resolve(source,name),resolve(root,name));
+    for (const name of ['scripts/build-blog.mjs','scripts/build-locales.mjs','content/translations.json','content/translation-ui-keys.json','templates/home.html','templates/privacy.html','templates/blog.html','index.html','styles.css','prefetch.js','site.js','keyboard.js','analytics-consent.js','blog.css','favicon.ico','favicon.png','privacy/index.html']) await cp(resolve(source,name),resolve(root,name));
     await symlink(resolve(source,'node_modules'),resolve(root,'node_modules'),'dir');
     const save = (name,body) => writeFile(resolve(root,name),body);
     const load = name => readFile(resolve(root,name),'utf8');
@@ -49,6 +49,7 @@ test('draft isolation, publication, validation and withdrawal', async () => {
     assert.match(await load('_preview/blog/unreleased/index.html'),/PRIVATE_DRAFT_SENTINEL/);
     assert.match(await load('_preview/privacy/index.html'),/privacy policy/);
     assert.equal(await load('_preview/keyboard.js'), await load('keyboard.js'));
+    assert.equal(await load('_preview/prefetch.js'), await load('prefetch.js'));
     assert.match(await load('_preview/blog/unreleased/index.html'),/noindex, nofollow/);
     assert.doesNotMatch(await load('_preview/blog/index.html'),/local preview|draft-notice/);
     assert.doesNotMatch(await load('_preview/blog/unreleased/index.html'),/draft-notice|unpublished draft/);

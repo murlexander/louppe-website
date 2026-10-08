@@ -14,7 +14,7 @@ const routes = ['/', '/privacy/', '/blog/', '/blog/a-proper-hello/'];
 test('static language pages, crawl discovery, links, and withdrawal remain consistent', async () => {
   const root = await mkdtemp(resolve(tmpdir(), 'louppe-locales-'));
   try {
-    for (const name of ['scripts','templates','content','media','privacy','index.html','styles.css','site.js','keyboard.js','analytics-consent.js','blog.css','favicon.ico','favicon.png']) await cp(resolve(source,name),resolve(root,name),{recursive:true});
+    for (const name of ['scripts','templates','content','media','privacy','index.html','styles.css','prefetch.js','site.js','keyboard.js','analytics-consent.js','blog.css','favicon.ico','favicon.png']) await cp(resolve(source,name),resolve(root,name),{recursive:true});
     await symlink(resolve(source,'node_modules'),resolve(root,'node_modules'),'dir');
     const load = path => readFile(resolve(root,path),'utf8');
     const run = (...args) => spawnSync(process.execPath,['scripts/build-blog.mjs',...args],{cwd:root,encoding:'utf8'});
@@ -68,6 +68,7 @@ test('static language pages, crawl discovery, links, and withdrawal remain consi
         else assert.doesNotMatch(html,/<html[^>]*dir="rtl"/);
         assert.doesNotMatch(html,/<script[^>]+src="https:\/\/.*googletagmanager/);
         assert.ok(html.includes('data-analytics-settings'));
+        assert.ok(html.includes('<script src="/prefetch.js?v=20261008-1" defer></script>'));
         assert.ok(html.includes('data-analytics-choice="rejected"'));
         // Resolve every local link and fragment, including prefixed privacy and blog links.
         for (const match of html.matchAll(/\b(?:href|src|poster)="([^"]+)"/g)) {
@@ -102,6 +103,7 @@ test('static language pages, crawl discovery, links, and withdrawal remain consi
     assert.equal(await load('ar/index.html'),arabic);
     await writeFile(resolve(root,'templates/home.html'),template);
     result=run('--preview'); assert.equal(result.status,0,result.stderr);
+    assert.equal(await load('_preview/prefetch.js'), await load('prefetch.js'));
     for (const language of languages) {
       const html=await load('_preview/'+localizedPath('/',language).slice(1)+'index.html');
       assert.match(html,/noindex, nofollow/);

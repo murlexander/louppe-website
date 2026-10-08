@@ -18,6 +18,16 @@
 - `DESIGN-SYSTEM.md`: design rules
 - `BACKLOG.md`: current work
 
+## Navigation prefetch
+
+`prefetch.js` fetches internal HTML after 100 ms of hover or keyboard focus, or immediately on an unmodified primary pointer press (including touch). It uses Speculation Rules when available, then supported `rel=prefetch` hints; other browsers keep ordinary navigation. It does not render pages or execute their scripts. Each page requests at most eight unique destinations, skips external links, downloads, assets, same-page anchors, redirect routes, and query parameters other than `look` and `seed`, and respects offline state, data saver, and 2G connections. Add `data-no-prefetch` to a link or ancestor to opt out.
+
+This gives the next document a head start; it does not fetch page images, fonts, or API data. Benefits depend on hover time, network latency, and browser caching. No measured speedup is claimed. The independently hosted sites keep the same script and behavior tests.
+
+Run `node --test scripts/prefetch.test.mjs`. Sources: [Chrome navigation prefetch guidance](https://developer.chrome.com/docs/web-platform/prerender-pages#prefetch) and [web.dev resource prefetch guidance](https://web.dev/articles/link-prefetch).
+
+Local verification, 8 October 2026: 22 automated tests pass. Chromium 151 confirmed hover requests and navigation cache reuse (`deliveryType: navigational-prefetch`); keyboard focus also exercised the resource-hint fallback. Louppe checks included an Arabic article. No Safari or Firefox browser run was performed.
+
 ## Analytics
 
 GA4 `G-9P9KKLZ5BN` loads only on HTTPS `louppe.eu` after consent. Previews and copied deployments cannot load it. The `louppe_download` key event in the `Louppe Media Culler` property measures link intent, not installation.

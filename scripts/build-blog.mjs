@@ -67,7 +67,7 @@ for (const post of posts) {
 if (preview) {
   // Dedicated ignored output; nothing from drafts is written into deployable paths.
   await mkdir(out,{recursive:true});
-  for (const name of ['index.html','styles.css','site.js','keyboard.js','analytics-consent.js','blog.css','favicon.ico','favicon.png','media','privacy']) await cp(resolve(root,name),resolve(out,name),{recursive:true});
+  for (const name of ['index.html','styles.css','prefetch.js','site.js','keyboard.js','analytics-consent.js','blog.css','favicon.ico','favicon.png','media','privacy']) await cp(resolve(root,name),resolve(out,name),{recursive:true});
 }
 let previous = [];
 try { previous = JSON.parse(await readFile(resolve(out,'blog/generated-files.json'),'utf8')); } catch(error) { if(error.code !== 'ENOENT') throw error; }
