@@ -54,7 +54,7 @@ Run `npm run build` after content changes; it generates the homepage, privacy po
 
 Edit `templates/home.html` and `templates/privacy.html`, not their generated pages. Keep `content/translations.json` aligned with visible text and accessible labels; missing homepage or policy translations stop the build. `content/translation-ui-keys.json` selects translated interactive labels embedded in each homepage. App screenshots and video captions remain English; translating the website does not change the app's language.
 
-Published blog posts with complete translations get localized article URLs. New untranslated posts remain English, are labeled English on localized indexes, and receive no translated alternate links. Add their copy to the catalog and rebuild to localize them. Drafts stay in private previews. The output manifest removes withdrawn translations; blog rebuilds preserve the language sitemap.
+Published blog posts with complete translations get localized article URLs. New untranslated posts remain English, are labeled English on localized indexes, and receive no translated alternate links. For new articles, provide complete translated Markdown and metadata as described in [BLOG.md](BLOG.md); the existing shared catalog remains supported. Drafts stay in private previews. The output manifest removes withdrawn translations; blog rebuilds preserve the language sitemap.
 
 Every translated page has its own canonical URL, reciprocal `hreflang` links, an English `x-default`, localized metadata, and WebPage language data. Homepage SoftwareApplication data describes the free app without invented reviews. Search copy targets photo sorting, photo culling, and media/file management using the supported workflow and hardware requirements.
 

@@ -7,7 +7,7 @@ Keep the current workflow for one author. Reconsider a CMS if browser editing, s
 ## Files
 
 - `content/posts.json`: published metadata, sorted newest first
-- `content/posts/<file>.md`: published articles
+- `content/posts/<file>.md`: published articles and their translations
 - `templates/blog.html`: shared shell and privacy controls
 - `blog.css`: article styles, alongside shared `styles.css`
 - `scripts/build-blog.mjs`: article, index, and sitemap generator
@@ -43,6 +43,10 @@ Metadata example:
 }
 ```
 
+For complete article translations, add a `translations` object to the record, with `es`, `zh-Hans`, `hi`, `pt`, and `ar` entries. Each needs its own `title`, `description`, and `file`, such as `article-es.md`. Keep translated Markdown beside the English source, including CTA markers and image alt text. All five translations must be complete; missing metadata, files, or markers stop the build. Localized pages use the same slug under each language prefix, and internal article links follow that language
+
+Older articles can still use the shared translation catalog. Articles without complete translations stay English and are labeled on localized indexes
+
 Use a descriptive subtitle and one Alex Markin byline beneath it, linked to https://alex-markin.com/. Author links turn purple on hover and focus.
 
 Every article needs at least two centered **Try Louppe** buttons without small print. Put `<!-- try-louppe -->` on its own line between body sections; the generator adds the final button. Missing markers or empty sections fail the build. More markers are supported.
@@ -51,9 +55,9 @@ Use natural sentence case, contractions, and Oxford commas. Omit trailing period
 
 ## Publish an approved article
 
-1. Check wording against the released app. Alex approved the 1.9 introduction on 26 September 2026.
-2. Copy Markdown to `content/posts/` and metadata to `content/posts.json`. Set `status` to `published` and add the actual `YYYY-MM-DD` publication date. Remove its draft record to avoid duplicate slugs.
-3. Run `npm run build:blog` and `npm run test:blog`, then inspect the pages. Invalid dates or incomplete metadata fail. Status controls publication; dates do not schedule it.
+1. Check wording against the released app. Alex approved the 1.9 introduction on 26 September 2026, and both photo-culling guides with their translations on 12 October 2026.
+2. Copy English and translated Markdown to `content/posts/` and metadata to `content/posts.json`. Set `status` to `published` and add the actual `YYYY-MM-DD` publication date. Remove its draft record to avoid duplicate slugs.
+3. Run `npm run build:blog` and `npm test`, then inspect the pages. Invalid dates or incomplete metadata fail. Status controls publication; dates do not schedule it.
 4. Commit source, generated `blog/` files, and `sitemap.xml` on `main`, then push. Pages serves them through `.nojekyll`; GitHub does not rebuild the blog.
 5. Confirm deployment, the live article, and its links.
 

@@ -19,12 +19,13 @@ body::before{background-image:url('/media/grain.svg?v=20260929-1')}
 .article-body p{margin:0 0 24px}
 .article-body h2{font-size:29px;font-weight:520;letter-spacing:-.7px;line-height:1.25;margin:48px 0 20px}
 .article-body h3{font-size:23px;font-weight:520;margin:32px 0 16px}
-.article-body ul,.article-body ol{padding-left:24px;margin:0 0 24px}
+.article-body ul,.article-body ol{padding-inline-start:24px;margin:0 0 24px}
 .article-body img{display:block;height:auto;border-radius:8px;margin:28px auto}
-.article-body blockquote{margin:28px 0;padding-left:22px;color:var(--muted)}
-.article-body pre{overflow-x:auto;padding:16px;background:var(--surface);border-radius:8px;font-size:14px}
+.article-body blockquote{margin:28px 0;padding-inline-start:22px;color:var(--muted)}
+.article-body code,.article-body kbd{direction:ltr;unicode-bidi:isolate}
+.article-body pre{direction:ltr;text-align:left;overflow-x:auto;padding:16px;background:var(--surface);border-radius:8px;font-size:14px}
 .article-body table{display:block;overflow-x:auto;font-size:16px}
-.article-body td,.article-body th{padding:8px;text-align:left}
+.article-body td,.article-body th{padding:8px;text-align:start}
 .article-cta{text-align:center;margin-top:40px}
 .article-body .article-cta{margin:36px 0}
 .article-author{margin-top:24px;font-size:15px;color:var(--muted)}

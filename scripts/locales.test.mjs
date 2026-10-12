@@ -9,7 +9,9 @@ import { languages, localizedPath } from './build-locales.mjs';
 
 const source = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const origin = 'https://louppe.eu';
-const routes = ['/', '/privacy/', '/blog/', '/blog/a-proper-hello/'];
+const published = JSON.parse(await readFile(resolve(source,'content/posts.json'),'utf8'));
+const articleRoutes = published.map(post=>`/blog/${post.slug}/`);
+const routes = ['/', '/privacy/', '/blog/', ...articleRoutes];
 
 test('static language pages, crawl discovery, links, and withdrawal remain consistent', async () => {
   const root = await mkdtemp(resolve(tmpdir(), 'louppe-locales-'));
@@ -21,7 +23,7 @@ test('static language pages, crawl discovery, links, and withdrawal remain consi
     let result = run();
     assert.equal(result.status,0,result.stderr);
     const sitemap = await load('sitemap.xml');
-    assert.equal((sitemap.match(/<loc>/g) ?? []).length,24);
+    assert.equal((sitemap.match(/<loc>/g) ?? []).length,routes.length*languages.length);
     const titles = new Set();
     for (const route of routes) {
       for (const language of languages) {
@@ -58,11 +60,11 @@ test('static language pages, crawl discovery, links, and withdrawal remain consi
           assert.equal(app.inLanguage,undefined); // Website translation does not promise a localized app.
           assert.ok(app.downloadUrl.endsWith('/Louppe.zip'));
         }
-        if (route==='/blog/a-proper-hello/') {
+        if (articleRoutes.includes(route)) {
           const article = schemas.find(schema=>schema['@type']==='BlogPosting');
           assert.equal(article.inLanguage,language.code);
           assert.equal(article.url,origin+path);
-          assert.equal(article.datePublished,'2026-09-27');
+          assert.equal(article.datePublished,published.find(post=>route===`/blog/${post.slug}/`).date);
         }
         if (language.code==='ar') assert.match(html,/dir="rtl"/);
         else assert.doesNotMatch(html,/<html[^>]*dir="rtl"/);
@@ -111,7 +113,9 @@ test('static language pages, crawl discovery, links, and withdrawal remain consi
     assert.equal(await load('ar/index.html'),arabic);
     await writeFile(resolve(root,'content/posts.json'),'[]');
     result=run(); assert.equal(result.status,0,result.stderr);
-    assert.doesNotMatch(await load('sitemap.xml'),/a-proper-hello/);
-    for (const language of languages) await assert.rejects(load(localizedPath('/blog/a-proper-hello/',language).slice(1)+'index.html'),{code:'ENOENT'});
+    for (const route of articleRoutes) {
+      assert.ok(!(await load('sitemap.xml')).includes(route));
+      for (const language of languages) await assert.rejects(load(localizedPath(route,language).slice(1)+'index.html'),{code:'ENOENT'});
+    }
   } finally { await rm(root,{recursive:true,force:true}); }
 });

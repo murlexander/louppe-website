@@ -1,5 +1,83 @@
 [
   {
+    "slug": "cull-photos-mac-before-lightroom",
+    "title": "How to cull photos on Mac before importing into Lightroom",
+    "description": "Cull photos on Mac for free with Louppe. Review offline, copy your keepers, and start editing in Lightroom Classic, Capture One, or darktable",
+    "file": "cull-photos-mac-before-lightroom.md",
+    "status": "published",
+    "cta": {
+      "label": "Try Louppe",
+      "href": "https://github.com/murlexander/louppe-media-culler/releases/latest/download/Louppe.zip"
+    },
+    "translations": {
+      "es": {
+        "title": "Cómo seleccionar fotos en Mac antes de importarlas en Lightroom",
+        "description": "Selecciona fotos gratis y sin conexión con Louppe en Mac. Copia las elegidas para editarlas en Lightroom Classic, Capture One, o darktable",
+        "file": "cull-photos-mac-before-lightroom-es.md"
+      },
+      "pt": {
+        "title": "Como selecionar fotos no Mac antes de importá-las no Lightroom",
+        "description": "Selecione fotos grátis e offline com o Louppe no Mac. Copie as escolhidas para editar no Lightroom Classic, Capture One, ou darktable",
+        "file": "cull-photos-mac-before-lightroom-pt.md"
+      },
+      "zh-Hans": {
+        "title": "在导入 Lightroom 前，先在 Mac 上筛选照片",
+        "description": "用免费的 Louppe 在 Mac 上离线筛选照片，再把入选照片复制到文件夹，导入 Lightroom Classic、Capture One 或 darktable",
+        "file": "cull-photos-mac-before-lightroom-zh.md"
+      },
+      "hi": {
+        "title": "Lightroom में इम्पोर्ट करने से पहले Mac पर फ़ोटो छाँटें",
+        "description": "मुफ़्त Louppe से Mac पर ऑफ़लाइन फ़ोटो चुनें, उन्हें फ़ोल्डर में कॉपी करें, और Lightroom Classic, Capture One, या darktable में एडिटिंग शुरू करें",
+        "file": "cull-photos-mac-before-lightroom-hi.md"
+      },
+      "ar": {
+        "title": "فرز الصور على Mac قبل استيرادها إلى Lightroom",
+        "description": "اختر أفضل صورك على Mac باستخدام Louppe، ثم انسخ الصور المختارة إلى مجلد لتحريرها في Lightroom Classic أو Capture One أو darktable",
+        "file": "cull-photos-mac-before-lightroom-ar.md"
+      }
+    },
+    "date": "2026-10-12"
+  },
+  {
+    "slug": "cull-raw-jpeg-pairs-mac",
+    "title": "How to cull RAW + JPEG pairs on Mac",
+    "description": "Cull RAW + JPEG pairs on Mac with Louppe. Review matching files together, keep separate decisions when needed, and copy your keepers",
+    "file": "cull-raw-jpeg-pairs-mac.md",
+    "status": "published",
+    "cta": {
+      "label": "Try Louppe",
+      "href": "https://github.com/murlexander/louppe-media-culler/releases/latest/download/Louppe.zip"
+    },
+    "translations": {
+      "es": {
+        "title": "Cómo seleccionar pares RAW + JPEG en Mac",
+        "description": "Revisa juntos los pares RAW + JPEG en Louppe, conserva decisiones separadas cuando lo necesites, y comprueba qué archivos se copian",
+        "file": "cull-raw-jpeg-pairs-mac-es.md"
+      },
+      "pt": {
+        "title": "Como selecionar pares RAW + JPEG no Mac",
+        "description": "Revise pares RAW + JPEG juntos no Louppe, mantenha decisões separadas quando precisar, e confira quais arquivos serão copiados",
+        "file": "cull-raw-jpeg-pairs-mac-pt.md"
+      },
+      "zh-Hans": {
+        "title": "在 Mac 上一起筛选 RAW + JPEG 照片",
+        "description": "用 Louppe 将匹配的 RAW + JPEG 当作一张照片筛选，需要时分开做决定，并在复制前检查实际包含的文件",
+        "file": "cull-raw-jpeg-pairs-mac-zh.md"
+      },
+      "hi": {
+        "title": "Mac पर RAW + JPEG फ़ोटो एक साथ छाँटें",
+        "description": "Louppe में RAW + JPEG की जोड़ी को एक फ़ोटो की तरह देखें, ज़रूरत पर अलग-अलग फ़ैसले लें, और कॉपी करने से पहले शामिल फ़ाइलें जाँचें",
+        "file": "cull-raw-jpeg-pairs-mac-hi.md"
+      },
+      "ar": {
+        "title": "فرز أزواج RAW + JPEG على Mac باستخدام Louppe",
+        "description": "راجع أزواج RAW + JPEG معًا أو كل ملف على حدة في Louppe على Mac، ثم تحقّق من قراراتك وانسخ الملفات التي تريدها للتحرير",
+        "file": "cull-raw-jpeg-pairs-mac-ar.md"
+      }
+    },
+    "date": "2026-10-12"
+  },
+  {
     "slug": "a-proper-hello",
     "title": "Louppe becoming a real thing: introducing 1.9",
     "description": "Clearer controls and an easier start for photo, video, and audio culling in Louppe 1.9",

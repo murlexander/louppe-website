@@ -7,7 +7,9 @@ review media and read-only text in Gallery or Grid. mark decisions, stars, and c
 - [website](https://louppe.eu/): features and download
 - [download](https://github.com/murlexander/louppe-media-culler/releases): macOS releases
 - [source](https://github.com/murlexander/louppe-media-culler): application code
-- [blog](https://louppe.eu/blog/): development and release notes
+- [blog](https://louppe.eu/blog/): photo culling guides and development notes
+- [cull photos on Mac before Lightroom](https://louppe.eu/blog/cull-photos-mac-before-lightroom/): choose keepers locally for Lightroom Classic, Capture One, or darktable
+- [cull RAW + JPEG pairs on Mac](https://louppe.eu/blog/cull-raw-jpeg-pairs-mac/): review matching files together and copy the versions you want
 - [privacy](https://louppe.eu/privacy/): app data and optional website analytics
 - [author](https://alex-markin.com/): artist Alex Markin
 

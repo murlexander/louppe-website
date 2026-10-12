@@ -20,7 +20,7 @@ const invariant = /^(?:[A-Z0-9+\-=]|·|×|louppe|Alex Markin|a@alex-markin\.com|
 export function translateHTML(html, dictionary, language) {
   const t = value => {
     const key = decode(value.trim());
-    if (!key || invariant.test(key)) return value;
+    if (!key || invariant.test(key) || /\{\{\w+\}\}/.test(key)) return value;
     const translated = dictionary[key]?.[language.code];
     if (typeof translated !== 'string' || !translated.trim()) throw new Error(`Missing ${language.code} translation: ${key}`);
     return value.replace(value.trim(), escape(translated));
@@ -39,7 +39,7 @@ export function translateHTML(html, dictionary, language) {
   });
 }
 
-export async function buildLocales({ root, out, published, preview }) {
+export async function buildLocales({ root, out, published, drafts = [], preview, renderTranslation }) {
   const read = path => readFile(resolve(root, path), 'utf8');
   const load = path => readFile(resolve(out, path), 'utf8');
   const dictionary = JSON.parse(await read('content/translations.json'));
@@ -58,10 +58,15 @@ export async function buildLocales({ root, out, published, preview }) {
   const listing = await load('blog/index.html');
   const translatedPosts = [];
   const englishPosts = [];
-  for (const post of published) {
+  const posts = [...published, ...(preview ? drafts : [])];
+  // Per-article Markdown supplies complete translations without putting draft copy in the public catalog.
+  for (const post of posts.filter(post => post.translations)) {
+    for (const key of ['title','description']) dictionary[post[key]] = Object.fromEntries(languages.map(language => [language.code, language.code === 'en' ? post[key] : post.translations[language.code][key]]));
+  }
+  for (const post of posts) {
     const source = await load(`blog/${post.slug}/index.html`);
     try {
-      for (const language of languages.slice(1)) translateHTML(source, dictionary, language);
+      if (!post.translations) for (const language of languages.slice(1)) translateHTML(source, dictionary, language);
       translatedPosts.push({ ...post, source });
     } catch (error) {
       if (!error.message.startsWith('Missing ')) throw error;
@@ -74,7 +79,7 @@ export async function buildLocales({ root, out, published, preview }) {
     { path: '/', source: home },
     { path: '/privacy/', source: privacy },
     { path: '/blog/', source: listing, localeSource: listingSource },
-    ...translatedPosts.map(post => ({ path: post.path, source: post.source })),
+    ...translatedPosts.map(post => ({ path: post.path, source: post.source, post })),
   ];
   const localizablePaths = new Set(pages.map(page => page.path));
   const uiKeys = JSON.parse(await read('content/translation-ui-keys.json'));
@@ -83,7 +88,9 @@ export async function buildLocales({ root, out, published, preview }) {
   for (const page of pages) {
     for (const language of languages) {
       // Preserve the English blog generator's original editorial copy.
-      let html = language.code === 'en' && page.path !== '/' ? page.source : translateHTML(page.localeSource ?? page.source, dictionary, language);
+      let html = language.code === 'en' && page.path !== '/' ? page.source
+        : page.post?.translations ? renderTranslation(page.post, language, dictionary)
+        : translateHTML(page.localeSource ?? page.source, dictionary, language);
       const path = localizedPath(page.path, language);
       html = html.replace(/<html lang="en">/, `<html lang="${language.code}"${language.code === 'ar' ? ' dir="rtl"' : ''}>`);
       html = html.replace(/(?:src|href|poster)="media\//g, value => value.replace('media/', '/media/')).replace(/srcset="media\//g, 'srcset="/media/').replace(/, media\//g, ', /media/');
@@ -123,7 +130,7 @@ export async function buildLocales({ root, out, published, preview }) {
   }
   for (const { path, html } of outputs) await write(path, html);
   // English-only posts keep their original generator output and sitemap entries.
-  const sitemapPaths = [...pages.flatMap(page => languages.map(language => localizedPath(page.path, language))), ...englishPosts.map(post => post.path)];
+  const sitemapPaths = [...pages.filter(page => !page.post?.draft).flatMap(page => languages.map(language => localizedPath(page.path, language))), ...englishPosts.filter(post => !post.draft).map(post => post.path)];
   await writeFile(resolve(out, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${sitemapPaths.map(path => `\n  <url><loc>${origin}${path}</loc></url>`).join('')}\n</urlset>\n`);
   let previous = [];
   try { previous = JSON.parse(await load('content/generated-locales.json')); } catch (error) { if (error.code !== 'ENOENT') throw error; }

@@ -1782,5 +1782,45 @@
     "hi": "{count} सितारा दें",
     "pt": "avaliar com {count} estrela",
     "ar": "عدد النجوم: {count}"
+  },
+  "Photo culling guides and Louppe news": {
+    "en": "Photo culling guides and Louppe news",
+    "es": "Guías de selección de fotos y novedades de Louppe",
+    "zh-Hans": "照片筛选指南与 Louppe 动态",
+    "hi": "फ़ोटो छाँटने की गाइड और Louppe की खबरें",
+    "pt": "Guias de seleção de fotos e novidades do Louppe",
+    "ar": "أدلة فرز الصور وأخبار Louppe"
+  },
+  "Photo culling guides for Mac, RAW + JPEG workflows, and Louppe development notes by Alex Markin.": {
+    "en": "Photo culling guides for Mac, RAW + JPEG workflows, and Louppe development notes by Alex Markin.",
+    "es": "Guías para seleccionar fotos en Mac, flujos de trabajo RAW + JPEG, y notas de Alex Markin sobre el desarrollo de Louppe.",
+    "zh-Hans": "Mac 照片筛选指南、RAW + JPEG 工作流程，以及 Alex Markin 的 Louppe 开发笔记。",
+    "hi": "Mac पर फ़ोटो छाँटने की गाइड, RAW + JPEG वर्कफ़्लो, और Alex Markin के Louppe डेवलपमेंट नोट्स.",
+    "pt": "Guias para selecionar fotos no Mac, fluxos de trabalho RAW + JPEG, e notas de Alex Markin sobre o desenvolvimento do Louppe.",
+    "ar": "أدلة فرز الصور على Mac، وسير عمل RAW + JPEG، وملاحظات Alex Markin عن تطوير Louppe."
+  },
+  "photo culling guides and development notes": {
+    "en": "photo culling guides and development notes",
+    "es": "guías de selección de fotos y notas de desarrollo",
+    "zh-Hans": "照片筛选指南与开发笔记",
+    "hi": "फ़ोटो छाँटने की गाइड और डेवलपमेंट नोट्स",
+    "pt": "guias de seleção de fotos e notas de desenvolvimento",
+    "ar": "أدلة فرز الصور وملاحظات التطوير"
+  },
+  "Louppe reviewing a local media folder on Mac": {
+    "en": "Louppe reviewing a local media folder on Mac",
+    "es": "Louppe revisando una carpeta local de archivos multimedia en Mac",
+    "zh-Hans": "Louppe 在 Mac 上审阅本地媒体文件夹",
+    "hi": "Mac पर स्थानीय मीडिया फ़ोल्डर की समीक्षा करता Louppe",
+    "pt": "Louppe revisando uma pasta local de mídia no Mac",
+    "ar": "Louppe أثناء مراجعة مجلد وسائط محلي على Mac"
+  },
+  "Photo culling guides and Louppe news — Louppe": {
+    "en": "Photo culling guides and Louppe news — Louppe",
+    "es": "Guías de selección de fotos y novedades de Louppe — Louppe",
+    "zh-Hans": "照片筛选指南与 Louppe 动态 — Louppe",
+    "hi": "फ़ोटो छाँटने की गाइड और Louppe की खबरें — Louppe",
+    "pt": "Guias de seleção de fotos e novidades do Louppe — Louppe",
+    "ar": "أدلة فرز الصور وأخبار Louppe — Louppe"
   }
 }
