@@ -1,5 +1,8 @@
 # Website readiness — 7 October 2026
 
+Dated evidence; statuses and local paths describe that review. See the
+[current backlog](../../../BACKLOG.md) for open work.
+
 ## Released app
 
 Latest direct release: **[v1.10.0 (12)](https://github.com/murlexander/louppe-media-culler/releases/tag/v1.10.0)**, published 7 October 2026. Signed with Developer ID and notarized by Apple. Both homepage download buttons use the latest-release ZIP. Requires Apple silicon and macOS 14 or later.

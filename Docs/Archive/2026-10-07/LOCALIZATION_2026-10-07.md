@@ -1,5 +1,8 @@
 # Website languages and SEO — 7 October 2026
 
+Dated evidence; statuses and local paths describe that review. See the
+[current backlog](../../../BACKLOG.md) for open work.
+
 Implemented and verified locally. Publication uses the existing GitHub Pages deployment from `main`.
 
 English, Spanish, Simplified Chinese, Hindi, Portuguese, and Arabic cover the homepage, privacy policy, blog index, and published 1.9 article: 24 static pages. Language links retain the page; Arabic flows right-to-left while keyboard keys retain their physical order. Screenshot UI and video captions remain English.

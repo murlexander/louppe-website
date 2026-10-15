@@ -16,7 +16,7 @@
 - `CNAME`: domain
 - `robots.txt`, `sitemap.xml`, and `llms.txt`: crawler discovery
 - `DESIGN-SYSTEM.md`: design rules
-- `BACKLOG.md`: current work
+- [BACKLOG.md](BACKLOG.md): open work
 
 ## Navigation prefetch
 
@@ -46,7 +46,9 @@ See [BLOG.md](BLOG.md) for drafting and publishing. Drafts stay local. The gener
 
 ## Readiness evidence
 
-[7 October 2026 review](Docs/READINESS_2026-10-07.md): release alignment, privacy sources, tests, and browser coverage limits.
+Dated reports stay in [Docs/Archive](Docs/Archive/); current work is in the backlog.
+
+[7 October 2026 review](Docs/Archive/2026-10-07/READINESS_2026-10-07.md): release alignment, privacy sources, tests, and browser coverage limits.
 
 ## Languages and search
 
