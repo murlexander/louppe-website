@@ -6,4 +6,7 @@ Keep public copy and internal docs short, concrete, and free of slogans or fille
 
 ## Project location
 
-Read `../AGENTS.md` and `../README.md` for the shared layout. App work belongs in `/Users/alexander_markin/Documents/code/louppe/app/`. Keep engineering docs with each repository; personal notes and CAS logs stay in Obsidian.
+Standalone website clones contain their own development instructions. In Alex's
+shared local workspace, optional parent `AGENTS.md` and `README.md` describe the
+layout; app work belongs in the adjacent app checkout. Keep engineering docs
+with each repository; personal notes and CAS logs stay in Obsidian.
