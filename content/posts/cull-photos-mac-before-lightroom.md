@@ -10,7 +10,7 @@ Here's a first pass you can use on your next shoot
 
 Copy the shoot from your memory card to a folder on your Mac, and keep a backup before clearing the card. You can open a card directly in Louppe, but a review decision isn't a backup
 
-[Download Louppe](https://github.com/murlexander/louppe-media-culler/releases/latest/download/Louppe.zip), unzip it, and drag Louppe into Applications. Open the app and choose your photo folder, or drop the folder onto its start window
+[Get Louppe on the Mac App Store](https://apps.apple.com/app/louppe/id6820131477). [GitHub and Homebrew are also available](/#download). Open the app and choose your photo folder, or drop the folder onto its start window
 
 Louppe reviews the files where they are. There's no separate library to import them into
 
@@ -24,7 +24,7 @@ For this pass, ask whether the photograph has a reason to stay. Does the express
 
 ![Louppe Gallery showing a photograph, a thumbnail browser, and the Info panel with camera settings and a histogram](/media/2026-09-26/gallery-info.webp)
 
-Louppe saves decisions automatically. Wait for **Saved** in the bottom panel before finishing; reopen the same folder to continue later
+Louppe saves decisions automatically. Wait for saving to finish before closing the folder; reopen the same folder to continue later
 
 <!-- try-louppe -->
 

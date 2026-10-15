@@ -1822,5 +1822,165 @@
     "hi": "फ़ोटो छाँटने की गाइड और Louppe की खबरें — Louppe",
     "pt": "Guias de seleção de fotos e novidades do Louppe — Louppe",
     "ar": "أدلة فرز الصور وأخبار Louppe — Louppe"
+  },
+  "download on the Mac App Store": {
+    "en": "download on the Mac App Store",
+    "es": "descargar en el Mac App Store",
+    "zh-Hans": "从 Mac App Store 下载",
+    "hi": "Mac App Store से डाउनलोड करें",
+    "pt": "baixar na Mac App Store",
+    "ar": "تنزيل من Mac App Store"
+  },
+  "other ways:": {
+    "en": "other ways:",
+    "es": "otras opciones:",
+    "zh-Hans": "其他方式：",
+    "hi": "दूसरे तरीके:",
+    "pt": "outras opções:",
+    "ar": "طرق أخرى:"
+  },
+  "GitHub": {
+    "en": "GitHub",
+    "es": "GitHub",
+    "zh-Hans": "GitHub",
+    "hi": "GitHub",
+    "pt": "GitHub",
+    "ar": "GitHub"
+  },
+  "Homebrew": {
+    "en": "Homebrew",
+    "es": "Homebrew",
+    "zh-Hans": "Homebrew",
+    "hi": "Homebrew",
+    "pt": "Homebrew",
+    "ar": "Homebrew"
+  },
+  "inspect photos at 100%, zoom from 30–400%, or use a phone-sized preview. check the histogram and clipping. optional cues flag high ISO, slow shutter speeds, and near-white or near-black areas; adjust their thresholds in Settings": {
+    "en": "inspect photos at 100%, zoom from 30–400%, or use a phone-sized preview. check the histogram and clipping. optional cues flag high ISO, slow shutter speeds, and near-white or near-black areas; adjust their thresholds in Settings",
+    "es": "inspecciona fotos al 100%, amplía del 30 al 400%, o usa una vista del tamaño de un teléfono. consulta el histograma y el recorte tonal. las señales opcionales indican ISO alto, velocidades lentas, y zonas casi blancas o casi negras; ajusta sus umbrales en Ajustes",
+    "zh-Hans": "以 100% 检查照片，在 30–400% 之间缩放，或使用手机尺寸预览。查看直方图与高光、阴影溢出。可选提示标记高 ISO、慢快门以及接近纯白或纯黑的区域；阈值可在设置中调整",
+    "hi": "फ़ोटो 100% पर जाँचें, 30–400% तक ज़ूम करें, या फ़ोन के आकार का पूर्वावलोकन देखें। हिस्टोग्राम और क्लिपिंग जाँचें। वैकल्पिक संकेत हाई ISO, धीमी शटर स्पीड और लगभग सफ़ेद या काले हिस्से दिखाते हैं; उनकी सीमाएँ Settings में बदलें",
+    "pt": "inspecione fotos a 100%, ajuste o zoom de 30 a 400%, ou use uma prévia do tamanho de um telefone. confira o histograma e o recorte tonal. os indicadores opcionais sinalizam ISO alto, velocidades lentas, e áreas quase brancas ou quase pretas; ajuste os limites em Ajustes",
+    "ar": "افحص الصور بنسبة 100%، أو كبّر من 30 إلى 400%، أو استخدم معاينة بحجم الهاتف. راجع المدرج التكراري ومناطق فقدان التفاصيل. تشير التنبيهات الاختيارية إلى ISO مرتفع وسرعة غالق بطيئة ومناطق شبه بيضاء أو شبه سوداء؛ اضبط حدودها في الإعدادات"
+  },
+  "Louppe processes your media locally, with no account or app analytics. all features are free, and the app is open source under the MIT License. optional tips unlock nothing": {
+    "en": "Louppe processes your media locally, with no account or app analytics. all features are free, and the app is open source under the MIT License. optional tips unlock nothing",
+    "es": "Louppe procesa tus archivos localmente, sin cuentas ni analítica de la app. todas las funciones son gratuitas y la app es de código abierto bajo la licencia MIT. las propinas opcionales no desbloquean nada",
+    "zh-Hans": "Louppe 在本机处理媒体，无需账号，也不收集应用使用分析。所有功能免费，应用以 MIT 许可证开源。自愿打赏不会解锁任何功能",
+    "hi": "Louppe मीडिया को स्थानीय रूप से प्रोसेस करता है, बिना खाते या ऐप एनालिटिक्स के। सभी सुविधाएँ मुफ़्त हैं और ऐप MIT लाइसेंस के तहत ओपन सोर्स है। वैकल्पिक टिप देने से कोई सुविधा अनलॉक नहीं होती",
+    "pt": "o Louppe processa sua mídia localmente, sem conta nem análise de uso do app. todos os recursos são gratuitos e o app é de código aberto sob a licença MIT. gorjetas opcionais não desbloqueiam nada",
+    "ar": "يعالج Louppe وسائطك محليًا دون حساب أو تحليلات استخدام للتطبيق. كل الميزات مجانية والتطبيق مفتوح المصدر بترخيص MIT. الإكراميات الاختيارية لا تفتح أي ميزات"
+  },
+  "updated 15 October 2026 · Alex Markin ·": {
+    "en": "updated 15 October 2026 · Alex Markin ·",
+    "es": "actualizado el 15 de octubre de 2026 · Alex Markin ·",
+    "zh-Hans": "更新于 2026 年 10 月 15 日 · Alex Markin ·",
+    "hi": "अपडेट: 15 अक्टूबर 2026 · Alex Markin ·",
+    "pt": "atualizado em 15 de outubro de 2026 · Alex Markin ·",
+    "ar": "آخر تحديث 15 أكتوبر 2026 · Alex Markin ·"
+  },
+  "optional tips": {
+    "en": "optional tips",
+    "es": "propinas opcionales",
+    "zh-Hans": "自愿打赏",
+    "hi": "वैकल्पिक टिप",
+    "pt": "gorjetas opcionais",
+    "ar": "إكراميات اختيارية"
+  },
+  "if you choose an in-app tip in a Mac App Store build, Apple processes the purchase through StoreKit. Louppe verifies the transaction locally; tips unlock no features. Apple handles payment information under": {
+    "en": "if you choose an in-app tip in a Mac App Store build, Apple processes the purchase through StoreKit. Louppe verifies the transaction locally; tips unlock no features. Apple handles payment information under",
+    "es": "si eliges una propina dentro de una versión del Mac App Store, Apple procesa la compra mediante StoreKit. Louppe verifica la transacción localmente; las propinas no desbloquean funciones. Apple trata los datos de pago según",
+    "zh-Hans": "如果你在 Mac App Store 版本中选择应用内打赏，Apple 会通过 StoreKit 处理购买。Louppe 在本机验证交易；打赏不会解锁任何功能。Apple 根据以下政策处理支付信息：",
+    "hi": "अगर आप Mac App Store संस्करण में ऐप के भीतर टिप देना चुनते हैं, तो Apple StoreKit के ज़रिए खरीदारी प्रोसेस करता है। Louppe लेनदेन स्थानीय रूप से सत्यापित करता है; टिप से कोई सुविधा अनलॉक नहीं होती। भुगतान जानकारी पर लागू होती है",
+    "pt": "se você optar por uma gorjeta dentro de uma versão da Mac App Store, a Apple processará a compra pelo StoreKit. o Louppe verifica a transação localmente; gorjetas não desbloqueiam recursos. a Apple trata os dados de pagamento conforme",
+    "ar": "إذا اخترت إكرامية داخل نسخة Mac App Store، تعالج Apple الشراء عبر StoreKit. يتحقق Louppe من المعاملة محليًا؛ ولا تفتح الإكراميات أي ميزات. تعالج Apple معلومات الدفع وفق"
+  },
+  "tips from this website or the direct-download app open Revolut. Alex receives the payment and any sender details or message provided by Revolut. its processing is covered by": {
+    "en": "tips from this website or the direct-download app open Revolut. Alex receives the payment and any sender details or message provided by Revolut. its processing is covered by",
+    "es": "las propinas desde este sitio o la app de descarga directa abren Revolut. Alex recibe el pago y los datos del remitente o mensajes que facilite Revolut. su tratamiento se describe en",
+    "zh-Hans": "通过本网站或直接下载版打赏时会打开 Revolut。Alex 会收到款项，以及 Revolut 提供的付款人信息或留言。其数据处理方式见",
+    "hi": "इस वेबसाइट या सीधे डाउनलोड वाले ऐप से टिप देने पर Revolut खुलता है। Alex को भुगतान और Revolut की ओर से दिए गए भेजने वाले के विवरण या संदेश मिलते हैं। डेटा प्रोसेसिंग का विवरण है",
+    "pt": "gorjetas pelo site ou pelo app de download direto abrem o Revolut. Alex recebe o pagamento e os dados do remetente ou mensagens fornecidos pelo Revolut. o tratamento está descrito em",
+    "ar": "تفتح إكراميات هذا الموقع أو التطبيق المنزّل مباشرة خدمة Revolut. يتلقى Alex الدفعة وأي بيانات عن المرسل أو رسالة تقدمها Revolut. توضح معالجة البيانات"
+  },
+  "Revolut’s privacy policy": {
+    "en": "Revolut’s privacy policy",
+    "es": "la política de privacidad de Revolut",
+    "zh-Hans": "Revolut 隐私政策",
+    "hi": "Revolut की गोपनीयता नीति",
+    "pt": "a política de privacidade do Revolut",
+    "ar": "سياسة خصوصية Revolut"
+  },
+  "Google Analytics loads only after “allow analytics” on the HTTPS production site. it measures page views, referring pages, browser and device information, approximate location, and download-link clicks, including the route (App Store, GitHub, or Homebrew). clicks record intent, not installation or app activity. Google signals and advertising personalization are disabled": {
+    "en": "Google Analytics loads only after “allow analytics” on the HTTPS production site. it measures page views, referring pages, browser and device information, approximate location, and download-link clicks, including the route (App Store, GitHub, or Homebrew). clicks record intent, not installation or app activity. Google signals and advertising personalization are disabled",
+    "es": "Google Analytics solo se carga tras elegir «permitir analítica» en el sitio de producción HTTPS. mide páginas vistas, páginas de origen, navegador y dispositivo, ubicación aproximada, y clics de descarga, incluida la opción elegida (App Store, GitHub, o Homebrew). los clics reflejan intención, no instalaciones ni actividad de la app. Google signals y la personalización publicitaria están desactivados",
+    "zh-Hans": "仅在 HTTPS 正式网站选择“允许分析”后加载 Google Analytics。它统计页面浏览、来源页面、浏览器及设备信息、大致位置和下载链接点击，包括所选方式（App Store、GitHub 或 Homebrew）。点击代表下载意向，并非安装或应用活动。Google signals 和广告个性化已禁用",
+    "hi": "HTTPS लाइव साइट पर “एनालिटिक्स की अनुमति दें” चुनने के बाद ही Google Analytics लोड होता है। यह पेज व्यू, रेफ़रिंग पेज, ब्राउज़र और डिवाइस जानकारी, अनुमानित स्थान और डाउनलोड लिंक क्लिक मापता है, जिसमें चुना गया तरीका (App Store, GitHub या Homebrew) भी शामिल है। क्लिक इरादा दर्शाते हैं, इंस्टॉलेशन या ऐप गतिविधि नहीं। Google signals और विज्ञापन वैयक्तिकरण बंद हैं",
+    "pt": "o Google Analytics só carrega após “permitir análise” no site de produção HTTPS. mede visualizações, páginas de origem, navegador e dispositivo, localização aproximada, e cliques de download, incluindo a opção escolhida (App Store, GitHub, ou Homebrew). cliques indicam intenção, não instalação ou atividade do app. Google signals e personalização de anúncios estão desativados",
+    "ar": "لا تُحمّل Google Analytics إلا بعد اختيار «السماح بالتحليلات» على الموقع الفعلي عبر HTTPS. تقيس مشاهدات الصفحات وصفحات الإحالة وبيانات المتصفح والجهاز والموقع التقريبي ونقرات التنزيل، بما فيها الطريقة المختارة (App Store أو GitHub أو Homebrew). تعبّر النقرات عن نية التنزيل لا التثبيت أو نشاط التطبيق. ميزتا Google signals وتخصيص الإعلانات معطّلتان"
+  },
+  "or:": {
+    "en": "or:",
+    "es": "o:",
+    "zh-Hans": "或：",
+    "hi": "या:",
+    "pt": "ou:",
+    "ar": "أو:"
+  },
+  "github": {
+    "en": "github",
+    "es": "github",
+    "zh-Hans": "github",
+    "hi": "github",
+    "pt": "github",
+    "ar": "github"
+  },
+  "homebrew": {
+    "en": "homebrew",
+    "es": "homebrew",
+    "zh-Hans": "homebrew",
+    "hi": "homebrew",
+    "pt": "homebrew",
+    "ar": "homebrew"
+  },
+  "inspect at 100%, use the floating control for Fit and 30–400% zoom, or try a phone-sized preview. check the histogram and clipping": {
+    "en": "inspect at 100%, use the floating control for Fit and 30–400% zoom, or try a phone-sized preview. check the histogram and clipping",
+    "es": "inspecciona al 100%, usa el control flotante para ajustar la foto y ampliar del 30 al 400%, o prueba una vista del tamaño de un teléfono. consulta el histograma y el recorte tonal",
+    "zh-Hans": "以 100% 检查照片，用浮动控件适应窗口或在 30–400% 之间缩放，也可使用手机尺寸预览。查看直方图与高光、阴影溢出",
+    "hi": "100% पर जाँचें, फ़ोटो को विंडो में फ़िट करने और 30–400% ज़ूम के लिए फ़्लोटिंग कंट्रोल इस्तेमाल करें, या फ़ोन के आकार का पूर्वावलोकन देखें। हिस्टोग्राम और क्लिपिंग जाँचें",
+    "pt": "inspecione a 100%, use o controle flutuante para ajustar a foto e ampliar de 30 a 400%, ou experimente uma prévia do tamanho de um telefone. confira o histograma e o recorte tonal",
+    "ar": "افحص بنسبة 100%، أو استخدم التحكم العائم لملاءمة الصورة والتكبير من 30 إلى 400%، أو جرّب معاينة بحجم الهاتف. راجع المدرج التكراري ومناطق فقدان التفاصيل"
+  },
+  "filter by optional quality cues for high ISO, slow shutter speeds, and near-white or near-black areas. adjust their rules in Settings; pause background checks in Filter": {
+    "en": "filter by optional quality cues for high ISO, slow shutter speeds, and near-white or near-black areas. adjust their rules in Settings; pause background checks in Filter",
+    "es": "filtra por señales de calidad opcionales: ISO alto, velocidades de obturación lentas, y zonas casi blancas o casi negras. ajusta sus reglas en Ajustes; pausa las comprobaciones en segundo plano desde Filtrar",
+    "zh-Hans": "通过可选画质提示筛选高 ISO、慢快门以及接近纯白或纯黑的区域。在设置中调整规则；在筛选菜单中暂停后台检查",
+    "hi": "वैकल्पिक गुणवत्ता संकेतों से हाई ISO, धीमी शटर स्पीड और लगभग सफ़ेद या काले हिस्से फ़िल्टर करें। Settings में नियम बदलें; फ़िल्टर से बैकग्राउंड जाँच रोकें",
+    "pt": "filtre por indicadores de qualidade opcionais: ISO alto, velocidades lentas, e áreas quase brancas ou quase pretas. ajuste as regras em Ajustes; pause as verificações em segundo plano em Filtrar",
+    "ar": "رشّح حسب تنبيهات الجودة الاختيارية لـ ISO مرتفع وسرعة غالق بطيئة ومناطق شبه بيضاء أو شبه سوداء. اضبط قواعدها في الإعدادات؛ وأوقف الفحوص في الخلفية مؤقتًا من قائمة التصفية"
+  },
+  "find exact duplicates and likely similar photos locally. Filter → Capture bursts groups photos by capture time; set the interval in Settings. analysis never changes ratings or files automatically": {
+    "en": "find exact duplicates and likely similar photos locally. Filter → Capture bursts groups photos by capture time; set the interval in Settings. analysis never changes ratings or files automatically",
+    "es": "encuentra duplicados exactos y fotos posiblemente similares de forma local. Filtrar → Ráfagas agrupa fotos por hora de captura; configura el intervalo en Ajustes. el análisis nunca cambia puntuaciones ni archivos automáticamente",
+    "zh-Hans": "在本机查找完全相同和可能相似的照片。筛选 → 连拍组按拍摄时间分组；时间间隔可在设置中调整。分析不会自动更改评分或文件",
+    "hi": "हूबहू एक जैसी और संभवतः मिलती-जुलती फ़ोटो स्थानीय रूप से खोजें। फ़िल्टर → फ़ोटो बर्स्ट फ़ोटो को कैप्चर समय के आधार पर समूहित करता है; Settings में अंतराल तय करें। विश्लेषण अपने आप रेटिंग या फ़ाइलें नहीं बदलता",
+    "pt": "encontre duplicatas exatas e fotos possivelmente semelhantes localmente. Filtrar → Sequências de fotos agrupa fotos pelo horário da captura; defina o intervalo em Ajustes. a análise nunca altera avaliações ou arquivos automaticamente",
+    "ar": "اعثر على الملفات المتطابقة والصور المحتمل تشابهها محليًا. يجمع تصفية ← تتابعات الصور الصور حسب وقت الالتقاط؛ اضبط الفاصل الزمني في الإعدادات. لا يغيّر التحليل التقييمات أو الملفات تلقائيًا"
+  },
+  "recover saved decisions after files change. verified identical copies and returning originals recover automatically; File → Check Saved Decisions lets you review other recovery options": {
+    "en": "recover saved decisions after files change. verified identical copies and returning originals recover automatically; File → Check Saved Decisions lets you review other recovery options",
+    "es": "recupera decisiones guardadas tras cambios en los archivos. las copias idénticas verificadas y los originales que vuelven recuperan sus decisiones automáticamente; Archivo → Comprobar decisiones guardadas permite revisar otras opciones de recuperación",
+    "zh-Hans": "文件变更后仍可恢复已保存的筛选决定。经验证的相同副本和重新出现的原文件会自动恢复决定；文件 → 检查已保存的决定可查看其他恢复选项",
+    "hi": "फ़ाइलें बदलने के बाद सहेजे गए फ़ैसले वापस पाएँ। सत्यापित समान कॉपियाँ और वापस आए मूल अपने फ़ैसले अपने आप वापस पाते हैं; फ़ाइल → सहेजे गए निर्णय जाँचें से दूसरे रिकवरी विकल्प देखें",
+    "pt": "recupere decisões salvas após alterações nos arquivos. cópias idênticas verificadas e originais que retornam recuperam as decisões automaticamente; Arquivo → Verificar decisões salvas permite revisar outras opções de recuperação",
+    "ar": "استعد القرارات المحفوظة بعد تغيّر الملفات. تستعيد النسخ المتطابقة المتحقق منها والملفات الأصلية العائدة قراراتها تلقائيًا؛ وتتيح قائمة ملف ← مراجعة القرارات المحفوظة مراجعة خيارات الاستعادة الأخرى"
+  },
+  ",": {
+    "en": ",",
+    "es": ",",
+    "zh-Hans": "、",
+    "hi": ",",
+    "pt": ",",
+    "ar": "،"
   }
 }

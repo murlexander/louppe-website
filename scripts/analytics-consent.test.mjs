@@ -47,7 +47,7 @@ function browser(initial = null) {
       get reloads() { return reloads; },
       choose(value) { handlers.get(value + ':click')(); },
       event(type, event = {}) { handlers.get(type)?.(event); },
-      download() { handlers.get('document:click')({ target: { closest() { return { href: 'https://github.com/murlexander/louppe-media-culler/releases/latest/download/Louppe.zip' }; } } }); },
+      download(href = 'https://github.com/murlexander/louppe-media-culler/releases/latest/download/Louppe.zip') { handlers.get('document:click')({ target: { closest() { return { href }; } } }); },
       downloads() { return (context.dataLayer ?? []).filter(args => args[0] === 'event' && args[1] === 'louppe_download').length; },
       fireTimers() { for (const [id, timer] of [...timers]) if (timer.at <= clock.now) { timers.delete(id); timer.fn(); } }
     };
@@ -198,4 +198,46 @@ test('unpersistable withdrawal stays disabled without an automatic reload', () =
   assert.equal(tab.context[disableKey], true);
   assert.equal(tab.downloads(), 0);
   assert.equal(tab.timers.size, 0);
+});
+
+
+test('download routes are classified only for Louppe and require live consent', () => {
+  const store = 'https://apps.apple.com/app/louppe/id6820131477';
+  const github = 'https://github.com/murlexander/louppe-media-culler/releases/latest/download/Louppe.zip';
+  const homebrew = 'https://github.com/murlexander/louppe-media-culler/blob/main/Docs/HOMEBREW.md';
+  const routes = [
+    [store, 'app_store'],
+    ['https://apps.apple.com/us/app/louppe/id6820131477?mt=12', 'app_store'],
+    ['https://apps.apple.com/es/app/id6820131477?l=es', 'app_store'],
+    [github, 'github'],
+    [homebrew, 'homebrew'],
+  ];
+  const b = browser(); const tab = b.page();
+  for (const [url] of routes) tab.download(url);
+  assert.equal(tab.downloads(),0);
+  assert.equal(tab.scripts.length,0);
+  tab.choose('accepted');
+  for (const [url] of routes) tab.download(url);
+  const events = tab.context.dataLayer.filter(args=>args[0]==='event');
+  assert.deepEqual(Array.from(events, args=>args[2].download_method),routes.map(([,method])=>method));
+  for (const args of events) assert.deepEqual(Object.keys(args[2]).sort(),['download_method','send_to']);
+  for (const url of [
+    'https://apps.apple.com/app/id1234567890',
+    'https://apps.apple.com/app/louppe/id68201314770',
+    'https://apps.apple.com/app/louppe/id6820131477/reviews',
+    'https://apps.apple.com.example.org/app/louppe/id6820131477',
+    'http://apps.apple.com/app/louppe/id6820131477',
+    'https://github.com/murlexander/louppe-media-culler',
+    'https://revolut.me/murlexander',
+  ]) tab.download(url);
+  assert.equal(tab.downloads(),routes.length);
+  b.storage.delete(key); // A missed cross-tab event must not permit the new routes.
+  for (const [url] of routes) tab.download(url);
+  assert.equal(tab.downloads(),routes.length);
+  for (const options of [{hostname:'localhost'},{protocol:'http:'}]) {
+    const preview = browser(accepted()).page(options);
+    for (const [url] of routes) preview.download(url);
+    assert.equal(preview.downloads(),0);
+    assert.equal(preview.scripts.length,0);
+  }
 });

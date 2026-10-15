@@ -148,9 +148,20 @@
         window["ga-disable-" + measurementId] ||
         location.hostname !== "louppe.eu" || location.protocol !== "https:") return;
     var url = new URL(link.href, location.href);
-    if (url.hostname !== "github.com" ||
-        url.pathname !== "/murlexander/louppe-media-culler/releases/latest/download/Louppe.zip") return;
-    // A download click is intent, not a confirmed installation.
-    window.gtag("event", "louppe_download", { send_to: measurementId });
+    if (url.protocol !== "https:") return;
+    var method;
+    if (url.hostname === "apps.apple.com" &&
+        /^\/(?:[a-z]{2}\/)?app\/(?:[^/]+\/)?id6820131477\/?$/.test(url.pathname)) {
+      method = "app_store";
+    } else if (url.hostname === "github.com") {
+      if (url.pathname === "/murlexander/louppe-media-culler/releases/latest/download/Louppe.zip") {
+        method = "github";
+      } else if (url.pathname === "/murlexander/louppe-media-culler/blob/main/Docs/HOMEBREW.md") {
+        method = "homebrew";
+      }
+    }
+    if (!method) return;
+    // A route click is intent, not a confirmed download or installation.
+    window.gtag("event", "louppe_download", { send_to: measurementId, download_method: method });
   });
 })();

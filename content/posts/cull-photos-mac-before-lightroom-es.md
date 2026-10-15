@@ -10,7 +10,7 @@ Aquí tienes una primera pasada que puedes probar con tu próxima sesión
 
 Copia la sesión de la tarjeta de memoria a una carpeta de tu Mac y guarda una copia de seguridad antes de vaciar la tarjeta. Puedes abrir una tarjeta directamente en Louppe, pero una decisión de revisión no es una copia de seguridad
 
-[Descarga Louppe](https://github.com/murlexander/louppe-media-culler/releases/latest/download/Louppe.zip), descomprime el archivo, y arrastra Louppe a Aplicaciones. Abre la app y elige la carpeta de fotos, o arrástrala a la ventana de inicio
+[Consigue Louppe en el Mac App Store](https://apps.apple.com/app/louppe/id6820131477). [También está disponible en GitHub y Homebrew](/#download). Abre la app y elige la carpeta de fotos, o arrástrala a la ventana de inicio
 
 Louppe revisa los archivos donde están. No hay que importarlos a una biblioteca aparte
 
@@ -24,7 +24,7 @@ En esta pasada, pregúntate si hay algún motivo para conservar la fotografía. 
 
 ![Galería de Louppe con una fotografía, un explorador de miniaturas, y el panel de información con los ajustes de la cámara y un histograma](/media/2026-09-26/gallery-info.webp)
 
-Louppe guarda las decisiones automáticamente. Espera a que aparezca **Guardado** en el panel inferior antes de terminar; vuelve a abrir la misma carpeta para continuar más tarde
+Louppe guarda las decisiones automáticamente. Espera a que termine de guardar antes de cerrar la carpeta; vuelve a abrir la misma carpeta para continuar más tarde
 
 <!-- try-louppe -->
 

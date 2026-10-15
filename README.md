@@ -30,7 +30,7 @@ Local verification, 8 October 2026: 22 automated tests pass. Chromium 151 confir
 
 ## Analytics
 
-GA4 `G-9P9KKLZ5BN` loads only on HTTPS `louppe.eu` after consent. Previews and copied deployments cannot load it. The `louppe_download` key event in the `Louppe Media Culler` property measures link intent, not installation.
+GA4 `G-9P9KKLZ5BN` loads only on HTTPS `louppe.eu` after consent. Previews and copied deployments cannot load it. The `louppe_download` key event in the `Louppe Media Culler` property measures link intent, not installation. `download_method` distinguishes `app_store`, `github`, and `homebrew`; Homebrew clicks open installation instructions.
 
 Withdrawal, missing consent, and expiry disable collection across tabs. The script rechecks on focus, visibility, and download clicks. Run `npm run test:consent` or `npm test`.
 

@@ -9,7 +9,7 @@
   <meta name="color-scheme" content="dark">
 
   <link rel="icon" href="/favicon.ico?v=20260909">
-  <link rel="stylesheet" href="/styles.css?v=20261007-3">
+  <link rel="stylesheet" href="/styles.css?v=20261015-2">
   <link rel="stylesheet" href="/blog.css?v=20261012-1">
   <meta property="og:title" content="在导入 Lightroom 前，先在 Mac 上筛选照片">
   <meta property="og:description" content="用免费的 Louppe 在 Mac 上离线筛选照片，再把入选照片复制到文件夹，导入 Lightroom Classic、Capture One 或 darktable">
@@ -22,7 +22,7 @@
   <meta name="twitter:image" content="https://louppe.eu/media/2026-09-26/social-preview.jpg">
   <meta name="twitter:image:alt" content="Louppe 在 Mac 上审阅本地媒体文件夹">
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"在导入 Lightroom 前，先在 Mac 上筛选照片","description":"用免费的 Louppe 在 Mac 上离线筛选照片，再把入选照片复制到文件夹，导入 Lightroom Classic、Capture One 或 darktable","url":"https://louppe.eu/zh/blog/cull-photos-mac-before-lightroom/","datePublished":"2026-10-12","author":{"@type":"Person","name":"Alex Markin","url":"https://alex-markin.com/"},"image":"https://louppe.eu/media/2026-09-26/social-preview.jpg","mainEntityOfPage":"https://louppe.eu/zh/blog/cull-photos-mac-before-lightroom/","inLanguage":"zh-Hans"}</script>
-  <script src="/analytics-consent.js?v=20260929-1" defer></script>
+  <script src="/analytics-consent.js?v=20261015-1" defer></script>
   <script src="/prefetch.js?v=20261008-1" defer></script>
   <link rel="canonical" href="https://louppe.eu/zh/blog/cull-photos-mac-before-lightroom/">
   <meta property="og:url" content="https://louppe.eu/zh/blog/cull-photos-mac-before-lightroom/">
@@ -48,15 +48,15 @@
 <p>下次拍摄后，可以用下面的方法做第一轮筛选</p>
 <h2>从一个照片文件夹开始</h2>
 <p>把本次拍摄的照片从存储卡复制到 Mac 上的文件夹中，清空存储卡前先留好备份。你也可以直接在 Louppe 中打开存储卡，但筛选决定不能代替备份</p>
-<p><a href="https://github.com/murlexander/louppe-media-culler/releases/latest/download/Louppe.zip">下载 Louppe</a>，解压后将 Louppe 拖入“应用程序”文件夹。打开应用，选择照片文件夹，或把文件夹拖到启动窗口上</p>
+<p><a href="https://apps.apple.com/app/louppe/id6820131477">从 Mac App Store 获取 Louppe</a>。<a href="/zh/#download">也可通过 GitHub 或 Homebrew 安装</a>。打开应用，选择照片文件夹，或把文件夹拖到启动窗口上</p>
 <p>Louppe 直接查看文件原本所在的位置，不需要将它们导入单独的图库</p>
 <h2>每张照片做一个决定</h2>
 <p>从图库视图开始，用方向键浏览本次拍摄的照片。如果一张照片值得进入后期，按 <strong>F</strong> 标记为“是”；如果不值得，按 <strong>D</strong> 标记为“否”</p>
 <p>这一轮，只需问自己这张照片有没有留下的理由。表情合适吗？主体对焦准确吗？同一瞬间有没有更好的一张？拿不准的照片先不做决定，稍后再看</p>
 <p><strong>“否”只是筛选决定，不会删除照片，也不会将它移到废纸篓</strong></p>
 <p><img src="/media/2026-09-26/gallery-info.webp" alt="Louppe 图库视图中显示一张照片、缩略图浏览器，以及包含相机设置和直方图的信息面板"></p>
-<p>Louppe 会自动保存决定。结束前，等底部面板显示<strong>已保存</strong>；以后重新打开同一个文件夹即可继续</p>
-<aside class="article-cta" aria-label="试用 Louppe"><a class="download-button" href="https://github.com/murlexander/louppe-media-culler/releases/latest/download/Louppe.zip">试用 Louppe</a></aside><h2>比较相似照片，再检查细节</h2>
+<p>Louppe 会自动保存决定。关闭文件夹前，等保存完成；以后重新打开同一个文件夹即可继续</p>
+<aside class="article-cta" aria-label="试用 Louppe"><a class="download-button" href="https://apps.apple.com/app/louppe/id6820131477">试用 Louppe</a></aside><h2>比较相似照片，再检查细节</h2>
 <p>想把相邻照片放在一起看时，按 <strong>G</strong> 切换到网格视图。比较构图和时机，再返回图库视图仔细查看</p>
 <p>按 <strong>S</strong> 以 100% 查看照片。如果已经缩放或平移过画面，第一次按 S 会先回到居中的 100%；再按一次则回到适应窗口。检查对这张照片重要的细节，比如人像中离镜头较近的那只眼睛</p>
 <p>对于 RAW 文件，Louppe 的**快点（Fast）**显示模式在低于 100% 时使用预览，在 100% 及以上时使用 Apple RAW 渲染。RAW 渲染的效果可能与相机 JPEG 或 Lightroom 的渲染不同，因此最终的颜色和曝光调整留给编辑软件</p>
@@ -82,7 +82,7 @@
 <p>你也可以直接管理本地文件夹：筛选并选择文件、复制或移动入选文件、重命名文件，以及在预览新层级结构后整理源文件夹。导出默认使用复制</p>
 <p>Louppe 不编辑照片，也不会自动替你挑选入选照片。它提供图库、网格、键盘决定和文件导出，让你自己做选择</p>
 <p>打开一组照片前，可以先<a href="/zh/#review-demo">观看简短演示</a>。如果这套流程有不适合你的地方，<a href="mailto:a@alex-markin.com">写信告诉我</a></p>
-</div><aside class="article-cta" aria-label="试用 Louppe"><a class="download-button" href="https://github.com/murlexander/louppe-media-culler/releases/latest/download/Louppe.zip">试用 Louppe</a></aside></article></main>
+</div><aside class="article-cta" aria-label="试用 Louppe"><a class="download-button" href="https://apps.apple.com/app/louppe/id6820131477">试用 Louppe</a></aside></article></main>
   <footer class="site-footer reading-width"><a class="footer-brand" href="/zh/">louppe</a><nav aria-label="页脚导航"><a href="/zh/blog/">博客</a><a href="/zh/privacy/">隐私政策</a><button class="text-button" data-analytics-settings type="button">分析选项</button></nav></footer>
   <aside class="analytics-consent" id="analytics-consent" aria-labelledby="analytics-consent-title" hidden>
     <div class="analytics-consent-copy">

@@ -48,7 +48,7 @@ test('static language pages, crawl discovery, links, and withdrawal remain consi
           assert.equal((html.match(/class="download-button"/g) ?? []).length,2);
           assert.match(html,/Apple silicon|Apple 芯片/);
           assert.ok(html.includes('macOS 14'));
-          assert.ok(html.includes('srclang="en" label="English"'));
+          assert.ok(html.includes('srclang="en" label="english"'));
           const ui = JSON.parse(html.match(/<script id="site-translations" type="application\/json">(.*?)<\/script>/s)[1]);
           assert.ok(ui['mark no']);
           assert.ok(ui['Enlarge Grid screenshot']);
@@ -58,10 +58,18 @@ test('static language pages, crawl discovery, links, and withdrawal remain consi
           assert.equal(app.offers.price,'0');
           assert.equal(app.aggregateRating,undefined);
           assert.equal(app.inLanguage,undefined); // Website translation does not promise a localized app.
-          assert.ok(app.downloadUrl.endsWith('/Louppe.zip'));
+          assert.equal(app.downloadUrl,'https://apps.apple.com/app/louppe/id6820131477');
+          const primary = [...html.matchAll(/class="download-button" href="([^"]+)"/g)];
+          assert.ok(primary.every(match=>match[1]===app.downloadUrl));
+          assert.equal((html.match(/class="requirements download-alternatives"/g) ?? []).length,2);
+          assert.equal((html.match(/href="https:\/\/github.com\/murlexander\/louppe-media-culler\/releases\/latest\/download\/Louppe.zip"/g) ?? []).length,2);
+          assert.equal((html.match(/href="https:\/\/github.com\/murlexander\/louppe-media-culler\/blob\/main\/Docs\/HOMEBREW.md"/g) ?? []).length,2);
         }
         if (articleRoutes.includes(route)) {
           const article = schemas.find(schema=>schema['@type']==='BlogPosting');
+          const primary = [...html.matchAll(/class="download-button" href="([^"]+)"/g)];
+          assert.equal(primary.length,2);
+          assert.ok(primary.every(match=>match[1]==='https://apps.apple.com/app/louppe/id6820131477'));
           assert.equal(article.inLanguage,language.code);
           assert.equal(article.url,origin+path);
           assert.equal(article.datePublished,published.find(post=>route===`/blog/${post.slug}/`).date);

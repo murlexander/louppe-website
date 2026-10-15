@@ -10,7 +10,7 @@
 
 把本次拍摄的照片从存储卡复制到 Mac 上的文件夹中，清空存储卡前先留好备份。你也可以直接在 Louppe 中打开存储卡，但筛选决定不能代替备份
 
-[下载 Louppe](https://github.com/murlexander/louppe-media-culler/releases/latest/download/Louppe.zip)，解压后将 Louppe 拖入“应用程序”文件夹。打开应用，选择照片文件夹，或把文件夹拖到启动窗口上
+[从 Mac App Store 获取 Louppe](https://apps.apple.com/app/louppe/id6820131477)。[也可通过 GitHub 或 Homebrew 安装](/#download)。打开应用，选择照片文件夹，或把文件夹拖到启动窗口上
 
 Louppe 直接查看文件原本所在的位置，不需要将它们导入单独的图库
 
@@ -24,7 +24,7 @@ Louppe 直接查看文件原本所在的位置，不需要将它们导入单独�
 
 ![Louppe 图库视图中显示一张照片、缩略图浏览器，以及包含相机设置和直方图的信息面板](/media/2026-09-26/gallery-info.webp)
 
-Louppe 会自动保存决定。结束前，等底部面板显示**已保存**；以后重新打开同一个文件夹即可继续
+Louppe 会自动保存决定。关闭文件夹前，等保存完成；以后重新打开同一个文件夹即可继续
 
 <!-- try-louppe -->
 

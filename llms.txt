@@ -2,10 +2,12 @@
 
 > free, open-source photo, video, and audio culling for macOS. the app is named Louppe
 
-review media and read-only text in Gallery or Grid. mark decisions, stars, and color labels; filter and select files. find duplicates, similar photos, and bursts locally. group RAW+JPEG pairs, inspect at 100%, and play video or audio. organize folders, clean up to macOS Trash, copy or move files, route copies, and write XMP sidecars
+review media and read-only text in Gallery or Grid. mark decisions, stars, and color labels; filter and select files. find duplicates and similar photos locally. filter by quality cues or capture bursts with adjustable rules and intervals. recover saved decisions after files change. group RAW+JPEG pairs, inspect at 100%, and play video or audio. organize folders, clean up to macOS Trash, copy or move files, route copies, and write XMP sidecars
 
 - [website](https://louppe.eu/): features and download
-- [download](https://github.com/murlexander/louppe-media-culler/releases): macOS releases
+- [download on the Mac App Store](https://apps.apple.com/app/louppe/id6820131477): primary download, free for Apple silicon and macOS 14 or later
+- [GitHub download](https://github.com/murlexander/louppe-media-culler/releases/latest/download/Louppe.zip): signed and notarized direct-download alternative
+- [Homebrew](https://github.com/murlexander/louppe-media-culler/blob/main/Docs/HOMEBREW.md): alternative installation instructions
 - [source](https://github.com/murlexander/louppe-media-culler): application code
 - [blog](https://louppe.eu/blog/): photo culling guides and development notes
 - [cull photos on Mac before Lightroom](https://louppe.eu/blog/cull-photos-mac-before-lightroom/): choose keepers locally for Lightroom Classic, Capture One, or darktable

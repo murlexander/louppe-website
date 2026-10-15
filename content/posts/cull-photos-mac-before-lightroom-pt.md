@@ -10,7 +10,7 @@ Aqui está uma primeira revisão que você pode usar no seu próximo ensaio
 
 Copie o ensaio do cartão de memória para uma pasta no Mac e mantenha um backup antes de esvaziar o cartão. Você pode abrir um cartão diretamente no Louppe, mas uma decisão de revisão não é um backup
 
-[Baixe o Louppe](https://github.com/murlexander/louppe-media-culler/releases/latest/download/Louppe.zip), descompacte o arquivo, e arraste o Louppe para Aplicativos. Abra o app e escolha sua pasta de fotos, ou arraste a pasta para a janela inicial
+[Obtenha o Louppe na Mac App Store](https://apps.apple.com/app/louppe/id6820131477). [Também está disponível no GitHub e no Homebrew](/#download). Abra o app e escolha sua pasta de fotos, ou arraste a pasta para a janela inicial
 
 O Louppe revisa os arquivos onde eles estão. Não há uma biblioteca separada para a qual importá-los
 
@@ -24,7 +24,7 @@ Nesta revisão, pergunte se há um motivo para manter a fotografia. A expressão
 
 ![Galeria do Louppe mostrando uma fotografia, um navegador de miniaturas, e o painel de informações com as configurações da câmera e um histograma](/media/2026-09-26/gallery-info.webp)
 
-O Louppe salva as decisões automaticamente. Espere por **Salvo** no painel inferior antes de terminar; reabra a mesma pasta para continuar depois
+O Louppe salva as decisões automaticamente. Espere o salvamento terminar antes de fechar a pasta; reabra a mesma pasta para continuar depois
 
 <!-- try-louppe -->
 

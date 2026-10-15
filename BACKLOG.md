@@ -27,6 +27,15 @@ Website work ships independently. Claims must match the released app.
   verified, both indexing requests were accepted, and a live test fetched the
   valid sitemap. The recorded sitemap report still said “Couldn't fetch.”
 
+## Store release alignment
+
+- [x] Added 1.11 quality-cue filters, capture-burst intervals, floating zoom,
+  and saved-decision recovery in all six languages. Alex explicitly requested
+  publication on 15 October without waiting for Store approval.
+- [ ] Refresh the 1.9 Gallery/Grid, demo, and social preview after Alex changes
+  the existing decision to retain those assets. Capture the floating zoom control
+  and toolbar save status; preserve original media and the historical 1.9 article.
+
 ## Release and publicity follow-up
 
 - [ ] Run the existing publicity plan after asset and release-copy checks.
