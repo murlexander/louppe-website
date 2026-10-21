@@ -4,7 +4,7 @@ The 21 October 2026 experiment adds a six-language ApolloOne comparison and upda
 
 ## Collection
 
-Use GA4 **Louppe Media Culler**, property `555464552`, measurement ID `G-9P9KKLZ5BN`. Analytics loads only after consent on HTTPS `louppe.eu`. Local previews cannot collect. No app usage or confirmed installations are measured.
+Use GA4 **Louppe Media Culler**, property `555464552`, measurement ID `G-9P9KKLZ5BN`. Analytics loads only after consent on HTTPS `louppe.eu`. Local previews cannot collect. No app usage or confirmed installations are measured. Enhanced measurement keeps page loads only; browser-history views, automatic outbound/file clicks, search, form, scroll, and video events are disabled. Explicit site events supply the article and download measurements.
 
 | Measurement | Fields |
 | --- | --- |

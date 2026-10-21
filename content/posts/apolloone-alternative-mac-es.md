@@ -1,5 +1,7 @@
 Louppe es un visor y organizador de fotos gratuito y de código abierto para Mac. Puede ser una alternativa a ApolloOne si quieres explorar carpetas de fotos y elegir tú cuáles conservar. Abre una carpeta con JPEG, archivos RAW, o ambos, revisa con el teclado, y elige qué conservar. Funciona sin conexión y sin cuenta en macOS 14 o posterior
 
+Estos pasos corresponden a Louppe 1.12. Si tu versión del App Store es anterior, [la versión de GitHub](https://github.com/murlexander/louppe-media-culler/releases/tag/v1.12.0) incluye estos cambios
+
 Creo Louppe para esa primera selección después de una sesión: recorrer las fotografías, decidir cuáles encajan, y conservar los archivos que quieres. Eso puede ser todo el trabajo, aunque nunca edites una fotografía
 
 Si eso es lo que buscas, estas son las diferencias entre Louppe y ApolloOne

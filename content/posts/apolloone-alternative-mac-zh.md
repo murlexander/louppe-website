@@ -1,5 +1,7 @@
 Louppe 是一款免费、开源的 Mac 照片查看与筛选工具。如果你想浏览照片文件夹，自己决定保留哪些照片，它可以作为 ApolloOne 的替代选择。打开包含 JPEG、RAW 或两种格式的文件夹，用键盘逐张查看，选出想保留的照片。它无需账户，可离线使用，支持 macOS 14 或更高版本
 
+这些步骤使用 Louppe 1.12。如果你的 App Store 版本较旧，[GitHub 发布版本](https://github.com/murlexander/louppe-media-culler/releases/tag/v1.12.0)包含这些更改
+
 我开发 Louppe，是为了拍摄后的第一轮筛选：看看拍下了什么，决定哪些值得留下，保留想要的文件。即使你从不编辑照片，筛选本身也可以就是全部工作
 
 如果这正是你需要的，下面介绍 Louppe 与 ApolloOne 的区别
