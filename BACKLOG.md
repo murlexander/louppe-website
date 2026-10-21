@@ -3,7 +3,7 @@
 [Project](../README.md) · [App backlog](../app/BACKLOG.md) ·
 [Website guide](README.md)
 
-Organized 15 October 2026 against local source and recorded publication evidence.
+Reviewed 21 October 2026 against local source and recorded publication evidence.
 Website work ships independently. Claims must match the released app.
 
 ## Browser acceptance
@@ -27,11 +27,8 @@ Website work ships independently. Claims must match the released app.
   verified, both indexing requests were accepted, and a live test fetched the
   valid sitemap. The recorded sitemap report still said “Couldn't fetch.”
 
-## Store release alignment
+## Deferred media refresh
 
-- [x] Added 1.11 quality-cue filters, capture-burst intervals, floating zoom,
-  and saved-decision recovery in all six languages. Alex explicitly requested
-  publication on 15 October without waiting for Store approval.
 - [ ] Refresh the 1.9 Gallery/Grid, demo, and social preview after Alex changes
   the existing decision to retain those assets. Capture the floating zoom control
   and toolbar save status; preserve original media and the historical 1.9 article.
@@ -39,8 +36,9 @@ Website work ships independently. Claims must match the released app.
 ## Release and publicity follow-up
 
 - [ ] Run the existing publicity plan after asset and release-copy checks.
-- [ ] At the next app release, review feature claims, screenshots, requirements,
-  download links, and capture notes. Retain the 26 September request: no visible
+- [ ] **1.13 release alignment.** Review feature claims, screenshots, requirements,
+  download links, and capture notes against the released 1.13 app before publishing
+  those changes. Retain the 26 September request: no visible
   version notices or installation instructions on the homepage.
 
 Maintain the download, Apple-silicon/macOS requirements, privacy, MIT license,
