@@ -12,6 +12,8 @@ Comece com uma pasta copiada do cartão da câmera, com um backup mantido separa
 
 ## Revise cada tomada uma vez
 
+Os atalhos deste guia são os padrões. Em Ajustes → Atalhos de teclado, você pode personalizar as teclas de revisão e escolher posições físicas para layouts como Dvorak
+
 1. Abra a pasta no Louppe
 2. Abra **Filtrar** e ative **Tratar RAW + JPEG correspondentes como uma única foto (Treat matching RAW + JPEG as one photo)** quando houver pares correspondentes
 3. Revise na Galeria, ou pressione **G** para a Grade
@@ -39,7 +41,7 @@ Se quiser manter decisões independentes, continue no modo separado. Aplicar uma
 
 Um arquivo RAW e o JPEG da câmera podem parecer diferentes. O JPEG contém a renderização da câmera; um decodificador RAW faz sua própria renderização
 
-No modo de exibição Rápido (Fast) do Louppe, as fotos RAW usam prévias abaixo de 100% e a renderização RAW da Apple em 100% ou mais. Pressione **S** para examinar em 100% centralizado; pressione novamente para Ajustar. As etiquetas Antevisão e RAW identificam a origem da exibição
+No modo de exibição Rápido (Fast) do Louppe, as fotos RAW usam prévias abaixo de 100% e a renderização RAW da Apple em 100% ou mais. Pressione **S** para examinar em 100% centralizado; pressione novamente para Ajustar. as preferências de exibição RAW ficam em Ajustes → Visualização RAW. em Ajustar e prévia do tamanho de um celular, um indicador mostra quando a prévia da foto ainda está carregando
 
 Para decidir sobre a cor ou a aparência do JPEG da câmera, mude para o modo separado e abra o próprio JPEG. Deixe a edição final do RAW para seu editor, cuja renderização pode diferir da do Louppe
 

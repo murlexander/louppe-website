@@ -10,11 +10,13 @@ Aquí tienes una primera pasada que puedes probar con tu próxima sesión
 
 Copia la sesión de la tarjeta de memoria a una carpeta de tu Mac y guarda una copia de seguridad antes de vaciar la tarjeta. Puedes abrir una tarjeta directamente en Louppe, pero una decisión de revisión no es una copia de seguridad
 
-[Consigue Louppe en el Mac App Store](https://apps.apple.com/app/louppe/id6820131477). [También está disponible en GitHub y Homebrew](/#download). Abre la app y elige la carpeta de fotos, o arrástrala a la ventana de inicio
+[Consigue Louppe en el Mac App Store](https://apps.apple.com/app/louppe/id6820131477). [También está disponible en GitHub y Homebrew](/#download). Abre una carpeta en Louppe o arrástrala a su icono del Dock o a la ventana de revisión. Puedes cambiar de carpeta mientras revisas; Louppe guarda tus decisiones y conserva el tamaño de la ventana
 
 Louppe revisa los archivos donde están. No hay que importarlos a una biblioteca aparte
 
 ## Toma una decisión por foto
+
+Los atajos de esta guía son los predeterminados. En Ajustes → Atajos de teclado, puedes personalizar las teclas de revisión y elegir posiciones físicas para distribuciones como Dvorak
 
 Empieza en Galería y recorre la sesión con las teclas de flecha. Pulsa **F** para marcar Sí cuando una fotografía deba formar parte de tu edición, o **D** para marcar No cuando no deba incluirse
 

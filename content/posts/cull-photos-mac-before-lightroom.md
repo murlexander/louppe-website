@@ -10,11 +10,13 @@ Here's a first pass you can use on your next shoot
 
 Copy the shoot from your memory card to a folder on your Mac, and keep a backup before clearing the card. You can open a card directly in Louppe, but a review decision isn't a backup
 
-[Get Louppe on the Mac App Store](https://apps.apple.com/app/louppe/id6820131477). [GitHub and Homebrew are also available](/#download). Open the app and choose your photo folder, or drop the folder onto its start window
+[Get Louppe on the Mac App Store](https://apps.apple.com/app/louppe/id6820131477). [GitHub and Homebrew are also available](/#download). Open a folder in Louppe, or drop one onto its Dock icon or review window. You can switch folders while reviewing; Louppe saves your decisions and keeps the window size
 
 Louppe reviews the files where they are. There's no separate library to import them into
 
 ## Make one decision per frame
+
+The shortcuts in this guide are the defaults. In Settings → Keyboard shortcuts, you can customise review keys and choose physical positions for layouts such as Dvorak
 
 Start in Gallery and move through the shoot with the arrow keys. Press **F** for Yes when a photograph belongs in your edit, or **D** for No when it doesn't
 

@@ -10,11 +10,13 @@ Aqui está uma primeira revisão que você pode usar no seu próximo ensaio
 
 Copie o ensaio do cartão de memória para uma pasta no Mac e mantenha um backup antes de esvaziar o cartão. Você pode abrir um cartão diretamente no Louppe, mas uma decisão de revisão não é um backup
 
-[Obtenha o Louppe na Mac App Store](https://apps.apple.com/app/louppe/id6820131477). [Também está disponível no GitHub e no Homebrew](/#download). Abra o app e escolha sua pasta de fotos, ou arraste a pasta para a janela inicial
+[Obtenha o Louppe na Mac App Store](https://apps.apple.com/app/louppe/id6820131477). [Também está disponível no GitHub e no Homebrew](/#download). Abra uma pasta no Louppe ou arraste-a para o ícone no Dock ou para a janela de revisão. Você pode trocar de pasta durante a revisão; o Louppe salva suas decisões e mantém o tamanho da janela
 
 O Louppe revisa os arquivos onde eles estão. Não há uma biblioteca separada para a qual importá-los
 
 ## Tome uma decisão por foto
+
+Os atalhos deste guia são os padrões. Em Ajustes → Atalhos de teclado, você pode personalizar as teclas de revisão e escolher posições físicas para layouts como Dvorak
 
 Comece na Galeria e percorra o ensaio com as teclas de seta. Pressione **F** para Sim quando uma fotografia deve fazer parte da sua edição, ou **D** para Não quando ela não deve entrar
 

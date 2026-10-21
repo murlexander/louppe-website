@@ -12,6 +12,8 @@ Empieza con una carpeta copiada de la tarjeta de la cámara y guarda una copia d
 
 ## Revisa cada toma una sola vez
 
+Los atajos de esta guía son los predeterminados. En Ajustes → Atajos de teclado, puedes personalizar las teclas de revisión y elegir posiciones físicas para distribuciones como Dvorak
+
 1. Abre la carpeta en Louppe
 2. Abre **Filtrar** y activa **Trate de combinar RAW + JPEG como una foto (Treat matching RAW + JPEG as one photo)** cuando haya pares correspondientes
 3. Revisa en Galería o pulsa **G** para ir a Cuadrícula
@@ -39,7 +41,7 @@ Si quieres mantener decisiones independientes, sigue en el modo separado. Aplica
 
 Un archivo RAW y el JPEG de su cámara pueden verse distintos. El JPEG contiene el revelado de la cámara; un decodificador RAW crea su propio revelado
 
-En la visualización Rápido de Louppe, las fotos RAW usan vistas previas por debajo del 100% y el revelado RAW de Apple al 100% o más. Pulsa **S** para examinar al 100% centrado; púlsala de nuevo para volver a Fit, el ajuste a la ventana. Las etiquetas Vista previa y RAW identifican el origen de la visualización
+En la visualización Rápido de Louppe, las fotos RAW usan vistas previas por debajo del 100% y el revelado RAW de Apple al 100% o más. Pulsa **S** para examinar al 100% centrado; púlsala de nuevo para volver a Fit, el ajuste a la ventana. las preferencias de visualización RAW están en Ajustes → Visualización RAW. en Ajustar y vista de tamaño móvil, un indicador muestra si la vista previa de la foto sigue cargando
 
 Para decidir sobre el color o el aspecto del JPEG de la cámara, cambia al modo separado y abre el propio JPEG. Deja la edición final del RAW para tu editor, cuyo revelado puede diferir del de Louppe
 

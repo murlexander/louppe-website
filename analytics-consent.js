@@ -15,6 +15,53 @@
   window["ga-disable-" + measurementId] = true;
   if (!banner || !settings || choices.length !== 2) return;
 
+  // Only public route shapes become report labels; never use query strings,
+  // fragments, link text, or arbitrary external URLs as custom dimensions.
+  function publicPage(path) {
+    if (path.charAt(path.length - 1) !== "/") path += "/";
+    if (path.length > 100) return null;
+    var match = /^(?:\/(es|pt|zh|hi|ar))?\/(?:((?:blog|privacy))(?:\/([a-z0-9]+(?:-[a-z0-9]+)*))?)?\/?$/.exec(path);
+    if (!match || (match[2] === "privacy" && match[3])) return null;
+    var prefix = match[1] ? "/" + match[1] : "";
+    return {
+      path: prefix + "/" + (match[2] ? match[2] + "/" : "") + (match[3] ? match[3] + "/" : ""),
+      language: { es: "es", pt: "pt-BR", zh: "zh-Hans", hi: "hi", ar: "ar" }[match[1]] || "en",
+      group: match[2] === "blog" ? (match[3] ? "blog_article" : "blog_index") : (match[2] || "home")
+    };
+  }
+
+  function currentPage() {
+    var canonical = document.querySelector('link[rel="canonical"]');
+    try {
+      var url = new URL(canonical ? canonical.getAttribute("href") : location.href, location.href);
+      if (url.origin === "https://louppe.eu") {
+        var page = publicPage(url.pathname);
+        if (page) return page;
+      }
+    } catch (_) { /* Invalid canonical metadata must not expose a raw URL. */ }
+    return { path: "/404.html", language: "en", group: "other" };
+  }
+
+  var page = currentPage();
+
+  function referralOrigin() {
+    try {
+      var url = new URL(document.referrer);
+      if (url.protocol === "https:" || url.protocol === "http:") return url.origin + "/";
+    } catch (_) { /* Direct visits have no referrer. */ }
+    return "";
+  }
+
+  function placement(link) {
+    if (link.closest(".hero")) return "home_hero";
+    if (link.closest(".get-section, .site-footer")) return "home_footer";
+    if (link.closest(".article-body")) return "article_body";
+    if (link.closest(".article-cta")) return "article_end";
+    if (page.group === "blog_index" && link.closest("main")) return "blog_index";
+    if (link.closest("header, nav")) return "navigation";
+    return "other";
+  }
+
   function savedChoice() {
     choiceExpiresAt = null;
     try {
@@ -74,6 +121,12 @@
     });
     window.gtag("js", new Date());
     window.gtag("config", measurementId, {
+      // The single config sends the ordinary page_view. Reacceptance only
+      // updates consent, so it cannot count another view of this document.
+      page_location: "https://louppe.eu" + page.path,
+      page_referrer: referralOrigin(),
+      content_group: page.group,
+      page_language: page.language,
       allow_google_signals: false,
       allow_ad_personalization_signals: false,
       cookie_expires: 30 * 24 * 60 * 60,
@@ -143,11 +196,13 @@
   if (reconcileChoice() === null) banner.hidden = false;
 
   document.addEventListener("click", function (event) {
+    if (event.defaultPrevented || (event.button !== undefined && event.button !== 0)) return;
     var link = event.target.closest && event.target.closest("a[href]");
     if (!link || reconcileChoice() !== "accepted" || !analyticsLoaded ||
         window["ga-disable-" + measurementId] ||
         location.hostname !== "louppe.eu" || location.protocol !== "https:") return;
-    var url = new URL(link.href, location.href);
+    var url;
+    try { url = new URL(link.href, location.href); } catch (_) { return; }
     if (url.protocol !== "https:") return;
     var method;
     if (url.hostname === "apps.apple.com" &&
@@ -160,8 +215,22 @@
         method = "homebrew";
       }
     }
-    if (!method) return;
-    // A route click is intent, not a confirmed download or installation.
-    window.gtag("event", "louppe_download", { send_to: measurementId, download_method: method });
+    if (method) {
+      // A route click is intent, not a confirmed download or installation.
+      window.gtag("event", "louppe_download", {
+        send_to: measurementId,
+        download_method: method,
+        download_placement: placement(link)
+      });
+      return;
+    }
+    var destination = url.origin === "https://louppe.eu" && publicPage(url.pathname);
+    if (destination && destination.group === "blog_article" && destination.path !== page.path) {
+      window.gtag("event", "louppe_article_open", {
+        send_to: measurementId,
+        article_path: destination.path,
+        link_placement: placement(link)
+      });
+    }
   });
 })();

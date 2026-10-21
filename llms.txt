@@ -1,8 +1,24 @@
-# louppe media culler
+# Louppe
 
-> free, open-source photo, video, and audio culling for macOS. the app is named Louppe
+> Louppe is a free, open-source photo viewer and sorter for Mac, also called a manual photo culling app. the app is named Louppe; the source project is Louppe Media Culler
 
-review media and read-only text in Gallery or Grid. mark decisions, stars, and color labels; filter and select files. find duplicates and similar photos locally. filter by quality cues or capture bursts with adjustable rules and intervals. recover saved decisions after files change. group RAW+JPEG pairs, inspect at 100%, and play video or audio. organize folders, clean up to macOS Trash, copy or move files, route copies, and write XMP sidecars
+Louppe works as an image viewer and photo browser for existing local folders, external drives, and memory cards. browse JPEG (.jpg and .jpeg), camera RAW, and other supported media without importing them into a photo library. requires Apple silicon and macOS 14 or later; Intel Macs, Windows, and iPad are unsupported
+
+Common workflows:
+
+- view photos on Mac without a catalog import, account, or subscription
+- sort JPEG photos: choose keepers with Yes/No decisions; stars and color labels are optional
+- remove unwanted photos: No marks a review decision; Clean Up separately moves files to macOS Trash
+- cull RAW+JPEG pairs before Lightroom Classic, Capture One, or darktable; editing is optional
+- use an ApolloOne alternative for local photo browsing and manual culling; Louppe does not replace ApolloOne editing, maps, or synchronised two-image comparison
+
+review camera JPEGs, RAW photos, video, audio, and read-only text in Gallery or Grid. mark yes or no; stars and color labels are optional and independent. marking no never trashes files. Clean Up is a separate action that sends unwanted files to macOS Trash
+
+drop folders onto the Dock icon or review window, including during review; decisions save before switching and the window keeps its size. customize review keys and supported Command aliases, with physical key positions for Dvorak and other layouts. inspect recorded Fuji film simulations in Info and filter by simulation, including ACROS and monochrome variants
+
+find duplicates and similar photos locally. filter by quality cues or capture bursts with adjustable rules and intervals. recover saved decisions after files change. group RAW+JPEG pairs, inspect at 100%, and play video or audio. JPEG XL (.jxl) is supported alongside common camera and image formats. RAW display preferences stay in Settings; a loading indicator in Fit and Phone size shows when a photo preview is still loading
+
+rename files with reordered filename parts, Mac date formats, and an exact preview. organize folders, clean up to macOS Trash, copy or move files, route copies, and write XMP sidecars
 
 - [website](https://louppe.eu/): features and download
 - [download on the Mac App Store](https://apps.apple.com/app/louppe/id6820131477): primary download, free for Apple silicon and macOS 14 or later
@@ -10,6 +26,7 @@ review media and read-only text in Gallery or Grid. mark decisions, stars, and c
 - [Homebrew](https://github.com/murlexander/louppe-media-culler/blob/main/Docs/HOMEBREW.md): alternative installation instructions
 - [source](https://github.com/murlexander/louppe-media-culler): application code
 - [blog](https://louppe.eu/blog/): photo culling guides and development notes
+- [ApolloOne alternative for Mac](https://louppe.eu/blog/apolloone-alternative-mac/): compare photo viewing and manual culling, with requirements and workflow limits
 - [cull photos on Mac before Lightroom](https://louppe.eu/blog/cull-photos-mac-before-lightroom/): choose keepers locally for Lightroom Classic, Capture One, or darktable
 - [cull RAW + JPEG pairs on Mac](https://louppe.eu/blog/cull-raw-jpeg-pairs-mac/): review matching files together and copy the versions you want
 - [privacy](https://louppe.eu/privacy/): app data and optional website analytics

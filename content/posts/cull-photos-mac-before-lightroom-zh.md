@@ -10,11 +10,13 @@
 
 把本次拍摄的照片从存储卡复制到 Mac 上的文件夹中，清空存储卡前先留好备份。你也可以直接在 Louppe 中打开存储卡，但筛选决定不能代替备份
 
-[从 Mac App Store 获取 Louppe](https://apps.apple.com/app/louppe/id6820131477)。[也可通过 GitHub 或 Homebrew 安装](/#download)。打开应用，选择照片文件夹，或把文件夹拖到启动窗口上
+[从 Mac App Store 获取 Louppe](https://apps.apple.com/app/louppe/id6820131477)。[也可通过 GitHub 或 Homebrew 安装](/#download)。在 Louppe 中打开文件夹，或将其拖到 Dock 图标或筛选窗口。筛选时可切换文件夹；Louppe 会保存你的决定，并保留窗口大小
 
 Louppe 直接查看文件原本所在的位置，不需要将它们导入单独的图库
 
 ## 每张照片做一个决定
+
+本指南中的快捷键均为默认设置。在 设置 → 键盘快捷键 中，可自定义筛选按键，并为 Dvorak 等布局选择物理按键位置
 
 从图库视图开始，用方向键浏览本次拍摄的照片。如果一张照片值得进入后期，按 **F** 标记为“是”；如果不值得，按 **D** 标记为“否”
 

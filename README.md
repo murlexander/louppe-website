@@ -1,6 +1,6 @@
 # Louppe website
 
-[Louppe](https://louppe.eu/) is a free, open-source photo, video, and audio culler for macOS. This site uses static HTML, CSS, and JavaScript. Generate the blog locally from Markdown before publishing. GitHub Pages serves `main`; `CNAME` sets the domain.
+[Louppe](https://louppe.eu/) is a free, open-source photo viewer and sorter for Mac. Browse JPEG and RAW folders, choose keepers with the keyboard, and review video, audio, and text locally. This site uses static HTML, CSS, and JavaScript. Generate the blog locally from Markdown before publishing. GitHub Pages serves `main`; `CNAME` sets the domain.
 
 ## Files
 
@@ -32,6 +32,8 @@ Local verification, 8 October 2026: 22 automated tests pass. Chromium 151 confir
 
 GA4 `G-9P9KKLZ5BN` loads only on HTTPS `louppe.eu` after consent. Previews and copied deployments cannot load it. The `louppe_download` key event in the `Louppe Media Culler` property measures link intent, not installation. `download_method` distinguishes `app_store`, `github`, and `homebrew`; Homebrew clicks open installation instructions.
 
+Page views use canonical paths without queries or fragments, site language, and the built-in content group. Referrers retain only their origin. `download_placement` distinguishes homepage and article buttons. `louppe_article_open` records internal article-link intent using `article_path` and `link_placement`; a page view confirms the subsequent visit. The event-scoped dimensions `page_language`, `download_placement`, `article_path`, `link_placement`, and `download_method` are configured in GA4. See [MEASUREMENT.md](MEASUREMENT.md) for comparisons and limits.
+
 Withdrawal, missing consent, and expiry disable collection across tabs. The script rechecks on focus, visibility, and download clicks. Run `npm run test:consent` or `npm test`.
 
 Older visits are in `alex-markin-personal`, under the saved `louppe.eu historical traffic` comparison. Visitors may overlap; do not sum user counts across properties.
@@ -46,6 +48,8 @@ See [BLOG.md](BLOG.md) for drafting and publishing. Drafts stay local. The gener
 
 ## Readiness evidence
 
+Current feature copy follows [Louppe 1.12.0](https://github.com/murlexander/louppe-media-culler/releases/tag/v1.12.0): folder dropping during review, configurable shortcuts and physical key positions, Fuji simulation filtering, JPEG XL, preview-loading feedback, and metadata renaming. The 1.9 introduction and retained media remain historical.
+
 Dated reports stay in [Docs/Archive](Docs/Archive/); current work is in the backlog.
 
 [7 October 2026 review](Docs/Archive/2026-10-07/READINESS_2026-10-07.md): release alignment, privacy sources, tests, and browser coverage limits.
@@ -58,7 +62,7 @@ Edit `templates/home.html` and `templates/privacy.html`, not their generated pag
 
 Published blog posts with complete translations get localized article URLs. New untranslated posts remain English, are labeled English on localized indexes, and receive no translated alternate links. For new articles, provide complete translated Markdown and metadata as described in [BLOG.md](BLOG.md); the existing shared catalog remains supported. Drafts stay in private previews. The output manifest removes withdrawn translations; blog rebuilds preserve the language sitemap.
 
-Every translated page has its own canonical URL, reciprocal `hreflang` links, an English `x-default`, localized metadata, and WebPage language data. Homepage SoftwareApplication data describes the free app without invented reviews. Search copy targets photo sorting, photo culling, and media/file management using the supported workflow and hardware requirements.
+Every translated page has its own canonical URL, reciprocal `hreflang` links, an English `x-default`, localized metadata, and WebPage language data. Homepage SoftwareApplication data describes the free app without invented reviews. Public copy leads with photo viewing and sorting, explains photo culling as choosing keepers, and uses photo browser, JPEG/RAW folders, and ApolloOne alternative where those tasks are described. Use natural equivalents in each language. Keep hardware requirements, limits, and file-safety conditions alongside the workflow; search wording must match released behavior.
 
 `npm test` covers language discovery, links/assets, metadata, missing translations, article withdrawal, private previews, and existing consent behavior. `npm run preview:blog` includes all languages. GitHub Pages publishes only after changes are committed and pushed to `main`.
 

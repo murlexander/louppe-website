@@ -1,5 +1,44 @@
 [
   {
+    "slug": "apolloone-alternative-mac",
+    "title": "ApolloOne alternative for Mac: view and sort photos",
+    "description": "Compare Louppe and ApolloOne for photo viewing and culling on Mac. Browse JPEG and RAW folders, choose keepers, and check the differences before switching",
+    "file": "apolloone-alternative-mac.md",
+    "status": "published",
+    "cta": {
+      "label": "Try Louppe",
+      "href": "https://apps.apple.com/app/louppe/id6820131477"
+    },
+    "date": "2026-10-21",
+    "translations": {
+      "es": {
+        "title": "Alternativa a ApolloOne para Mac: selecciona fotos con Louppe",
+        "description": "Compara Louppe y ApolloOne para explorar carpetas y elegir qué fotos conservar en Mac. Revisión de JPEG y RAW sin importar, con decisiones por teclado y copia de las fotos elegidas",
+        "file": "apolloone-alternative-mac-es.md"
+      },
+      "pt": {
+        "title": "Alternativa ao ApolloOne para Mac: selecione fotos com o Louppe",
+        "description": "Compare o Louppe e o ApolloOne para explorar pastas e escolher quais fotos manter no Mac. Revise JPEG e RAW sem importar, com decisões pelo teclado e cópia das fotos escolhidas",
+        "file": "apolloone-alternative-mac-pt.md"
+      },
+      "zh-Hans": {
+        "title": "Mac 上的 ApolloOne 替代选择：用 Louppe 查看和筛选照片",
+        "description": "用免费、开源的 Louppe 在 Mac 上查看 JPEG 和 RAW 照片，用键盘选择保留哪些照片，并通过单独的操作将不需要的文件移到废纸篓。比较它与 ApolloOne 的功能和适用场景",
+        "file": "apolloone-alternative-mac-zh.md"
+      },
+      "hi": {
+        "title": "Mac पर ApolloOne का विकल्प: Louppe में फ़ोटो देखें और छाँटें",
+        "description": "Mac पर मुफ़्त, ओपन-सोर्स Louppe से JPEG और RAW फ़ोटो देखें, कीबोर्ड से रखने वाली तस्वीरें चुनें, और अलग कार्रवाई से अनचाही फ़ाइलें कूड़ेदान में भेजें। ApolloOne से अंतर जानें",
+        "file": "apolloone-alternative-mac-hi.md"
+      },
+      "ar": {
+        "title": "بديل ApolloOne على Mac: عرض الصور وفرزها باستخدام Louppe",
+        "description": "راجع صور JPEG وRAW على Mac باستخدام Louppe المجاني ومفتوح المصدر، واختر ما تحتفظ به بلوحة المفاتيح، وانقل الملفات غير المرغوبة إلى سلة المهملات بإجراء منفصل. تعرّف على الفروق عن ApolloOne",
+        "file": "apolloone-alternative-mac-ar.md"
+      }
+    }
+  },
+  {
     "slug": "cull-photos-mac-before-lightroom",
     "title": "How to cull photos on Mac before importing into Lightroom",
     "description": "Cull photos on Mac for free with Louppe. Review offline, copy your keepers, and start editing in Lightroom Classic, Capture One, or darktable",
