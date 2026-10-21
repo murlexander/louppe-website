@@ -1823,13 +1823,13 @@
     "pt": "Guias de seleção de fotos e novidades do Louppe — Louppe",
     "ar": "أدلة فرز الصور وأخبار Louppe — Louppe"
   },
-  "download on the Mac App Store": {
-    "en": "download on the Mac App Store",
-    "es": "descargar en el Mac App Store",
-    "zh-Hans": "从 Mac App Store 下载",
-    "hi": "Mac App Store से डाउनलोड करें",
-    "pt": "baixar na Mac App Store",
-    "ar": "تنزيل من Mac App Store"
+  "download in App Store": {
+    "en": "download in App Store",
+    "es": "descargar en App Store",
+    "zh-Hans": "从 App Store 下载",
+    "hi": "App Store से डाउनलोड करें",
+    "pt": "baixar na App Store",
+    "ar": "تنزيل من App Store"
   },
   "other ways:": {
     "en": "other ways:",
