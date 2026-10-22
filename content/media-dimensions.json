@@ -94,5 +94,29 @@
   "/media/2026-10-22/guest-copy.webp": {
     "width": 1280,
     "height": 1240
+  },
+  "/media/2026-10-22-interface/paired-file-info-800.webp": {
+    "width": 800,
+    "height": 586
+  },
+  "/media/2026-10-22-interface/jpeg-grid-gallery-800.webp": {
+    "width": 800,
+    "height": 500
+  },
+  "/media/2026-10-22-interface/jpeg-grid-gallery-1600.webp": {
+    "width": 1600,
+    "height": 1000
+  },
+  "/media/2026-10-22-interface/raw-100-percent-800.webp": {
+    "width": 800,
+    "height": 502
+  },
+  "/media/2026-10-22-interface/paired-file-info-1600.webp": {
+    "width": 1600,
+    "height": 1172
+  },
+  "/media/2026-10-22-interface/raw-100-percent-1600.webp": {
+    "width": 1600,
+    "height": 1004
   }
 }

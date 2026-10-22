@@ -54,6 +54,8 @@ For a distinct sharing preview, add `"image": {"src": "/media/YYYY-MM-DD/example
 For a visible article cover and index thumbnail, add `cover` with local `src`
 and `small` image paths, descriptive `alt`, and the full image's `width` and
 `height`. Put translated cover descriptions in `content/translations.json`.
+An optional `caption` identifies historical app versions or an editorial
+composition; translate it in the same catalog.
 Record actual asset dimensions in `content/media-dimensions.json`; inline
 Markdown images use these to reserve space and load lazily. Images link to the
 full delivery. Keep source photos and editable exports in `media-library/`;

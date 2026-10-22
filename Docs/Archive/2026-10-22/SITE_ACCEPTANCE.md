@@ -4,7 +4,7 @@ The privacy page now has five native expandable sections, with short app and
 website summaries. All detailed policy paragraphs remain: a comparison with
 the previous source found only the revised introduction and date replaced.
 The page and translations retain the app/website anchor links and contact.
-Blog and privacy pages share the updated `blog.css?v=20261022-2` cache key.
+Blog and privacy pages share the updated `blog.css?v=20261022-3` cache key.
 The footer labels are privacy, legal, and analytics.
 
 ## Validation
@@ -13,8 +13,8 @@ The footer labels are privacy, legal, and analytics.
 - `npm run preview:blog`: six published articles, no active drafts
 - `npm audit --audit-level=moderate`: no reported vulnerabilities
 - Final local audit: 44 sitemap pages, no broken local links or anchors,
-  consistent shared CSS versions, 77 valid article image references, and all
-  21 new media hashes matched
+  consistent shared CSS versions, 76 valid article image references, and all
+  30 new media hashes matched
 - No merge conflicts, stashes, or open website-repository issues or PRs
 - The older JPEG draft was archived locally as superseded by the published
   JPEG-selection guide; original text was preserved
@@ -28,19 +28,28 @@ The existing language tests checked all six localized pages and their links.
 
 ## Blog illustrations
 
-The integrated refresh adds five Canada photographs as responsive article
-covers, index thumbnails, and sharing images, plus six workflow illustrations.
-All 21 new delivery files have recorded hashes and provenance in
-`media/2026-10-22-canada/`. Original RAFs, camera previews, and export scripts
-remain in `media-library/`; public derivatives contain no EXIF/GPS.
+The integrated refresh adds Canada photographs, six workflow illustrations,
+and three interface covers. The final blog mixes two photo covers with four
+interface covers, including the preserved 1.9 introduction. All 30 new delivery
+files have recorded hashes and provenance in `media/2026-10-22-canada/` and
+`media/2026-10-22-interface/`. Original RAFs, camera previews, capture inputs,
+and export scripts remain in `media-library/`; public derivatives contain no
+EXIF/GPS. Earlier photo exports are preserved for reuse.
 
-The media task verified all 77 image references across 26 public article pages:
+The media task verified all 76 image references across 26 public article pages:
 local paths exist, descriptions are nonempty, and dimensions reserve space.
 Desktop DOM checks found loaded images, a 1040px cover, two calls to action,
 and no overflow. Headless renders checked the desktop index and JPEG guide,
 the 390px JPEG guide, and the 390px Arabic RAW+JPEG guide. Cover-link keyboard
 focus had a visible outline. Mobile evidence is headless: the live browser's
 resize command did not change its actual viewport.
+
+The interface follow-up checked desktop and 390px indexes, the 390px JPEG guide,
+and the 390px Arabic pairing guide in headless renders. All 14 historical or
+composition captions match their page language. The JPEG cover combines two
+separate authentic 1.10 captures; RAW detail and paired-file Info use authentic
+1.9 captures. Captions identify these sources. No photos or interface details
+were replaced inside the captures. The duplicate inline RAW detail was removed.
 
 New background app capture failed with ScreenCaptureKit error -3811. Workflow
 illustrations therefore reuse authentic Louppe 1.9 captures, captioned as such;

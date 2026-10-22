@@ -10,10 +10,6 @@ Many camera RAW files include a processed preview. It can reflect the camera's c
 
 If you like the finished appearance of a camera JPEG, review that JPEG directly. A RAW processor doesn't have to reproduce the camera's look
 
-![A photograph of red berries enlarged to 100% in Louppe Gallery](/media/2026-10-22-canada/detail-focus.webp)
-
-*100% detail, captured in Louppe 1.9. The focus check uses the rendered image*
-
 ## What changes at 100% in Louppe?
 
 In [Louppe 1.12](https://github.com/murlexander/louppe-media-culler/releases/tag/v1.12.0), **Fast** uses previews below 100% and Apple RAW rendering at 100% and above. Grid and Browser keep fast previews

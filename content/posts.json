@@ -5,8 +5,8 @@
     "description": "Choose your best JPEG photos on Mac with Louppe. Mark keepers, check your shortlist, and copy the original files to a separate folder",
     "file": "sort-jpeg-photos-mac.md",
     "image": {
-      "src": "/media/2026-10-22-canada/maple-leaves-social.jpg",
-      "alt": "Maple leaves on a rain-darkened ledge"
+      "src": "/media/2026-10-22-interface/jpeg-grid-gallery-social.jpg",
+      "alt": "Louppe Grid and Gallery with street photographs and a yellow flower"
     },
     "status": "published",
     "cta": {
@@ -15,11 +15,12 @@
     },
     "date": "2026-10-22",
     "cover": {
-      "src": "/media/2026-10-22-canada/maple-leaves-1600.webp",
-      "small": "/media/2026-10-22-canada/maple-leaves-800.webp",
-      "alt": "Maple leaves on a rain-darkened ledge",
+      "src": "/media/2026-10-22-interface/jpeg-grid-gallery-1600.webp",
+      "small": "/media/2026-10-22-interface/jpeg-grid-gallery-800.webp",
+      "alt": "Louppe Grid and Gallery with street photographs and a yellow flower",
       "width": 1600,
-      "height": 1067
+      "height": 1000,
+      "caption": "Grid and Gallery from separate Louppe 1.10 captures"
     }
   },
   {
@@ -28,8 +29,8 @@
     "description": "Understand camera previews, Apple RAW rendering, and the change at 100% in Louppe. Check focus and color using the rendering you intend to judge",
     "file": "why-raw-photos-change-when-you-zoom.md",
     "image": {
-      "src": "/media/2026-10-22-canada/glass-light-social.jpg",
-      "alt": "Colors and light distorted by glass blocks"
+      "src": "/media/2026-10-22-interface/raw-100-percent-social.jpg",
+      "alt": "A RAW photo at 100% in Louppe with the histogram and camera information"
     },
     "status": "published",
     "cta": {
@@ -38,11 +39,12 @@
     },
     "date": "2026-10-22",
     "cover": {
-      "src": "/media/2026-10-22-canada/glass-light-1600.webp",
-      "small": "/media/2026-10-22-canada/glass-light-800.webp",
-      "alt": "Colors and light distorted by glass blocks",
+      "src": "/media/2026-10-22-interface/raw-100-percent-1600.webp",
+      "small": "/media/2026-10-22-interface/raw-100-percent-800.webp",
+      "alt": "A RAW photo at 100% in Louppe with the histogram and camera information",
       "width": 1600,
-      "height": 2400
+      "height": 1004,
+      "caption": "100% detail, captured in Louppe 1.9"
     }
   },
   {
@@ -184,15 +186,16 @@
     },
     "date": "2026-10-12",
     "cover": {
-      "src": "/media/2026-10-22-canada/morning-glory-1600.webp",
-      "small": "/media/2026-10-22-canada/morning-glory-800.webp",
-      "alt": "A purple morning glory against green leaves",
+      "src": "/media/2026-10-22-interface/paired-file-info-1600.webp",
+      "small": "/media/2026-10-22-interface/paired-file-info-800.webp",
+      "alt": "A brick facade in Louppe with paired RAW and JPEG filenames in Info",
       "width": 1600,
-      "height": 1067
+      "height": 1172,
+      "caption": "Gallery crop with paired filenames in Info, captured in Louppe 1.9"
     },
     "image": {
-      "src": "/media/2026-10-22-canada/morning-glory-social.jpg",
-      "alt": "A purple morning glory against green leaves"
+      "src": "/media/2026-10-22-interface/paired-file-info-social.jpg",
+      "alt": "A brick facade in Louppe with paired RAW and JPEG filenames in Info"
     }
   },
   {
@@ -211,7 +214,8 @@
       "small": "/media/2026-09-26/grid-overview-small.webp",
       "alt": "Louppe reviewing a local media folder on Mac",
       "width": 1800,
-      "height": 1068
+      "height": 1068,
+      "caption": "Grid, captured in Louppe 1.9"
     }
   }
 ]

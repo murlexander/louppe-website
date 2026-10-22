@@ -77,14 +77,15 @@ test('draft isolation, publication, validation and withdrawal', async () => {
       assert.notEqual(run().status,0);
       assert.equal(await load('blog/sample/index.html'),illustrated);
     }
-    const cover = {src:image.src,small:image.src,alt:'Leaves & light',width:1600,height:1067};
+    const cover = {src:image.src,small:image.src,alt:'Leaves & light',width:1600,height:1067,caption:'Captured in Louppe 1.9 & preserved'};
     await save('content/posts.json',JSON.stringify([{...record,image,cover}]));
     assert.equal(run().status,0);
     const withCover = await load('blog/sample/index.html');
     assert.match(withCover,/<figure class="article-cover">/);
     assert.match(withCover,/alt="Leaves &amp; light" width="1600" height="1067" fetchpriority="high"/);
+    assert.match(withCover,/<figcaption>Captured in Louppe 1.9 &amp; preserved<\/figcaption>/);
     assert.match(await load('blog/index.html'),/class="post-thumbnail"[^>]+alt=""[^>]+loading="lazy"/);
-    for (const invalidCover of [{...cover,src:'/media/../sample.webp'},{...cover,small:'/media/missing.webp'},{...cover,alt:''},{...cover,width:0}]) {
+    for (const invalidCover of [{...cover,src:'/media/../sample.webp'},{...cover,small:'/media/missing.webp'},{...cover,alt:''},{...cover,width:0},{...cover,caption:''}]) {
       await save('content/posts.json',JSON.stringify([{...record,cover:invalidCover}]));
       assert.notEqual(run().status,0);
       assert.equal(await load('blog/sample/index.html'),withCover);

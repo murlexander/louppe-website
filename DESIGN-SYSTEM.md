@@ -59,7 +59,7 @@ GitHub Pages publishes `main` at louppe.eu. Change dated `?v=YYYYMMDD-N` keys fo
 - Simple `/blog/` list; no card grid or categories
 - Small photo thumbnails beside list entries; full-width thumbnails on phones
 - Articles: 680px left-aligned column, system type, and shared grain
-- Photo covers may open to 1040px; inline workflow screenshots stay at reading width and link to their full delivery. Identify historical app versions in captions
+- Mix photography and authentic app-interface covers, up to 1040px. Preserve complete interface thumbnails; inline workflow screenshots stay at reading width and link to their full delivery. Identify historical app versions and editorial screenshot compositions in captions
 - Lowercase presentation, contractions, first-person voice, and no trailing periods
 - One byline below the subtitle, linked to Alex's site; none on the index
 - One divider above the footer; no others

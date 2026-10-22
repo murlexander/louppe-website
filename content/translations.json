@@ -2270,5 +2270,61 @@
     "hi": "हरे पत्तों के बीच बैंगनी मॉर्निंग ग्लोरी का फूल",
     "pt": "Uma flor roxa de glória-da-manhã entre folhas verdes",
     "ar": "زهرة مجد الصباح البنفسجية بين أوراق خضراء"
+  },
+  "Louppe Grid and Gallery with street photographs and a yellow flower": {
+    "en": "Louppe Grid and Gallery with street photographs and a yellow flower",
+    "es": "Cuadrícula y galería de Louppe con fotos callejeras y una flor amarilla",
+    "zh-Hans": "Louppe 网格和图库中的街头照片及黄色花朵",
+    "hi": "Louppe ग्रिड और गैलरी में सड़क की तस्वीरें और एक पीला फूल",
+    "pt": "Grade e galeria do Louppe com fotos de rua e uma flor amarela",
+    "ar": "شبكة ومعرض Louppe مع صور شوارع وزهرة صفراء"
+  },
+  "Grid and Gallery from separate Louppe 1.10 captures": {
+    "en": "Grid and Gallery from separate Louppe 1.10 captures",
+    "es": "Cuadrícula y galería de capturas independientes de Louppe 1.10",
+    "zh-Hans": "网格和图库来自 Louppe 1.10 的两张独立截图",
+    "hi": "Louppe 1.10 के अलग स्क्रीनशॉट से ग्रिड और गैलरी",
+    "pt": "Grade e galeria de capturas separadas do Louppe 1.10",
+    "ar": "الشبكة والمعرض من لقطتي شاشة منفصلتين في Louppe 1.10"
+  },
+  "A RAW photo at 100% in Louppe with the histogram and camera information": {
+    "en": "A RAW photo at 100% in Louppe with the histogram and camera information",
+    "es": "Una foto RAW al 100% en Louppe con histograma e información de cámara",
+    "zh-Hans": "Louppe 中 100% 显示的 RAW 照片、直方图和相机信息",
+    "hi": "Louppe में 100% पर RAW फ़ोटो, हिस्टोग्राम और कैमरे की जानकारी",
+    "pt": "Uma foto RAW a 100% no Louppe com histograma e informações da câmera",
+    "ar": "صورة RAW بنسبة 100% في Louppe مع الرسم البياني ومعلومات الكاميرا"
+  },
+  "100% detail, captured in Louppe 1.9": {
+    "en": "100% detail, captured in Louppe 1.9",
+    "es": "Detalle al 100%, capturado en Louppe 1.9",
+    "zh-Hans": "100% 细节，截自 Louppe 1.9",
+    "hi": "100% विवरण, Louppe 1.9 में लिया गया स्क्रीनशॉट",
+    "pt": "Detalhe a 100%, capturado no Louppe 1.9",
+    "ar": "تفاصيل بنسبة 100%، التُقطت في Louppe 1.9"
+  },
+  "A brick facade in Louppe with paired RAW and JPEG filenames in Info": {
+    "en": "A brick facade in Louppe with paired RAW and JPEG filenames in Info",
+    "es": "Una fachada de ladrillo en Louppe con nombres de archivos RAW y JPEG emparejados en Información",
+    "zh-Hans": "Louppe 中的砖墙立面，信息面板显示配对的 RAW 和 JPEG 文件名",
+    "hi": "Louppe में ईंटों वाली इमारत और जानकारी पैनल में पेयर RAW और JPEG फ़ाइल नाम",
+    "pt": "Uma fachada de tijolos no Louppe com nomes dos arquivos RAW e JPEG emparelhados em Informações",
+    "ar": "واجهة من الطوب في Louppe مع أسماء ملفات RAW وJPEG المقترنة في المعلومات"
+  },
+  "Gallery crop with paired filenames in Info, captured in Louppe 1.9": {
+    "en": "Gallery crop with paired filenames in Info, captured in Louppe 1.9",
+    "es": "Recorte de la galería con archivos emparejados en Información, capturado en Louppe 1.9",
+    "zh-Hans": "图库裁剪截图，信息面板显示配对文件名，截自 Louppe 1.9",
+    "hi": "जानकारी पैनल में पेयर फ़ाइल नामों के साथ गैलरी का क्रॉप, Louppe 1.9 का स्क्रीनशॉट",
+    "pt": "Recorte da galeria com nomes dos pares em Informações, capturado no Louppe 1.9",
+    "ar": "جزء من المعرض مع أسماء الملفات المقترنة في المعلومات، التُقط في Louppe 1.9"
+  },
+  "Grid, captured in Louppe 1.9": {
+    "en": "Grid, captured in Louppe 1.9",
+    "es": "Cuadrícula, capturada en Louppe 1.9",
+    "zh-Hans": "网格，截自 Louppe 1.9",
+    "hi": "ग्रिड, Louppe 1.9 में लिया गया स्क्रीनशॉट",
+    "pt": "Grade, capturada no Louppe 1.9",
+    "ar": "الشبكة، التُقطت في Louppe 1.9"
   }
 }

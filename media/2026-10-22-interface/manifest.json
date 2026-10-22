@@ -1,0 +1,138 @@
+[
+  {
+    "slug": "jpeg-grid-gallery",
+    "master": "media-library/2026-10-22-canada/interface-covers/masters/jpeg-grid-gallery.png",
+    "masterSha256": "7efb6ce1ed135f0eae8841c283014f969176b11d5dfe37c263ddbb09d5ebe1f4",
+    "inputs": [
+      {
+        "source": "media-library/2026-10-13/dark-store/raw/en-US/02-grid.png",
+        "sourceSha256": "eafa4420c5fd10d6e35bffd6b3dfc4b0e0e72f9968e9fa0d376acc575d268565",
+        "preserved": "media-library/2026-10-22-canada/interface-covers/sources/jpeg-grid.png",
+        "version": "1.10.0 (12)"
+      },
+      {
+        "source": "media-library/2026-10-13/dark-store/raw/en-US/01-gallery.png",
+        "sourceSha256": "fe106f06e0be2c9b317f2fa0ab4b758e6208dfdf3c7af8ea0cf35ea4d65cadf5",
+        "preserved": "media-library/2026-10-22-canada/interface-covers/sources/jpeg-gallery.png",
+        "version": "1.10.0 (12)"
+      }
+    ],
+    "layout": {
+      "canvas": [
+        2000,
+        1250
+      ],
+      "placements": [
+        {
+          "x": 40,
+          "y": 40,
+          "width": 1440,
+          "height": 904
+        },
+        {
+          "x": 760,
+          "y": 450,
+          "width": 1200,
+          "height": 753
+        }
+      ]
+    },
+    "assets": [
+      {
+        "file": "jpeg-grid-gallery-800.webp",
+        "width": 800,
+        "height": 500,
+        "sha256": "d2594dbf0a3db3e5dd0a867f304991d042bf7973b14204935bd9a0bc1a17ad77"
+      },
+      {
+        "file": "jpeg-grid-gallery-1600.webp",
+        "width": 1600,
+        "height": 1000,
+        "sha256": "67fdf2a3d8cd5b451fdb14d844978e7e5dda422be66e7bfc9a1f17975d8a68c4"
+      },
+      {
+        "file": "jpeg-grid-gallery-social.jpg",
+        "width": 1200,
+        "height": 630,
+        "sha256": "9fd11b3fb8115db07929a7e4f1c8f510217ad289f1d7d4ffd94f3a30d3025b42"
+      }
+    ]
+  },
+  {
+    "slug": "raw-100-percent",
+    "master": "media-library/2026-10-22-canada/interface-covers/masters/raw-100-percent.png",
+    "masterSha256": "6f19ac9d3e5827839533c2eb25d22ee151cee45206152d0249f2d4989cd04013",
+    "inputs": [
+      {
+        "source": "media-library/2026-09-26/screenshots/website/28-actual-size-orchard-XT508541-take-01.webp",
+        "sourceSha256": "4a9634f44b5dbf5a99c4269da504d92e10c29c51266692893f8636dda871ad40",
+        "preserved": "media-library/2026-10-22-canada/interface-covers/sources/raw-detail.webp",
+        "version": "1.9.0 (11)"
+      }
+    ],
+    "layout": {
+      "crop": null
+    },
+    "assets": [
+      {
+        "file": "raw-100-percent-800.webp",
+        "width": 800,
+        "height": 502,
+        "sha256": "efdf1388fafb3702dadb79ed4e74a5f7c4739ba7b4a2d524bff2945693f21eff"
+      },
+      {
+        "file": "raw-100-percent-1600.webp",
+        "width": 1600,
+        "height": 1004,
+        "sha256": "ce08838f6ccb2308096578a524bcb169850ba605d48e5409387f7e19385f0a4e"
+      },
+      {
+        "file": "raw-100-percent-social.jpg",
+        "width": 1200,
+        "height": 630,
+        "sha256": "1028012fd292b553c9cfa79d7f788b792e54188cf0ccaad8db2739c8b97abff3"
+      }
+    ]
+  },
+  {
+    "slug": "paired-file-info",
+    "master": "media-library/2026-10-22-canada/interface-covers/masters/paired-file-info.png",
+    "masterSha256": "444b2195b8d7b8fd8dd51c5bf1111b4d3f0c049cc4030acd5044992a0b52affe",
+    "inputs": [
+      {
+        "source": "media-library/2026-09-26/screenshots/website/10-gallery-info-architecture-XT508475-take-01.webp",
+        "sourceSha256": "2ec7c9f7f2a015392c174d10da2fd6ed5f834744345a81d1d731736eee15cde5",
+        "preserved": "media-library/2026-10-22-canada/interface-covers/sources/pair-info.webp",
+        "version": "1.9.0 (11)"
+      }
+    ],
+    "layout": {
+      "crop": [
+        575,
+        0,
+        3024,
+        1794
+      ]
+    },
+    "assets": [
+      {
+        "file": "paired-file-info-800.webp",
+        "width": 800,
+        "height": 586,
+        "sha256": "f5242dd35355ca07ab16a4c25daac027ec5470b62b71e74ba433abef266a17b6"
+      },
+      {
+        "file": "paired-file-info-1600.webp",
+        "width": 1600,
+        "height": 1172,
+        "sha256": "db900564da8c5ab745386f6e6dd963dbd998c63e75d7e69822d24fe67d7c06a0"
+      },
+      {
+        "file": "paired-file-info-social.jpg",
+        "width": 1200,
+        "height": 630,
+        "sha256": "57cf560c62771f8aeaf479bd763f394d34dc75a4c560abe7cf4ca23a17d7ed1f"
+      }
+    ]
+  }
+]

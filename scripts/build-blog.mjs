@@ -55,6 +55,7 @@ async function loadContent(record, directory, name) {
     const {src,small,alt,width,height} = record.cover ?? {};
     if (![src,small].every(path => typeof path === 'string' && /^\/media\/[a-zA-Z0-9/_-]+\.(?:jpg|png|webp)$/.test(path)) || typeof alt !== 'string' || !alt.trim() || ![width,height].every(value => Number.isInteger(value) && value > 0)) throw new Error(`Invalid article cover for ${name}`);
     await Promise.all([src,small].map(path => access(resolve(root,path.slice(1)))));
+    if (record.cover.caption !== undefined && (typeof record.cover.caption !== 'string' || !record.cover.caption.trim())) throw new Error(`Invalid cover caption for ${name}`);
   }
   const body = await read(`${directory}/${record.file}`);
   if (!body.trim()) throw new Error(`Empty article: ${name}`);
@@ -101,14 +102,16 @@ const index = page({title:'Photo culling guides and Louppe news',description:'Ph
 const generated = {'blog/index.html':index};
 function article(post, {shell=template, backLabel='all notes'} = {}) {
   const html = post.sections.map(section => marked.parse(section)).join(callToAction(post));
-  const cover = post.cover ? `<figure class="article-cover"><a href="${escape(post.cover.src)}">${coverImage(post.cover)}</a></figure>` : '';
+  const caption = post.cover?.caption ? `<figcaption>${escape(post.cover.caption)}</figcaption>` : '';
+  const cover = post.cover ? `<figure class="article-cover"><a href="${escape(post.cover.src)}">${coverImage(post.cover)}</a>${caption}</figure>` : '';
   return page({title:post.title,description:post.description,path:post.path,post,shell,content:`<a class="article-back" href="/blog/">${escape(backLabel)}</a><article><header class="post-header"><h1>${escape(post.title)}</h1><p class="post-deck">${escape(post.description)}</p><div class="article-author">${byline()}</div></header>${cover}<div class="article-body">${html}</div>${callToAction(post)}</article>`});
 }
 function renderTranslation(post, language, dictionary) {
   const label = dictionary[post.cta.label]?.[language.code];
   if (!label) throw new Error(`Missing ${language.code} translation: ${post.cta.label}`);
   if (post.cover && !dictionary[post.cover.alt]?.[language.code]) throw new Error(`Missing ${language.code} cover description: ${post.cover.alt}`);
-  const cover = post.cover ? {...post.cover,alt:dictionary[post.cover.alt][language.code]} : undefined;
+  if (post.cover?.caption && !dictionary[post.cover.caption]?.[language.code]) throw new Error(`Missing ${language.code} cover caption: ${post.cover.caption}`);
+  const cover = post.cover ? {...post.cover,alt:dictionary[post.cover.alt][language.code],caption:post.cover.caption ? dictionary[post.cover.caption][language.code] : undefined} : undefined;
   const localized = {...post, ...post.translations[language.code], cover, image:post.translations[language.code].image ?? post.image ?? {...defaultImage,alt:dictionary[defaultImage.alt][language.code]}, cta:{...post.cta,label}};
   return article(localized, {shell:translateHTML(template,dictionary,language), backLabel:dictionary['all notes'][language.code]});
 }
