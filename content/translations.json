@@ -2166,5 +2166,13 @@
     "hi": "HTTPS लाइव साइट पर “एनालिटिक्स की अनुमति दें” चुनने के बाद ही Google Analytics लोड होता है। यह पेज व्यू, रेफ़र करने वाली साइटें, ब्राउज़र और डिवाइस की जानकारी, अनुमानित स्थान, लेखों के लिंक पर क्लिक और डाउनलोड लिंक पर क्लिक मापता है। पेज की भाषा, लेखों के पाथ, बटन की स्थिति और डाउनलोड के तरीके (App Store, GitHub या Homebrew) सामग्री की तुलना करने में मदद करते हैं। पेज और रेफ़रर URL के क्वेरी स्ट्रिंग और फ़्रैगमेंट छोड़ दिए जाते हैं। क्लिक इरादा दर्शाते हैं, इंस्टॉलेशन या ऐप गतिविधि नहीं। Google signals और विज्ञापन वैयक्तिकरण बंद हैं",
     "pt": "o Google Analytics só carrega após “permitir análise” no site de produção HTTPS. mede visualizações de páginas, sites de origem, informações do navegador e do dispositivo, localização aproximada, cliques em links de artigos, e cliques em links de download. o idioma da página, os caminhos dos artigos, as posições dos botões, e as opções de download (App Store, GitHub, ou Homebrew) ajudam a comparar o conteúdo. as strings de consulta e os fragmentos das URLs da página e de referência são omitidos. cliques indicam intenção, não instalação ou atividade do app. Google signals e personalização de anúncios estão desativados",
     "ar": "لا تُحمّل Google Analytics إلا بعد اختيار «السماح بالتحليلات» على الموقع الفعلي عبر HTTPS. تقيس مشاهدات الصفحات ومواقع الإحالة وبيانات المتصفح والجهاز والموقع التقريبي ونقرات روابط المقالات ونقرات روابط التنزيل. تساعد لغة الصفحة ومسارات المقالات ومواضع الأزرار وطرق التنزيل (App Store أو GitHub أو Homebrew) في مقارنة المحتوى. تُحذف سلاسل الاستعلام والأجزاء اللاحقة لعلامة # من عنوان الصفحة وعنوان الإحالة. تعبّر النقرات عن النية لا التثبيت أو نشاط التطبيق. ميزتا Google signals وتخصيص الإعلانات معطّلتان"
+  },
+  "App Store publisher: SAMO DANNI EOOD": {
+    "en": "App Store publisher: SAMO DANNI EOOD",
+    "es": "Editor en App Store: SAMO DANNI EOOD",
+    "zh-Hans": "App Store 发布方：SAMO DANNI EOOD",
+    "hi": "App Store प्रकाशक: SAMO DANNI EOOD",
+    "pt": "Publicadora na App Store: SAMO DANNI EOOD",
+    "ar": "الناشر على App Store: ⁦SAMO DANNI EOOD⁩"
   }
 }
