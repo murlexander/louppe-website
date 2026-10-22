@@ -42,6 +42,10 @@ Las estrellas son opcionales. Pulsa **1–5** para valorar una fotografía si ne
 
 Si disparas en los dos formatos, [revisa juntos los pares RAW + JPEG correspondientes](/blog/cull-raw-jpeg-pairs-mac/) para que cada toma ocupe un solo lugar en la revisión
 
+![Siete fotos marcadas con Sí en la cuadrícula de Louppe](/media/2026-10-22-canada/keepers-grid.webp)
+
+*Selección filtrada por Sí, capturada en Louppe 1.9*
+
 ## Copia las fotos elegidas a una carpeta para editarlas
 
 Abre Exportar con **E** o **⌘E** y deja **Copiar** seleccionado. Elige el alcance y las decisiones que quieras incluir, y después comprueba el número de coincidencias antes de elegir un destino
@@ -51,6 +55,10 @@ Esta comprobación importa: si hay una selección activa, Exportar empieza con *
 Copia las fotos a una carpeta con un nombre claro, como `Shoot name/Keepers`. Copiar deja los archivos de origen en su sitio. **Trasladar** mueve los originales, así que usa Copiar para este flujo de trabajo
 
 El resultado es una carpeta con las fotografías que has elegido para editar. Puedes comprobarla en Finder antes de abrir tu editor
+
+![Vista previa de copia de Louppe con siete fotos y catorce archivos emparejados](/media/2026-10-22-canada/copy-keepers.webp)
+
+*Vista previa de copia en Louppe 1.9: siete pares son catorce archivos. La copia aún no se ha ejecutado*
 
 ## Importa esa carpeta en Lightroom Classic
 

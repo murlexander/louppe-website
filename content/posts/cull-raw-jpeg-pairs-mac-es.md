@@ -21,7 +21,9 @@ Los atajos de esta guía son los predeterminados. En Ajustes → Atajos de tecla
 
 Con la agrupación activada, una valoración o acción sobre un elemento se aplica a ambos archivos. Esto incluye las decisiones Sí/No, las estrellas, y las etiquetas de color. Marcar No no envía ninguno de los dos archivos a la Papelera
 
-![Galería de Louppe con la agrupación RAW + JPEG visible junto a los controles de revisión](/media/2026-09-26/gallery-info.webp)
+![Archivos RAW + JPEG agrupados en una miniatura por toma](/media/2026-10-22-canada/pairs-grouped.webp)
+
+*Agrupación activada: una miniatura por toma, capturada en Louppe 1.9*
 
 La agrupación cambia cómo revisas el par. El RAW y el JPEG siguen siendo archivos separados en el disco, y Louppe conserva sus valoraciones individuales
 
@@ -36,6 +38,10 @@ En esos casos, desactiva **Trate de combinar RAW + JPEG como una foto (Treat mat
 Volver a activar la agrupación no borra esas decisiones por separado. Si los dos archivos tienen decisiones distintas, el par puede mostrar una decisión **Mixto**. Revísalo antes de exportar en vez de dar por hecho que ambos archivos tienen la misma marca
 
 Si quieres mantener decisiones independientes, sigue en el modo separado. Aplicar una nueva decisión a un par agrupado vuelve a aplicarla a ambos archivos
+
+![Archivos RAW y JPEG como miniaturas separadas con sus extensiones](/media/2026-10-22-canada/pairs-separate.webp)
+
+*Agrupación desactivada: una miniatura por archivo, capturada en Louppe 1.9*
 
 ## Comprueba el enfoque y el origen de la vista previa
 
@@ -54,6 +60,10 @@ Cuando incluyes un par agrupado, se copian los dos archivos. Por tanto, una foto
 Para una selección que solo contenga una versión, usa el modo separado y selecciona o filtra primero los archivos que quieras. Comprueba de nuevo Exportar: con una selección activa empieza con **Todos seleccionados**, mientras que sin selección empieza con **Keepers (Yes)** del filtro actual, las fotos marcadas Sí
 
 Prueba primero el flujo de trabajo con unos pocos pares, después abre el destino en Finder y comprueba que los nombres de archivo y los formatos coincidan con lo que querías. Conserva la carpeta de origen y la copia de seguridad hasta verificar el resultado
+
+![Vista previa de copia de Louppe con siete fotos y catorce archivos emparejados](/media/2026-10-22-canada/copy-keepers.webp)
+
+*Vista previa de copia en Louppe 1.9: siete pares son catorce archivos. La copia aún no se ha ejecutado*
 
 ## Agrupar pares no es eliminar duplicados
 

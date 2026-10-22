@@ -1,0 +1,167 @@
+[
+  {
+    "file": "maple-leaves-800.webp",
+    "source": "media-library/2026-10-22-canada/exports/maple-leaves/maple-leaves-800.webp",
+    "sha256": "058a068ca177a193754a704f08e3522b0b049714f366832da158d5b5b7908378",
+    "kind": "camera-preview derivative",
+    "rawSha256": "ed7c62ba138c2fc249ec5f5768a3d6390c8ab2559253c4e4ae11bdd5f5a84657"
+  },
+  {
+    "file": "maple-leaves-1600.webp",
+    "source": "media-library/2026-10-22-canada/exports/maple-leaves/maple-leaves-1600.webp",
+    "sha256": "5e00c4c29d7ae5d01fb21429076d13db3b93a6ceac92f53ec5a4dd4e9a217d04",
+    "kind": "camera-preview derivative",
+    "rawSha256": "ed7c62ba138c2fc249ec5f5768a3d6390c8ab2559253c4e4ae11bdd5f5a84657"
+  },
+  {
+    "file": "maple-leaves-social.jpg",
+    "source": "media-library/2026-10-22-canada/exports/maple-leaves/maple-leaves-social.jpg",
+    "sha256": "2708b23eb3e296fec83862b405bd8fdeb480bca1593fa135d8f5347f89ec8d54",
+    "kind": "camera-preview derivative",
+    "rawSha256": "ed7c62ba138c2fc249ec5f5768a3d6390c8ab2559253c4e4ae11bdd5f5a84657"
+  },
+  {
+    "file": "glass-light-800.webp",
+    "source": "media-library/2026-10-22-canada/exports/glass-light/glass-light-800.webp",
+    "sha256": "a9f3c484b641bec62a02ad350fa9fd42fff5b50a0ada9637e93ddd44923b5e72",
+    "kind": "camera-preview derivative",
+    "rawSha256": "4b22276dab94f242bb07c062c933cb4da9879d14c9bdbf77134973b2f9ec8af2"
+  },
+  {
+    "file": "glass-light-1600.webp",
+    "source": "media-library/2026-10-22-canada/exports/glass-light/glass-light-1600.webp",
+    "sha256": "e147db0c268cf55f7b4da779e4dd4d232d9fb7dbfb8a1386f8745af502ee6ea7",
+    "kind": "camera-preview derivative",
+    "rawSha256": "4b22276dab94f242bb07c062c933cb4da9879d14c9bdbf77134973b2f9ec8af2"
+  },
+  {
+    "file": "glass-light-social.jpg",
+    "source": "media-library/2026-10-22-canada/exports/glass-light/glass-light-social.jpg",
+    "sha256": "017898ac520c2aa6b36bdda7791142a8624fb7d6bcad3784dce7563389b5645e",
+    "kind": "camera-preview derivative",
+    "rawSha256": "4b22276dab94f242bb07c062c933cb4da9879d14c9bdbf77134973b2f9ec8af2"
+  },
+  {
+    "file": "streetcar-wires-800.webp",
+    "source": "media-library/2026-10-22-canada/exports/streetcar-wires/streetcar-wires-800.webp",
+    "sha256": "db0dba3b4a834f1d364cf6d1c97f7e5c15ffb7923c4eb60603bf1760e494bd53",
+    "kind": "camera-preview derivative",
+    "rawSha256": "d6464cf0c03425cccf062ec6c78a825a4df145a8714d5ce81c003ab7518c1bca"
+  },
+  {
+    "file": "streetcar-wires-1600.webp",
+    "source": "media-library/2026-10-22-canada/exports/streetcar-wires/streetcar-wires-1600.webp",
+    "sha256": "8edcee28a06968c394c65d6379f5ef4fd414c69e3659e689280a723617ab87b9",
+    "kind": "camera-preview derivative",
+    "rawSha256": "d6464cf0c03425cccf062ec6c78a825a4df145a8714d5ce81c003ab7518c1bca"
+  },
+  {
+    "file": "streetcar-wires-social.jpg",
+    "source": "media-library/2026-10-22-canada/exports/streetcar-wires/streetcar-wires-social.jpg",
+    "sha256": "9e24898221990264c3030ec77940663312d0490cd7aa706c2c5f6943a145920f",
+    "kind": "camera-preview derivative",
+    "rawSha256": "d6464cf0c03425cccf062ec6c78a825a4df145a8714d5ce81c003ab7518c1bca"
+  },
+  {
+    "file": "garden-light-800.webp",
+    "source": "media-library/2026-10-22-canada/exports/garden-light/garden-light-800.webp",
+    "sha256": "4ca139efcaf6e59af7939ae8514177113d342bf92a1b9b3e5e51e0ef792ff493",
+    "kind": "camera-preview derivative",
+    "rawSha256": "1ea13bdc5ccf90e3048c7643a6d1d0697ef7c1c66f8975376d879db3eb21a660"
+  },
+  {
+    "file": "garden-light-1600.webp",
+    "source": "media-library/2026-10-22-canada/exports/garden-light/garden-light-1600.webp",
+    "sha256": "1d998a6d9307cd7fcb91f9e6badc4ee60b771f4b34cd48c675baeff4c484676f",
+    "kind": "camera-preview derivative",
+    "rawSha256": "1ea13bdc5ccf90e3048c7643a6d1d0697ef7c1c66f8975376d879db3eb21a660"
+  },
+  {
+    "file": "garden-light-social.jpg",
+    "source": "media-library/2026-10-22-canada/exports/garden-light/garden-light-social.jpg",
+    "sha256": "63b1799d3faa1fb2a356d3de133dac244c02ff32ffe7b15f55775a4a06e13ac3",
+    "kind": "camera-preview derivative",
+    "rawSha256": "1ea13bdc5ccf90e3048c7643a6d1d0697ef7c1c66f8975376d879db3eb21a660"
+  },
+  {
+    "file": "morning-glory-800.webp",
+    "source": "media-library/2026-10-22-canada/exports/morning-glory/morning-glory-800.webp",
+    "sha256": "0113219568b6016f4ce52287da25694193d0e4c2587e4864b53c6942227bf8e0",
+    "kind": "camera-preview derivative",
+    "rawSha256": "306066ab20dd3a576875e3ce45d19a88b172e65fe84c6c6d374284b30b0e66b4"
+  },
+  {
+    "file": "morning-glory-1600.webp",
+    "source": "media-library/2026-10-22-canada/exports/morning-glory/morning-glory-1600.webp",
+    "sha256": "7aee6ab8dcae134e153b126b587c62b2f4c145e2b1006cb7d4195f0ae0ae1482",
+    "kind": "camera-preview derivative",
+    "rawSha256": "306066ab20dd3a576875e3ce45d19a88b172e65fe84c6c6d374284b30b0e66b4"
+  },
+  {
+    "file": "morning-glory-social.jpg",
+    "source": "media-library/2026-10-22-canada/exports/morning-glory/morning-glory-social.jpg",
+    "sha256": "4d39b7f6429c4e15e182eb6ba694a51271dbdfdfb0307de129e7231e2748a183",
+    "kind": "camera-preview derivative",
+    "rawSha256": "306066ab20dd3a576875e3ce45d19a88b172e65fe84c6c6d374284b30b0e66b4"
+  },
+  {
+    "file": "pairs-grouped.webp",
+    "source": "media-library/2026-09-26/screenshots/website/26-raw-jpeg-paired-take-02.webp",
+    "sourceSha256": "fd1443dde23a0c1d29b016e466f6a1e1cf8315c04bd8efe1b96810ca61cf2d72",
+    "sha256": "8bf998f2e5868c0c9e44cba712d8837241622a5d80eb6b11d7ca4b4672e411bb",
+    "kind": "historical app capture derivative",
+    "version": "1.9.0 (11)",
+    "resizeMax": 1600,
+    "cropHeight": 190
+  },
+  {
+    "file": "pairs-separate.webp",
+    "source": "media-library/2026-09-26/screenshots/website/27-raw-jpeg-split-take-02.webp",
+    "sourceSha256": "1d57587c4d69a8d2f95500ea7c2026a9d1617297c5b0c006d4fbd0c072a5d95e",
+    "sha256": "90b2d79ae70b82ff2e8406d965486adc27ddb3b49debcf6fbc6cbdd941f9739e",
+    "kind": "historical app capture derivative",
+    "version": "1.9.0 (11)",
+    "resizeMax": 1600,
+    "cropHeight": 310
+  },
+  {
+    "file": "keepers-grid.webp",
+    "source": "media-library/2026-09-26/screenshots/website/22-grid-keepers-shortlist-take-02.webp",
+    "sourceSha256": "70dc2b730645ce3f6578758f38c763cdd1d40eb6cee5ffb17933807661d2fbf1",
+    "sha256": "7d12fb9617de9c109245b3c1245fa82b85f26949410bb073e6c04f64097808a9",
+    "kind": "historical app capture derivative",
+    "version": "1.9.0 (11)",
+    "resizeMax": 1600,
+    "cropHeight": 190
+  },
+  {
+    "file": "copy-keepers.webp",
+    "source": "media-library/2026-09-26/screenshots/website/34-export-keepers-preview-take-01.webp",
+    "sourceSha256": "2e15c57209418af250652274de277e6b71d6f0ba049b1be63a8c31f4886ce986",
+    "sha256": "1c250761751c15cb7884b9cc0d22c9ed3ee421019e3fb89fa0bd1d530fb780c0",
+    "kind": "historical app capture derivative",
+    "version": "1.9.0 (11)",
+    "resizeMax": 1600,
+    "cropHeight": null
+  },
+  {
+    "file": "gallery-architecture.webp",
+    "source": "media-library/2026-09-26/screenshots/website/10-gallery-info-architecture-XT508475-take-01.webp",
+    "sourceSha256": "2ec7c9f7f2a015392c174d10da2fd6ed5f834744345a81d1d731736eee15cde5",
+    "sha256": "39b3d44cde43b074873a58d31ef9cf22e8332b217a11b8c6705d32be8a9fc545",
+    "kind": "historical app capture derivative",
+    "version": "1.9.0 (11)",
+    "resizeMax": 1600,
+    "cropHeight": null
+  },
+  {
+    "file": "detail-focus.webp",
+    "source": "media-library/2026-09-26/screenshots/website/28-actual-size-orchard-XT508541-take-01.webp",
+    "sourceSha256": "4a9634f44b5dbf5a99c4269da504d92e10c29c51266692893f8636dda871ad40",
+    "sha256": "1d561768016e07c86b83a6e80618fdc65fb333b8d942b2cc508ca468f38831bf",
+    "kind": "historical app capture derivative",
+    "version": "1.9.0 (11)",
+    "resizeMax": 1600,
+    "cropHeight": null
+  }
+]

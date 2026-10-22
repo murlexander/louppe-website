@@ -14,6 +14,12 @@ const read = path => readFile(resolve(root, path), 'utf8');
 const json = async path => JSON.parse(await read(path));
 const write = async (path, data) => { await mkdir(dirname(resolve(out, path)), {recursive:true}); await writeFile(resolve(out, path), data); };
 const template = await read('templates/blog.html');
+const mediaDimensions = await json('content/media-dimensions.json');
+marked.use({renderer:{image({href, title, text}) {
+  const dimensions = mediaDimensions[href];
+  const size = dimensions ? ` width="${dimensions.width}" height="${dimensions.height}"` : '';
+  return `<a class="article-image-link" href="${escape(href)}"><img src="${escape(href)}" alt="${escape(text)}"${size} loading="lazy" decoding="async"${title ? ` title="${escape(title)}"` : ''}></a>`;
+}}});
 
 async function loadPosts(manifest, directory, draft = false) {
   const records = await json(manifest);
@@ -44,6 +50,11 @@ async function loadContent(record, directory, name) {
   if (record.image !== undefined) {
     if (typeof record.image?.src !== 'string' || !/^\/media\/[a-zA-Z0-9/_-]+\.(?:jpg|png|webp)$/.test(record.image.src) || typeof record.image?.alt !== 'string' || !record.image.alt.trim()) throw new Error(`Invalid article image for ${name}`);
     await access(resolve(root, record.image.src.slice(1)));
+  }
+  if (record.cover !== undefined) {
+    const {src,small,alt,width,height} = record.cover ?? {};
+    if (![src,small].every(path => typeof path === 'string' && /^\/media\/[a-zA-Z0-9/_-]+\.(?:jpg|png|webp)$/.test(path)) || typeof alt !== 'string' || !alt.trim() || ![width,height].every(value => Number.isInteger(value) && value > 0)) throw new Error(`Invalid article cover for ${name}`);
+    await Promise.all([src,small].map(path => access(resolve(root,path.slice(1)))));
   }
   const body = await read(`${directory}/${record.file}`);
   if (!body.trim()) throw new Error(`Empty article: ${name}`);
@@ -79,17 +90,26 @@ function callToAction(post) {
 function byline() {
   return `<div class="post-meta"><a href="https://alex-markin.com/" rel="author">Alex Markin</a></div>`;
 }
-const listing = posts.length ? `<ol class="post-list">${posts.map(post => `<li><h2><a href="${post.path}">${escape(post.title)}</a></h2><p>${escape(post.description)}</p></li>`).join('')}</ol>` : `<section class="blog-empty"><h2>no posts yet</h2><p>notes will appear here</p><a href="/">explore Louppe</a></section>`;
+function coverImage(cover, thumbnail = false) {
+  if (!cover) return '';
+  const sizes = thumbnail ? '(max-width: 600px) calc(100vw - 40px), 172px' : '(max-width: 680px) calc(100vw - 40px), (max-width: 1104px) calc(100vw - 64px), 1040px';
+  const smallWidth = mediaDimensions[cover.small]?.width ?? 800;
+  return `<img${thumbnail ? ' class="post-thumbnail"' : ''} src="${escape(thumbnail ? cover.small : cover.src)}" srcset="${escape(cover.small)} ${smallWidth}w, ${escape(cover.src)} ${cover.width}w" sizes="${sizes}" alt="${thumbnail ? '' : escape(cover.alt)}" width="${cover.width}" height="${cover.height}"${thumbnail ? ' loading="lazy"' : ' fetchpriority="high"'} decoding="async">`;
+}
+const listing = posts.length ? `<ol class="post-list">${posts.map(post => `<li><h2><a href="${post.path}">${escape(post.title)}</a></h2>${coverImage(post.cover,true)}<p>${escape(post.description)}</p></li>`).join('')}</ol>` : `<section class="blog-empty"><h2>no posts yet</h2><p>notes will appear here</p><a href="/">explore Louppe</a></section>`;
 const index = page({title:'Photo culling guides and Louppe news',description:'Photo culling guides for Mac, RAW + JPEG workflows, and Louppe development notes by Alex Markin.',path:'/blog/',content:`<header class="blog-heading"><h1>notes on Louppe</h1><p>photo culling guides and development notes</p></header>${listing}`});
 const generated = {'blog/index.html':index};
 function article(post, {shell=template, backLabel='all notes'} = {}) {
   const html = post.sections.map(section => marked.parse(section)).join(callToAction(post));
-  return page({title:post.title,description:post.description,path:post.path,post,shell,content:`<a class="article-back" href="/blog/">${escape(backLabel)}</a><article><header class="post-header"><h1>${escape(post.title)}</h1><p class="post-deck">${escape(post.description)}</p><div class="article-author">${byline()}</div></header><div class="article-body">${html}</div>${callToAction(post)}</article>`});
+  const cover = post.cover ? `<figure class="article-cover"><a href="${escape(post.cover.src)}">${coverImage(post.cover)}</a></figure>` : '';
+  return page({title:post.title,description:post.description,path:post.path,post,shell,content:`<a class="article-back" href="/blog/">${escape(backLabel)}</a><article><header class="post-header"><h1>${escape(post.title)}</h1><p class="post-deck">${escape(post.description)}</p><div class="article-author">${byline()}</div></header>${cover}<div class="article-body">${html}</div>${callToAction(post)}</article>`});
 }
 function renderTranslation(post, language, dictionary) {
   const label = dictionary[post.cta.label]?.[language.code];
   if (!label) throw new Error(`Missing ${language.code} translation: ${post.cta.label}`);
-  const localized = {...post, ...post.translations[language.code], image:post.translations[language.code].image ?? post.image ?? {...defaultImage,alt:dictionary[defaultImage.alt][language.code]}, cta:{...post.cta,label}};
+  if (post.cover && !dictionary[post.cover.alt]?.[language.code]) throw new Error(`Missing ${language.code} cover description: ${post.cover.alt}`);
+  const cover = post.cover ? {...post.cover,alt:dictionary[post.cover.alt][language.code]} : undefined;
+  const localized = {...post, ...post.translations[language.code], cover, image:post.translations[language.code].image ?? post.image ?? {...defaultImage,alt:dictionary[defaultImage.alt][language.code]}, cta:{...post.cta,label}};
   return article(localized, {shell:translateHTML(template,dictionary,language), backLabel:dictionary['all notes'][language.code]});
 }
 for (const post of posts) generated[`blog/${post.slug}/index.html`] = article(post);

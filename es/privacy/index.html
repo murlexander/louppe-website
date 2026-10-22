@@ -10,7 +10,7 @@
 
   <link rel="icon" href="/favicon.ico?v=20260909">
   <link rel="stylesheet" href="/styles.css?v=20261015-2">
-  <link rel="stylesheet" href="/blog.css?v=20260929-1">
+  <link rel="stylesheet" href="/blog.css?v=20261022-2">
   <meta property="og:title" content="política de privacidad">
   <meta property="og:description" content="datos locales de la app y analítica opcional del sitio de Louppe.">
   <meta property="og:type" content="website">
@@ -42,39 +42,61 @@
       <header class="post-header">
         <h1>política de privacidad</h1>
         <p class="post-deck">Louppe revisa tus medios localmente. la analítica del sitio es opcional</p>
-        <p class="article-author">actualizado el 15 de octubre de 2026 · Alex Markin · <a href="mailto:a@alex-markin.com">a@alex-markin.com</a></p>
+        <p class="article-author">actualizado el 22 de octubre de 2026 · Alex Markin · <a href="mailto:a@alex-markin.com">a@alex-markin.com</a></p>
       </header>
       <div class="article-body">
         <h2 id="app">la app Louppe</h2>
-        <p>Alex Markin crea Louppe, una app independiente para macOS. no tiene cuentas, publicidad, analítica de uso ni SDK de seguimiento. la app no envía a Alex medios, decisiones de revisión ni historial de uso</p>
+        <p>Louppe funciona en tu Mac. no tiene cuentas, anuncios, analítica de la app ni seguimiento. tus medios, decisiones de revisión e historial de uso no se envían a Alex</p>
 
-        <h3>tus archivos y datos de revisión</h3>
-        <p>Louppe lee las carpetas elegidas para previsualizar, reproducir, consultar metadatos y revisar. el análisis de duplicados y similitud se ejecuta en tu Mac. no se suben medios a Alex ni a servicios de análisis en la nube</p>
-        <p>las decisiones, estrellas, etiquetas de color, nombres e identidades de archivos se guardan en <code>.louppe_session.json</code> en la carpeta abierta, con una copia de seguridad en los datos de Application Support de Louppe. los archivos auxiliares XMP y las exportaciones van a las ubicaciones elegidas</p>
-        <p>las preferencias y rutas recientes de carpetas permanecen locales. las versiones con sandbox conservan permisos de acceso de macOS para las carpetas elegidas. las cachés de miniaturas agilizan la revisión. los registros locales de operaciones guardan rutas y progreso para la recuperación; el acceso al destino se conserva mientras un trabajo interrumpido pueda necesitarlo</p>
+        <div class="feature-disclosures privacy-details">
+          <details>
+            <summary>tus archivos y datos de revisión</summary>
+            <div>
+              <p>Louppe lee las carpetas elegidas para previsualizar, reproducir, consultar metadatos y revisar. el análisis de duplicados y similitud se ejecuta en tu Mac. no se suben medios a Alex ni a servicios de análisis en la nube</p>
+              <p>las decisiones, estrellas, etiquetas de color, nombres e identidades de archivos se guardan en <code>.louppe_session.json</code> en la carpeta abierta, con una copia de seguridad en los datos de Application Support de Louppe. los archivos auxiliares XMP y las exportaciones van a las ubicaciones elegidas</p>
+              <p>las preferencias y rutas recientes de carpetas permanecen locales. las versiones con sandbox conservan permisos de acceso de macOS para las carpetas elegidas. las cachés de miniaturas agilizan la revisión. los registros locales de operaciones guardan rutas y progreso para la recuperación; el acceso al destino se conserva mientras un trabajo interrumpido pueda necesitarlo</p>
 
-        <h3>conservación y control</h3>
-        <p>los archivos de sesión, copias de seguridad, preferencias y cachés pueden permanecer tras cerrar o desinstalar Louppe. los archivos auxiliares y las exportaciones permanecen hasta que los borres. borrar datos locales mediante macOS puede eliminar decisiones o información de recuperación. Louppe depura miniaturas y elimina registros de operaciones terminadas</p>
-        <p>la exportación copia por defecto. mover, renombrar, organizar, escribir XMP y enviar archivos a la papelera requieren acciones elegidas por ti. los servicios de carpetas compartidas o en la nube pueden sincronizar archivos y datos auxiliares según sus propias preferencias y políticas</p>
-
-        <h3>actualizaciones y recursos de Apple</h3>
-        <p>la descarga directa usa Sparkle para buscar y descargar versiones de GitHub. el servidor recibe datos de conexión, incluida tu IP. el perfilado del sistema de Sparkle está desactivado. puedes desactivar las comprobaciones automáticas en Updates de Louppe. las versiones de Mac App Store usan actualizaciones de Apple sin Sparkle</p>
-        <p>si un decodificador RAW de Apple elegido necesita recursos del modelo, macOS puede descargarlos de Apple. la decodificación sigue siendo local. Apple gestiona las descargas según <a href="https://www.apple.com/legal/privacy/">la política de privacidad de Apple</a></p>
-
-        <h3>propinas opcionales</h3>
-        <p>si eliges una propina dentro de una versión del Mac App Store, Apple procesa la compra mediante StoreKit. Louppe verifica la transacción localmente; las propinas no desbloquean funciones. Apple trata los datos de pago según <a href="https://www.apple.com/legal/privacy/">la política de privacidad de Apple</a></p>
-        <p>las propinas desde este sitio o la app de descarga directa abren Revolut. Alex recibe el pago y los datos del remitente o mensajes que facilite Revolut. su tratamiento se describe en <a href="https://www.revolut.com/legal/privacy/">la política de privacidad de Revolut</a></p>
-
-        <h3>contactar con Alex</h3>
-        <p>los enlaces de contacto y comentarios abren tu app de correo. tú decides si envías. Alex recibe tu dirección, mensaje y archivos adjuntos elegidos para responder e investigar. los proveedores de correo gestionan la entrega</p>
-        <p>se conserva la correspondencia para seguimiento y resolución. escribe a <a href="mailto:a@alex-markin.com">a@alex-markin.com</a> para consultar, corregir o solicitar la eliminación de información que enviaste. incluye solo los adjuntos que quieras compartir</p>
+              <p>los archivos de sesión, copias de seguridad, preferencias y cachés pueden permanecer tras cerrar o desinstalar Louppe. los archivos auxiliares y las exportaciones permanecen hasta que los borres. borrar datos locales mediante macOS puede eliminar decisiones o información de recuperación. Louppe depura miniaturas y elimina registros de operaciones terminadas</p>
+              <p>la exportación copia por defecto. mover, renombrar, organizar, escribir XMP y enviar archivos a la papelera requieren acciones elegidas por ti. los servicios de carpetas compartidas o en la nube pueden sincronizar archivos y datos auxiliares según sus propias preferencias y políticas</p>
+            </div>
+          </details>
+          <details>
+            <summary>actualizaciones y recursos de Apple</summary>
+            <div>
+              <p>la descarga directa usa Sparkle para buscar y descargar versiones de GitHub. el servidor recibe datos de conexión, incluida tu IP. el perfilado del sistema de Sparkle está desactivado. puedes desactivar las comprobaciones automáticas en Updates de Louppe. las versiones de Mac App Store usan actualizaciones de Apple sin Sparkle</p>
+              <p>si un decodificador RAW de Apple elegido necesita recursos del modelo, macOS puede descargarlos de Apple. la decodificación sigue siendo local. Apple gestiona las descargas según <a href="https://www.apple.com/legal/privacy/">la política de privacidad de Apple</a></p>
+            </div>
+          </details>
+          <details>
+            <summary>propinas opcionales</summary>
+            <div>
+              <p>si eliges una propina dentro de una versión del Mac App Store, Apple procesa la compra mediante StoreKit. Louppe verifica la transacción localmente; las propinas no desbloquean funciones. Apple trata los datos de pago según <a href="https://www.apple.com/legal/privacy/">la política de privacidad de Apple</a></p>
+              <p>las propinas desde este sitio o la app de descarga directa abren Revolut. Alex recibe el pago y los datos del remitente o mensajes que facilite Revolut. su tratamiento se describe en <a href="https://www.revolut.com/legal/privacy/">la política de privacidad de Revolut</a></p>
+            </div>
+          </details>
+          <details>
+            <summary>contactar con Alex</summary>
+            <div>
+              <p>los enlaces de contacto y comentarios abren tu app de correo. tú decides si envías. Alex recibe tu dirección, mensaje y archivos adjuntos elegidos para responder e investigar. los proveedores de correo gestionan la entrega</p>
+              <p>se conserva la correspondencia para seguimiento y resolución. escribe a <a href="mailto:a@alex-markin.com">a@alex-markin.com</a> para consultar, corregir o solicitar la eliminación de información que enviaste. incluye solo los adjuntos que quieras compartir</p>
+            </div>
+          </details>
+        </div>
 
         <h2 id="website">el sitio louppe.eu</h2>
-        <p>GitHub Pages recibe solicitudes de páginas y <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages#data-collection">registra las IP de visitantes por seguridad</a>, incluso sin consentimiento para analítica. consulta <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">la declaración de privacidad de GitHub</a> para conocer sus prácticas de conservación y tratamiento</p>
-        <p>Google Analytics solo se carga tras elegir «permitir analítica» en el sitio de producción HTTPS. mide páginas vistas, sitios de origen, información del navegador y del dispositivo, ubicación aproximada, clics en enlaces a artículos, y clics en enlaces de descarga. el idioma de la página, las rutas de los artículos, la ubicación de los botones, y las opciones de descarga (App Store, GitHub, o Homebrew) ayudan a comparar el contenido. se omiten las cadenas de consulta y los fragmentos de las URL de la página y de referencia. los clics reflejan intención, no instalaciones ni actividad de la app. Google signals y la personalización publicitaria están desactivados</p>
-        <p>Google recibe solicitudes de analítica según <a href="https://policies.google.com/privacy">la política de privacidad de Google</a>. <code>_ga</code> y <code>_ga_*</code> las cookies caducan tras 30 días sin renovación. tu elección dura 180 días en el almacenamiento local del navegador. si no está disponible, puede durar solo esta visita</p>
-        <p>rechaza o retira tu consentimiento en cualquier momento desde «analítica» en el pie de página. se detiene la recopilación en las pestañas abiertas de Louppe y se borran las cookies. no se eliminan datos ya recibidos por Google. las vistas previas locales no cargan analítica</p>
-        <p>las descargas, enlaces de código y donaciones usan servicios externos con sus propias políticas de privacidad. este sitio no tiene cuentas, subida de medios ni formulario de contacto</p>
+        <p>este sitio usa GitHub Pages. Google Analytics permanece desactivado salvo que lo permitas. cambia tu elección cuando quieras en «analítica» al pie de la página</p>
+        <div class="feature-disclosures privacy-details">
+          <details>
+            <summary>datos y analítica del sitio</summary>
+            <div>
+              <p>GitHub Pages recibe solicitudes de páginas y <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages#data-collection">registra las IP de visitantes por seguridad</a>, incluso sin consentimiento para analítica. consulta <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">la declaración de privacidad de GitHub</a> para conocer sus prácticas de conservación y tratamiento</p>
+              <p>Google Analytics solo se carga tras elegir «permitir analítica» en el sitio de producción HTTPS. mide páginas vistas, sitios de origen, información del navegador y del dispositivo, ubicación aproximada, clics en enlaces a artículos, y clics en enlaces de descarga. el idioma de la página, las rutas de los artículos, la ubicación de los botones, y las opciones de descarga (App Store, GitHub, o Homebrew) ayudan a comparar el contenido. se omiten las cadenas de consulta y los fragmentos de las URL de la página y de referencia. los clics reflejan intención, no instalaciones ni actividad de la app. Google signals y la personalización publicitaria están desactivados</p>
+              <p>Google recibe solicitudes de analítica según <a href="https://policies.google.com/privacy">la política de privacidad de Google</a>. <code>_ga</code> y <code>_ga_*</code> las cookies caducan tras 30 días sin renovación. tu elección dura 180 días en el almacenamiento local del navegador. si no está disponible, puede durar solo esta visita</p>
+              <p>rechaza o retira tu consentimiento en cualquier momento desde «analítica» en el pie de página. se detiene la recopilación en las pestañas abiertas de Louppe y se borran las cookies. no se eliminan datos ya recibidos por Google. las vistas previas locales no cargan analítica</p>
+              <p>las descargas, enlaces de código y donaciones usan servicios externos con sus propias políticas de privacidad. este sitio no tiene cuentas, subida de medios ni formulario de contacto</p>
+            </div>
+          </details>
+        </div>
 
         <h2>preguntas y cambios</h2>
         <p>envía preguntas o solicitudes de privacidad a <a href="mailto:a@alex-markin.com">a@alex-markin.com</a>. los cambios de privacidad aparecerán aquí con una fecha actualizada</p>

@@ -10,18 +10,18 @@
   <link rel="canonical" href="https://louppe.eu/blog/why-raw-photos-change-when-you-zoom/"><meta property="og:url" content="https://louppe.eu/blog/why-raw-photos-change-when-you-zoom/">
   <link rel="icon" href="/favicon.ico?v=20260909">
   <link rel="stylesheet" href="/styles.css?v=20261015-2">
-  <link rel="stylesheet" href="/blog.css?v=20261012-1">
+  <link rel="stylesheet" href="/blog.css?v=20261022-2">
   <meta property="og:title" content="Why RAW photos change when you zoom in on Mac">
   <meta property="og:description" content="Understand camera previews, Apple RAW rendering, and the change at 100% in Louppe. Check focus and color using the rendering you intend to judge">
   <meta property="og:type" content="article">
-  <meta property="og:image" content="https://louppe.eu/media/2026-10-22/raw-histogram.webp">
-  <meta property="og:image:alt" content="A RAW and JPEG pair with camera metadata and a RAW histogram in Louppe">
+  <meta property="og:image" content="https://louppe.eu/media/2026-10-22-canada/glass-light-social.jpg">
+  <meta property="og:image:alt" content="Colors and light distorted by glass blocks">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Why RAW photos change when you zoom in on Mac">
   <meta name="twitter:description" content="Understand camera previews, Apple RAW rendering, and the change at 100% in Louppe. Check focus and color using the rendering you intend to judge">
-  <meta name="twitter:image" content="https://louppe.eu/media/2026-10-22/raw-histogram.webp">
-  <meta name="twitter:image:alt" content="A RAW and JPEG pair with camera metadata and a RAW histogram in Louppe">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Why RAW photos change when you zoom in on Mac","description":"Understand camera previews, Apple RAW rendering, and the change at 100% in Louppe. Check focus and color using the rendering you intend to judge","url":"https://louppe.eu/blog/why-raw-photos-change-when-you-zoom/","datePublished":"2026-10-22","author":{"@type":"Person","name":"Alex Markin","url":"https://alex-markin.com/"},"image":"https://louppe.eu/media/2026-10-22/raw-histogram.webp","mainEntityOfPage":"https://louppe.eu/blog/why-raw-photos-change-when-you-zoom/","inLanguage":"en"}</script>
+  <meta name="twitter:image" content="https://louppe.eu/media/2026-10-22-canada/glass-light-social.jpg">
+  <meta name="twitter:image:alt" content="Colors and light distorted by glass blocks">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Why RAW photos change when you zoom in on Mac","description":"Understand camera previews, Apple RAW rendering, and the change at 100% in Louppe. Check focus and color using the rendering you intend to judge","url":"https://louppe.eu/blog/why-raw-photos-change-when-you-zoom/","datePublished":"2026-10-22","author":{"@type":"Person","name":"Alex Markin","url":"https://alex-markin.com/"},"image":"https://louppe.eu/media/2026-10-22-canada/glass-light-social.jpg","mainEntityOfPage":"https://louppe.eu/blog/why-raw-photos-change-when-you-zoom/","inLanguage":"en"}</script>
   <script src="/analytics-consent.js?v=20261021-1" defer></script>
   <script src="/prefetch.js?v=20261008-1" defer></script>
 </head>
@@ -31,18 +31,20 @@
     <a class="wordmark" href="/" aria-label="Louppe home">louppe</a>
     <nav aria-label="Main navigation"><a href="/blog/" aria-current="false">blog</a><a href="https://github.com/murlexander/louppe-media-culler" target="_blank" rel="noopener">open source</a></nav>
   </header>
-  <main id="main" class="blog-main"><a class="article-back" href="/blog/">all notes</a><article><header class="post-header"><h1>Why RAW photos change when you zoom in on Mac</h1><p class="post-deck">Understand camera previews, Apple RAW rendering, and the change at 100% in Louppe. Check focus and color using the rendering you intend to judge</p><div class="article-author"><div class="post-meta"><a href="https://alex-markin.com/" rel="author">Alex Markin</a></div></div></header><div class="article-body"><p>A RAW photo can look like your camera&#39;s JPEG at Fit, then change in color, contrast, or detail when you zoom in. In Louppe&#39;s Fast display mode, that can happen because the app changes from a preview to a RAW rendering at 100%</p>
+  <main id="main" class="blog-main"><a class="article-back" href="/blog/">all notes</a><article><header class="post-header"><h1>Why RAW photos change when you zoom in on Mac</h1><p class="post-deck">Understand camera previews, Apple RAW rendering, and the change at 100% in Louppe. Check focus and color using the rendering you intend to judge</p><div class="article-author"><div class="post-meta"><a href="https://alex-markin.com/" rel="author">Alex Markin</a></div></div></header><figure class="article-cover"><a href="/media/2026-10-22-canada/glass-light-1600.webp"><img src="/media/2026-10-22-canada/glass-light-1600.webp" srcset="/media/2026-10-22-canada/glass-light-800.webp 800w, /media/2026-10-22-canada/glass-light-1600.webp 1600w" sizes="(max-width: 680px) calc(100vw - 40px), (max-width: 1104px) calc(100vw - 64px), 1040px" alt="Colors and light distorted by glass blocks" width="1600" height="2400" fetchpriority="high" decoding="async"></a></figure><div class="article-body"><p>A RAW photo can look like your camera&#39;s JPEG at Fit, then change in color, contrast, or detail when you zoom in. In Louppe&#39;s Fast display mode, that can happen because the app changes from a preview to a RAW rendering at 100%</p>
 <p>That transition alone doesn&#39;t mean the original file changed. I keep the two questions separate: which rendering am I seeing, and what am I trying to judge?</p>
 <h2>A camera preview and a RAW rendering can differ</h2>
 <p>Many camera RAW files include a processed preview. It can reflect the camera&#39;s color choices, contrast, and sharpening. Rendering the RAW data with another processor can produce a different appearance</p>
 <p><a href="https://helpx.adobe.com/lightroom-classic/desktop/technical-support/technical-issues/miscellaneous-issues/color-faq.html">Adobe explains the same distinction</a> in Lightroom Classic: an embedded camera preview can differ from the rendering Lightroom generates</p>
 <p>If you like the finished appearance of a camera JPEG, review that JPEG directly. A RAW processor doesn&#39;t have to reproduce the camera&#39;s look</p>
+<p><a class="article-image-link" href="/media/2026-10-22-canada/detail-focus.webp"><img src="/media/2026-10-22-canada/detail-focus.webp" alt="A photograph of red berries enlarged to 100% in Louppe Gallery" width="1600" height="1004" loading="lazy" decoding="async"></a></p>
+<p><em>100% detail, captured in Louppe 1.9. The focus check uses the rendered image</em></p>
 <h2>What changes at 100% in Louppe?</h2>
 <p>In <a href="https://github.com/murlexander/louppe-media-culler/releases/tag/v1.12.0">Louppe 1.12</a>, <strong>Fast</strong> uses previews below 100% and Apple RAW rendering at 100% and above. Grid and Browser keep fast previews</p>
 <p>With the default keys, <strong>S</strong> toggles true 100% in Gallery. If the image changes as you cross that threshold, check <strong>Settings → RAW display</strong>. You can choose RAW rendering at all zoom levels to keep Gallery on a consistent rendering source</p>
 <p>Louppe is my free, open-source photo viewer and sorter for Apple silicon Macs running macOS 14 or later. Camera support depends on the RAW file and the available decoder</p>
 <aside class="article-cta" aria-label="Try Louppe"><a class="download-button" href="https://apps.apple.com/app/louppe/id6820131477">Try Louppe</a></aside><h2>The histogram label answers a different question</h2>
-<p><img src="/media/2026-10-22/raw-histogram.webp" alt="A Fujifilm RAW and JPEG pair in Louppe Gallery with a RAW histogram, camera settings, and paired filenames in Info"></p>
+<p><a class="article-image-link" href="/media/2026-10-22/raw-histogram.webp"><img src="/media/2026-10-22/raw-histogram.webp" alt="A Fujifilm RAW and JPEG pair in Louppe Gallery with a RAW histogram, camera settings, and paired filenames in Info" width="3024" height="1794" loading="lazy" decoding="async"></a></p>
 <p><em>RAW + JPEG inspection captured in Louppe 1.9. The histogram&#39;s RAW label identifies the analysis source; it doesn&#39;t identify the displayed photo rendering</em></p>
 <p>For a RAW file, the histogram can change from <strong>Preview</strong> to <strong>RAW</strong> after a separate analysis finishes. This happens independently of the photo&#39;s rendering. The <strong>X</strong> clipping overlay measures the displayed rendering</p>
 <p>Use the histogram and the image for their respective jobs. A RAW histogram label doesn&#39;t establish that the large photo is already an Apple RAW rendering</p>

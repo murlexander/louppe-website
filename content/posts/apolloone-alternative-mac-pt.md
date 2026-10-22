@@ -32,7 +32,9 @@ Em **Ajustes → Atalhos de teclado**, você pode personalizar as teclas de revi
 
 **Marcar Não não exclui um arquivo nem o envia à Lixeira**. Limpar é uma ação separada que envia arquivos indesejados à Lixeira do macOS. Suas decisões são salvas automaticamente para que você possa reabrir a pasta e continuar
 
-![Galeria do Louppe com uma fotografia, um navegador de miniaturas, e informações da câmera](/media/2026-09-26/gallery-info.webp)
+![Uma fachada de tijolos na galeria do Louppe com ajustes da câmera e nomes dos pares](/media/2026-10-22-canada/gallery-architecture.webp)
+
+*Galeria e informações da câmera, capturadas no Louppe 1.9*
 
 <!-- try-louppe -->
 
@@ -49,6 +51,10 @@ Para arquivos RAW, o modo de exibição Rápido usa prévias abaixo de 100% e a 
 Se você fotografa em RAW + JPEG, pode agrupar arquivos correspondentes como um só item de revisão ou revisá-los separadamente. O [guia de RAW + JPEG](/blog/cull-raw-jpeg-pairs-mac/) explica o agrupamento em pares, as decisões separadas, e quais arquivos são copiados
 
 Fotos, vídeo, áudio, e texto somente para leitura podem compartilhar uma pasta de revisão. Isso pode ser útil quando um ensaio contém mais do que fotografias
+
+![Uma foto de frutos vermelhos ampliada a 100% na galeria do Louppe](/media/2026-10-22-canada/detail-focus.webp)
+
+*Detalhe a 100%, capturado no Louppe 1.9. A verificação do foco usa a imagem renderizada*
 
 ## Termine sua seleção
 

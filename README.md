@@ -54,6 +54,8 @@ Dated reports stay in [Docs/Archive](Docs/Archive/); current work is in the back
 
 [7 October 2026 review](Docs/Archive/2026-10-07/READINESS_2026-10-07.md): release alignment, privacy sources, tests, and browser coverage limits.
 
+[22 October 2026 acceptance](Docs/Archive/2026-10-22/SITE_ACCEPTANCE.md): expandable privacy disclosures, shared stylesheet versions, keyboard interaction, and production consent reconciliation. The full policy details remain available in all six languages.
+
 ## Languages and search
 
 Run `npm run build` after content changes; it generates the homepage, privacy policy, blog, and sitemap in English, Spanish (`/es/`), Simplified Chinese (`/zh/`), Hindi (`/hi/`), Portuguese (`/pt/`), and Arabic (`/ar/`). Arabic uses a right-to-left page with the physical Mac keyboard kept left-to-right. No language redirects or browser-language detection are used.

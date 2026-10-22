@@ -32,7 +32,9 @@ ApolloOne 的信息来自[开发者的功能页面](https://anogeissus.com/apoll
 
 **标记为“否”不会删除文件，也不会将它移到废纸篓**。清理是单独的操作，会将不需要的文件移到 macOS 废纸篓。你的决定会自动保存，之后可以重新打开文件夹继续筛选
 
-![Louppe 图库，显示照片、缩略图浏览区和相机信息](/media/2026-09-26/gallery-info.webp)
+![Louppe 图库中的砖墙立面，信息面板显示相机参数和配对文件名](/media/2026-10-22-canada/gallery-architecture.webp)
+
+*图库和相机信息，截自 Louppe 1.9*
 
 <!-- try-louppe -->
 
@@ -49,6 +51,10 @@ ApolloOne 的信息来自[开发者的功能页面](https://anogeissus.com/apoll
 如果你拍摄 RAW + JPEG，可以将匹配的文件组合为一个筛选项目，也可以分别查看。[RAW + JPEG 指南](/blog/cull-raw-jpeg-pairs-mac/) 介绍配对、独立决定，以及实际会复制哪些文件
 
 照片、视频、音频和只读文本可以放在同一个查看文件夹中。如果一次拍摄包含的不只有照片，这会很有用
+
+![Louppe 图库中放大到 100% 的红色浆果照片](/media/2026-10-22-canada/detail-focus.webp)
+
+*100% 细节，截自 Louppe 1.9。对焦检查使用渲染后的图像*
 
 ## 完成筛选
 

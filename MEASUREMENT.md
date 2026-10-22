@@ -54,6 +54,12 @@ baseline and indexing status were unavailable, not zero. Retrieve the complete
 28 days before deployment when reporting access returns. The existing 28 October
 review can check discovery, but it is too early to judge these articles.
 
+The 22 October browser acceptance deliberately accepted consent in two agent
+tabs and generated verification page views. It generated no `louppe_download`
+events. Exclude these visits from acquisition conclusions; the deployment day
+is already excluded from the experiment comparison. Consent test receipts are
+private in `.drafts/site-wrap-up-consent-2026-10-22.json`.
+
 Evaluate each URL 14 and 28 days after its own publication. These are provisional
 experiment rules, not industry benchmarks:
 

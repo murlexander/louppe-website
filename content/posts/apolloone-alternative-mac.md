@@ -32,7 +32,9 @@ In **Settings → Keyboard shortcuts**, you can customise review keys or use phy
 
 **Marking No doesn't delete or trash a file**. Clean Up is a separate action that sends unwanted files to the macOS Trash. Your decisions save automatically so you can reopen the folder and continue
 
-![Louppe Gallery with a photograph, thumbnail browser, and camera information](/media/2026-09-26/gallery-info.webp)
+![A brick facade in Louppe Gallery with camera settings and paired filenames in Info](/media/2026-10-22-canada/gallery-architecture.webp)
+
+*Gallery and camera information, captured in Louppe 1.9*
 
 <!-- try-louppe -->
 
@@ -49,6 +51,10 @@ For RAW files, Fast display uses previews below 100% and Apple RAW rendering at 
 If you shoot RAW + JPEG, you can group matching files as one review item, or review them separately. The [RAW + JPEG guide](/blog/cull-raw-jpeg-pairs-mac/) explains pairing, separate decisions, and which files are copied
 
 Photos, video, audio, and read-only text can share a review folder. That can be useful when a shoot contains more than still photographs
+
+![A photograph of red berries enlarged to 100% in Louppe Gallery](/media/2026-10-22-canada/detail-focus.webp)
+
+*100% detail, captured in Louppe 1.9. The focus check uses the rendered image*
 
 ## Finish your selection
 

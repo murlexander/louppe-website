@@ -11,7 +11,7 @@ test('draft isolation, publication, validation and withdrawal', async () => {
   const root = await mkdtemp(resolve(tmpdir(),'louppe-blog-'));
   try {
     for (const name of ['scripts','templates','content/posts','.drafts','media','privacy']) await mkdir(resolve(root,name),{recursive:true});
-    for (const name of ['scripts/build-blog.mjs','scripts/build-locales.mjs','content/translations.json','content/translation-ui-keys.json','templates/home.html','templates/privacy.html','templates/blog.html','index.html','styles.css','prefetch.js','site.js','keyboard.js','analytics-consent.js','blog.css','favicon.ico','favicon.png','privacy/index.html']) await cp(resolve(source,name),resolve(root,name));
+    for (const name of ['scripts/build-blog.mjs','scripts/build-locales.mjs','content/media-dimensions.json','content/translations.json','content/translation-ui-keys.json','templates/home.html','templates/privacy.html','templates/blog.html','index.html','styles.css','prefetch.js','site.js','keyboard.js','analytics-consent.js','blog.css','favicon.ico','favicon.png','privacy/index.html']) await cp(resolve(source,name),resolve(root,name));
     await symlink(resolve(source,'node_modules'),resolve(root,'node_modules'),'dir');
     const save = (name,body) => writeFile(resolve(root,name),body);
     const load = name => readFile(resolve(root,name),'utf8');
@@ -76,6 +76,18 @@ test('draft isolation, publication, validation and withdrawal', async () => {
       await save('content/posts.json',JSON.stringify([{...record,image:invalidImage}]));
       assert.notEqual(run().status,0);
       assert.equal(await load('blog/sample/index.html'),illustrated);
+    }
+    const cover = {src:image.src,small:image.src,alt:'Leaves & light',width:1600,height:1067};
+    await save('content/posts.json',JSON.stringify([{...record,image,cover}]));
+    assert.equal(run().status,0);
+    const withCover = await load('blog/sample/index.html');
+    assert.match(withCover,/<figure class="article-cover">/);
+    assert.match(withCover,/alt="Leaves &amp; light" width="1600" height="1067" fetchpriority="high"/);
+    assert.match(await load('blog/index.html'),/class="post-thumbnail"[^>]+alt=""[^>]+loading="lazy"/);
+    for (const invalidCover of [{...cover,src:'/media/../sample.webp'},{...cover,small:'/media/missing.webp'},{...cover,alt:''},{...cover,width:0}]) {
+      await save('content/posts.json',JSON.stringify([{...record,cover:invalidCover}]));
+      assert.notEqual(run().status,0);
+      assert.equal(await load('blog/sample/index.html'),withCover);
     }
     // Publication is explicit; an editorial date does not schedule or hide a post.
     await save('content/posts.json',JSON.stringify([{...record,date:'2999-01-01'}]));

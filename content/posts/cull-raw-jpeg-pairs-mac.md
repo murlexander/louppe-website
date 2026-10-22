@@ -21,7 +21,9 @@ The shortcuts in this guide are the defaults. In Settings → Keyboard shortcuts
 
 With pairing enabled, a rating or item action applies to both files. That includes Yes/No decisions, stars, and colour labels. Marking No doesn't trash either file
 
-![Louppe Gallery with RAW + JPEG pairing visible beside the review controls](/media/2026-09-26/gallery-info.webp)
+![Matching RAW + JPEG files grouped into one thumbnail per shot](/media/2026-10-22-canada/pairs-grouped.webp)
+
+*Pairing on: one thumbnail per shot, captured in Louppe 1.9*
 
 Grouping changes how you review the pair. The RAW and JPEG remain separate files on disk, and Louppe retains their individual ratings
 
@@ -36,6 +38,10 @@ For those cases, turn **Treat matching RAW + JPEG as one photo** off. Review the
 Turning pairing back on doesn't erase those separate decisions. If the two files disagree, the pair can show a **Mixed** decision. Review it before exporting rather than assuming both files have the same mark
 
 If you want to keep independent decisions, continue in separate mode. Applying a new decision to a grouped pair applies it to both files again
+
+![RAW and JPEG files shown as separate thumbnails with their filename extensions](/media/2026-10-22-canada/pairs-separate.webp)
+
+*Pairing off: each file has its own thumbnail, captured in Louppe 1.9*
 
 ## Check focus and the preview source
 
@@ -54,6 +60,10 @@ When you include a grouped pair, both files are copied. One photo in the review 
 For a selection containing only one version, use separate mode and select or filter the files you want first. Check Export again: an active selection starts with **All selected**, while no selection starts with filtered **Keepers (Yes)**
 
 Try the workflow with a few pairs first, then open the destination in Finder and check that the filenames and formats match your intention. Keep the source folder and backup until you've verified the result
+
+![Louppe Copy export preview with seven keepers and fourteen paired files](/media/2026-10-22-canada/copy-keepers.webp)
+
+*Copy preview in Louppe 1.9: seven paired photos mean fourteen files. No export has run*
 
 ## Pairing isn't duplicate removal
 

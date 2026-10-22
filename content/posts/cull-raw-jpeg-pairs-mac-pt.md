@@ -21,7 +21,9 @@ Os atalhos deste guia são os padrões. Em Ajustes → Atalhos de teclado, você
 
 Com o agrupamento ativado, uma classificação ou ação sobre um item se aplica aos dois arquivos. Isso inclui decisões Sim/Não, estrelas, e etiquetas de cor. Marcar Não não envia nenhum dos arquivos para a Lixeira
 
-![Galeria do Louppe com o agrupamento RAW + JPEG visível ao lado dos controles de revisão](/media/2026-09-26/gallery-info.webp)
+![Arquivos RAW + JPEG agrupados em uma miniatura por foto](/media/2026-10-22-canada/pairs-grouped.webp)
+
+*Agrupamento ativado: uma miniatura por foto, capturada no Louppe 1.9*
 
 O agrupamento muda como você revisa o par. O RAW e o JPEG continuam sendo arquivos separados no disco, e o Louppe mantém suas classificações individuais
 
@@ -36,6 +38,10 @@ Nesses casos, desative **Tratar RAW + JPEG correspondentes como uma única foto 
 Ativar o agrupamento novamente não apaga essas decisões separadas. Se os dois arquivos tiverem decisões diferentes, o par pode mostrar uma decisão **Misto**. Revise antes de exportar, em vez de presumir que os dois arquivos têm a mesma marca
 
 Se quiser manter decisões independentes, continue no modo separado. Aplicar uma nova decisão a um par agrupado volta a aplicá-la aos dois arquivos
+
+![Arquivos RAW e JPEG em miniaturas separadas com suas extensões](/media/2026-10-22-canada/pairs-separate.webp)
+
+*Agrupamento desativado: uma miniatura por arquivo, capturada no Louppe 1.9*
 
 ## Confira o foco e a origem da prévia
 
@@ -54,6 +60,10 @@ Quando você inclui um par agrupado, os dois arquivos são copiados. Uma foto na
 Para uma seleção com apenas uma versão, use o modo separado e primeiro selecione ou filtre os arquivos que quer. Confira Exportar novamente: uma seleção ativa começa com **Todos os selecionados**, enquanto a ausência de seleção começa com **Keepers (Yes)** do filtro atual, as fotos marcadas Sim
 
 Experimente o fluxo de trabalho com alguns pares primeiro, depois abra o destino no Finder e confira se os nomes de arquivo e os formatos correspondem ao que você queria. Mantenha a pasta de origem e o backup até verificar o resultado
+
+![Prévia de cópia do Louppe com sete fotos e catorze arquivos emparelhados](/media/2026-10-22-canada/copy-keepers.webp)
+
+*Prévia de cópia no Louppe 1.9: sete pares são catorze arquivos. A exportação ainda não foi executada*
 
 ## Agrupar pares não é remover duplicatas
 

@@ -2159,6 +2159,30 @@
     "pt": "Publicadora na App Store: SAMO DANNI EOOD",
     "ar": "الناشر على App Store: ⁦SAMO DANNI EOOD⁩"
   },
+  "Louppe works on your Mac. it has no account, ads, app analytics, or tracking. your media, review decisions, and usage history are not sent to Alex": {
+    "en": "Louppe works on your Mac. it has no account, ads, app analytics, or tracking. your media, review decisions, and usage history are not sent to Alex",
+    "es": "Louppe funciona en tu Mac. no tiene cuentas, anuncios, analítica de la app ni seguimiento. tus medios, decisiones de revisión e historial de uso no se envían a Alex",
+    "zh-Hans": "Louppe 在您的 Mac 上运行。无需账号，没有广告、应用分析或跟踪。您的媒体、筛选决定和使用历史不会发送给 Alex",
+    "hi": "Louppe आपके Mac पर काम करता है। इसमें खाता, विज्ञापन, ऐप एनालिटिक्स या ट्रैकिंग नहीं है। आपका मीडिया, समीक्षा निर्णय और उपयोग का इतिहास Alex को नहीं भेजा जाता",
+    "pt": "o Louppe funciona no seu Mac. não tem conta, anúncios, análise de uso do app ou rastreamento. sua mídia, decisões de revisão e histórico de uso não são enviados a Alex",
+    "ar": "يعمل Louppe على جهاز Mac الخاص بك. لا يتضمن حسابات أو إعلانات أو تحليلات للتطبيق أو تتبعًا. لا تُرسل وسائطك أو قرارات المراجعة أو سجل الاستخدام إلى Alex"
+  },
+  "website data and analytics": {
+    "en": "website data and analytics",
+    "es": "datos y analítica del sitio",
+    "zh-Hans": "网站数据与分析",
+    "hi": "वेबसाइट डेटा और एनालिटिक्स",
+    "pt": "dados e análise do site",
+    "ar": "بيانات الموقع والتحليلات"
+  },
+  "updated 22 October 2026 · Alex Markin ·": {
+    "en": "updated 22 October 2026 · Alex Markin ·",
+    "es": "actualizado el 22 de octubre de 2026 · Alex Markin ·",
+    "zh-Hans": "更新于 2026 年 10 月 22 日 · Alex Markin ·",
+    "hi": "अपडेट: 22 अक्टूबर 2026 · Alex Markin ·",
+    "pt": "atualizado em 22 de outubro de 2026 · Alex Markin ·",
+    "ar": "آخر تحديث 22 أكتوبر 2026 · Alex Markin ·"
+  },
   "legal": {
     "en": "legal",
     "es": "legal",
@@ -2198,5 +2222,53 @@
     "hi": "फ़ुटर के “विश्लेषण” से कभी भी मना करें या सहमति वापस लें। इससे खुले Louppe वेबसाइट टैब में संग्रह रुकता है और एनालिटिक्स कुकी हटती हैं। Google को पहले मिले डेटा नहीं मिटते। स्थानीय पूर्वावलोकन एनालिटिक्स लोड नहीं करते",
     "pt": "rejeite ou retire o consentimento a qualquer momento em “análise” no rodapé. a coleta para nas abas abertas do Louppe e os cookies são limpos. dados já recebidos pelo Google não são apagados. prévias locais não carregam análise",
     "ar": "ارفض أو اسحب الموافقة في أي وقت من «التحليلات» في التذييل. يتوقف جمع البيانات في جميع تبويبات موقع Louppe المفتوحة وتُمسح ملفات التحليلات. لا تُحذف البيانات التي تلقتها Google سابقًا. لا تُحمّل التحليلات في المعاينات المحلية"
+  },
+  "this site uses GitHub Pages. Google Analytics is off unless you allow it. change your choice anytime through “analytics” in the footer": {
+    "en": "this site uses GitHub Pages. Google Analytics is off unless you allow it. change your choice anytime through “analytics” in the footer",
+    "es": "este sitio usa GitHub Pages. Google Analytics permanece desactivado salvo que lo permitas. cambia tu elección cuando quieras en «analítica» al pie de la página",
+    "zh-Hans": "本网站使用 GitHub Pages。除非您允许，否则不会启用 Google Analytics。您可随时通过页脚的“分析”更改选择",
+    "hi": "यह साइट GitHub Pages का उपयोग करती है। आपकी अनुमति के बिना Google Analytics बंद रहता है। फ़ुटर में “विश्लेषण” से कभी भी अपनी पसंद बदलें",
+    "pt": "este site usa o GitHub Pages. o Google Analytics fica desativado até você permitir. altere sua escolha a qualquer momento em “análise” no rodapé",
+    "ar": "يستخدم هذا الموقع GitHub Pages. تظل Google Analytics معطّلة ما لم تسمح بها. يمكنك تغيير اختيارك في أي وقت عبر «التحليلات» في التذييل"
+  },
+  "Maple leaves on a rain-darkened ledge": {
+    "en": "Maple leaves on a rain-darkened ledge",
+    "es": "Hojas de arce sobre una superficie oscurecida por la lluvia",
+    "zh-Hans": "雨后深色台面上的枫叶",
+    "hi": "बारिश से गहरे हुए किनारे पर मेपल के पत्ते",
+    "pt": "Folhas de bordo em uma superfície escurecida pela chuva",
+    "ar": "أوراق قيقب على حافة داكنة بفعل المطر"
+  },
+  "Colors and light distorted by glass blocks": {
+    "en": "Colors and light distorted by glass blocks",
+    "es": "Colores y luz distorsionados por bloques de vidrio",
+    "zh-Hans": "透过玻璃砖变形的色彩与光线",
+    "hi": "काँच की ईंटों से बदले हुए रंग और प्रकाश",
+    "pt": "Cores e luz distorcidas por blocos de vidro",
+    "ar": "ألوان وضوء تشوّههما قوالب زجاجية"
+  },
+  "Streetcar wires crossing a blue Toronto sky": {
+    "en": "Streetcar wires crossing a blue Toronto sky",
+    "es": "Cables de tranvía bajo el cielo azul de Toronto",
+    "zh-Hans": "多伦多蓝天下交错的有轨电车架线",
+    "hi": "टोरंटो के नीले आसमान में ट्राम के तार",
+    "pt": "Fios de bonde no céu azul de Toronto",
+    "ar": "أسلاك ترام تتقاطع في سماء تورونتو الزرقاء"
+  },
+  "Purple flowers and red leaves in dappled light": {
+    "en": "Purple flowers and red leaves in dappled light",
+    "es": "Flores moradas y hojas rojas bajo luces y sombras",
+    "zh-Hans": "斑驳光影中的紫色花朵和红叶",
+    "hi": "छनती रोशनी में बैंगनी फूल और लाल पत्ते",
+    "pt": "Flores roxas e folhas vermelhas sob luz entrecortada",
+    "ar": "زهور بنفسجية وأوراق حمراء في ضوء متخلل"
+  },
+  "A purple morning glory against green leaves": {
+    "en": "A purple morning glory against green leaves",
+    "es": "Una flor morada de campanilla entre hojas verdes",
+    "zh-Hans": "绿叶映衬下的紫色牵牛花",
+    "hi": "हरे पत्तों के बीच बैंगनी मॉर्निंग ग्लोरी का फूल",
+    "pt": "Uma flor roxa de glória-da-manhã entre folhas verdes",
+    "ar": "زهرة مجد الصباح البنفسجية بين أوراق خضراء"
   }
 }

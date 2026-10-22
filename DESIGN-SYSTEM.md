@@ -50,14 +50,16 @@ Static HTML, CSS, and JavaScript; Markdown-generated blog. Approved 26 September
 
 ## Assets and publishing
 
-Use public derivatives in `media/2026-09-26/`. Preserve capture notes. Keep original shoot files outside the public repo.
+Use optimized public derivatives in dated `media/` folders. Preserve capture notes. Keep original shoot files outside the public repo.
 
 GitHub Pages publishes `main` at louppe.eu. Change dated `?v=YYYYMMDD-N` keys for changed CSS/JavaScript. Preserve CNAME, crawler metadata, and download URLs.
 
 ## Blog
 
 - Simple `/blog/` list; no card grid or categories
+- Small photo thumbnails beside list entries; full-width thumbnails on phones
 - Articles: 680px left-aligned column, system type, and shared grain
+- Photo covers may open to 1040px; inline workflow screenshots stay at reading width and link to their full delivery. Identify historical app versions in captions
 - Lowercase presentation, contractions, first-person voice, and no trailing periods
 - One byline below the subtitle, linked to Alex's site; none on the index
 - One divider above the footer; no others

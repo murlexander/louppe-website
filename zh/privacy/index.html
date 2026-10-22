@@ -10,7 +10,7 @@
 
   <link rel="icon" href="/favicon.ico?v=20260909">
   <link rel="stylesheet" href="/styles.css?v=20261015-2">
-  <link rel="stylesheet" href="/blog.css?v=20260929-1">
+  <link rel="stylesheet" href="/blog.css?v=20261022-2">
   <meta property="og:title" content="隐私政策">
   <meta property="og:description" content="Louppe 的本地应用数据与可选网站分析。">
   <meta property="og:type" content="website">
@@ -42,39 +42,61 @@
       <header class="post-header">
         <h1>隐私政策</h1>
         <p class="post-deck">Louppe 在本机筛选媒体。网站分析为可选功能</p>
-        <p class="article-author">更新于 2026 年 10 月 15 日 · Alex Markin · <a href="mailto:a@alex-markin.com">a@alex-markin.com</a></p>
+        <p class="article-author">更新于 2026 年 10 月 22 日 · Alex Markin · <a href="mailto:a@alex-markin.com">a@alex-markin.com</a></p>
       </header>
       <div class="article-body">
         <h2 id="app">Louppe 应用</h2>
-        <p>Alex Markin 制作了独立 macOS 应用 Louppe。它没有账号、广告、应用分析或跟踪 SDK。应用不会向 Alex 发送媒体、筛选决定或使用历史</p>
+        <p>Louppe 在您的 Mac 上运行。无需账号，没有广告、应用分析或跟踪。您的媒体、筛选决定和使用历史不会发送给 Alex</p>
 
-        <h3>您的文件与筛选数据</h3>
-        <p>Louppe 读取选定文件夹用于预览、播放、元数据和筛选。重复和相似性分析在您的 Mac 上运行。媒体不会上传给 Alex 或云端分析服务</p>
-        <p>保留决定、星级、颜色标签、文件名和文件标识保存在 <code>.louppe_session.json</code> ，位于打开的文件夹中，并在 Louppe 的 Application Support 数据中备份。XMP 附属文件和导出文件写入选定位置</p>
-        <p>偏好设置和最近的文件夹路径保留在本机。沙盒版本保存选定文件夹的 macOS 访问书签。缩略图缓存加快筛选。本地操作日志记录路径和进度以便恢复；中断的任务可能需要访问目标位置时，会保留相关权限</p>
+        <div class="feature-disclosures privacy-details">
+          <details>
+            <summary>您的文件与筛选数据</summary>
+            <div>
+              <p>Louppe 读取选定文件夹用于预览、播放、元数据和筛选。重复和相似性分析在您的 Mac 上运行。媒体不会上传给 Alex 或云端分析服务</p>
+              <p>保留决定、星级、颜色标签、文件名和文件标识保存在 <code>.louppe_session.json</code> ，位于打开的文件夹中，并在 Louppe 的 Application Support 数据中备份。XMP 附属文件和导出文件写入选定位置</p>
+              <p>偏好设置和最近的文件夹路径保留在本机。沙盒版本保存选定文件夹的 macOS 访问书签。缩略图缓存加快筛选。本地操作日志记录路径和进度以便恢复；中断的任务可能需要访问目标位置时，会保留相关权限</p>
 
-        <h3>数据保留与控制</h3>
-        <p>关闭或卸载 Louppe 后，会话附属文件、备份、偏好设置和预览缓存可能仍然保留。附属文件和导出文件保留到您手动删除。通过 macOS 删除本地应用数据可能清除筛选决定或恢复信息。Louppe 会清理缩略图并移除已完成操作的日志</p>
-        <p>默认导出副本。移动、重命名、整理、写入 XMP 和移入废纸篓都需由您选择执行。云端或共享文件夹服务可能按其自身设置和隐私政策同步文件及附属文件</p>
-
-        <h3>更新与 Apple 资源</h3>
-        <p>直接下载版使用 Sparkle 检查和下载 GitHub 版本。服务器会收到包括 IP 地址在内的连接信息。Sparkle 系统信息统计已禁用。可在 Louppe 的 Updates 设置中关闭自动检查。Mac App Store 版本通过 Apple 更新，不使用 Sparkle</p>
-        <p>若选定的 Apple RAW 解码器需要机型资源，macOS 可能从 Apple 下载。解码仍在本机进行。Apple 根据以下政策管理下载： <a href="https://www.apple.com/legal/privacy/">Apple 隐私政策</a></p>
-
-        <h3>自愿打赏</h3>
-        <p>如果你在 Mac App Store 版本中选择应用内打赏，Apple 会通过 StoreKit 处理购买。Louppe 在本机验证交易；打赏不会解锁任何功能。Apple 根据以下政策处理支付信息： <a href="https://www.apple.com/legal/privacy/">Apple 隐私政策</a></p>
-        <p>通过本网站或直接下载版打赏时会打开 Revolut。Alex 会收到款项，以及 Revolut 提供的付款人信息或留言。其数据处理方式见 <a href="https://www.revolut.com/legal/privacy/">Revolut 隐私政策</a></p>
-
-        <h3>联系 Alex</h3>
-        <p>联系和反馈链接会打开您的邮件应用。是否发送由您决定。Alex 会收到您的地址、消息和所选附件用于回复及调查。邮件服务商负责传递</p>
-        <p>通信会保留用于跟进和解决问题。联系 <a href="mailto:a@alex-markin.com">a@alex-markin.com</a> ，咨询、更正或申请删除您发送的信息。仅附上您愿意分享的文件</p>
+              <p>关闭或卸载 Louppe 后，会话附属文件、备份、偏好设置和预览缓存可能仍然保留。附属文件和导出文件保留到您手动删除。通过 macOS 删除本地应用数据可能清除筛选决定或恢复信息。Louppe 会清理缩略图并移除已完成操作的日志</p>
+              <p>默认导出副本。移动、重命名、整理、写入 XMP 和移入废纸篓都需由您选择执行。云端或共享文件夹服务可能按其自身设置和隐私政策同步文件及附属文件</p>
+            </div>
+          </details>
+          <details>
+            <summary>更新与 Apple 资源</summary>
+            <div>
+              <p>直接下载版使用 Sparkle 检查和下载 GitHub 版本。服务器会收到包括 IP 地址在内的连接信息。Sparkle 系统信息统计已禁用。可在 Louppe 的 Updates 设置中关闭自动检查。Mac App Store 版本通过 Apple 更新，不使用 Sparkle</p>
+              <p>若选定的 Apple RAW 解码器需要机型资源，macOS 可能从 Apple 下载。解码仍在本机进行。Apple 根据以下政策管理下载： <a href="https://www.apple.com/legal/privacy/">Apple 隐私政策</a></p>
+            </div>
+          </details>
+          <details>
+            <summary>自愿打赏</summary>
+            <div>
+              <p>如果你在 Mac App Store 版本中选择应用内打赏，Apple 会通过 StoreKit 处理购买。Louppe 在本机验证交易；打赏不会解锁任何功能。Apple 根据以下政策处理支付信息： <a href="https://www.apple.com/legal/privacy/">Apple 隐私政策</a></p>
+              <p>通过本网站或直接下载版打赏时会打开 Revolut。Alex 会收到款项，以及 Revolut 提供的付款人信息或留言。其数据处理方式见 <a href="https://www.revolut.com/legal/privacy/">Revolut 隐私政策</a></p>
+            </div>
+          </details>
+          <details>
+            <summary>联系 Alex</summary>
+            <div>
+              <p>联系和反馈链接会打开您的邮件应用。是否发送由您决定。Alex 会收到您的地址、消息和所选附件用于回复及调查。邮件服务商负责传递</p>
+              <p>通信会保留用于跟进和解决问题。联系 <a href="mailto:a@alex-markin.com">a@alex-markin.com</a> ，咨询、更正或申请删除您发送的信息。仅附上您愿意分享的文件</p>
+            </div>
+          </details>
+        </div>
 
         <h2 id="website">louppe.eu 网站</h2>
-        <p>GitHub Pages 接收页面请求，并 <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages#data-collection">为安全目的记录访客 IP 地址</a>，即使未同意分析也如此。请查看 <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub 隐私声明</a> ，了解其保留和处理方式</p>
-        <p>仅在 HTTPS 正式网站选择“允许分析”后加载 Google Analytics。它统计页面浏览、来源网站、浏览器及设备信息、大致位置、文章链接点击和下载链接点击。页面语言、文章路径、按钮位置和下载方式（App Store、GitHub 或 Homebrew）用于比较内容。页面和来源网址中的查询字符串和片段均被省略。点击代表意向，并非安装或应用活动。Google signals 和广告个性化已禁用</p>
-        <p>Google 接收分析请求，适用 <a href="https://policies.google.com/privacy">Google 隐私政策</a>。 <code>_ga</code> 和 <code>_ga_*</code> Cookie 在未续期的情况下于 30 天后过期。您的选择在浏览器本地存储中保留 180 天。存储不可用时，选择可能仅在本次访问有效</p>
-        <p>可随时通过页脚的“分析”拒绝或撤回同意。撤回会停止所有已打开 Louppe 网站标签页的数据收集并清除分析 Cookie，但不会删除 Google 已收到的数据。本地预览不加载分析</p>
-        <p>下载、源代码链接和捐赠使用外部服务，适用各自的隐私政策。本网站没有账号、媒体上传或联系表单</p>
+        <p>本网站使用 GitHub Pages。除非您允许，否则不会启用 Google Analytics。您可随时通过页脚的“分析”更改选择</p>
+        <div class="feature-disclosures privacy-details">
+          <details>
+            <summary>网站数据与分析</summary>
+            <div>
+              <p>GitHub Pages 接收页面请求，并 <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages#data-collection">为安全目的记录访客 IP 地址</a>，即使未同意分析也如此。请查看 <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub 隐私声明</a> ，了解其保留和处理方式</p>
+              <p>仅在 HTTPS 正式网站选择“允许分析”后加载 Google Analytics。它统计页面浏览、来源网站、浏览器及设备信息、大致位置、文章链接点击和下载链接点击。页面语言、文章路径、按钮位置和下载方式（App Store、GitHub 或 Homebrew）用于比较内容。页面和来源网址中的查询字符串和片段均被省略。点击代表意向，并非安装或应用活动。Google signals 和广告个性化已禁用</p>
+              <p>Google 接收分析请求，适用 <a href="https://policies.google.com/privacy">Google 隐私政策</a>。 <code>_ga</code> 和 <code>_ga_*</code> Cookie 在未续期的情况下于 30 天后过期。您的选择在浏览器本地存储中保留 180 天。存储不可用时，选择可能仅在本次访问有效</p>
+              <p>可随时通过页脚的“分析”拒绝或撤回同意。撤回会停止所有已打开 Louppe 网站标签页的数据收集并清除分析 Cookie，但不会删除 Google 已收到的数据。本地预览不加载分析</p>
+              <p>下载、源代码链接和捐赠使用外部服务，适用各自的隐私政策。本网站没有账号、媒体上传或联系表单</p>
+            </div>
+          </details>
+        </div>
 
         <h2>问题与变更</h2>
         <p>将隐私问题或请求发送至 <a href="mailto:a@alex-markin.com">a@alex-markin.com</a>。隐私实践的变更会在此公布，并更新日期</p>

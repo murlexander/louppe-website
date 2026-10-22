@@ -32,7 +32,9 @@ En **Ajustes → Atajos de teclado**, puedes personalizar las teclas de revisió
 
 **Marcar No no elimina un archivo ni lo envía a la Papelera**. Limpiar es una acción independiente que envía archivos no deseados a la Papelera de macOS. Tus decisiones se guardan automáticamente para que puedas volver a abrir la carpeta y continuar
 
-![Galería de Louppe con una fotografía, un explorador de miniaturas, y datos de la cámara](/media/2026-09-26/gallery-info.webp)
+![Una fachada de ladrillo en la galería de Louppe con ajustes de cámara y archivos emparejados](/media/2026-10-22-canada/gallery-architecture.webp)
+
+*Galería e información de cámara, capturadas en Louppe 1.9*
 
 <!-- try-louppe -->
 
@@ -49,6 +51,10 @@ Para los archivos RAW, la visualización Rápido usa vistas previas por debajo d
 Si disparas en RAW + JPEG, puedes agrupar los archivos correspondientes como un solo elemento de revisión o revisarlos por separado. La [guía de RAW + JPEG](/blog/cull-raw-jpeg-pairs-mac/) explica el emparejamiento, las decisiones independientes, y qué archivos se copian
 
 Las fotos, el vídeo, el audio, y el texto de solo lectura pueden compartir una carpeta de revisión. Puede ser útil cuando una sesión contiene algo más que fotografías
+
+![Una fotografía de bayas rojas ampliada al 100% en la galería de Louppe](/media/2026-10-22-canada/detail-focus.webp)
+
+*Detalle al 100%, capturado en Louppe 1.9. La comprobación de enfoque usa la imagen renderizada*
 
 ## Termina tu selección
 

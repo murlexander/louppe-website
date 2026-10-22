@@ -42,6 +42,10 @@ As estrelas são opcionais. Pressione **1–5** para classificar uma fotografia 
 
 Se você fotografa nos dois formatos, [revise os pares RAW + JPEG correspondentes juntos](/blog/cull-raw-jpeg-pairs-mac/) para que cada tomada ocupe um só lugar na revisão
 
+![Sete fotos marcadas como Sim na grade do Louppe](/media/2026-10-22-canada/keepers-grid.webp)
+
+*Seleção filtrada por Sim, capturada no Louppe 1.9*
+
 ## Copie as fotos escolhidas para uma pasta de edição
 
 Abra Exportar com **E** ou **⌘E** e mantenha **Copiar** selecionado. Escolha o escopo e as decisões que quer incluir, depois confira a contagem de correspondências antes de escolher um destino
@@ -51,6 +55,10 @@ Essa conferência importa: com uma seleção ativa, Exportar começa com **Todos
 Copie para uma pasta com um nome claro, como `Shoot name/Keepers`. Copiar deixa os arquivos de origem onde estão. **Mover** transfere os originais, então use Copiar neste fluxo de trabalho
 
 O resultado é uma pasta com as fotografias que você escolheu para editar. Você pode conferir a pasta no Finder antes de abrir seu editor
+
+![Prévia de cópia do Louppe com sete fotos e catorze arquivos emparelhados](/media/2026-10-22-canada/copy-keepers.webp)
+
+*Prévia de cópia no Louppe 1.9: sete pares são catorze arquivos. A exportação ainda não foi executada*
 
 ## Importe essa pasta no Lightroom Classic
 

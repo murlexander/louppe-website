@@ -42,6 +42,10 @@ Stars are optional. Press **1–5** to rate a photograph if you need a second le
 
 If you shoot both formats, [review matching RAW + JPEG pairs together](/blog/cull-raw-jpeg-pairs-mac/) so each shot takes one place in the review
 
+![Seven photos marked Yes in Louppe Grid](/media/2026-10-22-canada/keepers-grid.webp)
+
+*A Yes-filtered shortlist, captured in Louppe 1.9*
+
 ## Copy the keepers into a folder for editing
 
 Open Export with **E** or **⌘E**, and keep **Copy** selected. Choose the scope and decisions you want to include, then check the matching count before choosing a destination
@@ -51,6 +55,10 @@ This check matters: with an active selection, Export starts with **All selected*
 Copy into a clearly named folder, such as `Shoot name/Keepers`. Copy leaves the source files in place. **Move** transfers originals, so use Copy for this workflow
 
 The result is a folder containing the photographs you've chosen for editing. You can check it in Finder before opening your editor
+
+![Louppe Copy export preview with seven keepers and fourteen paired files](/media/2026-10-22-canada/copy-keepers.webp)
+
+*Copy preview in Louppe 1.9: seven paired photos mean fourteen files. No export has run*
 
 ## Import that folder into Lightroom Classic
 

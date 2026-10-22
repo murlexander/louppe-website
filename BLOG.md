@@ -51,6 +51,14 @@ Use a descriptive subtitle and one Alex Markin byline beneath it, linked to http
 
 For a distinct sharing preview, add `"image": {"src": "/media/YYYY-MM-DD/example.webp", "alt": "What the capture shows"}` to the post record. The local image must exist; Open Graph, Twitter, and article structured data share it. Older posts keep the default preview. Record native capture provenance beside new media, and identify historical interfaces in captions when relevant.
 
+For a visible article cover and index thumbnail, add `cover` with local `src`
+and `small` image paths, descriptive `alt`, and the full image's `width` and
+`height`. Put translated cover descriptions in `content/translations.json`.
+Record actual asset dimensions in `content/media-dimensions.json`; inline
+Markdown images use these to reserve space and load lazily. Images link to the
+full delivery. Keep source photos and editable exports in `media-library/`;
+only optimized public derivatives belong in this repository.
+
 Every article needs at least two centered **Try Louppe** buttons without small print. Put `<!-- try-louppe -->` on its own line between body sections; the generator adds the final button. Missing markers or empty sections fail the build. More markers are supported.
 
 Use natural sentence case, contractions, and Oxford commas. Omit trailing periods in headings and paragraphs; use periods between sentences.
