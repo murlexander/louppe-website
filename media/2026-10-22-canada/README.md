@@ -3,6 +3,8 @@
 Five Canada photographs: 800px and 1600px WebP covers and 1200 × 630 JPEG sharing
 crops. These are camera-preview derivatives from Alex Markin's RAF archive.
 No color adjustments or generated content. Public exports contain no EXIF/GPS.
+The streetcar and garden covers also have 400px index thumbnails, resized from
+their 1600px deliveries with `cwebp -q 82 -m 6 -resize 400 0`.
 
 Six workflow illustrations reuse authentic Louppe 1.9.0 (11) screenshots:
 Gallery with Info, 100% detail, paired and separate thumbnail rows, a Yes

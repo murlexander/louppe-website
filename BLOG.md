@@ -56,6 +56,9 @@ and `small` image paths, descriptive `alt`, and the full image's `width` and
 `height`. Put translated cover descriptions in `content/translations.json`.
 An optional `caption` identifies historical app versions or an editorial
 composition; translate it in the same catalog.
+Add an optional `thumbnail` path to a 400px WebP for compact index entries.
+Its dimensions must be in the media catalog. Larger candidates remain available
+for full-width phone thumbnails and article covers.
 Record actual asset dimensions in `content/media-dimensions.json`; inline
 Markdown images use these to reserve space and load lazily. Images link to the
 full delivery. Keep source photos and editable exports in `media-library/`;

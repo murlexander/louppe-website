@@ -55,6 +55,13 @@
         "width": 1200,
         "height": 630,
         "sha256": "9fd11b3fb8115db07929a7e4f1c8f510217ad289f1d7d4ffd94f3a30d3025b42"
+      },
+      {
+        "file": "jpeg-grid-gallery-400.webp",
+        "width": 400,
+        "height": 250,
+        "sha256": "25c547099dfb4ba5886cdae376cc9ecc9df60b4d0449553c7afadd305938b694",
+        "derivedFrom": "jpeg-grid-gallery-1600.webp"
       }
     ]
   },
@@ -91,6 +98,13 @@
         "width": 1200,
         "height": 630,
         "sha256": "1028012fd292b553c9cfa79d7f788b792e54188cf0ccaad8db2739c8b97abff3"
+      },
+      {
+        "file": "raw-100-percent-400.webp",
+        "width": 400,
+        "height": 251,
+        "sha256": "caecef9ec7f6a988f9707aaf31e3b34b1a8c6f94d7a8ccf6363db39790173a3c",
+        "derivedFrom": "raw-100-percent-1600.webp"
       }
     ]
   },
@@ -132,6 +146,13 @@
         "width": 1200,
         "height": 630,
         "sha256": "57cf560c62771f8aeaf479bd763f394d34dc75a4c560abe7cf4ca23a17d7ed1f"
+      },
+      {
+        "file": "paired-file-info-400.webp",
+        "width": 400,
+        "height": 293,
+        "sha256": "0fc2a423e1958964d75b78be0facd34eb95a1a56070925028eb4df7b3d6dd25b",
+        "derivedFrom": "paired-file-info-1600.webp"
       }
     ]
   }

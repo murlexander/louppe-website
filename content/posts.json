@@ -20,7 +20,8 @@
       "alt": "Louppe Grid and Gallery with street photographs and a yellow flower",
       "width": 1600,
       "height": 1000,
-      "caption": "Grid and Gallery from separate Louppe 1.10 captures"
+      "caption": "Grid and Gallery from separate Louppe 1.10 captures",
+      "thumbnail": "/media/2026-10-22-interface/jpeg-grid-gallery-400.webp"
     }
   },
   {
@@ -44,7 +45,8 @@
       "alt": "A RAW photo at 100% in Louppe with the histogram and camera information",
       "width": 1600,
       "height": 1004,
-      "caption": "100% detail, captured in Louppe 1.9"
+      "caption": "100% detail, captured in Louppe 1.9",
+      "thumbnail": "/media/2026-10-22-interface/raw-100-percent-400.webp"
     }
   },
   {
@@ -90,7 +92,8 @@
       "small": "/media/2026-10-22-canada/streetcar-wires-800.webp",
       "alt": "Streetcar wires crossing a blue Toronto sky",
       "width": 1600,
-      "height": 1067
+      "height": 1067,
+      "thumbnail": "/media/2026-10-22-canada/streetcar-wires-400.webp"
     },
     "image": {
       "src": "/media/2026-10-22-canada/streetcar-wires-social.jpg",
@@ -140,7 +143,8 @@
       "small": "/media/2026-10-22-canada/garden-light-800.webp",
       "alt": "Purple flowers and red leaves in dappled light",
       "width": 1600,
-      "height": 1067
+      "height": 1067,
+      "thumbnail": "/media/2026-10-22-canada/garden-light-400.webp"
     },
     "image": {
       "src": "/media/2026-10-22-canada/garden-light-social.jpg",
@@ -191,7 +195,8 @@
       "alt": "A brick facade in Louppe with paired RAW and JPEG filenames in Info",
       "width": 1600,
       "height": 1172,
-      "caption": "Gallery crop with paired filenames in Info, captured in Louppe 1.9"
+      "caption": "Gallery crop with paired filenames in Info, captured in Louppe 1.9",
+      "thumbnail": "/media/2026-10-22-interface/paired-file-info-400.webp"
     },
     "image": {
       "src": "/media/2026-10-22-interface/paired-file-info-social.jpg",
@@ -215,7 +220,8 @@
       "alt": "Louppe reviewing a local media folder on Mac",
       "width": 1800,
       "height": 1068,
-      "caption": "Grid, captured in Louppe 1.9"
+      "caption": "Grid, captured in Louppe 1.9",
+      "thumbnail": "/media/2026-09-26/grid-overview-400.webp"
     }
   }
 ]

@@ -118,5 +118,29 @@
   "/media/2026-10-22-interface/raw-100-percent-1600.webp": {
     "width": 1600,
     "height": 1004
+  },
+  "/media/2026-10-22-interface/jpeg-grid-gallery-400.webp": {
+    "width": 400,
+    "height": 250
+  },
+  "/media/2026-10-22-interface/raw-100-percent-400.webp": {
+    "width": 400,
+    "height": 251
+  },
+  "/media/2026-10-22-canada/streetcar-wires-400.webp": {
+    "width": 400,
+    "height": 267
+  },
+  "/media/2026-10-22-canada/garden-light-400.webp": {
+    "width": 400,
+    "height": 267
+  },
+  "/media/2026-10-22-interface/paired-file-info-400.webp": {
+    "width": 400,
+    "height": 293
+  },
+  "/media/2026-09-26/grid-overview-400.webp": {
+    "width": 400,
+    "height": 238
   }
 }

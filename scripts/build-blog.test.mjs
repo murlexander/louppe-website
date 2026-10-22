@@ -90,6 +90,24 @@ test('draft isolation, publication, validation and withdrawal', async () => {
       assert.notEqual(run().status,0);
       assert.equal(await load('blog/sample/index.html'),withCover);
     }
+    // Compact desktop thumbnails retain larger candidates for phone displays.
+    await save('media/sample-400.webp','thumbnail-image');
+    const dimensions = JSON.parse(await load('content/media-dimensions.json'));
+    dimensions['/media/sample-400.webp'] = {width:400,height:267};
+    dimensions['/media/missing-400.webp'] = {width:400,height:267};
+    await save('content/media-dimensions.json',JSON.stringify(dimensions));
+    const compactCover = {...cover,thumbnail:'/media/sample-400.webp'};
+    await save('content/posts.json',JSON.stringify([{...record,cover:compactCover}]));
+    assert.equal(run().status,0);
+    const compactIndex = await load('blog/index.html');
+    assert.match(compactIndex,/class="post-thumbnail" src="\/media\/sample-400.webp"/);
+    assert.match(compactIndex,/srcset="\/media\/sample-400.webp 400w, \/media\/sample.webp 800w, \/media\/sample.webp 1600w"/);
+    assert.match(compactIndex,/sizes="\(max-width: 600px\) calc\(100vw - 40px\), 172px"/);
+    for (const thumbnail of ['/media/../sample-400.webp','https://example.com/sample-400.webp','/media/missing-400.webp','/media/sample.webp']) {
+      await save('content/posts.json',JSON.stringify([{...record,cover:{...cover,thumbnail}}]));
+      assert.notEqual(run().status,0);
+      assert.equal(await load('blog/index.html'),compactIndex);
+    }
     // Publication is explicit; an editorial date does not schedule or hide a post.
     await save('content/posts.json',JSON.stringify([{...record,date:'2999-01-01'}]));
     assert.equal(run().status,0);

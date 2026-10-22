@@ -163,5 +163,19 @@
     "version": "1.9.0 (11)",
     "resizeMax": 1600,
     "cropHeight": null
+  },
+  {
+    "file": "streetcar-wires-400.webp",
+    "source": "website/media/2026-10-22-canada/streetcar-wires-1600.webp",
+    "sha256": "9eb849f626286ca76cb22959ce3d4f668a808c69bfb96b83ed9da31d6de506f5",
+    "kind": "compact camera-preview derivative",
+    "rawSha256": "d6464cf0c03425cccf062ec6c78a825a4df145a8714d5ce81c003ab7518c1bca"
+  },
+  {
+    "file": "garden-light-400.webp",
+    "source": "website/media/2026-10-22-canada/garden-light-1600.webp",
+    "sha256": "a72c84985a858bac85b6a7e647fcf6abb9d65c695649fe89101dc36ff4a0cedc",
+    "kind": "compact camera-preview derivative",
+    "rawSha256": "1ea13bdc5ccf90e3048c7643a6d1d0697ef7c1c66f8975376d879db3eb21a660"
   }
 ]

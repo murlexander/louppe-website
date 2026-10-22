@@ -11,7 +11,9 @@ ApolloOne streetcar and before-Lightroom garden covers remain photographs.
 - `paired-file-info`: crop of Gallery with a brick facade and paired filenames
   in Info, from **Louppe 1.9.0 (11)**, taken on 26 September
 
-Each has 800px and 1600px WebP deliveries and a 1200 × 630 JPEG sharing image.
+Each has 400px, 800px, and 1600px WebP deliveries and a 1200 × 630 JPEG sharing image.
+The 400px index thumbnails are resized from the 1600px deliveries with
+`cwebp -q 82 -m 6 -resize 400 0 input.webp -o output-400.webp`.
 Sharing images contain the complete artwork with padding; no UI is cropped
 from them. All interface covers have translated historical/version captions.
 No image content or interface was generated or replaced.

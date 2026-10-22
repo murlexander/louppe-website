@@ -55,6 +55,12 @@ async function loadContent(record, directory, name) {
     const {src,small,alt,width,height} = record.cover ?? {};
     if (![src,small].every(path => typeof path === 'string' && /^\/media\/[a-zA-Z0-9/_-]+\.(?:jpg|png|webp)$/.test(path)) || typeof alt !== 'string' || !alt.trim() || ![width,height].every(value => Number.isInteger(value) && value > 0)) throw new Error(`Invalid article cover for ${name}`);
     await Promise.all([src,small].map(path => access(resolve(root,path.slice(1)))));
+    if (record.cover.thumbnail !== undefined) {
+      const thumbnail = record.cover.thumbnail;
+      const dimensions = mediaDimensions[thumbnail];
+      if (typeof thumbnail !== 'string' || !/^\/media\/[a-zA-Z0-9/_-]+\.webp$/.test(thumbnail) || ![dimensions?.width,dimensions?.height].every(value => Number.isInteger(value) && value > 0)) throw new Error(`Invalid cover thumbnail for ${name}`);
+      await access(resolve(root,thumbnail.slice(1)));
+    }
     if (record.cover.caption !== undefined && (typeof record.cover.caption !== 'string' || !record.cover.caption.trim())) throw new Error(`Invalid cover caption for ${name}`);
   }
   const body = await read(`${directory}/${record.file}`);
@@ -95,7 +101,9 @@ function coverImage(cover, thumbnail = false) {
   if (!cover) return '';
   const sizes = thumbnail ? '(max-width: 600px) calc(100vw - 40px), 172px' : '(max-width: 680px) calc(100vw - 40px), (max-width: 1104px) calc(100vw - 64px), 1040px';
   const smallWidth = mediaDimensions[cover.small]?.width ?? 800;
-  return `<img${thumbnail ? ' class="post-thumbnail"' : ''} src="${escape(thumbnail ? cover.small : cover.src)}" srcset="${escape(cover.small)} ${smallWidth}w, ${escape(cover.src)} ${cover.width}w" sizes="${sizes}" alt="${thumbnail ? '' : escape(cover.alt)}" width="${cover.width}" height="${cover.height}"${thumbnail ? ' loading="lazy"' : ' fetchpriority="high"'} decoding="async">`;
+  const thumbnailSource = cover.thumbnail ?? cover.small;
+  const candidates = `${cover.thumbnail ? `${escape(cover.thumbnail)} ${mediaDimensions[cover.thumbnail].width}w, ` : ''}${escape(cover.small)} ${smallWidth}w, ${escape(cover.src)} ${cover.width}w`;
+  return `<img${thumbnail ? ' class="post-thumbnail"' : ''} src="${escape(thumbnail ? thumbnailSource : cover.src)}" srcset="${candidates}" sizes="${sizes}" alt="${thumbnail ? '' : escape(cover.alt)}" width="${cover.width}" height="${cover.height}"${thumbnail ? ' loading="lazy"' : ' fetchpriority="high"'} decoding="async">`;
 }
 const listing = posts.length ? `<ol class="post-list">${posts.map(post => `<li><h2><a href="${post.path}">${escape(post.title)}</a></h2>${coverImage(post.cover,true)}<p>${escape(post.description)}</p></li>`).join('')}</ol>` : `<section class="blog-empty"><h2>no posts yet</h2><p>notes will appear here</p><a href="/">explore Louppe</a></section>`;
 const index = page({title:'Photo culling guides and Louppe news',description:'Photo culling guides for Mac, RAW + JPEG workflows, and Louppe development notes by Alex Markin.',path:'/blog/',content:`<header class="blog-heading"><h1>notes on Louppe</h1><p>photo culling guides and development notes</p></header>${listing}`});

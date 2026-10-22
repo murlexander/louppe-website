@@ -28,6 +28,19 @@ Run `node --test scripts/prefetch.test.mjs`. Sources: [Chrome navigation prefetc
 
 Local verification, 8 October 2026: 22 automated tests pass. Chromium 151 confirmed hover requests and navigation cache reuse (`deliveryType: navigational-prefetch`); keyboard focus also exercised the resource-hint fallback. Louppe checks included an Arabic article. No Safari or Firefox browser run was performed.
 
+## Rendering and media
+
+Demo media and screenshot enlargement load on demand. Closing enlargement
+removes its image source; playback pauses when offscreen or hidden. Gallery
+and Grid use responsive images, and blog entries have compact 400px candidates.
+The stepped grain animation moves a painted layer instead of repainting its
+background; reduced motion remains supported.
+
+[22 October performance checks](Docs/Archive/2026-10-22/WEBSITE_PERFORMANCE.md):
+80% fewer homepage media bytes on a phone, 73% fewer desktop blog media bytes,
+and no repeated idle paint/raster work in the sampled Chromium trace. These
+are local measurements; total browser RAM and real-network times were not measured.
+
 ## Analytics
 
 GA4 `G-9P9KKLZ5BN` loads only on HTTPS `louppe.eu` after consent. Previews and copied deployments cannot load it. The `louppe_download` key event in the `Louppe Media Culler` property measures link intent, not installation. `download_method` distinguishes `app_store`, `github`, and `homebrew`; Homebrew clicks open installation instructions.
