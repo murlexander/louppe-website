@@ -1,5 +1,37 @@
 [
   {
+    "slug": "sort-jpeg-photos-mac",
+    "title": "How to sort JPEG photos on Mac without importing or editing",
+    "description": "Choose your best JPEG photos on Mac with Louppe. Mark keepers, check your shortlist, and copy the original files to a separate folder",
+    "file": "sort-jpeg-photos-mac.md",
+    "image": {
+      "src": "/media/2026-10-22/jpeg-grid.webp",
+      "alt": "A JPEG-only photo folder in Louppe Grid"
+    },
+    "status": "published",
+    "cta": {
+      "label": "Try Louppe",
+      "href": "https://apps.apple.com/app/louppe/id6820131477"
+    },
+    "date": "2026-10-22"
+  },
+  {
+    "slug": "why-raw-photos-change-when-you-zoom",
+    "title": "Why RAW photos change when you zoom in on Mac",
+    "description": "Understand camera previews, Apple RAW rendering, and the change at 100% in Louppe. Check focus and color using the rendering you intend to judge",
+    "file": "why-raw-photos-change-when-you-zoom.md",
+    "image": {
+      "src": "/media/2026-10-22/raw-histogram.webp",
+      "alt": "A RAW and JPEG pair with camera metadata and a RAW histogram in Louppe"
+    },
+    "status": "published",
+    "cta": {
+      "label": "Try Louppe",
+      "href": "https://apps.apple.com/app/louppe/id6820131477"
+    },
+    "date": "2026-10-22"
+  },
+  {
     "slug": "apolloone-alternative-mac",
     "title": "ApolloOne alternative for Mac: view and sort photos",
     "description": "Compare Louppe and ApolloOne for photo viewing and culling on Mac. Browse JPEG and RAW folders, choose keepers, and check the differences before switching",

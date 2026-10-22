@@ -1,4 +1,4 @@
-import { readFile, writeFile, mkdir, cp, rm } from 'node:fs/promises';
+import { access, readFile, writeFile, mkdir, cp, rm } from 'node:fs/promises';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { marked } from 'marked';
@@ -8,6 +8,7 @@ const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const preview = process.argv.includes('--preview');
 const out = preview ? resolve(root, '_preview') : root;
 const origin = 'https://louppe.eu';
+const defaultImage = {src:'/media/2026-09-26/social-preview.jpg',alt:'Louppe reviewing a local media folder on Mac'};
 const escape = value => String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const read = path => readFile(resolve(root, path), 'utf8');
 const json = async path => JSON.parse(await read(path));
@@ -40,6 +41,10 @@ async function loadPosts(manifest, directory, draft = false) {
 async function loadContent(record, directory, name) {
   if (!/^[a-z0-9-]+\.md$/.test(record.file)) throw new Error(`Invalid file for ${name}`);
   for (const key of ['title','description']) if (typeof record[key] !== 'string' || !record[key].trim()) throw new Error(`Missing ${key} for ${name}`);
+  if (record.image !== undefined) {
+    if (typeof record.image?.src !== 'string' || !/^\/media\/[a-zA-Z0-9/_-]+\.(?:jpg|png|webp)$/.test(record.image.src) || typeof record.image?.alt !== 'string' || !record.image.alt.trim()) throw new Error(`Invalid article image for ${name}`);
+    await access(resolve(root, record.image.src.slice(1)));
+  }
   const body = await read(`${directory}/${record.file}`);
   if (!body.trim()) throw new Error(`Empty article: ${name}`);
   const sections = body.split('<!-- try-louppe -->');
@@ -58,13 +63,14 @@ const posts = [...drafts,...published];
 if (new Set(posts.map(p=>p.slug)).size !== posts.length) throw new Error('Duplicate post slugs');
 
 function page({title,description,path,content,post,shell=template}) {
+  const image = post?.image ?? defaultImage;
   const robots = preview ? '<meta name="robots" content="noindex, nofollow">' : `<link rel="canonical" href="${origin}${path}"><meta property="og:url" content="${origin}${path}">`;
   const schema = !post || post.draft ? '' : `<script type="application/ld+json">${JSON.stringify({
     '@context':'https://schema.org','@type':'BlogPosting',headline:title,description,url:origin+path,
     datePublished:post.date,author:{'@type':'Person',name:'Alex Markin',url:'https://alex-markin.com/'},
-    image:origin+'/media/2026-09-26/social-preview.jpg',mainEntityOfPage:origin+path
+    image:origin+image.src,mainEntityOfPage:origin+path,inLanguage:'en'
   }).replaceAll('<','\\u003c')}</script>`;
-  const values = {title:escape(title),description:escape(description),discovery:robots,structured:schema,type:post?'article':'website',current:post?'false':'page',content};
+  const values = {title:escape(title),description:escape(description),image:escape(origin+image.src),imageAlt:escape(image.alt),discovery:robots,structured:schema,type:post?'article':'website',current:post?'false':'page',content};
   return shell.replace(/\{\{(\w+)\}\}/g, (_, key) => values[key]).replace(/^[ \t]+$/gm, '');
 }
 function callToAction(post) {
@@ -83,7 +89,7 @@ function article(post, {shell=template, backLabel='all notes'} = {}) {
 function renderTranslation(post, language, dictionary) {
   const label = dictionary[post.cta.label]?.[language.code];
   if (!label) throw new Error(`Missing ${language.code} translation: ${post.cta.label}`);
-  const localized = {...post, ...post.translations[language.code], cta:{...post.cta,label}};
+  const localized = {...post, ...post.translations[language.code], image:post.translations[language.code].image ?? post.image ?? {...defaultImage,alt:dictionary[defaultImage.alt][language.code]}, cta:{...post.cta,label}};
   return article(localized, {shell:translateHTML(template,dictionary,language), backLabel:dictionary['all notes'][language.code]});
 }
 for (const post of posts) generated[`blog/${post.slug}/index.html`] = article(post);

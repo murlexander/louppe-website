@@ -10,8 +10,13 @@ import { languages, localizedPath } from './build-locales.mjs';
 const source = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const origin = 'https://louppe.eu';
 const published = JSON.parse(await readFile(resolve(source,'content/posts.json'),'utf8'));
+const translationCatalog = JSON.parse(await readFile(resolve(source,'content/translations.json'),'utf8'));
 const articleRoutes = published.map(post=>`/blog/${post.slug}/`);
 const routes = ['/', '/privacy/', '/blog/', ...articleRoutes];
+const isLocalized = route => {
+  const post = published.find(post=>route===`/blog/${post.slug}/`);
+  return !post || post.translations || languages.every(language=>translationCatalog[post.title]?.[language.code]);
+};
 
 test('static language pages, crawl discovery, links, and withdrawal remain consistent', async () => {
   const root = await mkdtemp(resolve(tmpdir(), 'louppe-locales-'));
@@ -23,26 +28,38 @@ test('static language pages, crawl discovery, links, and withdrawal remain consi
     let result = run();
     assert.equal(result.status,0,result.stderr);
     const sitemap = await load('sitemap.xml');
-    assert.equal((sitemap.match(/<loc>/g) ?? []).length,routes.length*languages.length);
+    assert.equal((sitemap.match(/<loc>/g) ?? []).length,routes.reduce((count,route)=>count+(isLocalized(route)?languages.length:1),0));
     const titles = new Set();
     for (const route of routes) {
-      for (const language of languages) {
+      for (const language of isLocalized(route) ? languages : languages.slice(0,1)) {
         const path = localizedPath(route,language);
         const html = await load(path.slice(1)+'index.html');
         assert.ok(html.includes(`<html lang="${language.code}"`));
         assert.equal((html.match(/rel="canonical"/g) ?? []).length,1);
         assert.ok(html.includes(`<link rel="canonical" href="${origin}${path}">`));
         assert.ok(sitemap.includes(`<loc>${origin}${path}</loc>`));
-        assert.ok(html.includes(`hreflang="x-default" href="${origin}${route}"`));
-        for (const other of languages) {
-          const target = localizedPath(route,other);
-          assert.ok(html.includes(`hreflang="${other.code}" href="${origin}${target}"`));
-          assert.ok(html.includes(`href="${target}" hreflang="${other.code}" lang="${other.code}"`));
+        if (isLocalized(route)) {
+          assert.ok(html.includes(`hreflang="x-default" href="${origin}${route}"`));
+          for (const other of languages) {
+            const target = localizedPath(route,other);
+            assert.ok(html.includes(`hreflang="${other.code}" href="${origin}${target}"`));
+            assert.ok(html.includes(`href="${target}" hreflang="${other.code}" lang="${other.code}"`));
+          }
+        } else {
+          assert.doesNotMatch(html,/hreflang=/);
+          for (const other of languages.slice(1)) {
+            await assert.rejects(load(localizedPath(route,other).slice(1)+'index.html'),{code:'ENOENT'});
+            const index=await load(localizedPath('/blog/',other).slice(1)+'index.html');
+            assert.ok(index.includes(`<li lang="en"><h2><a href="${route}">`));
+            assert.match(index,/\(English\)/);
+          }
         }
         const schemas = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map(match=>JSON.parse(match[1]));
         const webpage = schemas.find(schema=>schema['@type']==='WebPage');
-        assert.equal(webpage.inLanguage,language.code);
-        assert.equal(webpage.url,origin+path);
+        if (isLocalized(route)) {
+          assert.equal(webpage.inLanguage,language.code);
+          assert.equal(webpage.url,origin+path);
+        }
         if (route==='/') {
           titles.add(html.match(/<title>(.*?)<\/title>/)[1]);
           assert.equal((html.match(/class="download-button"/g) ?? []).length,2);
@@ -67,6 +84,11 @@ test('static language pages, crawl discovery, links, and withdrawal remain consi
         }
         if (articleRoutes.includes(route)) {
           const article = schemas.find(schema=>schema['@type']==='BlogPosting');
+          const post = published.find(post=>route===`/blog/${post.slug}/`);
+          const imageAlt = post.image?.alt ?? translationCatalog['Louppe reviewing a local media folder on Mac'][language.code];
+          const escapedAlt = imageAlt.replaceAll('&','&amp;').replaceAll('"','&quot;');
+          assert.ok(html.includes(`<meta property="og:image:alt" content="${escapedAlt}">`));
+          assert.ok(html.includes(`<meta name="twitter:image:alt" content="${escapedAlt}">`));
           const primary = [...html.matchAll(/class="download-button" href="([^"]+)"/g)];
           assert.equal(primary.length,2);
           assert.ok(primary.every(match=>match[1]==='https://apps.apple.com/app/louppe/id6820131477'));

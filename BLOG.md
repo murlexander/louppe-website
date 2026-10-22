@@ -49,6 +49,8 @@ Older articles can still use the shared translation catalog. Articles without co
 
 Use a descriptive subtitle and one Alex Markin byline beneath it, linked to https://alex-markin.com/. Author links turn purple on hover and focus.
 
+For a distinct sharing preview, add `"image": {"src": "/media/YYYY-MM-DD/example.webp", "alt": "What the capture shows"}` to the post record. The local image must exist; Open Graph, Twitter, and article structured data share it. Older posts keep the default preview. Record native capture provenance beside new media, and identify historical interfaces in captions when relevant.
+
 Every article needs at least two centered **Try Louppe** buttons without small print. Put `<!-- try-louppe -->` on its own line between body sections; the generator adds the final button. Missing markers or empty sections fail the build. More markers are supported.
 
 Use natural sentence case, contractions, and Oxford commas. Omit trailing periods in headings and paragraphs; use periods between sentences.

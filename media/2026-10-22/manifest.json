@@ -1,0 +1,34 @@
+[
+  {
+    "file": "jpeg-grid.webp",
+    "source": "media-library/2026-10-13/dark-store/raw/en-US/02-grid.png",
+    "capture_version": "1.10.0 (12)",
+    "source_sha256": "eafa4420c5fd10d6e35bffd6b3dfc4b0e0e72f9968e9fa0d376acc575d268565",
+    "delivery_sha256": "d2281ab5f82eb43eaf686c850db554eaa233cc0d2224de7988bb7661996baf91",
+    "bytes": 226602
+  },
+  {
+    "file": "raw-histogram.webp",
+    "source": "media-library/2026-09-26/screenshots/masters/06-gallery-info-still-life-XT508487-take-01.jpg",
+    "capture_version": "1.9.0 (11)",
+    "source_sha256": "cd254b13481679363d646a9d0cc160f9b937dd4e4cf996cac6c059ff7fa710fb",
+    "delivery_sha256": "b4cd742ab4af4955903a27982b4a6cb59e75781e731ac127d893c04a51ab3771",
+    "bytes": 420794
+  },
+  {
+    "file": "guest-gallery.webp",
+    "source": "media-library/2026-10-13/dark-store/raw/en-US/01-gallery.png",
+    "capture_version": "1.10.0 (12)",
+    "source_sha256": "fe106f06e0be2c9b317f2fa0ab4b758e6208dfdf3c7af8ea0cf35ea4d65cadf5",
+    "delivery_sha256": "e1b8faeb0aef37f59fd27064ffe2e1673a26b490b4c9bd0574b9beee843105dd",
+    "bytes": 303874
+  },
+  {
+    "file": "guest-copy.webp",
+    "source": "media-library/2026-10-13/dark-store/raw/en-US/06-copy.png",
+    "capture_version": "1.10.0 (12)",
+    "source_sha256": "6987b9824acce86133196c6511ad6f7eba7d9d69cd7483daa369d363dd7da916",
+    "delivery_sha256": "549c67139d793dc9fc7a15b0c97d556e89197e6a6f1fcc7ad9c37fdbd29d0ab6",
+    "bytes": 52214
+  }
+]

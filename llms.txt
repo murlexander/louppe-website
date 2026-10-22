@@ -26,6 +26,8 @@ rename files with reordered filename parts, Mac date formats, and an exact previ
 - [Homebrew](https://github.com/murlexander/louppe-media-culler/blob/main/Docs/HOMEBREW.md): alternative installation instructions
 - [source](https://github.com/murlexander/louppe-media-culler): application code
 - [blog](https://louppe.eu/blog/): photo culling guides and development notes
+- [sort JPEG photos on Mac](https://louppe.eu/blog/sort-jpeg-photos-mac/): choose keepers without a library import or editing, then copy the original JPEGs
+- [why RAW photos change when you zoom](https://louppe.eu/blog/why-raw-photos-change-when-you-zoom/): distinguish camera previews, Apple RAW rendering, histogram analysis, and the 100% transition
 - [ApolloOne alternative for Mac](https://louppe.eu/blog/apolloone-alternative-mac/): compare photo viewing and manual culling, with requirements and workflow limits
 - [cull photos on Mac before Lightroom](https://louppe.eu/blog/cull-photos-mac-before-lightroom/): choose keepers locally for Lightroom Classic, Capture One, or darktable
 - [cull RAW + JPEG pairs on Mac](https://louppe.eu/blog/cull-raw-jpeg-pairs-mac/): review matching files together and copy the versions you want

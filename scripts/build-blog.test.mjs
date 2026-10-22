@@ -31,6 +31,7 @@ test('draft isolation, publication, validation and withdrawal', async () => {
     assert.doesNotMatch(publicPage,/RSS|application\/rss\+xml/);
     assert.match(publicPage,/try Louppe/);
     assert.equal((publicPage.match(/class="download-button"/g) ?? []).length,2);
+    assert.match(publicPage,/<meta property="og:image" content="https:\/\/louppe.eu\/media\/2026-09-26\/social-preview.jpg">/);
     assert.ok(publicPage.indexOf('class="article-cta"') > publicPage.indexOf('A published paragraph'));
     assert.ok(publicPage.indexOf('class="article-cta"') < publicPage.indexOf('A closing paragraph'));
     assert.ok(publicPage.lastIndexOf('class="article-cta"') > publicPage.indexOf('A closing paragraph'));
@@ -60,6 +61,21 @@ test('draft isolation, publication, validation and withdrawal', async () => {
       await save('content/posts.json',JSON.stringify([{...record,...invalid}]));
       assert.notEqual(run().status,0);
       assert.equal(await load('blog/sample/index.html'),publicPage);
+    }
+    // Sharing cards and structured data must agree, with escaped descriptions.
+    await save('media/sample.webp','sample-image');
+    const image = {src:'/media/sample.webp',alt:'JPEG "keepers" & review'};
+    await save('content/posts.json',JSON.stringify([{...record,image}]));
+    assert.equal(run().status,0);
+    const illustrated = await load('blog/sample/index.html');
+    assert.match(illustrated,/<meta property="og:image" content="https:\/\/louppe.eu\/media\/sample.webp">/);
+    assert.match(illustrated,/<meta name="twitter:image" content="https:\/\/louppe.eu\/media\/sample.webp">/);
+    assert.match(illustrated,/content="JPEG &quot;keepers&quot; &amp; review"/);
+    assert.match(illustrated,/"image":"https:\/\/louppe.eu\/media\/sample.webp"/);
+    for (const invalidImage of [{src:'/media/missing.webp',alt:'Missing'}, {src:'/media/../sample.webp',alt:'Escape'}, {src:'https://example.com/image.webp',alt:'External'}, {src:image.src,alt:''}]) {
+      await save('content/posts.json',JSON.stringify([{...record,image:invalidImage}]));
+      assert.notEqual(run().status,0);
+      assert.equal(await load('blog/sample/index.html'),illustrated);
     }
     // Publication is explicit; an editorial date does not schedule or hide a post.
     await save('content/posts.json',JSON.stringify([{...record,date:'2999-01-01'}]));
