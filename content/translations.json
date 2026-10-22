@@ -703,14 +703,6 @@
     "pt": "e",
     "ar": "و"
   },
-  "cookies last 30 days; your choice lasts 180 days. withdraw through “analytics choices” in the footer to clear cookies": {
-    "en": "cookies last 30 days; your choice lasts 180 days. withdraw through “analytics choices” in the footer to clear cookies",
-    "es": "las cookies duran 30 días; tu elección dura 180 días. retira tu consentimiento en «preferencias de analítica» del pie de página para borrar las cookies",
-    "zh-Hans": "Cookie 保留 30 天；您的选择保留 180 天。在页脚的“分析选项”撤回同意即可清除 Cookie",
-    "hi": "कुकी 30 दिन और आपका विकल्प 180 दिन रहता है। कुकी हटाने के लिए फ़ुटर के “एनालिटिक्स विकल्प” से सहमति वापस लें",
-    "pt": "os cookies duram 30 dias; sua escolha dura 180 dias. retire o consentimento em “preferências de análise” no rodapé para limpar os cookies",
-    "ar": "تستمر ملفات تعريف الارتباط 30 يومًا ويستمر اختيارك 180 يومًا. اسحب الموافقة من «خيارات التحليلات» في التذييل لمسح الملفات"
-  },
   "GitHub Pages hosts this site and receives page requests.": {
     "en": "GitHub Pages hosts this site and receives page requests.",
     "es": "GitHub Pages aloja este sitio y recibe solicitudes de páginas.",
@@ -1014,14 +1006,6 @@
     "hi": "कुकी नवीनीकरण के बिना 30 दिन बाद समाप्त होती हैं। आपका विकल्प ब्राउज़र के स्थानीय स्टोरेज में 180 दिन रहता है। स्टोरेज उपलब्ध न हो तो यह केवल इस विज़िट तक रह सकता है",
     "pt": "os cookies expiram após 30 dias sem renovação. sua escolha dura 180 dias no armazenamento local do navegador. se ele estiver indisponível, a escolha pode durar apenas esta visita",
     "ar": "تنتهي ملفات تعريف الارتباط بعد 30 يومًا دون تجديد. يستمر اختيارك 180 يومًا في التخزين المحلي للمتصفح. إذا لم يتوفر التخزين فقد يستمر الاختيار لهذه الزيارة فقط"
-  },
-  "reject or withdraw anytime through “analytics choices” in the footer. withdrawal stops collection across open Louppe website tabs and clears analytics cookies. withdrawal does not delete data already received by Google. local previews do not load analytics": {
-    "en": "reject or withdraw anytime through “analytics choices” in the footer. withdrawal stops collection across open Louppe website tabs and clears analytics cookies. withdrawal does not delete data already received by Google. local previews do not load analytics",
-    "es": "rechaza o retira tu consentimiento en cualquier momento desde «preferencias de analítica» en el pie de página. se detiene la recopilación en las pestañas abiertas de Louppe y se borran las cookies. no se eliminan datos ya recibidos por Google. las vistas previas locales no cargan analítica",
-    "zh-Hans": "可随时通过页脚的“分析选项”拒绝或撤回同意。撤回会停止所有已打开 Louppe 网站标签页的数据收集并清除分析 Cookie，但不会删除 Google 已收到的数据。本地预览不加载分析",
-    "hi": "फ़ुटर के “एनालिटिक्स विकल्प” से कभी भी मना करें या सहमति वापस लें। इससे खुले Louppe वेबसाइट टैब में संग्रह रुकता है और एनालिटिक्स कुकी हटती हैं। Google को पहले मिले डेटा नहीं मिटते। स्थानीय पूर्वावलोकन एनालिटिक्स लोड नहीं करते",
-    "pt": "rejeite ou retire o consentimento a qualquer momento em “preferências de análise” no rodapé. a coleta para nas abas abertas do Louppe e os cookies são limpos. dados já recebidos pelo Google não são apagados. prévias locais não carregam análise",
-    "ar": "ارفض أو اسحب الموافقة في أي وقت من «خيارات التحليلات» في التذييل. يتوقف جمع البيانات في جميع تبويبات موقع Louppe المفتوحة وتُمسح ملفات التحليلات. لا تُحذف البيانات التي تلقتها Google سابقًا. لا تُحمّل التحليلات في المعاينات المحلية"
   },
   "downloads, source links, and donations use external services with their own privacy policies. this site has no account, media upload, or contact form": {
     "en": "downloads, source links, and donations use external services with their own privacy policies. this site has no account, media upload, or contact form",
@@ -2174,5 +2158,45 @@
     "hi": "App Store प्रकाशक: SAMO DANNI EOOD",
     "pt": "Publicadora na App Store: SAMO DANNI EOOD",
     "ar": "الناشر على App Store: ⁦SAMO DANNI EOOD⁩"
+  },
+  "legal": {
+    "en": "legal",
+    "es": "legal",
+    "zh-Hans": "法律",
+    "hi": "कानूनी",
+    "pt": "legal",
+    "ar": "قانوني"
+  },
+  "analytics": {
+    "en": "analytics",
+    "es": "analítica",
+    "zh-Hans": "分析",
+    "hi": "विश्लेषण",
+    "pt": "análise",
+    "ar": "التحليلات"
+  },
+  "privacy": {
+    "en": "privacy",
+    "es": "privacidad",
+    "zh-Hans": "隐私",
+    "hi": "गोपनीयता",
+    "pt": "privacidade",
+    "ar": "الخصوصية"
+  },
+  "cookies last 30 days; your choice lasts 180 days. withdraw through “analytics” in the footer to clear cookies": {
+    "en": "cookies last 30 days; your choice lasts 180 days. withdraw through “analytics” in the footer to clear cookies",
+    "es": "las cookies duran 30 días; tu elección dura 180 días. retira tu consentimiento en «analítica» del pie de página para borrar las cookies",
+    "zh-Hans": "Cookie 保留 30 天；您的选择保留 180 天。在页脚的“分析”撤回同意即可清除 Cookie",
+    "hi": "कुकी 30 दिन और आपका विकल्प 180 दिन रहता है। कुकी हटाने के लिए फ़ुटर के “विश्लेषण” से सहमति वापस लें",
+    "pt": "os cookies duram 30 dias; sua escolha dura 180 dias. retire o consentimento em “análise” no rodapé para limpar os cookies",
+    "ar": "تستمر ملفات تعريف الارتباط 30 يومًا ويستمر اختيارك 180 يومًا. اسحب الموافقة من «التحليلات» في التذييل لمسح الملفات"
+  },
+  "reject or withdraw anytime through “analytics” in the footer. withdrawal stops collection across open Louppe website tabs and clears analytics cookies. withdrawal does not delete data already received by Google. local previews do not load analytics": {
+    "en": "reject or withdraw anytime through “analytics” in the footer. withdrawal stops collection across open Louppe website tabs and clears analytics cookies. withdrawal does not delete data already received by Google. local previews do not load analytics",
+    "es": "rechaza o retira tu consentimiento en cualquier momento desde «analítica» en el pie de página. se detiene la recopilación en las pestañas abiertas de Louppe y se borran las cookies. no se eliminan datos ya recibidos por Google. las vistas previas locales no cargan analítica",
+    "zh-Hans": "可随时通过页脚的“分析”拒绝或撤回同意。撤回会停止所有已打开 Louppe 网站标签页的数据收集并清除分析 Cookie，但不会删除 Google 已收到的数据。本地预览不加载分析",
+    "hi": "फ़ुटर के “विश्लेषण” से कभी भी मना करें या सहमति वापस लें। इससे खुले Louppe वेबसाइट टैब में संग्रह रुकता है और एनालिटिक्स कुकी हटती हैं। Google को पहले मिले डेटा नहीं मिटते। स्थानीय पूर्वावलोकन एनालिटिक्स लोड नहीं करते",
+    "pt": "rejeite ou retire o consentimento a qualquer momento em “análise” no rodapé. a coleta para nas abas abertas do Louppe e os cookies são limpos. dados já recebidos pelo Google não são apagados. prévias locais não carregam análise",
+    "ar": "ارفض أو اسحب الموافقة في أي وقت من «التحليلات» في التذييل. يتوقف جمع البيانات في جميع تبويبات موقع Louppe المفتوحة وتُمسح ملفات التحليلات. لا تُحذف البيانات التي تلقتها Google سابقًا. لا تُحمّل التحليلات في المعاينات المحلية"
   }
 }
