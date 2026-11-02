@@ -43,10 +43,17 @@ Website work ships independently. Claims must match the released app.
 
 ## Release and publicity follow-up
 
-- [ ] Run the existing publicity plan after asset and release-copy checks.
-- [ ] **Guest article publication.** [Kirill's PR #97](https://github.com/kirill-markin/kirill-markin-com/pull/97)
-  is submitted; GitHub checks and Vercel preview require his authorization before
-  review and merge. The two owned-site article experiments are already published.
+- [ ] **Directory listings, opened 2 November.** Pull requests add Louppe to
+  [awesome-mac](https://github.com/jaywcjlove/awesome-mac/pull/4173),
+  [open-source-mac-os-apps](https://github.com/serhii-londar/open-source-mac-os-apps/pull/1938),
+  [awesome-swift-macos-apps](https://github.com/jaywcjlove/awesome-swift-macos-apps/pull/203),
+  and [awesome-swiftui](https://github.com/onmyway133/awesome-swiftui/pull/86).
+  Answer maintainer review; referrals appear by origin in GA4. Community posts
+  are Alex's to publish; the official Homebrew cask needs more GitHub stars.
+- [x] **Guest article published.** [Kirill's PR #97](https://github.com/kirill-markin/kirill-markin-com/pull/97)
+  merged on 28 October; the [live article](https://kirill-markin.com/articles/photo-culling-mac-louppe-folder-workflow/)
+  links the homepage and the JPEG guide. Its 14- and 28-day reviews count from
+  that date.
 - [ ] **1.13 release alignment.** Review feature claims, screenshots, requirements,
   download links, and capture notes against the released 1.13 app before publishing
   those changes. Retain the 26 September request: no visible
