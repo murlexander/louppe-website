@@ -81,4 +81,6 @@ Every translated page has its own canonical URL, reciprocal `hreflang` links, an
 
 `npm test` covers language discovery, links/assets, metadata, missing translations, article withdrawal, private previews, and existing consent behavior. `npm run preview:blog` includes all languages. GitHub Pages publishes only after changes are committed and pushed to `main`.
 
+The sitemap gives each article and blog index a `lastmod` from post dates; the homepage and privacy policy omit it. After a deployment is live, run `npm run indexnow` to submit sitemap URLs to IndexNow search engines (Bing, Yandex, Seznam, Naver, and Yep), or `npm run indexnow -- /blog/<slug>/` for specific pages. The key file at the site root must stay published. Google ignores IndexNow; request indexing in Search Console.
+
 After publication, use Search Console to inspect localized URLs and monitor impressions, clicks, and download intent by landing page. SEO changes do not guarantee traffic or indexing. Implementation follows [Google's multilingual guidance](https://developers.google.com/search/docs/specialty/international/managing-multi-regional-sites) and [alternate-language guidance](https://developers.google.com/search/docs/specialty/international/localized-versions).

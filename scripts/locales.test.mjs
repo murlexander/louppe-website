@@ -38,6 +38,12 @@ test('static language pages, crawl discovery, links, and withdrawal remain consi
         assert.equal((html.match(/rel="canonical"/g) ?? []).length,1);
         assert.ok(html.includes(`<link rel="canonical" href="${origin}${path}">`));
         assert.ok(sitemap.includes(`<loc>${origin}${path}</loc>`));
+        const post = published.find(post=>route===`/blog/${post.slug}/`);
+        const newest = published.map(post=>post.date).sort().at(-1);
+        const expected = post ? post.date : route === '/blog/' ? newest : null;
+        const entry = sitemap.match(new RegExp(`<url><loc>${(origin+path).replace(/[.*+?^${}()|[\]\\/]/g,'\\$&')}</loc>(?:<lastmod>([^<]+)</lastmod>)?</url>`));
+        assert.ok(entry, path);
+        assert.equal(entry[1] ?? null, expected, `lastmod for ${path}`);
         if (isLocalized(route)) {
           assert.ok(html.includes(`hreflang="x-default" href="${origin}${route}"`));
           for (const other of languages) {

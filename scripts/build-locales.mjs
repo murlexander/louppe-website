@@ -130,8 +130,11 @@ export async function buildLocales({ root, out, published, drafts = [], preview,
   }
   for (const { path, html } of outputs) await write(path, html);
   // English-only posts keep their original generator output and sitemap entries.
-  const sitemapPaths = [...pages.filter(page => !page.post?.draft).flatMap(page => languages.map(language => localizedPath(page.path, language))), ...englishPosts.filter(post => !post.draft).map(post => post.path)];
-  await writeFile(resolve(out, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${sitemapPaths.map(path => `\n  <url><loc>${origin}${path}</loc></url>`).join('')}\n</urlset>\n`);
+  // lastmod uses article dates only; homepage and privacy have no reliable content date, so they omit it.
+  const newestPost = published.map(post => post.date).filter(Boolean).sort().at(-1);
+  const lastmod = page => page.post ? page.post.date : page.path === '/blog/' ? newestPost : undefined;
+  const sitemapEntries = [...pages.filter(page => !page.post?.draft).flatMap(page => languages.map(language => ({ path: localizedPath(page.path, language), date: lastmod(page) }))), ...englishPosts.filter(post => !post.draft).map(post => ({ path: post.path, date: post.date }))];
+  await writeFile(resolve(out, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${sitemapEntries.map(({ path, date }) => `\n  <url><loc>${origin}${path}</loc>${date ? `<lastmod>${date}</lastmod>` : ''}</url>`).join('')}\n</urlset>\n`);
   let previous = [];
   try { previous = JSON.parse(await load('content/generated-locales.json')); } catch (error) { if (error.code !== 'ENOENT') throw error; }
   for (const path of previous) {

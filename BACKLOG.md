@@ -23,9 +23,12 @@ Website work ships independently. Claims must match the released app.
 
 - [ ] Report traffic sources and landing pages leading to `louppe_download` in
   the separate Louppe property. Treat clicks as intent, not installations.
-- [ ] Recheck Search Console after the 6 October submissions. Ownership is
-  verified, both indexing requests were accepted, and a live test fetched the
-  valid sitemap. The recorded sitemap report still said “Couldn't fetch.”
+- [ ] **Search Console discovery, rechecked 2 November.** The sitemap was never
+  read after its 6 October submission, so all five guides were “unknown to
+  Google.” Resubmitted the sitemap and requested indexing for the homepage and
+  the five English guides on 2 November. Around 9 November, confirm the
+  sitemap shows Success with discovered pages, then request the localized guides
+  if they remain unknown (daily quota).
 
 ## Deferred media refresh
 

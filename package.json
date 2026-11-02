@@ -9,7 +9,8 @@
     "test": "node --test scripts/*.test.mjs",
     "test:consent": "node --test scripts/analytics-consent.test.mjs",
     "build": "node scripts/build-blog.mjs",
-    "test:i18n": "node --test scripts/locales.test.mjs"
+    "test:i18n": "node --test scripts/locales.test.mjs",
+    "indexnow": "node scripts/indexnow.mjs"
   },
   "engines": {
     "node": ">=22"
