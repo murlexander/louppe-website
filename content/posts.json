@@ -13,6 +13,33 @@
       "label": "Try Louppe",
       "href": "https://apps.apple.com/app/louppe/id6820131477"
     },
+    "translations": {
+      "es": {
+        "title": "Cómo seleccionar fotos JPEG en Mac sin importarlas ni editarlas",
+        "description": "Elige tus mejores fotos JPEG en Mac con Louppe. Marca las que quieras conservar, comprueba tu selección, y copia los archivos originales a otra carpeta",
+        "file": "sort-jpeg-photos-mac-es.md"
+      },
+      "zh-Hans": {
+        "title": "如何在 Mac 上筛选 JPEG 照片，无需导入或编辑",
+        "description": "用 Louppe 在 Mac 上选出最好的 JPEG 照片。标记入选照片，检查候选照片，再把原始文件复制到单独的文件夹",
+        "file": "sort-jpeg-photos-mac-zh.md"
+      },
+      "hi": {
+        "title": "Mac पर बिना इम्पोर्ट या एडिटिंग के JPEG फ़ोटो कैसे छाँटें",
+        "description": "Louppe से Mac पर अपनी सबसे अच्छी JPEG फ़ोटो चुनें। रखने वाली फ़ोटो पर निशान लगाएँ, अपना चयन जाँचें, और मूल फ़ाइलें अलग फ़ोल्डर में कॉपी करें",
+        "file": "sort-jpeg-photos-mac-hi.md"
+      },
+      "pt": {
+        "title": "Como selecionar fotos JPEG no Mac sem importar nem editar",
+        "description": "Escolha suas melhores fotos JPEG no Mac com o Louppe. Marque as fotos que quer manter, confira sua seleção, e copie os arquivos originais para uma pasta separada",
+        "file": "sort-jpeg-photos-mac-pt.md"
+      },
+      "ar": {
+        "title": "كيفية فرز صور JPEG على Mac دون استيراد أو تحرير",
+        "description": "اختر أفضل صور JPEG على Mac باستخدام Louppe. ضع علامة على الصور التي ستحتفظ بها، وراجع قائمتك المختارة، وانسخ الملفات الأصلية إلى مجلد منفصل",
+        "file": "sort-jpeg-photos-mac-ar.md"
+      }
+    },
     "date": "2026-10-22",
     "cover": {
       "src": "/media/2026-10-22-interface/jpeg-grid-gallery-1600.webp",
@@ -37,6 +64,33 @@
     "cta": {
       "label": "Try Louppe",
       "href": "https://apps.apple.com/app/louppe/id6820131477"
+    },
+    "translations": {
+      "es": {
+        "title": "Por qué las fotos RAW cambian al ampliar en Mac",
+        "description": "Entiende las vistas previas de cámara, el revelado RAW de Apple, y el cambio al 100% en Louppe. Comprueba el enfoque y el color con el revelado que quieras evaluar",
+        "file": "why-raw-photos-change-when-you-zoom-es.md"
+      },
+      "zh-Hans": {
+        "title": "为什么 RAW 照片在 Mac 上放大后会变样",
+        "description": "了解相机预览、Apple RAW 渲染，以及 Louppe 在 100% 时的变化。检查对焦和颜色时，确认所用的正是你想判断的渲染结果",
+        "file": "why-raw-photos-change-when-you-zoom-zh.md"
+      },
+      "hi": {
+        "title": "Mac पर ज़ूम करने से RAW फ़ोटो क्यों बदलती हैं",
+        "description": "कैमरे के पूर्वावलोकन, Apple RAW रेंडरिंग, और Louppe में 100% पर होने वाले बदलाव को समझें। जिस रेंडरिंग को परखना चाहते हैं, उसी से फ़ोकस और रंग जाँचें",
+        "file": "why-raw-photos-change-when-you-zoom-hi.md"
+      },
+      "pt": {
+        "title": "Por que as fotos RAW mudam ao dar zoom no Mac",
+        "description": "Entenda as prévias da câmera, a renderização RAW da Apple, e a mudança em 100% no Louppe. Confira o foco e a cor na renderização que você quer avaliar",
+        "file": "why-raw-photos-change-when-you-zoom-pt.md"
+      },
+      "ar": {
+        "title": "لماذا تتغيّر صور RAW عند التكبير على Mac",
+        "description": "تعرّف على معاينات الكاميرا، ومعالجة Apple لملفات RAW، وما يتغيّر عند 100% في Louppe. افحص التركيز والألوان باستخدام المعالجة التي تريد تقييمها",
+        "file": "why-raw-photos-change-when-you-zoom-ar.md"
+      }
     },
     "date": "2026-10-22",
     "cover": {

@@ -2,12 +2,12 @@ const siteTranslations = JSON.parse(document.getElementById('site-translations')
 const translateSite = value => siteTranslations[value] || value;
 const views = {
   gallery: {
-    file: 'gallery-info', height: 1129,
-    alt: translateSite('Louppe Gallery showing an apple-tree photograph, camera settings, a histogram, and RAW+JPEG information')
+    file: 'gallery', height: 975,
+    alt: translateSite('Louppe Gallery with a mountain sunset, five stars, a purple label, and a Yes mark, beside camera settings and a histogram')
   },
   grid: {
-    file: 'grid-overview', height: 1068,
-    alt: translateSite('Louppe Grid showing a real shoot of street scenes, architecture, and reflections, with a photo selected in purple')
+    file: 'grid', height: 975,
+    alt: translateSite('Louppe Grid with landscape photos grouped by date, showing stars, color labels, and Yes/No marks on each photo')
   }
 };
 const appImage = document.getElementById('app-image');
@@ -43,11 +43,11 @@ function selectView(name) {
     demoVideo.pause();
     currentView = name;
     const view = views[name];
-    appImage.srcset = `/media/2026-09-26/${view.file}-small.webp 960w, /media/2026-09-26/${view.file}.webp 1800w`;
-    appImage.src = `/media/2026-09-26/${view.file}.webp`;
+    appImage.srcset = `/media/2026-11-04/${view.file}-small.webp 960w, /media/2026-11-04/${view.file}.webp 1800w`;
+    appImage.src = `/media/2026-11-04/${view.file}.webp`;
     appImage.alt = view.alt;
     appImage.height = view.height;
-    imageLink.href = `/media/2026-09-26/${view.file}.webp`;
+    imageLink.href = `/media/2026-11-04/${view.file}.webp`;
     imageLink.setAttribute('aria-label', translateSite(`Enlarge ${name === 'gallery' ? 'Gallery' : 'Grid'} screenshot`));
   }
   viewButtons.forEach(button => {
@@ -67,7 +67,7 @@ openLinkedDemo();
 
 function showImage() {
   const view = views[currentView];
-  dialogImage.src = `/media/2026-09-26/${view.file}.webp`;
+  dialogImage.src = `/media/2026-11-04/${view.file}.webp`;
   dialogImage.alt = view.alt;
   dialogImage.height = view.height;
   imageDialog.showModal();

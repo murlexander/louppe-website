@@ -863,14 +863,6 @@
     "pt": "atualizações e recursos da Apple",
     "ar": "التحديثات وموارد Apple"
   },
-  "the direct-download app uses Sparkle to check for and download GitHub releases. the host receives connection information, including your IP address. Sparkle system profiling is disabled. turn off automatic checks in Louppe’s Updates settings. Mac App Store builds use Apple updates without Sparkle": {
-    "en": "the direct-download app uses Sparkle to check for and download GitHub releases. the host receives connection information, including your IP address. Sparkle system profiling is disabled. turn off automatic checks in Louppe’s Updates settings. Mac App Store builds use Apple updates without Sparkle",
-    "es": "la descarga directa usa Sparkle para buscar y descargar versiones de GitHub. el servidor recibe datos de conexión, incluida tu IP. el perfilado del sistema de Sparkle está desactivado. puedes desactivar las comprobaciones automáticas en Updates de Louppe. las versiones de Mac App Store usan actualizaciones de Apple sin Sparkle",
-    "zh-Hans": "直接下载版使用 Sparkle 检查和下载 GitHub 版本。服务器会收到包括 IP 地址在内的连接信息。Sparkle 系统信息统计已禁用。可在 Louppe 的 Updates 设置中关闭自动检查。Mac App Store 版本通过 Apple 更新，不使用 Sparkle",
-    "hi": "सीधे डाउनलोड वाला ऐप GitHub रिलीज़ जाँचने और डाउनलोड करने के लिए Sparkle इस्तेमाल करता है। होस्ट को आपके IP पते सहित कनेक्शन जानकारी मिलती है। Sparkle सिस्टम प्रोफ़ाइलिंग बंद है। Louppe की Updates सेटिंग में स्वतः जाँच बंद करें। Mac App Store संस्करण Sparkle के बिना Apple अपडेट इस्तेमाल करते हैं",
-    "pt": "o download direto usa Sparkle para verificar e baixar versões do GitHub. o servidor recebe dados de conexão, incluindo seu IP. a coleta de perfil do sistema do Sparkle está desativada. desative verificações automáticas em Updates no Louppe. versões da Mac App Store usam atualizações da Apple sem Sparkle",
-    "ar": "يستخدم التطبيق المنزّل مباشرة Sparkle للتحقق من إصدارات GitHub وتنزيلها. تتلقى جهة الاستضافة معلومات الاتصال بما فيها عنوان IP. جمع معلومات النظام في Sparkle معطّل. يمكنك إيقاف التحقق التلقائي في إعدادات Updates. تستخدم إصدارات Mac App Store تحديثات Apple دون Sparkle"
-  },
   "if a selected Apple RAW decoder needs model resources, macOS may download them from Apple. decoding stays local. Apple manages downloads under": {
     "en": "if a selected Apple RAW decoder needs model resources, macOS may download them from Apple. decoding stays local. Apple manages downloads under",
     "es": "si un decodificador RAW de Apple elegido necesita recursos del modelo, macOS puede descargarlos de Apple. la decodificación sigue siendo local. Apple gestiona las descargas según",
@@ -2382,5 +2374,229 @@
     "hi": "फ़ुटर के “विश्लेषण” से कभी भी मना करें या सहमति वापस लें। इससे खुले Louppe वेबसाइट टैब में संग्रह रुकता है और एनालिटिक्स कुकी हटती हैं। Google को पहले मिले डेटा नहीं मिटते। स्थानीय पूर्वावलोकन Google Analytics लोड नहीं करते",
     "pt": "rejeite ou retire o consentimento a qualquer momento em “análise” no rodapé. a coleta para nas abas abertas do Louppe e os cookies são limpos. dados já recebidos pelo Google não são apagados. prévias locais não carregam o Google Analytics",
     "ar": "ارفض أو اسحب الموافقة في أي وقت من «التحليلات» في التذييل. يتوقف جمع البيانات في جميع تبويبات موقع Louppe المفتوحة وتُمسح ملفات التحليلات. لا تُحذف البيانات التي تلقتها Google سابقًا. لا تُحمّل Google Analytics في المعاينات المحلية"
+  },
+  "the direct-download app uses Sparkle to check for and download GitHub releases. the host receives connection information, including your IP address. Sparkle system profiling is disabled. turn off automatic checks in Settings → General → Updates. Mac App Store builds use Apple updates without Sparkle": {
+    "en": "the direct-download app uses Sparkle to check for and download GitHub releases. the host receives connection information, including your IP address. Sparkle system profiling is disabled. turn off automatic checks in Settings → General → Updates. Mac App Store builds use Apple updates without Sparkle",
+    "es": "la descarga directa usa Sparkle para buscar y descargar versiones de GitHub. el servidor recibe datos de conexión, incluida tu IP. el perfilado del sistema de Sparkle está desactivado. puedes desactivar las comprobaciones automáticas en Ajustes → General → Actualizaciones. las versiones de Mac App Store usan actualizaciones de Apple sin Sparkle",
+    "zh-Hans": "直接下载版使用 Sparkle 检查和下载 GitHub 版本。服务器会收到包括 IP 地址在内的连接信息。Sparkle 系统信息统计已禁用。可在“设置 → 通用 → 更新”中关闭自动检查。Mac App Store 版本通过 Apple 更新，不使用 Sparkle",
+    "hi": "सीधे डाउनलोड वाला ऐप GitHub रिलीज़ जाँचने और डाउनलोड करने के लिए Sparkle इस्तेमाल करता है। होस्ट को आपके IP पते सहित कनेक्शन जानकारी मिलती है। Sparkle सिस्टम प्रोफ़ाइलिंग बंद है। सेटिंग्स → सामान्य → अपडेट में स्वतः जाँच बंद करें। Mac App Store संस्करण Sparkle के बिना Apple अपडेट इस्तेमाल करते हैं",
+    "pt": "o download direto usa Sparkle para verificar e baixar versões do GitHub. o servidor recebe dados de conexão, incluindo seu IP. a coleta de perfil do sistema do Sparkle está desativada. desative verificações automáticas em Ajustes → Geral → Atualizações. versões da Mac App Store usam atualizações da Apple sem Sparkle",
+    "ar": "يستخدم التطبيق المنزّل مباشرة Sparkle للتحقق من إصدارات GitHub وتنزيلها. تتلقى جهة الاستضافة معلومات الاتصال بما فيها عنوان IP. جمع معلومات النظام في Sparkle معطّل. يمكنك إيقاف التحقق التلقائي من الإعدادات ← عام ← التحديثات. تستخدم إصدارات Mac App Store تحديثات Apple دون Sparkle"
+  },
+  "Apple Photos": {
+    "en": "Apple Photos",
+    "es": "Apple Photos",
+    "zh-Hans": "Apple Photos",
+    "hi": "Apple Photos",
+    "pt": "Apple Photos",
+    "ar": "Apple Photos"
+  },
+  "File → Open Apple Photos… asks macOS for access to your Photos library. Louppe reads the library or album you choose to show previews and play media, and doesn’t change photos, edits, or Favorites": {
+    "en": "File → Open Apple Photos… asks macOS for access to your Photos library. Louppe reads the library or album you choose to show previews and play media, and doesn’t change photos, edits, or Favorites",
+    "es": "Archivo → Abrir Apple Photos… pide a macOS acceso a tu fototeca. Louppe lee la fototeca o el álbum que elijas para mostrar vistas previas y reproducir medios, y no cambia fotos, ediciones ni Favoritas",
+    "zh-Hans": "“文件 → 打开 Apple Photos…”会向 macOS 请求访问你的照片图库。Louppe 读取你选择的图库或相簿以显示预览和播放媒体，不会更改照片、编辑或个人收藏",
+    "hi": "फ़ाइल → Apple Photos खोलें… macOS से आपकी Photos लाइब्रेरी की पहुँच माँगता है। Louppe प्रीव्यू दिखाने और मीडिया चलाने के लिए आपकी चुनी लाइब्रेरी या ऐल्बम पढ़ता है, और फ़ोटो, संपादन या पसंदीदा नहीं बदलता",
+    "pt": "Arquivo → Abrir Apple Photos… pede ao macOS acesso à sua fototeca. o Louppe lê a fototeca ou o álbum que você escolher para mostrar pré-visualizações e reproduzir mídia, e não altera fotos, edições nem Favoritas",
+    "ar": "يطلب ملف ← فتح Apple Photos… من macOS الوصول إلى مكتبة الصور. يقرأ Louppe المكتبة أو الألبوم الذي تختاره لعرض المعاينات وتشغيل الوسائط، ولا يغيّر الصور أو تعديلاتها أو المفضلة"
+  },
+  "Yes/No decisions, stars, and colors for Photos items are saved by Photos asset ID in Louppe’s Application Support data, not in the library. the chooser remembers your source, dates, and order": {
+    "en": "Yes/No decisions, stars, and colors for Photos items are saved by Photos asset ID in Louppe’s Application Support data, not in the library. the chooser remembers your source, dates, and order",
+    "es": "las decisiones Sí/No, estrellas y colores de los elementos de Photos se guardan por ID de recurso de Photos en los datos de Application Support de Louppe, no en la fototeca. el selector recuerda tu origen, fechas y orden",
+    "zh-Hans": "照片项目的“是/否”决定、星级和颜色按 Photos 资源 ID 保存在 Louppe 的 Application Support 数据中，而不是图库里。选择器会记住你的来源、日期和排序",
+    "hi": "Photos आइटम के हाँ/नहीं फ़ैसले, स्टार और रंग Photos ऐसेट ID के आधार पर Louppe के Application Support डेटा में सहेजे जाते हैं, लाइब्रेरी में नहीं। चयनकर्ता आपका स्रोत, तारीखें और क्रम याद रखता है",
+    "pt": "decisões Sim/Não, estrelas e cores dos itens do Photos são salvas pelo ID do recurso do Photos nos dados de Application Support do Louppe, não na fototeca. o seletor lembra sua origem, datas e ordem",
+    "ar": "تُحفظ قرارات نعم/لا والنجوم والألوان لعناصر Photos حسب معرّف العنصر في Photos ضمن بيانات Application Support الخاصة بـ Louppe، لا في المكتبة. يتذكر المنتقي المصدر والتواريخ والترتيب"
+  },
+  "with Allow iCloud Review Images or Allow iCloud Originals in Settings → General, Photos may download items from iCloud as you view, open original detail, or copy them. originals are staged temporarily, up to 5 GB, and deleted when released": {
+    "en": "with Allow iCloud Review Images or Allow iCloud Originals in Settings → General, Photos may download items from iCloud as you view, open original detail, or copy them. originals are staged temporarily, up to 5 GB, and deleted when released",
+    "es": "con Permitir imágenes de revisión de iCloud o Permitir originales de iCloud en Ajustes → General, Photos puede descargar elementos de iCloud cuando los ves, abres el detalle original o los copias. los originales se preparan temporalmente, hasta 5 GB, y se eliminan al liberarse",
+    "zh-Hans": "在“设置 → 通用”中开启“允许下载 iCloud 审阅图像”或“允许下载 iCloud 原片”后，你查看、打开原片细节或复制项目时，Photos 可能会从 iCloud 下载这些项目。原片会临时暂存，最多 5 GB，释放后即删除",
+    "hi": "सेटिंग्स → सामान्य में iCloud समीक्षा छवियों की अनुमति दें या iCloud मूल की अनुमति दें चालू होने पर, जब आप आइटम देखते हैं, मूल विवरण खोलते हैं या कॉपी करते हैं, Photos उन्हें iCloud से डाउनलोड कर सकता है। मूल फ़ाइलें 5 GB तक अस्थायी रूप से रखी जाती हैं और छोड़ने पर हटा दी जाती हैं",
+    "pt": "com Permitir imagens de revisão do iCloud ou Permitir originais do iCloud em Ajustes → Geral, o Photos pode baixar itens do iCloud quando você os vê, abre o detalhe original ou os copia. os originais ficam temporariamente preparados, até 5 GB, e são apagados ao serem liberados",
+    "ar": "عند تفعيل السماح بصور المراجعة من iCloud أو السماح بأصول iCloud في الإعدادات ← عام، قد ينزّل Photos العناصر من iCloud عند عرضها أو فتح تفاصيلها الأصلية أو نسخها. تُجهَّز الأصول مؤقتًا بحد أقصى 5 GB وتُحذف عند تحريرها"
+  },
+  "Louppe changes your library only when you choose File → Add to Album… and confirm. it adds items to an existing or new album. existing albums and originals stay intact": {
+    "en": "Louppe changes your library only when you choose File → Add to Album… and confirm. it adds items to an existing or new album. existing albums and originals stay intact",
+    "es": "Louppe solo cambia tu fototeca cuando eliges Archivo → Añadir al álbum… y confirmas. añade elementos a un álbum existente o nuevo. los álbumes y originales existentes quedan intactos",
+    "zh-Hans": "只有在你选择“文件 → 添加到相簿…”并确认后，Louppe 才会更改你的图库。它会把项目添加到现有相簿或新相簿，现有相簿和原片保持不变",
+    "hi": "Louppe आपकी लाइब्रेरी तभी बदलता है जब आप फ़ाइल → ऐल्बम में जोड़ें… चुनकर पुष्टि करते हैं। यह आइटम मौजूदा या नए ऐल्बम में जोड़ता है। मौजूदा ऐल्बम और मूल फ़ाइलें वैसी ही रहती हैं",
+    "pt": "o Louppe só altera sua fototeca quando você escolhe Arquivo → Adicionar ao álbum… e confirma. ele adiciona itens a um álbum existente ou novo. álbuns e originais existentes ficam intactos",
+    "ar": "لا يغيّر Louppe مكتبتك إلا عندما تختار ملف ← إضافة إلى ألبوم… وتؤكد. يضيف العناصر إلى ألبوم موجود أو جديد، وتبقى الألبومات والأصول الموجودة كما هي"
+  },
+  "in Mac App Store builds, after three successful Copies on two different days, Louppe may ask once per version for a rating with Apple’s standard prompt. the counts stay on your Mac": {
+    "en": "in Mac App Store builds, after three successful Copies on two different days, Louppe may ask once per version for a rating with Apple’s standard prompt. the counts stay on your Mac",
+    "es": "en las versiones de Mac App Store, tras tres copias correctas en dos días distintos, Louppe puede pedir una valoración una vez por versión con el aviso estándar de Apple. los recuentos se quedan en tu Mac",
+    "zh-Hans": "在 Mac App Store 版本中，当你在两个不同的日子成功完成三次复制后，Louppe 可能会通过 Apple 的标准提示在每个版本中请求一次评分。计数只保存在你的 Mac 上",
+    "hi": "Mac App Store संस्करणों में, दो अलग-अलग दिनों में तीन सफल कॉपी के बाद, Louppe हर संस्करण में एक बार Apple के मानक प्रॉम्प्ट से रेटिंग माँग सकता है। गिनती आपके Mac पर ही रहती है",
+    "pt": "nas versões da Mac App Store, após três cópias bem-sucedidas em dois dias diferentes, o Louppe pode pedir uma avaliação uma vez por versão com o aviso padrão da Apple. as contagens ficam no seu Mac",
+    "ar": "في إصدارات Mac App Store، بعد ثلاث عمليات نسخ ناجحة في يومين مختلفين، قد يطلب Louppe تقييمًا مرة واحدة لكل إصدار عبر نافذة Apple القياسية. تبقى الأعداد على جهاز Mac"
+  },
+  "Louppe Gallery with a mountain sunset, five stars, a purple label, and a Yes mark, beside camera settings and a histogram": {
+    "en": "Louppe Gallery with a mountain sunset, five stars, a purple label, and a Yes mark, beside camera settings and a histogram",
+    "es": "galería de Louppe con un atardecer en la montaña, cinco estrellas, una etiqueta morada y una marca Sí, junto a los ajustes de cámara y un histograma",
+    "zh-Hans": "Louppe 图库中的山间日落照片，带五星、紫色标签和“是”标记，旁边是相机参数和直方图",
+    "hi": "Louppe की गैलरी में पहाड़ों पर सूर्यास्त, पाँच स्टार, बैंगनी लेबल और हाँ का निशान, साथ में कैमरा सेटिंग और हिस्टोग्राम",
+    "pt": "galeria do Louppe com um pôr do sol nas montanhas, cinco estrelas, uma etiqueta roxa e uma marca Sim, ao lado das configurações da câmera e de um histograma",
+    "ar": "معرض Louppe يعرض غروب الشمس فوق الجبال مع خمس نجوم وتسمية بنفسجية وعلامة نعم، بجانب إعدادات الكاميرا ومخطط الإضاءة"
+  },
+  "Louppe Grid with landscape photos grouped by date, showing stars, color labels, and Yes/No marks on each photo": {
+    "en": "Louppe Grid with landscape photos grouped by date, showing stars, color labels, and Yes/No marks on each photo",
+    "es": "cuadrícula de Louppe con paisajes agrupados por fecha, con estrellas, etiquetas de color y marcas Sí/No en cada foto",
+    "zh-Hans": "Louppe 网格中按日期分组的风景照片，每张照片上显示星级、颜色标签和“是/否”标记",
+    "hi": "Louppe ग्रिड में तारीख़ के अनुसार समूहित लैंडस्केप फ़ोटो, हर फ़ोटो पर स्टार, रंग लेबल और हाँ/नहीं के निशान",
+    "pt": "grade do Louppe com paisagens agrupadas por data, com estrelas, etiquetas de cor e marcas Sim/Não em cada foto",
+    "ar": "شبكة Louppe تعرض صور مناظر طبيعية مجمّعة حسب التاريخ، مع النجوم وتسميات الألوان وعلامات نعم/لا على كل صورة"
+  },
+  "Grid lays out photos like a contact sheet, with decisions, stars, and color labels on each photo": {
+    "en": "Grid lays out photos like a contact sheet, with decisions, stars, and color labels on each photo",
+    "es": "la cuadrícula muestra las fotos como una hoja de contactos, con decisiones, estrellas y etiquetas de color sobre cada foto",
+    "zh-Hans": "网格像印样一样排列照片，每张照片上直接显示决定、星级和颜色标签",
+    "hi": "ग्रिड फ़ोटो को कॉन्टैक्ट शीट की तरह दिखाता है, हर फ़ोटो पर फ़ैसले, स्टार और रंग लेबल के साथ",
+    "pt": "a grade mostra as fotos como uma folha de contato, com decisões, estrelas e etiquetas de cor em cada foto",
+    "ar": "تعرض الشبكة الصور مثل ورقة التلامس، مع القرارات والنجوم وتسميات الألوان على كل صورة"
+  },
+  "review your Apple Photos library or an album without exporting it. iCloud downloads are optional, and albums change only when you choose Add to Album": {
+    "en": "review your Apple Photos library or an album without exporting it. iCloud downloads are optional, and albums change only when you choose Add to Album",
+    "es": "revisa tu fototeca de Apple Photos o un álbum sin exportarlos. las descargas de iCloud son opcionales, y los álbumes solo cambian cuando eliges Añadir al álbum",
+    "zh-Hans": "无需导出即可审阅你的 Apple Photos 图库或相簿。iCloud 下载为可选项，只有在你选择“添加到相簿”时相簿才会改变",
+    "hi": "अपनी Apple Photos लाइब्रेरी या किसी ऐल्बम को एक्सपोर्ट किए बिना देखें। iCloud डाउनलोड वैकल्पिक हैं, और ऐल्बम तभी बदलते हैं जब आप ऐल्बम में जोड़ें चुनते हैं",
+    "pt": "revise sua fototeca do Apple Photos ou um álbum sem exportá-los. downloads do iCloud são opcionais, e os álbuns só mudam quando você escolhe Adicionar ao álbum",
+    "ar": "راجع مكتبة Apple Photos أو ألبومًا دون تصديرهما. تنزيلات iCloud اختيارية، ولا تتغيّر الألبومات إلا عندما تختار إضافة إلى ألبوم"
+  },
+  "browse an archive’s folder tree in Gallery or Grid, and move between folders with [ and ]. pin archives on Welcome to reopen them with cached previews": {
+    "en": "browse an archive’s folder tree in Gallery or Grid, and move between folders with [ and ]. pin archives on Welcome to reopen them with cached previews",
+    "es": "explora el árbol de carpetas de un archivo en la galería o la cuadrícula, y pasa de una carpeta a otra con [ y ]. fija archivos en la bienvenida para reabrirlos con vistas previas guardadas",
+    "zh-Hans": "在图库或网格中浏览归档的文件夹树，用 [ 和 ] 在文件夹之间切换。在欢迎窗口固定归档，再次打开时可直接显示缓存的预览",
+    "hi": "गैलरी या ग्रिड में किसी आर्काइव का फ़ोल्डर ट्री देखें, और [ व ] से फ़ोल्डरों के बीच जाएँ। स्वागत विंडो में आर्काइव पिन करें ताकि वे कैश किए गए प्रीव्यू के साथ फिर खुलें",
+    "pt": "navegue pela árvore de pastas de um arquivo na galeria ou na grade, e passe de uma pasta a outra com [ e ]. fixe arquivos na tela de boas-vindas para reabri-los com pré-visualizações em cache",
+    "ar": "تصفّح شجرة مجلدات الأرشيف في المعرض أو الشبكة، وانتقل بين المجلدات باستخدام [ و ]. ثبّت الأرشيفات في نافذة الترحيب لإعادة فتحها مع المعاينات المخزّنة"
+  },
+  "gallery / grid": {
+    "en": "gallery / grid",
+    "es": "galería / cuadrícula",
+    "zh-Hans": "图库 / 网格",
+    "hi": "गैलरी / ग्रिड",
+    "pt": "galeria / grade",
+    "ar": "المعرض / الشبكة"
+  },
+  "play / pause video or audio. otherwise next item": {
+    "en": "play / pause video or audio. otherwise next item",
+    "es": "reproducir / pausar vídeo o audio. en otros medios, siguiente elemento",
+    "zh-Hans": "播放 / 暂停视频或音频。其他媒体转到下一个项目",
+    "hi": "वीडियो या ऑडियो चलाएँ / रोकें। अन्य मीडिया में अगला आइटम",
+    "pt": "reproduzir / pausar vídeo ou áudio. em outras mídias, próximo item",
+    "ar": "تشغيل / إيقاف مؤقت للفيديو أو الصوت. العنصر التالي للوسائط الأخرى"
+  },
+  "show / hide browser": {
+    "en": "show / hide browser",
+    "es": "mostrar / ocultar explorador",
+    "zh-Hans": "显示 / 隐藏浏览栏",
+    "hi": "ब्राउज़र दिखाएँ / छिपाएँ",
+    "pt": "mostrar / ocultar navegador",
+    "ar": "إظهار / إخفاء المتصفح"
+  },
+  "show / hide folders": {
+    "en": "show / hide folders",
+    "es": "mostrar / ocultar carpetas",
+    "zh-Hans": "显示 / 隐藏文件夹",
+    "hi": "फ़ोल्डर दिखाएँ / छिपाएँ",
+    "pt": "mostrar / ocultar pastas",
+    "ar": "إظهار / إخفاء المجلدات"
+  },
+  "previous folder": {
+    "en": "previous folder",
+    "es": "carpeta anterior",
+    "zh-Hans": "上一个文件夹",
+    "hi": "पिछला फ़ोल्डर",
+    "pt": "pasta anterior",
+    "ar": "المجلد السابق"
+  },
+  "next folder": {
+    "en": "next folder",
+    "es": "carpeta siguiente",
+    "zh-Hans": "下一个文件夹",
+    "hi": "अगला फ़ोल्डर",
+    "pt": "pasta seguinte",
+    "ar": "المجلد التالي"
+  },
+  "open export": {
+    "en": "open export",
+    "es": "abrir exportación",
+    "zh-Hans": "打开导出",
+    "hi": "निर्यात खोलें",
+    "pt": "abrir exportação",
+    "ar": "فتح التصدير"
+  },
+  "clear all yes / no decisions": {
+    "en": "clear all yes / no decisions",
+    "es": "borrar todas las decisiones sí / no",
+    "zh-Hans": "清除所有保留 / 舍弃决定",
+    "hi": "सभी रखने / न रखने के निर्णय हटाएँ",
+    "pt": "limpar todas as decisões sim / não",
+    "ar": "مسح جميع قرارات الاحتفاظ / الاستبعاد"
+  },
+  "open settings": {
+    "en": "open settings",
+    "es": "abrir ajustes",
+    "zh-Hans": "打开设置",
+    "hi": "सेटिंग्स खोलें",
+    "pt": "abrir ajustes",
+    "ar": "فتح الإعدادات"
+  },
+  "close window": {
+    "en": "close window",
+    "es": "cerrar ventana",
+    "zh-Hans": "关闭窗口",
+    "hi": "विंडो बंद करें",
+    "pt": "fechar janela",
+    "ar": "إغلاق النافذة"
+  },
+  "quit louppe": {
+    "en": "quit louppe",
+    "es": "salir de louppe",
+    "zh-Hans": "退出 louppe",
+    "hi": "louppe बंद करें",
+    "pt": "sair do louppe",
+    "ar": "إنهاء louppe"
+  },
+  "move to trash": {
+    "en": "move to trash",
+    "es": "enviar a la papelera",
+    "zh-Hans": "移入废纸篓",
+    "hi": "ट्रैश में भेजें",
+    "pt": "mover para a lixeira",
+    "ar": "نقل إلى سلة المهملات"
+  },
+  "enclosing folder": {
+    "en": "enclosing folder",
+    "es": "carpeta superior",
+    "zh-Hans": "上层文件夹",
+    "hi": "ऊपरी फ़ोल्डर",
+    "pt": "pasta superior",
+    "ar": "المجلد الأصل"
+  },
+  "Left bracket": {
+    "en": "Left bracket",
+    "es": "corchete izquierdo",
+    "zh-Hans": "左方括号",
+    "hi": "बायाँ वर्ग कोष्ठक",
+    "pt": "colchete esquerdo",
+    "ar": "القوس المربع الأيسر"
+  },
+  "Right bracket": {
+    "en": "Right bracket",
+    "es": "corchete derecho",
+    "zh-Hans": "右方括号",
+    "hi": "दायाँ वर्ग कोष्ठक",
+    "pt": "colchete direito",
+    "ar": "القوس المربع الأيمن"
+  },
+  "Comma": {
+    "en": "Comma",
+    "es": "coma",
+    "zh-Hans": "逗号",
+    "hi": "अल्पविराम",
+    "pt": "vírgula",
+    "ar": "الفاصلة"
   }
 }

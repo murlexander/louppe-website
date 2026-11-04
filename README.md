@@ -12,7 +12,8 @@
 - `analytics-consent.js`: consent and download events
 - `favicon.ico`, `favicon.png`: app artwork icons
 - `media/grain.svg`: background texture
-- `media/2026-09-26/`: screenshots, captioned walkthrough, and sharing image
+- `media/2026-11-04/`: 1.13 Gallery/Grid screenshots and sharing image
+- `media/2026-09-26/`: 1.9 screenshots (used by articles) and the captioned walkthrough
 - `CNAME`: domain
 - `robots.txt`, `sitemap.xml`, and `llms.txt`: crawler discovery
 - `DESIGN-SYSTEM.md`: design rules
@@ -61,7 +62,7 @@ See [BLOG.md](BLOG.md) for drafting and publishing. Drafts stay local. The gener
 
 ## Readiness evidence
 
-Current feature copy follows [Louppe 1.12.0](https://github.com/murlexander/louppe-media-culler/releases/tag/v1.12.0): folder dropping during review, configurable shortcuts and physical key positions, Fuji simulation filtering, JPEG XL, preview-loading feedback, and metadata renaming. The 1.9 introduction and retained media remain historical.
+Current feature copy follows [Louppe 1.13.0](https://github.com/murlexander/louppe-media-culler/releases/tag/v1.13.0): Apple Photos library review, pinned archives, folder-tree browsing with folder shortcuts, and the contact-sheet Grid, on top of the 1.12 features. Gallery and Grid stills are native 1.13 captures from `media-library/2026-11-04-store/`. The Demo video, the 1.9 introduction, and its media remain historical.
 
 Dated reports stay in [Docs/Archive](Docs/Archive/); current work is in the backlog.
 

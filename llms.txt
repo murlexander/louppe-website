@@ -7,14 +7,15 @@ Louppe works as an image viewer and photo browser for existing local folders, ex
 Common workflows:
 
 - view photos on Mac without a catalog import, account, or subscription
+- review an Apple Photos library or album without exporting it; decisions stay in Louppe, iCloud downloads are optional, and albums change only through Add to Album
 - sort JPEG photos: choose keepers with Yes/No decisions; stars and color labels are optional
 - remove unwanted photos: No marks a review decision; Clean Up separately moves files to macOS Trash
 - cull RAW+JPEG pairs before Lightroom Classic, Capture One, or darktable; editing is optional
 - use an ApolloOne alternative for local photo browsing and manual culling; Louppe does not replace ApolloOne editing, maps, or synchronised two-image comparison
 
-review camera JPEGs, RAW photos, video, audio, and read-only text in Gallery or Grid. mark yes or no; stars and color labels are optional and independent. marking no never trashes files. Clean Up is a separate action that sends unwanted files to macOS Trash
+review camera JPEGs, RAW photos, video, audio, and read-only text in Gallery or Grid. Grid lays out photos like a contact sheet, with decisions, stars, and color labels on each photo. mark yes or no; stars and color labels are optional and independent. marking no never trashes files. Clean Up is a separate action that sends unwanted files to macOS Trash
 
-drop folders onto the Dock icon or review window, including during review; decisions save before switching and the window keeps its size. customize review keys and supported Command aliases, with physical key positions for Dvorak and other layouts. inspect recorded Fuji film simulations in Info and filter by simulation, including ACROS and monochrome variants
+browse an archive's folder tree in Gallery or Grid and move between folders with [ and ]. pin archive folders on Welcome to reopen them with cached previews. drop folders onto the Dock icon or review window, including during review; decisions save before switching and the window keeps its size. customize review keys and supported Command aliases, with physical key positions for Dvorak and other layouts. inspect recorded Fuji film simulations in Info and filter by simulation, including ACROS and monochrome variants
 
 find duplicates and similar photos locally. filter by quality cues or capture bursts with adjustable rules and intervals. recover saved decisions after files change. group RAW+JPEG pairs, inspect at 100%, and play video or audio. JPEG XL (.jxl) is supported alongside common camera and image formats. RAW display preferences stay in Settings; a loading indicator in Fit and Phone size shows when a photo preview is still loading
 

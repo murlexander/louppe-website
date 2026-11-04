@@ -3,7 +3,7 @@
 [Project](../README.md) · [App backlog](../app/BACKLOG.md) ·
 [Website guide](README.md)
 
-Reviewed 22 October 2026 against local source and recorded publication evidence.
+Reviewed 4 November 2026 against the released 1.13 app and recorded publication evidence.
 Website work ships independently. Claims must match the released app.
 
 ## Completed browser acceptance
@@ -21,45 +21,60 @@ Website work ships independently. Claims must match the released app.
 
 ## Deferred by Alex — 6 October 2026
 
-- [ ] Report traffic sources and landing pages leading to `louppe_download` in
-  the separate Louppe property. Treat clicks as intent, not installations.
+- [x] Report traffic sources and landing pages leading to `louppe_download` in
+  the separate Louppe property. Done 4 November: `louppe_download` is the only
+  firing key event, so `summary.md` lists key events by session source/medium and
+  landing page from the weekly stats run. Clicks remain intent, not installations.
 - [ ] **Search indexing, rechecked 4 November.** Google indexes 12 URLs: `/`,
   `/pt/`, `/zh/`, `/blog/`, `/privacy/`, all six English guides, and the zh
   ApolloOne guide. Indexing was requested for the es/hi/ar homepages, cull-photos
   in five languages, and ApolloOne in es/pt/hi until the daily quota ran out.
   Next: ar ApolloOne, then cull-raw ×5, blog indexes ×5, a-proper-hello ×5, and
-  privacy ×5. The sitemap still shows "Couldn't fetch" on both properties although
-  the live test passes; recheck around 9 November. Bing Webmaster Tools is set up
+  privacy ×5; a daily scheduled task continues until none remain. The sitemap
+  still shows "Couldn't fetch" on both properties although the live test passes;
+  a scheduled check on 9 November rechecks and resubmits it. Bing Webmaster Tools is set up
   (imported from Search Console, sitemap read with 44 URLs, all URLs submitted).
 
 ## Deferred media refresh
 
-- [ ] **Canada app captures.** New background capture failed on 22 October with
-  ScreenCaptureKit error -3811. Canada photo covers and optimized, captioned
+- [ ] **Canada app captures.** Background capture failed on 22 October with
+  ScreenCaptureKit error -3811. The own-window capture method in
+  `media-library/2026-11-04-store/` now works without Screen Recording access. Canada photo covers and optimized, captioned
   historical workflow screenshots are ready. New app screenshots remain blocked;
   retain the original media and source archive. See the
   [acceptance evidence](Docs/Archive/2026-10-22/SITE_ACCEPTANCE.md#blog-illustrations).
-- [ ] Refresh the 1.9 Gallery/Grid, demo, and social preview after Alex changes
-  the existing decision to retain those assets. Capture the floating zoom control
-  and toolbar save status; preserve original media and the historical 1.9 article.
+- [x] **Gallery/Grid stills and social preview refreshed, 4 November.** Alex
+  replaced the earlier decision to retain the 1.9 assets. The homepage, structured
+  data, and Open Graph image use native 1.13 captures (`media/2026-11-04/`); the
+  1.9 originals stay in `media/2026-09-26/` and `media-library/`, and the 1.9
+  article is unchanged.
+- [ ] **Optional: re-record the Demo for 1.13.** The 25-second captioned Demo still
+  shows the 1.9 interface. Re-record only if the new Grid and Folders views
+  should appear in motion.
 
 ## Release and publicity follow-up
 
-- [ ] **Directory listings, opened 2 November.** Pull requests add Louppe to
-  [awesome-mac](https://github.com/jaywcjlove/awesome-mac/pull/4173),
-  [open-source-mac-os-apps](https://github.com/serhii-londar/open-source-mac-os-apps/pull/1938),
-  [awesome-swift-macos-apps](https://github.com/jaywcjlove/awesome-swift-macos-apps/pull/203),
-  and [awesome-swiftui](https://github.com/onmyway133/awesome-swiftui/pull/86).
+- [x] **Directory listings merged and live.**
+  [awesome-swift-macos-apps #203](https://github.com/jaywcjlove/awesome-swift-macos-apps/pull/203)
+  (3 November) and [awesome-swiftui #86](https://github.com/onmyway133/awesome-swiftui/pull/86)
+  (2 November) list Louppe.
+- [ ] **Directory listings awaiting maintainers.**
+  [awesome-mac #4173](https://github.com/jaywcjlove/awesome-mac/pull/4173) (body
+  corrected 4 November: all features free, optional tips unlock nothing) and
+  [open-source-mac-os-apps #1938](https://github.com/serhii-londar/open-source-mac-os-apps/pull/1938).
   Answer maintainer review; referrals appear by origin in GA4. Community posts
   are Alex's to publish; the official Homebrew cask needs more GitHub stars.
 - [x] **Guest article published.** [Kirill's PR #97](https://github.com/kirill-markin/kirill-markin-com/pull/97)
   merged on 28 October; the [live article](https://kirill-markin.com/articles/photo-culling-mac-louppe-folder-workflow/)
   links the homepage and the JPEG guide. Its 14- and 28-day reviews count from
   that date.
-- [ ] **1.13 release alignment.** Review feature claims, screenshots, requirements,
-  download links, and capture notes against the released 1.13 app before publishing
-  those changes. Retain the 26 September request: no visible
-  version notices or installation instructions on the homepage.
+- [x] **1.13 release alignment, 4 November.** Homepage, llms.txt, privacy policy
+  (Apple Photos access, asset-ID decisions, on-demand iCloud downloads, explicit
+  album additions, Settings → General → Updates, Store rating prompt), keyboard
+  shortcuts (T, [, ], ⌘↑), and the JPEG and RAW guides match 1.13; both guides now
+  have all five translations. Requirements and download links are unchanged. The
+  26 September rule holds: no visible version notices or installation
+  instructions on the homepage.
 
 Maintain the download, Apple-silicon/macOS requirements, privacy, MIT license,
 previews, and captioned Demo. This backlog does not schedule work or authorize publication.

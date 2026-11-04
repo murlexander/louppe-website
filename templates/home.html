@@ -41,6 +41,8 @@
       "operatingSystem": "macOS 14 or later",
       "featureList": [
         "Keyboard-first Gallery and Grid review",
+        "Apple Photos library and album review without exporting",
+        "Folder-tree browsing and pinned archive folders",
         "Yes/No decisions, stars, color labels, filtering, sorting, and selection",
         "Local review of exact duplicates, likely similar photos, and capture bursts",
         "Optional RAW+JPEG grouping",
@@ -49,7 +51,7 @@
         "Source-folder organization with previews",
         "Copy export, same-volume Move, routed copies, and portable XMP sidecars"
       ],
-      "screenshot": "https://louppe.eu/media/2026-09-26/gallery-info.webp",
+      "screenshot": "https://louppe.eu/media/2026-11-04/gallery.webp",
       "isAccessibleForFree": true,
       "sameAs": "https://github.com/murlexander/louppe-media-culler",
       "downloadUrl": "https://apps.apple.com/app/louppe/id6820131477",
@@ -64,8 +66,8 @@
 
   <meta name="color-scheme" content="dark">
   <link rel="stylesheet" href="/styles.css?v=20261022-1">
-  <script src="/site.js?v=20261022-1" defer></script>
-  <script src="/keyboard.js?v=20261007-1" defer></script>
+  <script src="/site.js?v=20261105-1" defer></script>
+  <script src="/keyboard.js?v=20261105-1" defer></script>
   <script src="/analytics-consent.js?v=20261021-1" defer></script>
   <script src="/prefetch.js?v=20261008-1" defer></script>
   <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "f1b7eccca320482d87c3f562667caf01"}'></script>
@@ -96,8 +98,8 @@
         <button type="button" data-view="demo" aria-pressed="false" aria-controls="review-demo">demo</button>
       </div>
       <figure id="image-panel">
-        <a class="app-image-link" id="image-link" href="media/2026-09-26/gallery-info.webp" aria-label="Enlarge Gallery screenshot">
-          <span class="app-image-stage"><img id="app-image" src="media/2026-09-26/gallery-info.webp" srcset="media/2026-09-26/gallery-info-small.webp 960w, media/2026-09-26/gallery-info.webp 1800w" sizes="(max-width: 680px) calc(100vw - 40px), (max-width: 1104px) calc(100vw - 64px), 1040px" width="1800" height="1129" alt="Louppe Gallery showing an apple-tree photograph, camera settings, a histogram, and RAW+JPEG information" fetchpriority="high" decoding="async"></span>
+        <a class="app-image-link" id="image-link" href="media/2026-11-04/gallery.webp" aria-label="Enlarge Gallery screenshot">
+          <span class="app-image-stage"><img id="app-image" src="media/2026-11-04/gallery.webp" srcset="media/2026-11-04/gallery-small.webp 960w, media/2026-11-04/gallery.webp 1800w" sizes="(max-width: 680px) calc(100vw - 40px), (max-width: 1104px) calc(100vw - 64px), 1040px" width="1800" height="975" alt="Louppe Gallery with a mountain sunset, five stars, a purple label, and a Yes mark, beside camera settings and a histogram" fetchpriority="high" decoding="async"></span>
         </a>
       </figure>
       <div class="demo-panel" id="review-demo" hidden>
@@ -154,14 +156,14 @@
               <button class="keyboard-key" type="button" data-shortcut-key="w" aria-label="W" aria-pressed="false" aria-controls="key-description"><kbd>w</kbd></button>
               <button class="keyboard-key" type="button" data-shortcut-key="e" aria-label="E" aria-pressed="false" aria-controls="key-description"><kbd>e</kbd></button>
               <button class="keyboard-key" type="button" data-shortcut-key="r" aria-label="R" aria-pressed="false" aria-controls="key-description"><kbd>r</kbd></button>
-              <span class="keyboard-key unused-key" aria-hidden="true"><kbd>t</kbd></span>
+              <button class="keyboard-key" type="button" data-shortcut-key="t" aria-label="T" aria-pressed="false" aria-controls="key-description"><kbd>t</kbd></button>
               <span class="keyboard-key unused-key" aria-hidden="true"><kbd>y</kbd></span>
               <span class="keyboard-key unused-key" aria-hidden="true"><kbd>u</kbd></span>
               <span class="keyboard-key unused-key" aria-hidden="true"><kbd>i</kbd></span>
               <button class="keyboard-key" type="button" data-shortcut-key="o" aria-label="O" aria-pressed="false" aria-controls="key-description" disabled><kbd>o</kbd></button>
               <span class="keyboard-key unused-key" aria-hidden="true"><kbd>p</kbd></span>
-              <span class="keyboard-key unused-key" aria-hidden="true"><kbd>[</kbd></span>
-              <span class="keyboard-key unused-key" aria-hidden="true"><kbd>]</kbd></span>
+              <button class="keyboard-key" type="button" data-shortcut-key="[" aria-label="Left bracket" aria-pressed="false" aria-controls="key-description"><kbd>[</kbd></button>
+              <button class="keyboard-key" type="button" data-shortcut-key="]" aria-label="Right bracket" aria-pressed="false" aria-controls="key-description"><kbd>]</kbd></button>
               <span class="keyboard-key unused-key" aria-hidden="true" style="--key-span:6"><kbd>\</kbd></span></div>
             <div class="keyboard-row">
               <span class="keyboard-key unused-key" aria-hidden="true" style="--key-span:8"><kbd>caps</kbd></span>
@@ -186,7 +188,7 @@
               <span class="keyboard-key unused-key" aria-hidden="true"><kbd>b</kbd></span>
               <span class="keyboard-key unused-key" aria-hidden="true"><kbd>n</kbd></span>
               <span class="keyboard-key unused-key" aria-hidden="true"><kbd>m</kbd></span>
-              <span class="keyboard-key unused-key" aria-hidden="true"><kbd>,</kbd></span>
+              <button class="keyboard-key" type="button" data-shortcut-key="," aria-label="Comma" aria-pressed="false" aria-controls="key-description" disabled><kbd>,</kbd></button>
               <span class="keyboard-key unused-key" aria-hidden="true"><kbd>.</kbd></span>
               <span class="keyboard-key unused-key" aria-hidden="true"><kbd>/</kbd></span>
               <button class="keyboard-key modifier-key" type="button" data-modifier="shift" aria-label="Show Shift shortcuts" aria-pressed="false" aria-controls="key-description" style="--key-span:10"><kbd>⇧</kbd></button></div>
@@ -212,9 +214,9 @@
     <section class="features-section reading-width" aria-labelledby="features-title">
       <div class="section-intro"><h2 id="features-title">review tools<br>and file actions</h2></div>
       <div class="feature-disclosures">
-        <details><summary>photos, video, audio, and text</summary><div><p>review photos and play video and audio in Gallery, with keyboard playback controls</p><p>drop another folder while reviewing. Louppe saves your decisions before switching and keeps the window size</p><p>common camera RAW files, JPEG, JPEG XL (.jxl), TIFF, PNG, HEIC, WebP, and AVIF are supported. optionally group matching RAW+JPEG files as one review item, with separate decisions, stars, and color labels</p><p>see recorded Fuji film simulations in Info and filter by simulation, including ACROS and monochrome variants. show one look from a bracketed series without changing hidden photos' decisions</p><p><a href="/blog/cull-raw-jpeg-pairs-mac/">How to cull RAW + JPEG pairs on Mac</a></p><p>read text, Markdown, and structured files alongside your media. text previews are read-only, with selectable text and clickable web and email links</p></div></details>
+        <details><summary>photos, video, audio, and text</summary><div><p>review photos and play video and audio in Gallery, with keyboard playback controls</p><p>Grid lays out photos like a contact sheet, with decisions, stars, and color labels on each photo</p><p>review your Apple Photos library or an album without exporting it. iCloud downloads are optional, and albums change only when you choose Add to Album</p><p>drop another folder while reviewing. Louppe saves your decisions before switching and keeps the window size</p><p>common camera RAW files, JPEG, JPEG XL (.jxl), TIFF, PNG, HEIC, WebP, and AVIF are supported. optionally group matching RAW+JPEG files as one review item, with separate decisions, stars, and color labels</p><p>see recorded Fuji film simulations in Info and filter by simulation, including ACROS and monochrome variants. show one look from a bracketed series without changing hidden photos' decisions</p><p><a href="/blog/cull-raw-jpeg-pairs-mac/">How to cull RAW + JPEG pairs on Mac</a></p><p>read text, Markdown, and structured files alongside your media. text previews are read-only, with selectable text and clickable web and email links</p></div></details>
         <details><summary>zoom and compare</summary><div><p>inspect at 100%, use the floating control for Fit and 30–400% zoom, or try a phone-sized preview. check the histogram and clipping</p><p>in Fit and Phone size, a loading indicator shows when the photo preview is still loading. wait for it to finish before judging focus</p><p>filter by optional quality cues for high ISO, slow shutter speeds, and near-white or near-black areas. adjust their rules in Settings; pause background checks in Filter</p><p>find exact duplicates and likely similar photos locally. Filter → Capture bursts groups photos by capture time; set the interval in Settings. analysis never changes ratings or files automatically</p></div></details>
-        <details><summary>filter, sort, and organise</summary><div><p>filter by decisions, stars, labels, dates, folders, camera details, and file types. decisions save automatically for your next session</p><p>recover saved decisions after files change. verified identical copies and returning originals recover automatically; File → Check Saved Decisions lets you review other recovery options</p><p>Organize Source Folder previews folders before moving files. Rename Files lets you reorder filename parts and use dates in your Mac's preferred format. names are previewed, extensions stay unchanged, and recognised RAW+JPEG/XMP families stay together. both actions support undo during the open session</p></div></details>
+        <details><summary>filter, sort, and organise</summary><div><p>browse an archive’s folder tree in Gallery or Grid, and move between folders with [ and ]. pin archives on Welcome to reopen them with cached previews</p><p>filter by decisions, stars, labels, dates, folders, camera details, and file types. decisions save automatically for your next session</p><p>recover saved decisions after files change. verified identical copies and returning originals recover automatically; File → Check Saved Decisions lets you review other recovery options</p><p>Organize Source Folder previews folders before moving files. Rename Files lets you reorder filename parts and use dates in your Mac's preferred format. names are previewed, extensions stay unchanged, and recognised RAW+JPEG/XMP families stay together. both actions support undo during the open session</p></div></details>
         <details><summary>export and clean up</summary><div><p>export copies by default. you can also choose Move on the same drive, route copies to multiple folders, or write XMP sidecars for compatible editing apps</p><p>marking no does not trash a file. Clean Up is a separate action that sends unwanted files to the macOS Trash. undo is available during the open session while the files remain in Trash</p></div></details>
         <details><summary>local, free, and open source</summary><div><p>Louppe processes your media locally, with no account or app analytics. all features are free, and the app is open source under the MIT License. optional tips unlock nothing</p><p>review with the keyboard or VoiceOver. customize review keys and supported Command aliases in Settings. use physical key positions for layouts such as Dvorak, or follow your keyboard layout</p><a href="https://github.com/murlexander/louppe-media-culler" target="_blank" rel="noopener">explore the source code</a> · <a href="/privacy/#app">app privacy policy</a></div></details>
       </div>
@@ -240,7 +242,7 @@
 
   <footer class="site-footer reading-width"><a class="footer-brand" href="#main">louppe</a><nav aria-label="Footer navigation"><a href="/blog/">blog</a><a href="https://github.com/murlexander/louppe-media-culler/releases" target="_blank" rel="noopener">release notes</a><a href="https://github.com/murlexander/louppe-media-culler" target="_blank" rel="noopener">source code</a><a href="/privacy/">privacy</a><a href="https://kirill-markin.com/samo-danni-eood/" target="_blank" rel="noopener">legal</a><button class="text-button" data-analytics-settings type="button">analytics</button></nav></footer>
 
-  <dialog id="image-dialog" aria-label="Full-size app screenshot"><form method="dialog"><button class="dialog-close" aria-label="Close full-size screenshot">close <span aria-hidden="true">×</span></button></form><img id="dialog-image" width="1800" height="1129" alt="Full-size Louppe Gallery screenshot" decoding="async"></dialog>
+  <dialog id="image-dialog" aria-label="Full-size app screenshot"><form method="dialog"><button class="dialog-close" aria-label="Close full-size screenshot">close <span aria-hidden="true">×</span></button></form><img id="dialog-image" width="1800" height="975" alt="Full-size Louppe Gallery screenshot" decoding="async"></dialog>
   <aside class="analytics-consent" id="analytics-consent" aria-labelledby="analytics-consent-title" hidden>
     <div class="analytics-consent-copy">
       <h2 id="analytics-consent-title">optional website analytics</h2>

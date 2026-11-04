@@ -1,13 +1,13 @@
-// Reference: app README.md, Keyboard shortcuts, and SessionView.handleKey
+// Defaults: app/Sources/Louppe/ReviewShortcuts.swift and app/Sources/Louppe/CommandShortcuts.swift
 (() => {
   const explorer = document.querySelector('.key-explorer');
   if (!explorer) return;
   const review = {
     f: 'mark yes',
     d: 'mark no',
-    g: 'Gallery / Grid',
-    tab: 'Gallery / Grid',
-    space: 'play / pause video or audio. next photo or text',
+    g: 'gallery / grid',
+    tab: 'gallery / grid',
+    space: 'play / pause video or audio. otherwise next item',
     k: 'play / pause',
     j: 'previous item',
     l: 'next item',
@@ -18,10 +18,13 @@
     s: '100% zoom',
     a: 'phone-sized preview',
     x: 'show / hide clipping',
-    q: 'show / hide thumbnails',
+    q: 'show / hide browser',
+    t: 'show / hide folders',
+    '[': 'previous folder',
+    ']': 'next folder',
     w: 'show / hide info',
-    e: 'open Export',
-    r: 'clear all decisions',
+    e: 'open export',
+    r: 'clear all yes / no decisions',
     z: 'undo last action',
     escape: 'cancel / deselect',
     0: 'clear stars',
@@ -33,6 +36,9 @@
   }
   const command = {
     o: 'open a folder',
+    ',': 'open settings',
+    w: 'close window',
+    q: 'quit louppe',
     r: 'rescan folder',
     f: 'filter / search',
     k: 'command palette',
@@ -41,9 +47,10 @@
     z: review.z,
     '-': 'smaller thumbnails',
     '=': 'larger thumbnails',
-    backspace: 'move to Trash',
+    backspace: 'move to trash',
     arrowleft: 'slower / previous',
     arrowright: 'faster / next',
+    arrowup: 'enclosing folder',
   };
   const shift = {
     ...Object.fromEntries(Object.entries(review).filter(([key]) => /^[a-z]$/.test(key))),
@@ -56,7 +63,7 @@
     arrowright: 'select to last item',
   };
   const glyphs = { space: 'space', tab: 'tab', escape: 'esc', backspace: '⌫', arrowleft: '←', arrowright: '→', arrowup: '↑', arrowdown: '↓', '=': '+' };
-  const names = { space: 'Space', tab: 'Tab', escape: 'Escape', backspace: 'Delete', arrowleft: 'Left arrow', arrowright: 'Right arrow', arrowup: 'Up arrow', arrowdown: 'Down arrow', '=': 'Plus' };
+  const names = { space: 'Space', tab: 'Tab', escape: 'Escape', backspace: 'Delete', arrowleft: 'Left arrow', arrowright: 'Right arrow', arrowup: 'Up arrow', arrowdown: 'Down arrow', '=': 'Plus', '[': 'Left bracket', ']': 'Right bracket', ',': 'Comma' };
   const buttons = [...explorer.querySelectorAll('[data-shortcut-key]')];
   const modifiers = [...explorer.querySelectorAll('[data-modifier]')];
   const chord = document.getElementById('shortcut-chord');
@@ -109,7 +116,7 @@
   });
   const compactQuery = window.matchMedia('(max-width: 600px)');
   const pad = explorer.querySelector('.shortcut-pad');
-  const compactOrder = ['f', 'd', 'g', 'space', 's', 'a', 'x', 'z', 'j', 'k', 'l', 'q', 'w', 'e', 'r', 'tab', 'escape', 'o', '0', '1', '2', '3', '4', '5', 'arrowleft', 'arrowup', 'arrowdown', 'arrowright', '-', '=', 'backspace'];
+  const compactOrder = ['f', 'd', 'g', 'space', 's', 'a', 'x', 'z', 'j', 'k', 'l', 'q', 't', 'w', 'e', 'r', '[', ']', 'tab', 'escape', 'o', ',', '0', '1', '2', '3', '4', '5', 'arrowleft', 'arrowup', 'arrowdown', 'arrowright', '-', '=', 'backspace'];
   const compactButtons = [
     modifiers.find(button => button.dataset.modifier === 'command'),
     modifiers.find(button => button.dataset.modifier === 'shift'),

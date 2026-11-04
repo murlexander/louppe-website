@@ -8,7 +8,7 @@ Louppe is my free, open-source photo viewer and sorter for Apple silicon Macs ru
 
 Copy your shoot from the camera card to a folder on your Mac or an external drive, and keep a separate backup. Open that folder in Louppe
 
-This guide starts with ordinary `.jpg` or `.jpeg` files in Finder. If your photos are inside an Apple Photos library, [export copies to a folder first](https://support.apple.com/guide/photos/export-photos-videos-and-slideshows-pht6e157c5f/mac). Leave the library's internal files alone
+This guide starts with ordinary `.jpg` or `.jpeg` files in Finder. For photos in Apple Photos, choose **File → Open Apple Photos…** instead and review the library in place. Leave the library's internal files alone
 
 ![A folder of 16 camera JPEGs in Louppe Grid, including street scenes, buildings, and a yellow flower](/media/2026-10-22/jpeg-grid.webp)
 
