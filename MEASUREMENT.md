@@ -62,6 +62,21 @@ source through the `louppe-stats` skill; GitHub keeps traffic for only 14 days.
 A failed or skipped source is saved with its reason and reported as unknown,
 never as zero. Earlier receipts were copied in as the first data points.
 
+Privacy rules for the store:
+
+- Collect only aggregate counts the services already publish to Alex: no IP
+  addresses, user IDs, client IDs, raw event logs, or GitHub usernames
+  (stargazers keep only the date).
+- The app sends nothing. Store usage figures (installs, sessions, deletions,
+  crashes, active devices) come from Apple's analytics for users who opted in
+  to share with developers, above Apple's privacy threshold. The direct build
+  has no app analytics; GitHub release download counts include Sparkle updates.
+- Website figures come from consented GA4 and cookieless Cloudflare Web
+  Analytics, as the privacy policy describes. Adding a source or a new kind of
+  visitor data needs a matching privacy-policy update in all six languages first.
+- `.drafts/analytics/` stays gitignored and on this Mac; publish only headline
+  figures.
+
 ## First review
 
 Review on 28 October at 10:00 Europe/Copenhagen. Compare all complete days after deployment with an equal prior period; exclude the deployment day and unfinished day. Save exact dates, property timezone, deployment commit/time, and any verification visits with the results.

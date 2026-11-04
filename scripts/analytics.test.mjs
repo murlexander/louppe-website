@@ -113,7 +113,7 @@ test('parseGithub handles collector and legacy snapshot formats', () => {
   const repo = {
     stars: 3, forks: 1, views: { count: 5, uniques: 2, views: [{ timestamp: '2026-11-01T00:00:00Z', count: 5, uniques: 2 }] },
     clones: { clones: [] }, referrers: [{ referrer: 'example.com', count: 2, uniques: 1 }], paths: [],
-    stargazers: [{ user: 'a', starred_at: '2026-11-01T10:00:00Z' }, { user: 'b', starred_at: '2026-11-01T11:00:00Z' }],
+    stargazers: [{ starred_at: '2026-11-01T10:00:00Z' }, { starred_at: '2026-11-01T11:00:00Z' }],
     releases: [{ tag: 'v2', assets: [{ name: 'A.zip', download_count: 4 }, { name: 'B.dmg', download_count: 1 }] }, { tag: 'v1', assets: [{ download_count: 2 }] }],
   };
   const rows = parseGithub({ source: 'github', collected_at: at, status: 'ok', data: { repos: { 'o/app': repo } } }, 'x');

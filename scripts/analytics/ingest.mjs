@@ -222,6 +222,15 @@ export function summarize(rows, envelopes, now = new Date()) {
   total('Store redownloads', 'app_store', 'redownloads', 9999);
   total('Store impressions', 'app_store', 'impressions_total', 9999);
   total('Store page views', 'app_store', 'page_view_count', 9999);
+  total('Store app installs (sharing users)', 'app_store', 'installs', 9999);
+  total('Store app sessions (sharing users)', 'app_store', 'sessions', 9999);
+  total('Store app deletions (sharing users)', 'app_store', 'uninstalls', 9999);
+  total('Store app crashes (sharing users)', 'app_store', 'crashes', 9999);
+  total('Store tip purchases', 'app_store', 'iap', 9999);
+  total('Store tip proceeds', 'app_store', 'proceeds', 9999);
+  const rolling = lastDataDay(rows, { source: 'app_store', metric: 'rolling_active_devices' });
+  const rollingRow = rolling && match(rows, { source: 'app_store', granularity: 'day', dimension: '', metric: 'rolling_active_devices' }).find((r) => r.period_start === rolling);
+  if (rollingRow) line(`| Store active devices, 30 days (sharing users) | ${fmt(rollingRow.value)} | 30 days to ${rolling} | app_store |`);
   total('Cloudflare visits', 'cloudflare', 'visits', 28);
   total('GitHub repo views, 14 days (app)', ghRepo, 'views', 14);
   const snap = (label, source, metric, dimension = '') => {
@@ -269,6 +278,8 @@ export function summarize(rows, envelopes, now = new Date()) {
     "GA4 Denmark traffic includes Alex's own and verification visits; the 21–22 October consent tests generated page views.",
     'App Store Connect first-time downloads are the install figure; GA4 clicks are intent. Campaign (ct) tokens exist since 2026-11-04, so campaign rows start then.',
     `App Store Connect lags 1–2 days; its windows end at the last day with data (${ascEnd || '—'}). Search Console lags 2–3 days (last day ${scEnd || '—'}).`,
+    'Store app installs, sessions, deletions, crashes, and active devices count only users who share analytics with developers, so they undercount. Apple hides groups below its privacy threshold.',
+    'GitHub release downloads include Sparkle updates (the appcast points at the release ZIP), so the count for each release is new direct downloads plus updating installs. The direct build has no app analytics.',
     'GitHub keeps traffic for 14 days and counts days in UTC; unique visitor counts per day cannot be summed into unique people.',
     'Rows with granularity `approx_range` come from hand-written receipts whose exact window is unknown.',
   ];

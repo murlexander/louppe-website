@@ -33,7 +33,7 @@ export async function github() {
       referrers: gh(`repos/${repo}/traffic/popular/referrers`),
       paths: gh(`repos/${repo}/traffic/popular/paths`),
       stargazers: gh(`repos/${repo}/stargazers?per_page=100`, 'application/vnd.github.star+json')
-        .map((s) => ({ user: s.user?.login, starred_at: s.starred_at })),
+        .map((s) => ({ starred_at: s.starred_at })), // dates only; no usernames
       releases: releases.map((r) => ({
         tag: r.tag_name,
         published_at: r.published_at,

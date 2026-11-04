@@ -1,7 +1,8 @@
 // App Store Connect analytics reader for preview_evaluate on a signed-in appstoreconnect.apple.com tab.
 // Print a ready expression with: node scripts/analytics/snippet.mjs app-store-connect '{}'
-// Defaults: Store release (2026-10-13) through yesterday; daily totals plus weekly breakdowns by
-// source, storefront, web referrer, app referrer, platform, and campaign (ct token).
+// Defaults: Store release (2026-10-13) through yesterday; daily totals (Store funnel, plus app usage and
+// tips from users who share analytics with developers) and weekly breakdowns by source, storefront,
+// web referrer, app referrer, platform, and campaign (ct token).
 // Downloads the timeseries responses (points compacted to [date, value]) and returns a short status;
 // import with: node scripts/analytics/save.mjs --downloads
 async (opts = {}) => {
@@ -32,7 +33,8 @@ async (opts = {}) => {
     location.href = `https://appstoreconnect.apple.com/analytics/app/d30/${adamId}/overview`;
     return finish({ ...envelope, status: 'navigating', error: 'Opened App Store Connect; run the snippet again.' });
   }
-  const totals = opts.totals || ['units', 'redownloads', 'updates', 'impressionsTotalUnique', 'impressionsTotal', 'pageViewUnique', 'pageViewCount', 'conversionRate'];
+  const totals = opts.totals || ['units', 'redownloads', 'updates', 'impressionsTotalUnique', 'impressionsTotal', 'pageViewUnique', 'pageViewCount', 'conversionRate',
+    'installs', 'sessions', 'activeDevices', 'rollingActiveDevices', 'uninstalls', 'crashes', 'iap', 'proceeds', 'payingUsers'];
   const grouped = opts.grouped || ['units', 'pageViewUnique', 'impressionsTotalUnique'];
   const dimensions = opts.dimensions || ['source', 'storefront', 'domainReferrer', 'appReferrer', 'platform', 'campaignId'];
   const requests = [
