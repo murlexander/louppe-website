@@ -339,7 +339,7 @@ export function parseItunes(env, origin) {
   return rows;
 }
 
-// Hand-written discovery-review receipts (.drafts/discovery-review-*.json) recorded before the collectors existed.
+// Hand-written discovery-review receipts (analytics/receipts/discovery-review-*.json) recorded before the collectors existed.
 export function parseDiscoveryReview(json, origin) {
   const date = json.recorded_at.slice(0, 10);
   const collected_at = `${date}T00:00:00.000Z`;

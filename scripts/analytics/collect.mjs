@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Collects the command-line sources into .drafts/analytics/raw/<date>/<source>.json.
+// Collects the command-line sources into <analytics>/raw/<date>/<source>.json (see lib.mjs).
 // Usage: node scripts/analytics/collect.mjs [github] [cloudflare] [itunes]   (default: all)
 // A failed or skipped source is still written, with its status and reason, so
 // ingest and the summary report it instead of treating it as zero.

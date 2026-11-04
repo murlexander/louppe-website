@@ -1,10 +1,11 @@
-// Shared paths and helpers for the private analytics store in .drafts/analytics/.
+// Shared paths and helpers for the private analytics store. In Alex's workspace it is
+// louppe/analytics/, beside (not inside) this public repository; set LOUPPE_ANALYTICS_DIR elsewhere.
 import { mkdirSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 export const siteRoot = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
-export const dataDir = process.env.LOUPPE_ANALYTICS_DIR || join(siteRoot, '.drafts', 'analytics');
+export const dataDir = process.env.LOUPPE_ANALYTICS_DIR || join(siteRoot, '..', 'analytics');
 export const rawDir = join(dataDir, 'raw');
 
 // Local calendar date (the GA4 property and Alex's Mac use Europe/Copenhagen).

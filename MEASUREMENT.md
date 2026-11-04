@@ -40,8 +40,9 @@ can use their own `ct` (for example `reddit` or `awesome-mac`).
 
 ## Stats collection
 
-All usage and discovery figures land in private `.drafts/analytics/`:
-`raw/<date>/<name>.json` holds each collected payload with its status,
+All usage and discovery figures land in a private store outside this repository:
+`../analytics/` in Alex's Louppe workspace (`LOUPPE_ANALYTICS_DIR` overrides it;
+its `README.md` describes the layout). `raw/<date>/<name>.json` holds each collected payload with its status,
 `metrics.csv` is the parsed long-format table (one row per source, window,
 metric, and dimension value; the newest collection wins), and `summary.md` is
 regenerated with totals, the visit → click → Store download funnel,
@@ -53,6 +54,7 @@ Download intent by source/medium and landing page comes from GA4 key events
 
 ```sh
 node scripts/analytics/collect.mjs      # GitHub, Cloudflare, App Store lookup
+node scripts/analytics/due.mjs          # browser sources missing, failed, or 6+ days old
 node scripts/analytics/snippet.mjs ga4 '{"report":"traffic","ranges":["last7","prev7"]}'
 node scripts/analytics/save.mjs --downloads   # import browser snippet results
 node scripts/analytics/ingest.mjs       # rebuild metrics.csv and summary.md
@@ -60,8 +62,12 @@ node scripts/analytics/ingest.mjs       # rebuild metrics.csv and summary.md
 
 Browser snippets (`browser/ga4.js`, `search-console.js`, and
 `app-store-connect.js`) run in a signed-in agent browser tab and download
-their result as JSON for `save.mjs`. The weekly maintenance run collects every
-source through the `louppe-stats` skill; GitHub keeps traffic for only 14 days.
+their result as JSON for `save.mjs`. A daily T3 schedule runs the `louppe-stats`
+skill unattended: command-line sources every day (GitHub keeps traffic for only
+14 days) and browser sources when `due.mjs` lists them, so they refresh weekly
+and failures retry the next day. Weekly maintenance recollects if the summary
+shows a stale or failed source. Only an expired Google or App Store Connect
+sign-in in the agent browser needs Alex.
 A failed or skipped source is saved with its reason and reported as unknown,
 never as zero. Earlier receipts were copied in as the first data points.
 
@@ -77,8 +83,8 @@ Privacy rules for the store:
 - Website figures come from consented GA4 and cookieless Cloudflare Web
   Analytics, as the privacy policy describes. Adding a source or a new kind of
   visitor data needs a matching privacy-policy update in all six languages first.
-- `.drafts/analytics/` stays gitignored and on this Mac; publish only headline
-  figures.
+- The store stays on this Mac, outside both public repositories; publish only
+  headline figures.
 
 ## First review
 
@@ -88,7 +94,7 @@ Check users, sessions, landing-page views, source/medium, article navigation, an
 
 Consent, blockers, small samples, indexing delays, and missing attribution limit conclusions. Never treat missing report access as zero traffic or a one-week change as proof of causality. Do not combine overlapping user counts from the historical personal-site property. Preserve the existing event name for comparisons.
 
-Record actual traffic and experiment receipts privately in `.drafts/discovery-baseline-2026-10-21.json` and subsequent dated notes; keep visitor data out of the public repository. Choose one or two small follow-up changes, record the hypothesis and publication time, and keep all six languages aligned. Keep original acquisition referrers: do not add campaign tags to internal links.
+Record actual traffic and experiment receipts privately in `../analytics/receipts/` (starting with `discovery-baseline-2026-10-21.json`); keep visitor data out of the public repository. Choose one or two small follow-up changes, record the hypothesis and publication time, and keep all six languages aligned. Keep original acquisition referrers: do not add campaign tags to internal links.
 
 ## 22 October article experiment
 
@@ -122,7 +128,7 @@ The 22 October browser acceptance deliberately accepted consent in two agent
 tabs and generated verification page views. It generated no `louppe_download`
 events. Exclude these visits from acquisition conclusions; the deployment day
 is already excluded from the experiment comparison. Consent test receipts are
-private in `.drafts/site-wrap-up-consent-2026-10-22.json`.
+private in `../analytics/receipts/site-wrap-up-consent-2026-10-22.json`.
 
 Evaluate each URL 14 and 28 days after its own publication. These are provisional
 experiment rules, not industry benchmarks:

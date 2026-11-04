@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Parses every .drafts/analytics/raw/<date>/*.json into metrics.csv (deduplicated, newest
+// Parses every <analytics>/raw/<date>/*.json (see lib.mjs) into metrics.csv (deduplicated, newest
 // collection wins) and regenerates summary.md. Usage: node scripts/analytics/ingest.mjs
 import { existsSync, readFileSync, readdirSync, writeFileSync } from 'node:fs';
 import { join, relative } from 'node:path';

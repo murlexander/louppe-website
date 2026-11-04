@@ -165,3 +165,22 @@ test('summarize reports collection problems instead of zeros', () => {
   assert.match(md, /\| cloudflare \| 2026-11-04 \| skipped \| no token \|/);
   assert.match(md, /Collection problem — cloudflare: skipped \(no token\)\. Missing data is unknown, not zero\./);
 });
+
+test('due.mjs lists missing, failed, and stale browser sources', async () => {
+  const { dueSources, browserSources } = await import('./analytics/due.mjs');
+  const env = (name, day, status = 'ok') => ({ env: { name, status, collected_at: `${day}T08:00:00Z` } });
+  const envelopes = [
+    env('app-store-connect', '2026-11-01'),
+    env('app-store-connect', '2026-11-05'),
+    env('ga4-landing-last28', '2026-10-30'),
+    env('search-console-indexing', '2026-11-05', 'failed'),
+  ];
+  const { due, fresh } = dueSources(envelopes, '2026-11-05', 6);
+  assert.ok(fresh.includes('app-store-connect'));
+  const reasons = Object.fromEntries(due.map((d) => [d.name, d.reason]));
+  assert.equal(reasons['ga4-landing-last28'], '6 days old');
+  assert.equal(reasons['search-console-indexing'], 'failed');
+  assert.equal(reasons['ga4-pages-last28'], 'missing');
+  assert.equal(due.length + fresh.length, Object.keys(browserSources).length);
+  assert.match(due.find((d) => d.name === 'ga4-pages-last28').run, /snippet\.mjs ga4 '\{"report":"pages","ranges":\["last28"\]\}'/);
+});

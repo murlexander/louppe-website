@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Saves browser-snippet results to .drafts/analytics/raw/<date>/<name>.json.
+// Saves browser-snippet results to <analytics>/raw/<date>/<name>.json (see lib.mjs).
 //   node scripts/analytics/save.mjs --downloads [hours]   import snippet downloads from the T3 browser (default: last 12 h)
 //   node scripts/analytics/save.mjs [file] < result.json   save one envelope (bare or preview_evaluate's {value})
 // Snippet downloads are marked `louppe_stats: 1`; other downloads are ignored and nothing is deleted.
