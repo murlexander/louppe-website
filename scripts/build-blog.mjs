@@ -3,6 +3,7 @@ import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { marked } from 'marked';
 import { buildLocales, languages, translateHTML } from './build-locales.mjs';
+import { tagStoreLinks } from './store-link.mjs';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const preview = process.argv.includes('--preview');
@@ -112,7 +113,7 @@ function article(post, {shell=template, backLabel='all notes'} = {}) {
   const html = post.sections.map(section => marked.parse(section)).join(callToAction(post));
   const caption = post.cover?.caption ? `<figcaption>${escape(post.cover.caption)}</figcaption>` : '';
   const cover = post.cover ? `<figure class="article-cover"><a href="${escape(post.cover.src)}">${coverImage(post.cover)}</a>${caption}</figure>` : '';
-  return page({title:post.title,description:post.description,path:post.path,post,shell,content:`<a class="article-back" href="/blog/">${escape(backLabel)}</a><article><header class="post-header"><h1>${escape(post.title)}</h1><p class="post-deck">${escape(post.description)}</p><div class="article-author">${byline()}</div></header>${cover}<div class="article-body">${html}</div>${callToAction(post)}</article>`});
+  return page({title:post.title,description:post.description,path:post.path,post,shell,content:tagStoreLinks(`<a class="article-back" href="/blog/">${escape(backLabel)}</a><article><header class="post-header"><h1>${escape(post.title)}</h1><p class="post-deck">${escape(post.description)}</p><div class="article-author">${byline()}</div></header>${cover}<div class="article-body">${html}</div>${callToAction(post)}</article>`,`blog-${post.slug}`)});
 }
 function renderTranslation(post, language, dictionary) {
   const label = dictionary[post.cta.label]?.[language.code];

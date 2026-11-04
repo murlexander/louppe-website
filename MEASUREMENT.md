@@ -16,6 +16,21 @@ Use GA4 **Louppe Media Culler**, property `555464552`, measurement ID `G-9P9KKLZ
 
 Event-scoped custom dimensions are configured for `page_language`, `download_method`, `download_placement`, `article_path`, and `link_placement`. Page path, landing page, source/medium, and content group use GA4's built-in dimensions. New custom dimensions are not retrospective and can take 24–48 hours to appear in reports. See [GA4 custom dimensions](https://support.google.com/analytics/answer/14240153) and [page views](https://developers.google.com/analytics/devguides/collection/ga4/views).
 
+## App Store campaigns
+
+Since 4 November 2026, website App Store links carry Apple campaign tokens
+(`pt=128797295`, provider SAMO DANNI EOOD). `ct` is `home-hero`, `home-footer`, or
+`blog-<slug>` for every link in that article; language comes from GA4. App Store
+Connect → Analytics → Campaigns reports page views and first-time downloads per
+token, with no consent dependency, so these are the install figures; GA4 click
+counts remain intent. Structured data and `llms.txt` keep the plain Store URL.
+`scripts/store-link.mjs` adds the tokens at build time. Links shared off-site
+can use their own `ct` (for example `reddit` or `awesome-mac`).
+
+`scripts/github-stats-snapshot.mjs` saves GitHub traffic, referrers, stars, and
+release downloads to `.drafts/github-stats/`; the weekly maintenance run calls it
+because GitHub keeps traffic for 14 days.
+
 ## First review
 
 Review on 28 October at 10:00 Europe/Copenhagen. Compare all complete days after deployment with an equal prior period; exclude the deployment day and unfinished day. Save exact dates, property timezone, deployment commit/time, and any verification visits with the results.

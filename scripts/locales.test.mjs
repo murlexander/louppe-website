@@ -82,8 +82,8 @@ test('static language pages, crawl discovery, links, and withdrawal remain consi
           assert.equal(app.aggregateRating,undefined);
           assert.equal(app.inLanguage,undefined); // Website translation does not promise a localized app.
           assert.equal(app.downloadUrl,'https://apps.apple.com/app/louppe/id6820131477');
-          const primary = [...html.matchAll(/class="download-button" href="([^"]+)"/g)];
-          assert.ok(primary.every(match=>match[1]===app.downloadUrl));
+          const primary = [...html.matchAll(/class="download-button" href="([^"]+)"/g)].map(match=>match[1]);
+          assert.deepEqual(primary,['home-hero','home-footer'].map(ct=>`${app.downloadUrl}?pt=128797295&amp;ct=${ct}&amp;mt=12`));
           assert.equal((html.match(/class="requirements download-alternatives"/g) ?? []).length,2);
           assert.equal((html.match(/href="https:\/\/github.com\/murlexander\/louppe-media-culler\/releases\/latest\/download\/Louppe.zip"/g) ?? []).length,2);
           assert.equal((html.match(/href="https:\/\/github.com\/murlexander\/louppe-media-culler\/blob\/main\/Docs\/HOMEBREW.md"/g) ?? []).length,2);
@@ -97,7 +97,8 @@ test('static language pages, crawl discovery, links, and withdrawal remain consi
           assert.ok(html.includes(`<meta name="twitter:image:alt" content="${escapedAlt}">`));
           const primary = [...html.matchAll(/class="download-button" href="([^"]+)"/g)];
           assert.equal(primary.length,2);
-          assert.ok(primary.every(match=>match[1]==='https://apps.apple.com/app/louppe/id6820131477'));
+          assert.ok(primary.every(match=>match[1]===`https://apps.apple.com/app/louppe/id6820131477?pt=128797295&amp;ct=blog-${post.slug}&amp;mt=12`));
+          assert.doesNotMatch(html,/href="https:\/\/apps\.apple\.com\/app\/louppe\/id6820131477"/);
           assert.equal(article.inLanguage,language.code);
           assert.equal(article.url,origin+path);
           assert.equal(article.datePublished,published.find(post=>route===`/blog/${post.slug}/`).date);
