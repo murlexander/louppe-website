@@ -258,6 +258,9 @@ export function summarize(rows, envelopes, now = new Date()) {
   list('GA4 countries', { source: 'ga4', metric: 'active_users', dimension: 'country' }, 28, 'active users');
   list('GA4 download placement', { source: 'ga4', metric: 'louppe_download_event_count', dimension: 'download_placement' }, 28, 'clicks');
   list('GA4 download method', { source: 'ga4', metric: 'louppe_download_event_count', dimension: 'download_method' }, 28, 'clicks');
+  // louppe_download is the property's only key event, so key events by session source and landing page attribute download intent.
+  list('GA4 download clicks by source / medium', { source: 'ga4', metric: 'key_events', dimension: 'session_source_medium' }, 28, 'key events');
+  list('GA4 download clicks by landing page', { source: 'ga4', metric: 'key_events', dimension: 'landing_page' }, 28, 'key events');
   list('Cloudflare referrers', { source: 'cloudflare', metric: 'visits', dimension: 'referrer' }, 28, 'visits');
   list('Cloudflare paths', { source: 'cloudflare', metric: 'page_views', dimension: 'path' }, 28, 'page views');
   list('Cloudflare countries', { source: 'cloudflare', metric: 'visits', dimension: 'country' }, 28, 'visits');

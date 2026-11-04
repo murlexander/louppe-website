@@ -4,7 +4,7 @@ The 21 October 2026 experiment adds a six-language ApolloOne comparison and upda
 
 ## Collection
 
-Use GA4 **Louppe Media Culler**, property `555464552`, measurement ID `G-9P9KKLZ5BN`. Analytics loads only after consent on HTTPS `louppe.eu`. Local previews cannot collect. No app usage or confirmed installations are measured. Enhanced measurement keeps page loads only; browser-history views, automatic outbound/file clicks, search, form, scroll, and video events are disabled. Explicit site events supply the article and download measurements.
+Use GA4 **Louppe Media Culler**, property `555464552`, measurement ID `G-9P9KKLZ5BN`. Analytics loads only after consent on HTTPS `louppe.eu`. Local previews cannot collect. No app usage or confirmed installations are measured. Enhanced measurement keeps page loads only; browser-history views, automatic outbound/file clicks, search, form, scroll, and video events are disabled. Explicit site events supply the article and download measurements. Checked 4 November: the stream measures page views only. The 14 `scroll`, 2 `click`, and 2 `file_download` events in lifetime reports all fall between 1 September and 21 October, before enhanced measurement was narrowed; none have arrived since 22 October. The remaining automatic events (`page_view`, `session_start`, `first_visit`, `user_engagement`) are GA4's standard page-view and session events, covered by the privacy policy. Google signals and ad personalization are off in the property and in the tag config.
 
 | Measurement | Fields |
 | --- | --- |
@@ -47,6 +47,9 @@ metric, and dimension value; the newest collection wins), and `summary.md` is
 regenerated with totals, the visit → click → Store download funnel,
 week-over-week changes, top lists, and data-quality notes. Scripts live in
 `scripts/analytics/`; parser tests in `scripts/analytics.test.mjs`.
+
+Download intent by source/medium and landing page comes from GA4 key events
+(`louppe_download` is the only key event that fires), listed in `summary.md`.
 
 ```sh
 node scripts/analytics/collect.mjs      # GitHub, Cloudflare, App Store lookup
