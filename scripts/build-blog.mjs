@@ -9,7 +9,7 @@ const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const preview = process.argv.includes('--preview');
 const out = preview ? resolve(root, '_preview') : root;
 const origin = 'https://louppe.eu';
-const defaultImage = {src:'/media/2026-09-26/social-preview.jpg',alt:'Louppe reviewing a local media folder on Mac'};
+const defaultImage = {src:'/media/2026-11-04/social-preview.jpg',alt:'Louppe reviewing a local media folder on Mac'};
 const escape = value => String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const read = path => readFile(resolve(root, path), 'utf8');
 const json = async path => JSON.parse(await read(path));

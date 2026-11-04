@@ -31,7 +31,7 @@ test('draft isolation, publication, validation and withdrawal', async () => {
     assert.doesNotMatch(publicPage,/RSS|application\/rss\+xml/);
     assert.match(publicPage,/try Louppe/);
     assert.equal((publicPage.match(/class="download-button"/g) ?? []).length,2);
-    assert.match(publicPage,/<meta property="og:image" content="https:\/\/louppe.eu\/media\/2026-09-26\/social-preview.jpg">/);
+    assert.match(publicPage,/<meta property="og:image" content="https:\/\/louppe.eu\/media\/2026-11-04\/social-preview.jpg">/);
     assert.ok(publicPage.indexOf('class="article-cta"') > publicPage.indexOf('A published paragraph'));
     assert.ok(publicPage.indexOf('class="article-cta"') < publicPage.indexOf('A closing paragraph'));
     assert.ok(publicPage.lastIndexOf('class="article-cta"') > publicPage.indexOf('A closing paragraph'));
