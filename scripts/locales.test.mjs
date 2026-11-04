@@ -106,6 +106,8 @@ test('static language pages, crawl discovery, links, and withdrawal remain consi
         if (language.code==='ar') assert.match(html,/dir="rtl"/);
         else assert.doesNotMatch(html,/<html[^>]*dir="rtl"/);
         assert.doesNotMatch(html,/<script[^>]+src="https:\/\/.*googletagmanager/);
+        // Cookieless Cloudflare Web Analytics loads on every page, independent of GA consent.
+        assert.equal(html.match(/<script defer src="https:\/\/static\.cloudflareinsights\.com\/beacon\.min\.js" data-cf-beacon='\{"token": "[0-9a-f]{32}"\}'><\/script>/g)?.length,1);
         assert.ok(html.includes('data-analytics-settings'));
         assert.ok(html.includes('<script src="/prefetch.js?v=20261008-1" defer></script>'));
         assert.ok(html.includes('data-analytics-choice="rejected"'));

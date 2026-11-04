@@ -16,6 +16,17 @@ Use GA4 **Louppe Media Culler**, property `555464552`, measurement ID `G-9P9KKLZ
 
 Event-scoped custom dimensions are configured for `page_language`, `download_method`, `download_placement`, `article_path`, and `link_placement`. Page path, landing page, source/medium, and content group use GA4's built-in dimensions. New custom dimensions are not retrospective and can take 24–48 hours to appear in reports. See [GA4 custom dimensions](https://support.google.com/analytics/answer/14240153) and [page views](https://developers.google.com/analytics/devguides/collection/ga4/views).
 
+## Cloudflare Web Analytics
+
+Since 4 November 2026, every page loads the cookieless Cloudflare Web Analytics
+beacon (site `louppe.eu`, JS snippet; DNS stays off Cloudflare). It counts page
+views and visits by path, referrer, country, and browser, plus load timing, for
+all visitors regardless of GA consent. Query strings are not logged. Local
+previews also load the beacon; filter reports to host `louppe.eu`. Data is in
+the Cloudflare dashboard (Analytics → Web analytics) and the private collector,
+which reads the read-only API token and site tag from Keychain service
+`louppe-cloudflare-analytics`. Cloudflare and GA counts differ by design; don't sum them.
+
 ## App Store campaigns
 
 Since 4 November 2026, website App Store links carry Apple campaign tokens
@@ -27,9 +38,29 @@ counts remain intent. Structured data and `llms.txt` keep the plain Store URL.
 `scripts/store-link.mjs` adds the tokens at build time. Links shared off-site
 can use their own `ct` (for example `reddit` or `awesome-mac`).
 
-`scripts/github-stats-snapshot.mjs` saves GitHub traffic, referrers, stars, and
-release downloads to `.drafts/github-stats/`; the weekly maintenance run calls it
-because GitHub keeps traffic for 14 days.
+## Stats collection
+
+All usage and discovery figures land in private `.drafts/analytics/`:
+`raw/<date>/<name>.json` holds each collected payload with its status,
+`metrics.csv` is the parsed long-format table (one row per source, window,
+metric, and dimension value; the newest collection wins), and `summary.md` is
+regenerated with totals, the visit → click → Store download funnel,
+week-over-week changes, top lists, and data-quality notes. Scripts live in
+`scripts/analytics/`; parser tests in `scripts/analytics.test.mjs`.
+
+```sh
+node scripts/analytics/collect.mjs      # GitHub, Cloudflare, App Store lookup
+node scripts/analytics/snippet.mjs ga4 '{"report":"traffic","ranges":["last7","prev7"]}'
+node scripts/analytics/save.mjs --downloads   # import browser snippet results
+node scripts/analytics/ingest.mjs       # rebuild metrics.csv and summary.md
+```
+
+Browser snippets (`browser/ga4.js`, `search-console.js`, and
+`app-store-connect.js`) run in a signed-in agent browser tab and download
+their result as JSON for `save.mjs`. The weekly maintenance run collects every
+source through the `louppe-stats` skill; GitHub keeps traffic for only 14 days.
+A failed or skipped source is saved with its reason and reported as unknown,
+never as zero. Earlier receipts were copied in as the first data points.
 
 ## First review
 

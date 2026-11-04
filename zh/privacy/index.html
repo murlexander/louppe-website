@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>隐私政策 — Louppe</title>
-  <meta name="description" content="Louppe 的本地应用数据与可选网站分析。">
+  <meta name="description" content="Louppe 的本地应用数据与网站分析。">
   <meta name="author" content="Alex Markin">
   <meta name="color-scheme" content="dark">
 
@@ -12,13 +12,14 @@
   <link rel="stylesheet" href="/styles.css?v=20261022-1">
   <link rel="stylesheet" href="/blog.css?v=20261022-3">
   <meta property="og:title" content="隐私政策">
-  <meta property="og:description" content="Louppe 的本地应用数据与可选网站分析。">
+  <meta property="og:description" content="Louppe 的本地应用数据与网站分析。">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://louppe.eu/media/2026-09-26/social-preview.jpg">
   <meta name="twitter:card" content="summary_large_image">
 
   <script src="/analytics-consent.js?v=20261021-1" defer></script>
   <script src="/prefetch.js?v=20261008-1" defer></script>
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "f1b7eccca320482d87c3f562667caf01"}'></script>
   <link rel="canonical" href="https://louppe.eu/zh/privacy/">
   <meta property="og:url" content="https://louppe.eu/zh/privacy/">
   <meta property="og:locale" content="zh_CN">
@@ -41,8 +42,8 @@
     <article>
       <header class="post-header">
         <h1>隐私政策</h1>
-        <p class="post-deck">Louppe 在本机筛选媒体。网站分析为可选功能</p>
-        <p class="article-author">更新于 2026 年 10 月 22 日 · Alex Markin · <a href="mailto:a@alex-markin.com">a@alex-markin.com</a></p>
+        <p class="post-deck">Louppe 在本机筛选媒体。本网站的 Google Analytics 为可选功能</p>
+        <p class="article-author">更新于 2026 年 11 月 4 日 · Alex Markin · <a href="mailto:a@alex-markin.com">a@alex-markin.com</a></p>
       </header>
       <div class="article-body">
         <h2 id="app">Louppe 应用</h2>
@@ -84,15 +85,16 @@
         </div>
 
         <h2 id="website">louppe.eu 网站</h2>
-        <p>本网站使用 GitHub Pages。除非您允许，否则不会启用 Google Analytics。您可随时通过页脚的“分析”更改选择</p>
+        <p>本网站使用 GitHub Pages，并通过 Cloudflare Web Analytics 统计访问量，不使用 Cookie。除非您允许，否则不会启用 Google Analytics。您可随时通过页脚的“分析”更改选择</p>
         <div class="feature-disclosures privacy-details">
           <details>
             <summary>网站数据与分析</summary>
             <div>
               <p>GitHub Pages 接收页面请求，并 <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages#data-collection">为安全目的记录访客 IP 地址</a>，即使未同意分析也如此。请查看 <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub 隐私声明</a> ，了解其保留和处理方式</p>
+              <p>Cloudflare Web Analytics 在每次访问时统计页面浏览量，不使用 Cookie 或本地存储，也无需同意。其脚本会将页面地址、来源网站和页面加载时间发送给 Cloudflare，Cloudflare 还会收到您的 IP 地址和浏览器信息。Cloudflare 不记录页面查询参数，只提供汇总统计，并表示不会进行指纹识别或跟踪个人访问者。Cloudflare 处理这些数据时适用 <a href="https://www.cloudflare.com/privacypolicy/">Cloudflare 隐私政策</a></p>
               <p>仅在 HTTPS 正式网站选择“允许分析”后加载 Google Analytics。它统计页面浏览、来源网站、浏览器及设备信息、大致位置、文章链接点击和下载链接点击。页面语言、文章路径、按钮位置和下载方式（App Store、GitHub 或 Homebrew）用于比较内容。页面和来源网址中的查询字符串和片段均被省略。点击代表意向，并非安装或应用活动。Google signals 和广告个性化已禁用</p>
               <p>Google 接收分析请求，适用 <a href="https://policies.google.com/privacy">Google 隐私政策</a>。 <code>_ga</code> 和 <code>_ga_*</code> Cookie 在未续期的情况下于 30 天后过期。您的选择在浏览器本地存储中保留 180 天。存储不可用时，选择可能仅在本次访问有效</p>
-              <p>可随时通过页脚的“分析”拒绝或撤回同意。撤回会停止所有已打开 Louppe 网站标签页的数据收集并清除分析 Cookie，但不会删除 Google 已收到的数据。本地预览不加载分析</p>
+              <p>可随时通过页脚的“分析”拒绝或撤回同意。撤回会停止所有已打开 Louppe 网站标签页的数据收集并清除分析 Cookie，但不会删除 Google 已收到的数据。本地预览不加载 Google Analytics</p>
               <p>下载、源代码链接和捐赠使用外部服务，适用各自的隐私政策。本网站没有账号、媒体上传或联系表单</p>
             </div>
           </details>

@@ -23,12 +23,14 @@ Website work ships independently. Claims must match the released app.
 
 - [ ] Report traffic sources and landing pages leading to `louppe_download` in
   the separate Louppe property. Treat clicks as intent, not installations.
-- [ ] **Search Console discovery, rechecked 2 November.** The sitemap was never
-  read after its 6 October submission, so all five guides were “unknown to
-  Google.” Resubmitted the sitemap and requested indexing for the homepage and
-  the five English guides on 2 November. Around 9 November, confirm the
-  sitemap shows Success with discovered pages, then request the localized guides
-  if they remain unknown (daily quota).
+- [ ] **Search indexing, rechecked 4 November.** Google indexes 12 URLs: `/`,
+  `/pt/`, `/zh/`, `/blog/`, `/privacy/`, all six English guides, and the zh
+  ApolloOne guide. Indexing was requested for the es/hi/ar homepages, cull-photos
+  in five languages, and ApolloOne in es/pt/hi until the daily quota ran out.
+  Next: ar ApolloOne, then cull-raw ×5, blog indexes ×5, a-proper-hello ×5, and
+  privacy ×5. The sitemap still shows "Couldn't fetch" on both properties although
+  the live test passes; recheck around 9 November. Bing Webmaster Tools is set up
+  (imported from Search Console, sitemap read with 44 URLs, all URLs submitted).
 
 ## Deferred media refresh
 

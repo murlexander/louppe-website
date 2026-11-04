@@ -2326,5 +2326,61 @@
     "hi": "ग्रिड, Louppe 1.9 में लिया गया स्क्रीनशॉट",
     "pt": "Grade, capturada no Louppe 1.9",
     "ar": "الشبكة، التُقطت في Louppe 1.9"
+  },
+  "Local app data and website analytics in Louppe.": {
+    "en": "Local app data and website analytics in Louppe.",
+    "es": "datos locales de la app y analítica del sitio de Louppe.",
+    "zh-Hans": "Louppe 的本地应用数据与网站分析。",
+    "hi": "Louppe में स्थानीय ऐप डेटा और वेबसाइट एनालिटिक्स।",
+    "pt": "dados locais do app e análise do site do Louppe.",
+    "ar": "بيانات التطبيق المحلية وتحليلات الموقع في Louppe."
+  },
+  "Louppe reviews media locally. Google Analytics on this website is optional": {
+    "en": "Louppe reviews media locally. Google Analytics on this website is optional",
+    "es": "Louppe revisa tus medios localmente. Google Analytics en este sitio es opcional",
+    "zh-Hans": "Louppe 在本机筛选媒体。本网站的 Google Analytics 为可选功能",
+    "hi": "Louppe मीडिया की समीक्षा स्थानीय रूप से करता है। इस वेबसाइट पर Google Analytics वैकल्पिक है",
+    "pt": "o Louppe revisa a mídia localmente. o Google Analytics neste site é opcional",
+    "ar": "يراجع Louppe الوسائط محليًا. Google Analytics على هذا الموقع اختيارية"
+  },
+  "updated 4 November 2026 · Alex Markin ·": {
+    "en": "updated 4 November 2026 · Alex Markin ·",
+    "es": "actualizado el 4 de noviembre de 2026 · Alex Markin ·",
+    "zh-Hans": "更新于 2026 年 11 月 4 日 · Alex Markin ·",
+    "hi": "अपडेट: 4 नवंबर 2026 · Alex Markin ·",
+    "pt": "atualizado em 4 de novembro de 2026 · Alex Markin ·",
+    "ar": "آخر تحديث 4 نوفمبر 2026 · Alex Markin ·"
+  },
+  "this site uses GitHub Pages and counts visits with Cloudflare Web Analytics, without cookies. Google Analytics is off unless you allow it. change your choice anytime through “analytics” in the footer": {
+    "en": "this site uses GitHub Pages and counts visits with Cloudflare Web Analytics, without cookies. Google Analytics is off unless you allow it. change your choice anytime through “analytics” in the footer",
+    "es": "este sitio usa GitHub Pages y cuenta las visitas con Cloudflare Web Analytics, sin cookies. Google Analytics permanece desactivado salvo que lo permitas. cambia tu elección cuando quieras en «analítica» al pie de la página",
+    "zh-Hans": "本网站使用 GitHub Pages，并通过 Cloudflare Web Analytics 统计访问量，不使用 Cookie。除非您允许，否则不会启用 Google Analytics。您可随时通过页脚的“分析”更改选择",
+    "hi": "यह साइट GitHub Pages का उपयोग करती है और Cloudflare Web Analytics से बिना कुकी के विज़िट गिनती है। आपकी अनुमति के बिना Google Analytics बंद रहता है। फ़ुटर में “विश्लेषण” से कभी भी अपनी पसंद बदलें",
+    "pt": "este site usa o GitHub Pages e conta visitas com o Cloudflare Web Analytics, sem cookies. o Google Analytics fica desativado até você permitir. altere sua escolha a qualquer momento em “análise” no rodapé",
+    "ar": "يستخدم هذا الموقع GitHub Pages ويحصي الزيارات باستخدام Cloudflare Web Analytics دون ملفات تعريف الارتباط. تظل Google Analytics معطّلة ما لم تسمح بها. يمكنك تغيير اختيارك في أي وقت عبر «التحليلات» في التذييل"
+  },
+  "Cloudflare Web Analytics counts page views on every visit, without cookies, local storage, or consent. its script sends the page address, referring site, and page load timing to Cloudflare, which also receives your IP address and browser details. Cloudflare doesn’t log page queries, reports only aggregate counts, and says it doesn’t fingerprint or track individual visitors. Cloudflare processes this data under": {
+    "en": "Cloudflare Web Analytics counts page views on every visit, without cookies, local storage, or consent. its script sends the page address, referring site, and page load timing to Cloudflare, which also receives your IP address and browser details. Cloudflare doesn’t log page queries, reports only aggregate counts, and says it doesn’t fingerprint or track individual visitors. Cloudflare processes this data under",
+    "es": "Cloudflare Web Analytics cuenta las páginas vistas en cada visita, sin cookies, almacenamiento local ni consentimiento. su script envía a Cloudflare la dirección de la página, el sitio de procedencia y el tiempo de carga, y Cloudflare también recibe tu dirección IP y datos del navegador. Cloudflare no registra los parámetros de consulta, solo ofrece recuentos agregados y afirma que no crea huellas digitales ni sigue a visitantes individuales. Cloudflare trata estos datos según",
+    "zh-Hans": "Cloudflare Web Analytics 在每次访问时统计页面浏览量，不使用 Cookie 或本地存储，也无需同意。其脚本会将页面地址、来源网站和页面加载时间发送给 Cloudflare，Cloudflare 还会收到您的 IP 地址和浏览器信息。Cloudflare 不记录页面查询参数，只提供汇总统计，并表示不会进行指纹识别或跟踪个人访问者。Cloudflare 处理这些数据时适用",
+    "hi": "Cloudflare Web Analytics हर विज़िट पर पेज व्यू गिनता है, बिना कुकी, लोकल स्टोरेज या सहमति के। इसकी स्क्रिप्ट पेज का पता, रेफ़र करने वाली साइट और पेज लोड होने का समय Cloudflare को भेजती है, और Cloudflare को आपका IP पता और ब्राउज़र की जानकारी भी मिलती है। Cloudflare पेज क्वेरी लॉग नहीं करता, केवल कुल गिनती दिखाता है और कहता है कि वह फ़िंगरप्रिंटिंग या अलग-अलग विज़िटर की ट्रैकिंग नहीं करता। Cloudflare इस डेटा को संसाधित करता है, जिस पर लागू है",
+    "pt": "o Cloudflare Web Analytics conta visualizações de página em todas as visitas, sem cookies, armazenamento local ou consentimento. o script envia à Cloudflare o endereço da página, o site de origem e o tempo de carregamento, e a Cloudflare também recebe seu endereço IP e dados do navegador. a Cloudflare não registra parâmetros de consulta, mostra apenas contagens agregadas e afirma não criar impressões digitais nem rastrear visitantes individuais. a Cloudflare trata esses dados conforme",
+    "ar": "يحصي Cloudflare Web Analytics مشاهدات الصفحات في كل زيارة، دون ملفات تعريف الارتباط أو التخزين المحلي أو الموافقة. يرسل نصه البرمجي عنوان الصفحة والموقع المُحيل ووقت تحميل الصفحة إلى Cloudflare، التي تتلقى أيضًا عنوان IP ومعلومات المتصفح. لا تسجّل Cloudflare معاملات الاستعلام، وتعرض أعدادًا إجمالية فقط، وتقول إنها لا تأخذ بصمات الزوار ولا تتتبع الأفراد. تعالج Cloudflare هذه البيانات وفق"
+  },
+  "Cloudflare’s privacy policy": {
+    "en": "Cloudflare’s privacy policy",
+    "es": "la política de privacidad de Cloudflare",
+    "zh-Hans": "Cloudflare 隐私政策",
+    "hi": "Cloudflare की गोपनीयता नीति",
+    "pt": "a política de privacidade da Cloudflare",
+    "ar": "سياسة خصوصية Cloudflare"
+  },
+  "reject or withdraw anytime through “analytics” in the footer. withdrawal stops collection across open Louppe website tabs and clears analytics cookies. withdrawal does not delete data already received by Google. local previews do not load Google Analytics": {
+    "en": "reject or withdraw anytime through “analytics” in the footer. withdrawal stops collection across open Louppe website tabs and clears analytics cookies. withdrawal does not delete data already received by Google. local previews do not load Google Analytics",
+    "es": "rechaza o retira tu consentimiento en cualquier momento desde «analítica» en el pie de página. se detiene la recopilación en las pestañas abiertas de Louppe y se borran las cookies. no se eliminan datos ya recibidos por Google. las vistas previas locales no cargan Google Analytics",
+    "zh-Hans": "可随时通过页脚的“分析”拒绝或撤回同意。撤回会停止所有已打开 Louppe 网站标签页的数据收集并清除分析 Cookie，但不会删除 Google 已收到的数据。本地预览不加载 Google Analytics",
+    "hi": "फ़ुटर के “विश्लेषण” से कभी भी मना करें या सहमति वापस लें। इससे खुले Louppe वेबसाइट टैब में संग्रह रुकता है और एनालिटिक्स कुकी हटती हैं। Google को पहले मिले डेटा नहीं मिटते। स्थानीय पूर्वावलोकन Google Analytics लोड नहीं करते",
+    "pt": "rejeite ou retire o consentimento a qualquer momento em “análise” no rodapé. a coleta para nas abas abertas do Louppe e os cookies são limpos. dados já recebidos pelo Google não são apagados. prévias locais não carregam o Google Analytics",
+    "ar": "ارفض أو اسحب الموافقة في أي وقت من «التحليلات» في التذييل. يتوقف جمع البيانات في جميع تبويبات موقع Louppe المفتوحة وتُمسح ملفات التحليلات. لا تُحذف البيانات التي تلقتها Google سابقًا. لا تُحمّل Google Analytics في المعاينات المحلية"
   }
 }
