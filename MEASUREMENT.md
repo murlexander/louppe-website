@@ -62,8 +62,8 @@ node scripts/analytics/ingest.mjs       # rebuild metrics.csv and summary.md
 
 Browser snippets (`browser/ga4.js`, `search-console.js`, and
 `app-store-connect.js`) run in a signed-in agent browser tab and download
-their result as JSON for `save.mjs`. A daily T3 schedule runs the `louppe-stats`
-skill unattended: command-line sources every day (GitHub keeps traffic for only
+their result as JSON for `save.mjs`. A T3 schedule repeating every 24 hours (it catches up on wake after a missed
+run) runs the `louppe-stats` skill unattended: command-line sources every day (GitHub keeps traffic for only
 14 days) and browser sources when `due.mjs` lists them, so they refresh weekly
 and failures retry the next day. Weekly maintenance recollects if the summary
 shows a stale or failed source. Only an expired Google or App Store Connect
