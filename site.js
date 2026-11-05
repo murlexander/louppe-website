@@ -35,8 +35,11 @@ function loadDemo() {
 function selectView(name) {
   if (name !== 'demo' && !views[name]) return;
   const isDemo = name === 'demo';
+  // Both panels keep their layout space (see .showcase in styles.css); inert keeps the hidden one out of focus.
   imagePanel.hidden = isDemo;
+  imagePanel.inert = isDemo;
   demoPanel.hidden = !isDemo;
+  demoPanel.inert = !isDemo;
   if (isDemo) {
     loadDemo();
   } else {

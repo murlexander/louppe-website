@@ -48,9 +48,15 @@ Website work ships independently. Claims must match the released app.
   data, and Open Graph image use native 1.13 captures (`media/2026-11-04/`); the
   1.9 originals stay in `media/2026-09-26/` and `media-library/`, and the 1.9
   article is unchanged.
-- [ ] **Optional: re-record the Demo for 1.13.** The 25-second captioned Demo still
-  shows the 1.9 interface. Re-record only if the new Grid and Folders views
-  should appear in motion.
+- [x] **One stage ratio, 5 November.** Gallery, Grid, and Demo share a 24:13
+  stage, the native window ratio of the 1.13 stills, so switching views keeps the
+  same height and the stills fill it without bands. The Demo was re-rendered at
+  1920 × 1040 from its Remotion source (`media/2026-11-05/`); the 16:9 originals
+  stay in `media-library/2026-09-26/demos/`.
+- [ ] **Optional: re-record the Demo for 1.13.1.** The 25-second captioned Demo
+  still shows the pre-1.13 (1.9) interface, captured as an inactive window. A new
+  recording with an active 1.13.1 window is a separate task; keep the 24:13 frame
+  (1920 × 1040).
 
 ## Release and publicity follow-up
 

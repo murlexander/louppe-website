@@ -35,7 +35,7 @@ Static HTML, CSS, and JavaScript; Markdown-generated blog. Approved 26 September
 - Hero: product purpose, primary Mac App Store download, and Apple-silicon/macOS requirements. Place “or: github, homebrew” directly below the button, before hardware requirements
 - One viewer with lowercase Gallery/Grid/Demo controls; no autoplay
 - Gallery and Grid enlarge; Demo uses native controls and English captions
-- Keep Demo at 16:9 without cropping or padding; pause it when switching views
+- Gallery, Grid, and Demo share one 24:13 stage (the native window ratio of the stills); switching views never changes the section height. Render Demo at that ratio rather than cropping or padding it; pause it when switching views
 - Preserve `#review-demo` and the written walkthrough; no video/caption download buttons
 - Three short workflow descriptions, interactive Mac keyboard, and expandable features
 - Keyboard: clickable review, Command, and Shift keys; one concise explanation, allowing longer media-dependent actions

@@ -76,6 +76,8 @@ test('Gallery and Grid use root-relative image candidates in every language', ()
     assert.equal(page.imageLink.href, page.appImage.src);
     assert.equal(page.imagePanel.hidden, false);
     assert.equal(page.demoPanel.hidden, true);
+    assert.equal(page.imagePanel.inert, false);
+    assert.equal(page.demoPanel.inert, true);
     assert.equal(page.buttons.find(button => button.dataset.view === view)['aria-pressed'], 'true');
   }
 });
@@ -88,6 +90,8 @@ test('Demo attaches its poster, source, and captions once, without autoplay', ()
   assert.equal(page.video.loads, 1);
   assert.equal(page.imagePanel.hidden, true);
   assert.equal(page.demoPanel.hidden, false);
+  assert.equal(page.imagePanel.inert, true);
+  assert.equal(page.demoPanel.inert, false);
   page.select('grid');
   assert.ok(page.video.pauses > 0);
   page.select('demo');

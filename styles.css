@@ -36,8 +36,13 @@ h1{font-size:clamp(42px,5.2vw,58px);font-weight:580;letter-spacing:-2.3px;line-h
 .view-picker button{font-size:14px;background:none;border:0;border-bottom:2px solid transparent;color:var(--muted);padding:8px 3px 9px;min-height:44px}
 .view-picker button[aria-pressed=true]{color:var(--purple-text);border-color:var(--purple-text)}
 .app-image-link{display:block;border-radius:12px;overflow:hidden;text-decoration:none;cursor:zoom-in}
-.app-image-stage{aspect-ratio:1800/1129;display:flex;align-items:center;justify-content:center;background:var(--surface)}
-.app-image-stage img{display:block;width:100%;height:auto}
+.showcase{display:grid}
+.showcase>.view-picker{grid-row:1}
+/* Gallery, Grid, and Demo share one 24:13 stage and one grid cell, so switching views never changes height. */
+.showcase>#image-panel,.showcase>.demo-panel{grid-row:2;grid-column:1;min-width:0}
+.showcase>[hidden]{display:block!important;visibility:hidden}
+.app-image-stage{display:block;aspect-ratio:24/13;background:var(--surface)}
+.app-image-stage img{display:block;width:100%;height:100%;object-fit:cover}
 .text-button{appearance:none;border:0;background:none;color:inherit;padding:0;font-size:inherit;text-decoration:none;line-height:inherit}
 .text-button:hover{color:var(--purple-text)}
 
@@ -46,7 +51,7 @@ summary::-webkit-details-marker{display:none}
 
 video{display:block;width:100%;height:auto;background:var(--surface);border-radius:12px}
 [hidden]{display:none!important}
-.video-stage{aspect-ratio:16/9;background:var(--surface);border-radius:12px;overflow:hidden}
+.video-stage{aspect-ratio:24/13;background:var(--surface);border-radius:12px;overflow:hidden}
 
 .transcript{font-size:14px;margin-top:16px;color:var(--muted)}
 .transcript>summary{text-decoration:underline;text-underline-offset:4px;display:inline-block;padding-block:7px}
