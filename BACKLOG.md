@@ -56,7 +56,10 @@ Website work ships independently. Claims must match the released app.
 - [ ] **Optional: re-record the Demo for 1.13.1.** The 25-second captioned Demo
   still shows the pre-1.13 (1.9) interface, captured as an inactive window. A new
   recording with an active 1.13.1 window is a separate task; keep the 24:13 frame
-  (1920 × 1040).
+  (1920 × 1040). A 5 November attempt stopped when the screen locked; its six
+  staged scenes are in `media-library/2026-11-05-active-demo/`, and several need
+  recapturing because a macOS screen-sharing indicator covers the traffic lights.
+  Foreground capture needs Alex to hand over the unlocked Mac.
 
 ## Release and publicity follow-up
 
