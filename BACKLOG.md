@@ -61,6 +61,14 @@ Website work ships independently. Claims must match the released app.
   recapturing because a macOS screen-sharing indicator covers the traffic lights.
   Foreground capture needs Alex to hand over the unlocked Mac.
 
+## Agent tooling follow-ups (9 November 2026)
+
+- [ ] A site test that every homepage stage image, poster and video matches the
+  24:13 stage ratio, since a swapped still once shifted the layout between tabs.
+- [ ] `scripts/analytics/selfcheck.mjs`, run by `ingest.mjs`, marks a source
+  suspect when its window stops advancing, its figures are all multiples of 10,
+  or its newest day is zero.
+
 ## Release and publicity follow-up
 
 - [x] **Directory listings merged and live.**
