@@ -3,7 +3,7 @@
 // Print a ready expression with: node scripts/analytics/snippet.mjs search-console '{"view":"performance","tabs":["QUERIES","PAGES"]}'
 // Views: performance (tabs QUERIES, PAGES, COUNTRIES, DEVICES, DAYS; months 3 or days 7/28), sitemaps, indexing.
 // If the tab is on another page, it navigates and returns status "navigating"; run it again.
-// Stops before ~12 s and lists unfinished tabs in `remaining`.
+// Stops before ~12 s and lists unfinished tabs in `remaining`. A sign-in page gives status "signed_out".
 async (opts = {}) => {
   const finish = (env) => {
     env.louppe_stats = 1;
@@ -37,6 +37,9 @@ async (opts = {}) => {
     data: [], remaining: [],
   };
   if (!target) return finish({ ...envelope, status: 'failed', error: `Unknown view ${view}` });
+  if (location.hostname === 'accounts.google.com' || (location.hostname === 'search.google.com' && /^\/search-console\/about/.test(location.pathname))) {
+    return finish({ ...envelope, status: 'signed_out', error: 'Search Console shows a sign-in page' });
+  }
   const here = location.pathname + location.search;
   if (location.hostname !== 'search.google.com' || !decodeURIComponent(here).startsWith(decodeURIComponent(target.split('&metrics')[0]))) {
     location.href = `https://search.google.com${target}`;

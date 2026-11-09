@@ -2,7 +2,7 @@
 // Row: { collected_at, source, granularity, period_start, period_end, metric, dimension, dimension_value, value, origin }
 // granularity: day | week | month | range | snapshot | approx_range (receipt figures whose exact window is unknown).
 // Percentages stay 0-100; durations are seconds.
-import { addDays } from './lib.mjs';
+import { addDays, daysBetween } from './lib.mjs';
 
 export const columns = ['collected_at', 'source', 'granularity', 'period_start', 'period_end', 'metric', 'dimension', 'dimension_value', 'value', 'origin'];
 
@@ -228,25 +228,51 @@ export function parseSearchConsole(env, origin) {
   return rows;
 }
 
+// Apple returns zeros for days it has not processed yet (1–2 days). The last processed day is the last
+// day with any non-zero daily total in that family; later days are left out (unknown, not zero) and
+// ranges end there. Store-funnel figures and opt-in usage figures are processed separately.
+const usageMeasures = new Set(['installs', 'sessions', 'activeDevices', 'rollingActiveDevices', 'uninstalls', 'crashes']);
+const familyOf = (measure) => (usageMeasures.has(measure) ? 'usage' : 'store');
+
+export function lastProcessedDays(env) {
+  const { end } = env.options || {};
+  const last = {};
+  for (const resp of env.data || []) {
+    if (resp.error || !resp.results || resp.request.group || resp.request.frequency !== 'day') continue;
+    const family = familyOf(resp.request.measures[0]);
+    for (const r of resp.results) {
+      for (const [date, value] of r.data || []) {
+        if (value && (!end || date < end) && !(date <= (last[family] || ''))) last[family] = date;
+      }
+    }
+  }
+  const fallback = end ? addDays(end, -1) : null;
+  last.store ||= fallback;
+  last.usage ||= last.store;
+  return last;
+}
+
 export function parseAppStoreConnect(env, origin) {
   const make = rowMaker({ ...env, source: 'app_store' }, origin);
   const rows = [];
-  const { start, end } = env.options || {};
-  const last = end ? addDays(end, -1) : null;
+  const { start } = env.options || {};
+  const processed = lastProcessedDays(env);
   for (const resp of env.data || []) {
     if (resp.error || !resp.results) continue;
     const measure = resp.request.measures[0];
     const metric = snake(measure);
+    const last = processed[familyOf(measure)];
     const dimension = resp.request.group ? snake(resp.request.group.dimension) : '';
     const freq = resp.request.frequency;
     for (const r of resp.results) {
       const dv = r.group?.title ?? '';
       for (const [date, value] of r.data || []) {
-        if (value == null || (end && date >= end)) continue;
+        if (value == null || (last && date > last)) continue;
         let periodEnd = freq === 'week' ? addDays(date, 6) : date;
         if (freq === 'month') periodEnd = new Date(Date.UTC(+date.slice(0, 4), +date.slice(5, 7), 0)).toISOString().slice(0, 10);
         if (last && periodEnd > last) periodEnd = last;
-        rows.push(make({ granularity: freq, period_start: date, period_end: periodEnd, metric, dimension, dimension_value: dv, value }));
+        const periodStart = start && date < start ? start : date;
+        rows.push(make({ granularity: freq, period_start: periodStart, period_end: periodEnd, metric, dimension, dimension_value: dv, value }));
       }
       if (r.totals?.type === 'COUNT' && start && last) {
         rows.push(make({ granularity: 'range', period_start: start, period_end: last, metric, dimension, dimension_value: dv, value: r.totals.value }));
@@ -269,9 +295,11 @@ export function parseGithub(env, origin) {
     const make = rowMaker({ collected_at: collected, source: `github/${full.split('/')[1]}` }, origin);
     const snap = { granularity: 'snapshot', period_start: day, period_end: day };
     for (const k of ['stars', 'forks', 'watchers']) if (r[k] != null) rows.push(make({ ...snap, metric: k, value: r[k] }));
+    // Releases whose assets were deleted (v1.0–v1.10) have unknown downloads, not zero; the legacy
+    // snapshot recorded those as 0, so its zeros are skipped too.
     const releases = r.releases
-      ? r.releases.map((x) => [x.tag, x.assets.reduce((n, a) => n + a.download_count, 0)])
-      : Object.entries(r.release_downloads || {});
+      ? r.releases.filter((x) => x.assets.length).map((x) => [x.tag, x.assets.reduce((n, a) => n + a.download_count, 0)])
+      : Object.entries(r.release_downloads || {}).filter(([, v]) => v > 0);
     if (releases.length) {
       rows.push(make({ ...snap, metric: 'release_downloads', value: releases.reduce((n, [, v]) => n + v, 0) }));
       for (const [tag, v] of releases) rows.push(make({ ...snap, metric: 'release_downloads', dimension: 'release', dimension_value: tag, value: v }));
@@ -284,7 +312,9 @@ export function parseGithub(env, origin) {
         rows.push(make({ granularity: 'day', period_start: d, period_end: d, metric: unique, value: p.uniques }));
       }
     }
-    const window = { granularity: 'range', period_start: addDays(day, -13), period_end: day };
+    // GitHub's 14 days are the days its views series lists (UTC, ending yesterday or earlier), not today-13…today.
+    const listed = (r.views?.views || []).map((p) => p.timestamp.slice(0, 10)).sort();
+    const window = { granularity: 'range', period_start: listed[0] || addDays(day, -14), period_end: listed.at(-1) || addDays(day, -1) };
     if (r.views?.count != null) {
       rows.push(make({ ...window, metric: 'views', value: r.views.count }));
       rows.push(make({ ...window, metric: 'unique_visitors', value: r.views.uniques }));
@@ -303,24 +333,49 @@ export function parseGithub(env, origin) {
   return rows;
 }
 
+// The Cloudflare beacon went live on 2026-11-04 (about 05:50 CET); earlier days are unknown, not zero.
+export const cloudflareSince = '2026-11-04';
+const cloudflareDims = [['byCountry', 'country', 'countryName'], ['byReferer', 'referrer', 'refererHost'], ['byPath', 'path', 'requestPath'], ['byDevice', 'device', 'deviceType']];
+
+// Envelopes from before 2026-11-09 held one 28-day query that Cloudflare answered with 10% sampled
+// estimates, so they are ignored; the per-day collector (data.days) supersedes them.
 export function parseCloudflare(env, origin) {
-  if (env.status !== 'ok' || !env.data) return [];
+  if (!['ok', 'partial'].includes(env.status) || !Array.isArray(env.data?.days)) return [];
   const make = rowMaker({ ...env, source: 'cloudflare' }, origin);
-  const acct = env.data.viewer?.accounts?.[0] || {};
-  const { start, end } = env.options;
+  const start = [env.options.start, cloudflareSince].sort().at(-1);
+  const { end } = env.options;
   const rows = [];
-  const add = (base, g) => {
-    rows.push(make({ ...base, metric: 'page_views', value: g.count }));
-    rows.push(make({ ...base, metric: 'visits', value: g.sum?.visits ?? 0 }));
-  };
-  for (const g of acct.byDate || []) add({ granularity: 'day', period_start: g.dimensions.date, period_end: g.dimensions.date }, g);
+  const totals = { page_views: 0, visits: 0 };
+  const byDim = new Map();
+  let covered = 0;
+  for (const d of env.data.days) {
+    if (d.date < start || d.date > end) continue;
+    const groups = [d.byDate, ...cloudflareDims.map(([k]) => d[k])].flat().filter(Boolean);
+    if (groups.some((g) => (g.avg?.sampleInterval ?? 0) !== 1)) continue; // sampled or unknown sampling
+    covered++;
+    const day = { granularity: 'day', period_start: d.date, period_end: d.date };
+    const pv = (d.byDate || []).reduce((n, g) => n + g.count, 0);
+    const v = (d.byDate || []).reduce((n, g) => n + (g.sum?.visits ?? 0), 0);
+    rows.push(make({ ...day, metric: 'page_views', value: pv }), make({ ...day, metric: 'visits', value: v }));
+    totals.page_views += pv;
+    totals.visits += v;
+    for (const [key, dim, field] of cloudflareDims) {
+      for (const g of d[key] || []) {
+        const k = `${dim}\u0001${g.dimensions[field] || '(none)'}`;
+        const t = byDim.get(k) || { page_views: 0, visits: 0 };
+        t.page_views += g.count;
+        t.visits += g.sum?.visits ?? 0;
+        byDim.set(k, t);
+      }
+    }
+  }
+  // Range totals only when every day of the window is exact.
+  if (!covered || covered !== daysBetween(start, end) + 1) return rows;
   const range = { granularity: 'range', period_start: start, period_end: end };
-  // An empty result means no beacon data yet, which is unknown rather than zero.
-  if (!(acct.byDate || []).length) return rows;
-  rows.push(make({ ...range, metric: 'page_views', value: (acct.byDate || []).reduce((n, g) => n + g.count, 0) }));
-  rows.push(make({ ...range, metric: 'visits', value: (acct.byDate || []).reduce((n, g) => n + (g.sum?.visits ?? 0), 0) }));
-  for (const [key, dim, field] of [['byCountry', 'country', 'countryName'], ['byReferer', 'referrer', 'refererHost'], ['byPath', 'path', 'requestPath'], ['byDevice', 'device', 'deviceType']]) {
-    for (const g of acct[key] || []) add({ ...range, dimension: dim, dimension_value: g.dimensions[field] || '(none)' }, g);
+  for (const [metric, value] of Object.entries(totals)) rows.push(make({ ...range, metric, value }));
+  for (const [k, t] of byDim) {
+    const [dimension, dimension_value] = k.split('\u0001');
+    for (const [metric, value] of Object.entries(t)) rows.push(make({ ...range, metric, dimension, dimension_value, value }));
   }
   return rows;
 }
@@ -331,10 +386,8 @@ export function parseItunes(env, origin) {
   const day = env.collected_at.slice(0, 10);
   const snap = { granularity: 'snapshot', period_start: day, period_end: day };
   const a = env.data;
-  const rows = [
-    make({ ...snap, metric: 'user_rating_count', value: a.userRatingCount ?? 0 }),
-    make({ ...snap, metric: 'average_user_rating', value: a.averageUserRating ?? 0 }),
-  ];
+  const rows = [make({ ...snap, metric: 'user_rating_count', value: a.userRatingCount ?? 0 })];
+  if (a.userRatingCount > 0 && a.averageUserRating != null) rows.push(make({ ...snap, metric: 'average_user_rating', value: a.averageUserRating }));
   if (a.version) rows.push(make({ ...snap, metric: 'current_version', dimension: 'version', dimension_value: a.version, value: 1 }));
   return rows;
 }
@@ -392,10 +445,10 @@ export function parseDiscoveryReview(json, origin) {
   const gh = json.github || {};
   const repo = 'github/louppe-media-culler';
   for (const k of ['stars', 'forks']) add(repo, 'snapshot', date, date, k, gh[k]);
-  add(repo, 'range', addDays(date, -13), date, 'views', gh.views_14d);
-  add(repo, 'range', addDays(date, -13), date, 'unique_visitors', gh.unique_14d);
-  for (const [k, v] of Object.entries(gh.referrers || {})) add(repo, 'range', addDays(date, -13), date, 'referrer_views', v, 'referrer', k);
-  const tags = Object.entries(gh).filter(([k]) => /^v[\d.]+_zip_downloads$/.test(k));
+  add(repo, 'approx_range', addDays(date, -14), addDays(date, -1), 'views', gh.views_14d);
+  add(repo, 'approx_range', addDays(date, -14), addDays(date, -1), 'unique_visitors', gh.unique_14d);
+  for (const [k, v] of Object.entries(gh.referrers || {})) add(repo, 'approx_range', addDays(date, -14), addDays(date, -1), 'referrer_views', v, 'referrer', k);
+  const tags = Object.entries(gh).filter(([k, v]) => /^v[\d.]+_zip_downloads$/.test(k) && v > 0);
   for (const [k, v] of tags) add(repo, 'snapshot', date, date, 'release_downloads', v, 'release', k.replace('_zip_downloads', ''));
   if (tags.length) add(repo, 'snapshot', date, date, 'release_downloads', tags.reduce((n, [, v]) => n + v, 0));
   const as = json.app_store || {};

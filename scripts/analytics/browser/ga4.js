@@ -5,6 +5,7 @@
 // Ranges: last7, prev7, last28, lifetime (2026-09-01 on), or {"start":"YYYY-MM-DD","end":"YYYY-MM-DD"}; days end yesterday.
 // It changes the SPA hash per range and returns the visible report text; ingest.mjs parses it.
 // Stops before ~12 s and lists unfinished ranges in `remaining`; run again with those.
+// A Google sign-in page gives status "signed_out" (saved, so the summary shows it).
 async (opts = {}) => {
   const finish = (env) => {
     env.louppe_stats = 1;
@@ -44,6 +45,9 @@ async (opts = {}) => {
     source: 'ga4', name: `ga4-${report}-${ranges.map((r) => r.label).join('+')}`,
     collected_at: new Date().toISOString(), status: 'ok', options: { property, report, ranges }, data: [], remaining: [],
   };
+  if (['accounts.google.com', 'marketingplatform.google.com'].includes(location.hostname)) {
+    return finish({ ...envelope, status: 'signed_out', error: `Google shows ${location.hostname} instead of Analytics` });
+  }
   if (location.hostname !== 'analytics.google.com') {
     location.href = 'https://analytics.google.com/analytics/web/';
     return finish({ ...envelope, status: 'navigating', error: 'Opened analytics.google.com; run the snippet again.' });

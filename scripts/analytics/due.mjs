@@ -1,7 +1,8 @@
 #!/usr/bin/env node
-// Lists the browser-collected sources that are missing, failed, partial, or older than
-// --days (default 6), so a daily run refreshes them about once a week and retries failures.
-// Usage: node scripts/analytics/due.mjs [--days 6]   → JSON {due:[{name,reason,run}], fresh:[…]}
+// Lists the browser-collected sources that are missing, not ok (failed, partial, signed_out), truncated,
+// or at least --days old (default 5, in local days). The run every 48 h therefore refreshes them every
+// third run (about 6 days, never more than 7) and retries failures on the next run.
+// Usage: node scripts/analytics/due.mjs [--days 5]   → JSON {due:[{name,reason,run}], fresh:[…]}
 import { daysBetween, localDate } from './lib.mjs';
 import { readRaw } from './ingest.mjs';
 
@@ -23,7 +24,7 @@ export const browserSources = {
   'search-console-indexing': ['search-console', { view: 'indexing' }],
 };
 
-export function dueSources(envelopes, today = localDate(), maxAge = 6) {
+export function dueSources(envelopes, today = localDate(), maxAge = 5) {
   const latest = new Map();
   for (const { env } of envelopes) {
     const name = env.name || env.source;
@@ -34,8 +35,8 @@ export function dueSources(envelopes, today = localDate(), maxAge = 6) {
   for (const [name, [snippet, options]] of Object.entries(browserSources)) {
     const env = latest.get(name);
     const run = `node scripts/analytics/snippet.mjs ${snippet} '${JSON.stringify(options)}'`;
-    const age = env?.collected_at ? daysBetween(env.collected_at.slice(0, 10), today) : null;
-    const reason = !env ? 'missing' : env.status !== 'ok' ? env.status : age >= maxAge ? `${age} days old` : null;
+    const age = env?.collected_at ? daysBetween(localDate(new Date(env.collected_at)), today) : null;
+    const reason = !env ? 'missing' : env.status !== 'ok' ? env.status : env.truncated ? 'truncated' : age >= maxAge ? `${age} days old` : null;
     (reason ? due : fresh).push(reason ? { name, reason, run } : name);
   }
   return { today, maxAge, due, fresh };
@@ -43,6 +44,6 @@ export function dueSources(envelopes, today = localDate(), maxAge = 6) {
 
 if (import.meta.url === `file://${process.argv[1]}`) {
   const i = process.argv.indexOf('--days');
-  const maxAge = i > 0 ? Number(process.argv[i + 1]) : 6;
+  const maxAge = i > 0 ? Number(process.argv[i + 1]) : 5;
   console.log(JSON.stringify(dueSources(readRaw(), localDate(), maxAge), null, 2));
 }

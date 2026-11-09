@@ -4,7 +4,8 @@
 // A failed or skipped source is still written, with its status and reason, so
 // ingest and the summary report it instead of treating it as zero.
 import { execFileSync } from 'node:child_process';
-import { addDays, envelope, localDate, writeRaw } from './lib.mjs';
+import { addDays, envelope, utcDate, writeRaw } from './lib.mjs';
+import { cloudflareSince } from './parsers.mjs';
 
 export const githubRepos = ['murlexander/louppe-media-culler', 'murlexander/louppe-website'];
 export const appStoreId = '6820131477';
@@ -66,12 +67,15 @@ function keychain(account) {
   }
 }
 
-// Cloudflare Web Analytics (RUM) through the GraphQL Analytics API, last 28 complete days.
+// Cloudflare Web Analytics (RUM) through the GraphQL Analytics API, last 28 complete UTC days since the
+// beacon went live. Windows longer than about a week come back 10% sampled (estimates in steps of 10 that
+// can drop whole days), so each day is queried on its own and the parser rejects sampled groups.
 export function cloudflareQuery() {
   const group = (alias, dims, orderBy) => `
       ${alias}: rumPageloadEventsAdaptiveGroups(filter: $filter, limit: 1000, orderBy: [${orderBy}]) {
         count
         sum { visits }
+        avg { sampleInterval }
         dimensions { ${dims} }
       }`;
   return `query LouppeWebAnalytics($account: String!, $filter: AccountRumPageloadEventsAdaptiveGroupsFilter_InputObject!) {
@@ -82,32 +86,45 @@ export function cloudflareQuery() {
 }`;
 }
 
-export async function cloudflare() {
-  const token = keychain('api-token');
-  const siteTag = keychain('site-tag');
+export async function cloudflare({ now = new Date(), days = 28, post = fetch, token = keychain('api-token'), siteTag = keychain('site-tag') } = {}) {
   if (!token || !siteTag) {
     return envelope('cloudflare', {
       status: 'skipped',
       error: `Keychain service "${keychainService}" lacks ${token ? '' : 'account "api-token" '}${siteTag ? '' : 'account "site-tag"'}`.trim(),
     });
   }
-  const end = addDays(localDate(), -1);
-  const start = addDays(end, -27);
-  const variables = {
-    account: cloudflareAccount,
-    filter: { AND: [{ date_geq: start, date_leq: end }, { siteTag }, { requestHost: 'louppe.eu' }, { bot: 0 }] },
+  const end = addDays(utcDate(now), -1);
+  const start = [addDays(end, -(days - 1)), cloudflareSince].sort().at(-1);
+  const options = { start, end, host: 'louppe.eu', per: 'utc-day' };
+  const queryDay = async (date) => {
+    try {
+      const res = await post('https://api.cloudflare.com/client/v4/graphql', {
+        method: 'POST',
+        headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
+        body: JSON.stringify({ query: cloudflareQuery(), variables: {
+          account: cloudflareAccount,
+          filter: { AND: [{ date_geq: date, date_leq: date }, { siteTag }, { requestHost: 'louppe.eu' }, { bot: 0 }] },
+        } }),
+      });
+      const body = await res.json().catch(() => ({ errors: [{ message: `HTTP ${res.status}, non-JSON body` }] }));
+      const account = body.data?.viewer?.accounts?.[0];
+      if (!res.ok || body.errors?.length || !account) {
+        return { date, error: (body.errors || []).map((e) => e.message).join('; ') || (account ? `HTTP ${res.status}` : 'account not visible to token') };
+      }
+      return { date, ...account };
+    } catch (error) {
+      return { date, error: String(error.message || error) };
+    }
   };
-  const res = await fetch('https://api.cloudflare.com/client/v4/graphql', {
-    method: 'POST',
-    headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
-    body: JSON.stringify({ query: cloudflareQuery(), variables }),
-  });
-  const body = await res.json().catch(() => ({ errors: [{ message: `HTTP ${res.status}, non-JSON body` }] }));
-  const options = { start, end, host: 'louppe.eu' };
-  if (!res.ok || body.errors?.length) {
-    return envelope('cloudflare', { status: 'failed', options, error: (body.errors || []).map((e) => e.message).join('; ') || `HTTP ${res.status}`, data: body.data ?? null });
-  }
-  return envelope('cloudflare', { options, data: body.data });
+  const dates = [];
+  for (let day = start; day <= end; day = addDays(day, 1)) dates.push(day);
+  const all = [];
+  for (let i = 0; i < dates.length; i += 7) all.push(...await Promise.all(dates.slice(i, i + 7).map(queryDay)));
+  const ok = all.filter((d) => !d.error);
+  const sampled = ok.filter((d) => Object.values(d).flat().some((g) => (g?.avg?.sampleInterval ?? 1) !== 1)).map((d) => d.date);
+  const problems = [...all.filter((d) => d.error).map((d) => `${d.date}: ${d.error}`), ...sampled.map((d) => `${d}: sampled`)];
+  const status = !ok.length ? 'failed' : problems.length ? 'partial' : 'ok';
+  return envelope('cloudflare', { status, options, ...(problems.length ? { error: problems.slice(0, 5).join('; ') } : {}), data: { days: ok } });
 }
 
 const collectors = { github, cloudflare, itunes };
@@ -123,7 +140,7 @@ if (import.meta.url === `file://${process.argv[1]}`) {
     } catch (error) {
       payload = envelope(name, { status: 'failed', error: String(error.message || error).split('\n')[0] });
     }
-    if (payload.status === 'failed') failed++;
+    if (payload.status !== 'ok') failed++;
     console.log(`${name}: ${payload.status}${payload.error ? ` (${payload.error})` : ''} -> ${writeRaw(payload)}`);
   }
   process.exitCode = failed ? 1 : 0;

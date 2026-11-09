@@ -42,19 +42,20 @@ can use their own `ct` (for example `reddit` or `awesome-mac`).
 
 All usage and discovery figures land in a private store outside this repository:
 `../analytics/` in Alex's Louppe workspace (`LOUPPE_ANALYTICS_DIR` overrides it;
-its `README.md` describes the layout). `raw/<date>/<name>.json` holds each collected payload with its status,
-`metrics.csv` is the parsed long-format table (one row per source, window,
-metric, and dimension value; the newest collection wins), and `summary.md` is
-regenerated with totals, the visit → click → Store download funnel,
-week-over-week changes, top lists, and data-quality notes. Scripts live in
-`scripts/analytics/`; parser tests in `scripts/analytics.test.mjs`.
+its `README.md` describes the layout). `raw/<date>/<name>.json` holds each collected
+payload with its status; raw files are never overwritten (another collection on the
+same day gets a time suffix). `metrics.csv` is rebuilt from all raw files on every
+ingest (one row per source, window, metric, and dimension value; the newest
+collection wins), and `summary.md` is regenerated with totals, a funnel over one
+shared 7-day window, week-over-week changes, top lists, and data-quality notes.
+Scripts live in `scripts/analytics/`; parser tests in `scripts/analytics.test.mjs`.
 
 Download intent by source/medium and landing page comes from GA4 key events
 (`louppe_download` is the only key event that fires), listed in `summary.md`.
 
 ```sh
 node scripts/analytics/collect.mjs      # GitHub, Cloudflare, App Store lookup
-node scripts/analytics/due.mjs          # browser sources missing, failed, or 6+ days old
+node scripts/analytics/due.mjs          # browser sources missing, not ok, or 5+ days old
 node scripts/analytics/snippet.mjs ga4 '{"report":"traffic","ranges":["last7","prev7"]}'
 node scripts/analytics/save.mjs --downloads   # import browser snippet results
 node scripts/analytics/ingest.mjs       # rebuild metrics.csv and summary.md
@@ -62,14 +63,27 @@ node scripts/analytics/ingest.mjs       # rebuild metrics.csv and summary.md
 
 Browser snippets (`browser/ga4.js`, `search-console.js`, and
 `app-store-connect.js`) run in a signed-in agent browser tab and download
-their result as JSON for `save.mjs`. A T3 schedule repeating every 24 hours (it catches up on wake after a missed
-run) runs the `louppe-stats` skill unattended: command-line sources every day (GitHub keeps traffic for only
-14 days) and browser sources when `due.mjs` lists them, so they refresh weekly
-and failures retry the next day. Weekly maintenance recollects if the summary
-shows a stale or failed source. Only an expired Google or App Store Connect
-sign-in in the agent browser needs Alex.
-A failed or skipped source is saved with its reason and reported as unknown,
-never as zero. Earlier receipts were copied in as the first data points.
+their result as JSON for `save.mjs`. A T3 schedule repeating every 48 hours (it
+catches up on wake after a missed run) runs the `louppe-stats` skill unattended:
+command-line sources every run (GitHub keeps traffic for only 14 days) and browser
+sources when `due.mjs` lists them, so they refresh every third run and failures
+retry on the next run. Only an expired Google or App Store Connect sign-in in the
+agent browser needs Alex; the snippet then saves status `signed_out`. A failed,
+partial, skipped, or signed-out source is saved with its reason and reported as
+unknown, never as zero. Earlier receipts were copied in as the first data points.
+
+Metric definitions:
+
+- Cloudflare: exact page loads and visits per UTC day, queried one day at a time
+  because longer windows come back 10% sampled; sampled days are rejected. The
+  beacon went live on 2026-11-04, so earlier days are unknown.
+- App Store Connect: first-time downloads (`units`) are Store installs. Days Apple
+  has not processed yet (1–2 days) are left out, so ranges end at the last
+  processed day.
+- GitHub release downloads count every fetch of `Louppe.zip`: new direct and
+  Homebrew installs, Sparkle auto-updates, and one fetch per release by the
+  Homebrew workflow. They are not first-time installs. Assets before v1.11 were
+  deleted; those downloads are unknown.
 
 Privacy rules for the store:
 
@@ -79,7 +93,7 @@ Privacy rules for the store:
 - The app sends nothing. Store usage figures (installs, sessions, deletions,
   crashes, active devices) come from Apple's analytics for users who opted in
   to share with developers, above Apple's privacy threshold. The direct build
-  has no app analytics; GitHub release download counts include Sparkle updates.
+  has no app analytics.
 - Website figures come from consented GA4 and cookieless Cloudflare Web
   Analytics, as the privacy policy describes. Adding a source or a new kind of
   visitor data needs a matching privacy-policy update in all six languages first.

@@ -1,10 +1,11 @@
 #!/usr/bin/env node
-// Parses every <analytics>/raw/<date>/*.json (see lib.mjs) into metrics.csv (deduplicated, newest
-// collection wins) and regenerates summary.md. Usage: node scripts/analytics/ingest.mjs
-import { existsSync, readFileSync, readdirSync, writeFileSync } from 'node:fs';
+// Rebuilds metrics.csv from every <analytics>/raw/<date>/*.json (see lib.mjs; deduplicated, newest
+// collection wins) and regenerates summary.md. Raw files are the record: metrics.csv is derived, so a
+// parser fix applies to all earlier collections. Usage: node scripts/analytics/ingest.mjs
+import { existsSync, readFileSync, readdirSync } from 'node:fs';
 import { join, relative } from 'node:path';
-import { addDays, dataDir, daysBetween, rawDir } from './lib.mjs';
-import { columns, parseEnvelope } from './parsers.mjs';
+import { addDays, dataDir, daysBetween, localDate, rawDir, writeAtomic } from './lib.mjs';
+import { cloudflareSince, columns, parseEnvelope } from './parsers.mjs';
 
 export function toCsv(rows) {
   const cell = (v) => {
@@ -76,14 +77,16 @@ export function pickRange(rows, q, days) {
   return c.filter((r) => r.period_end === end).sort((a, b) => Math.abs(daysBetween(a.period_start, a.period_end) + 1 - days) - Math.abs(daysBetween(b.period_start, b.period_end) + 1 - days))[0];
 }
 
-function exactRange(rows, q, start, end) {
-  return match(rows, { granularity: 'range', dimension: '', ...q }).find((r) => r.period_start === start && r.period_end === end) || null;
-}
-
+// Sum of day rows in [start, end] → { value, days, of }, or null when no day in the window has data.
+// Every source here lists each covered day (zeros included), so days < of means partial coverage.
 function sumDays(rows, q, start, end) {
   const d = match(rows, { granularity: 'day', dimension: '', ...q }).filter((r) => r.period_start >= start && r.period_start <= end);
-  return d.length ? d.reduce((n, r) => n + r.value, 0) : null;
+  if (!d.length) return null;
+  return { value: d.reduce((n, r) => n + r.value, 0), days: new Set(d.map((r) => r.period_start)).size, of: daysBetween(start, end) + 1 };
 }
+const complete = (s) => s != null && s.days === s.of;
+const fmtSum = (s) => (!s ? '—' : complete(s) ? fmt(s.value) : `${fmt(s.value)} (${s.days} of ${s.of} days)`);
+const lastDay = (rows, q) => match(rows, { granularity: 'day', dimension: '', ...q }).map((r) => r.period_start).sort().at(-1) || null;
 
 // Last day with data; trailing all-zero days are treated as not yet processed.
 function lastDataDay(rows, q) {
@@ -105,8 +108,9 @@ function top(rows, q, days, n = 8) {
 const clip = (s, n = 60) => (s.length > n ? `${s.slice(0, n - 1)}…` : s);
 const cell = (s) => String(s).replaceAll('|', '\\|').replaceAll('\n', ' ');
 
+const signIn = { 'app-store-connect': 'App Store Connect', ga4: 'Google Analytics', 'search-console': 'Search Console' };
+
 export function summarize(rows, envelopes, now = new Date()) {
-  const today = now.toISOString().slice(0, 10);
   const out = [];
   const line = (s = '') => out.push(s);
   line('# Louppe usage and discovery summary');
@@ -127,80 +131,100 @@ export function summarize(rows, envelopes, now = new Date()) {
     if (!prev || (env.collected_at || '') >= (prev.env.collected_at || '')) latest.set(name, { path, env });
   }
   const problems = [];
+  const signedOut = new Set();
   for (const [name, { env }] of [...latest].sort()) {
-    const day = (env.collected_at || '').slice(0, 10);
-    const stale = day && daysBetween(day, today) > 8;
+    const day = env.collected_at ? localDate(new Date(env.collected_at)) : '';
+    const stale = day && daysBetween(day, localDate(now)) > 8;
     const note = [env.error, env.remaining?.length ? `remaining: ${env.remaining.join(', ')}` : '', env.truncated ? 'truncated pages' : '', stale ? 'stale (>8 days)' : ''].filter(Boolean).join('; ');
-    if (env.status !== 'ok' || stale) problems.push(`${name}: ${env.status}${note ? ` (${note})` : ''}`);
+    if (env.status !== 'ok' || env.truncated || stale) problems.push(`${name}: ${env.status}${note ? ` (${note})` : ''}`);
+    if (env.status === 'signed_out') signedOut.add(signIn[env.source] || env.source);
     line(`| ${cell(name)} | ${day} | ${env.status} | ${cell(clip(note || '', 90))} |`);
   }
   line();
+  if (signedOut.size) {
+    line(`**Needs Alex:** sign in to ${[...signedOut].sort().join(' and ')} in T3's built-in browser (Default profile). Earlier data is kept; the next run collects again.`);
+    line();
+  }
 
-  // Windows
-  const gaLast = pickRange(rows, { source: 'ga4', metric: 'sessions' }, 7);
-  const gaEnd = gaLast?.period_end;
+  // Windows: each source's latest 7 complete days.
   const wk = (end) => end && { last: [addDays(end, -6), end], prev: [addDays(end, -13), addDays(end, -7)] };
-  const ga = wk(gaEnd);
-  const gaVal = (metric, w) => (ga ? exactRange(rows, { source: 'ga4', metric }, ...ga[w])?.value ?? null : null);
-  const ascEnd = lastDataDay(rows, { source: 'app_store', metric: 'units' });
+  const gaLast = pickRange(rows, { source: 'ga4', metric: 'sessions' }, 7);
+  const ga = gaLast && daysBetween(gaLast.period_start, gaLast.period_end) === 6 ? wk(gaLast.period_end) : null;
+  const gaIn = (metric, w, extra = {}) => (w ? match(rows, { source: 'ga4', granularity: 'range', metric, dimension: '', ...extra }).find((r) => r.period_start === w[0] && r.period_end === w[1])?.value ?? null : null);
+  const ascEnd = lastDay(rows, { source: 'app_store', metric: 'units' });
   const asc = wk(ascEnd);
-  const ascSum = (metric, w) => (asc ? sumDays(rows, { source: 'app_store', metric }, ...asc[w]) : null);
-  const scEnd = lastDataDay(rows, { source: 'search_console', metric: 'impressions' });
+  const scEnd = lastDay(rows, { source: 'search_console', metric: 'impressions' });
   const sc = wk(scEnd);
-  const scSum = (metric, w) => (sc ? sumDays(rows, { source: 'search_console', metric }, ...sc[w]) : null);
-  const cfEnd = match(rows, { source: 'cloudflare', granularity: 'day', metric: 'visits' }).map((r) => r.period_start).sort().at(-1);
+  const cfEnd = lastDay(rows, { source: 'cloudflare', metric: 'visits' });
   const cf = wk(cfEnd);
-  const cfSum = (metric, w) => (cf ? sumDays(rows, { source: 'cloudflare', metric }, ...cf[w]) : null);
   const ghRepo = 'github/louppe-media-culler';
-  const ghEnd = addDays(today, -1);
+  const ghEnd = lastDay(rows, { source: ghRepo, metric: 'views' });
   const gh = wk(ghEnd);
-  const ghSum = (metric, w) => sumDays(rows, { source: ghRepo, metric }, ...gh[w]);
-  const span = (w) => (w ? `${w.last[0]}…${w.last[1]}` : 'no data');
+  const sum = (source, metric, w) => (w ? sumDays(rows, { source, metric }, ...w) : null);
+  const span = (w) => (w ? `${w[0]}…${w[1]}` : 'no data');
 
-  line('## Funnel (last 7 complete days per source)');
+  // GitHub Louppe.zip downloads between the snapshots that bracket a window.
+  const relSnaps = match(rows, { source: ghRepo, granularity: 'snapshot', metric: 'release_downloads', dimension: '' }).sort((a, b) => a.period_start.localeCompare(b.period_start));
+  const zipDelta = (w) => {
+    const base = relSnaps.filter((r) => r.period_start < w[0] && r.period_start >= addDays(w[0], -3)).at(-1);
+    const top = relSnaps.find((r) => r.period_start >= w[1] && r.period_start <= addDays(w[1], 2));
+    return base && top ? `${top.value - base.value} (snapshots ${base.period_start}→${top.period_start})` : '—';
+  };
+
+  // Funnel: one shared window, GA4's latest 7 days (GA4 has no daily rows), else the earliest
+  // latest-day among daily sources, so every step covers the same dates.
+  const fEnd = ga?.last[1] || [cfEnd, ascEnd].filter(Boolean).sort()[0];
+  const fw = fEnd ? [addDays(fEnd, -6), fEnd] : null;
+  line(`## Funnel (${fw ? span(fw) : 'no data'})`);
   line();
-  line('Steps come from different systems with different coverage; read them side by side, not as exact conversion rates.');
+  line('All steps use the same 7 days. Days are UTC for Cloudflare and GitHub and Europe/Copenhagen for GA4. Sources differ in coverage, so read them side by side, not as conversion rates. "n of 7 days" marks a source that covers only part of the window; "—" means unknown, not zero.');
   line();
-  line('| Step | Value | Window | Source |');
-  line('| --- | --- | --- | --- |');
-  line(`| Website visits (all visitors) | ${fmt(cfSum('visits', 'last'))} | ${span(cf)} | Cloudflare Web Analytics |`);
-  line(`| Website sessions (consented) | ${fmt(gaVal('sessions', 'last'))} | ${span(ga)} | GA4 |`);
-  line(`| Download clicks (consented) | ${fmt(gaVal('louppe_download_event_count', 'last'))} | ${span(ga)} | GA4 \`louppe_download\` |`);
-  const gaStoreClicks = ga && match(rows, { source: 'ga4', granularity: 'range', metric: 'louppe_download_event_count', dimension: 'download_method', dimension_value: 'app_store' }).find((r) => r.period_start === ga.last[0] && r.period_end === ga.last[1]);
-  line(`| – of which App Store clicks | ${fmt(gaStoreClicks?.value ?? null)} | ${span(ga)} | GA4 \`download_method\` |`);
-  line(`| Store product page views | ${fmt(ascSum('page_view_count', 'last'))} | ${span(asc)} | App Store Connect |`);
-  line(`| Store first-time downloads | ${fmt(ascSum('units', 'last'))} | ${span(asc)} | App Store Connect |`);
-  const relNow = match(rows, { source: ghRepo, granularity: 'snapshot', metric: 'release_downloads', dimension: '' }).sort((a, b) => a.period_start.localeCompare(b.period_start));
-  const relLatest = relNow.at(-1);
-  const earlier = relNow.filter((r) => r.period_start < (relLatest?.period_start || ''));
-  const relBase = earlier.filter((r) => r.period_start <= addDays(relLatest?.period_start || today, -7)).at(-1) || earlier.at(-1);
-  line(`| GitHub release downloads (cumulative) | ${fmt(relLatest?.value ?? null)}${relBase ? ` (+${relLatest.value - relBase.value} since ${relBase.period_start})` : ''} | snapshot ${relLatest?.period_start || '—'} | GitHub assets |`);
+  line('| Step | Value | Source |');
+  line('| --- | --- | --- |');
+  if (fw) {
+    line(`| Website visits (all visitors) | ${fmtSum(sum('cloudflare', 'visits', fw))} | Cloudflare Web Analytics |`);
+    line(`| Website sessions (consented) | ${fmt(gaIn('sessions', fw))} | GA4 |`);
+    line(`| Download clicks (consented) | ${fmt(gaIn('louppe_download_event_count', fw))} | GA4 \`louppe_download\` |`);
+    line(`| – of which App Store clicks | ${fmt(gaIn('louppe_download_event_count', fw, { dimension: 'download_method', dimension_value: 'app_store' }))} | GA4 \`download_method\` |`);
+    line(`| Store product page views | ${fmtSum(sum('app_store', 'page_view_count', fw))} | App Store Connect |`);
+    line(`| Store first-time downloads | ${fmtSum(sum('app_store', 'units', fw))} | App Store Connect |`);
+    line(`| GitHub Louppe.zip downloads (include updates) | ${zipDelta(fw)} | GitHub release assets |`);
+  }
   line();
 
   const storeRange = pickRange(rows, { source: 'app_store', metric: 'units' }, 9999);
   if (storeRange) {
     const web = match(rows, { source: 'app_store', granularity: 'range', metric: 'units', dimension: 'domain_referrer', dimension_value: 'louppe.eu' }).find((r) => r.period_start === storeRange.period_start && r.period_end === storeRange.period_end);
     const gaLife = match(rows, { source: 'ga4', granularity: 'range', metric: 'louppe_download_event_count', dimension: 'download_method', dimension_value: 'app_store' }).sort((a, b) => b.period_end.localeCompare(a.period_end) || a.period_start.localeCompare(b.period_start))[0];
-    line(`Since Store release (${storeRange.period_start}…${storeRange.period_end}): ${fmt(storeRange.value)} first-time downloads, ${fmt(web?.value ?? null)} of them referred by louppe.eu. GA4 recorded ${fmt(gaLife?.value ?? null)} App Store clicks (${gaLife ? `${gaLife.period_start}…${gaLife.period_end}` : '—'}).`);
+    line(`Since Store release (${storeRange.period_start}…${storeRange.period_end}, the last day Apple has processed): ${fmt(storeRange.value)} Store first-time downloads, ${fmt(web?.value ?? null)} of them referred by louppe.eu. GA4 recorded ${fmt(gaLife?.value ?? null)} consented App Store clicks (${gaLife ? `${gaLife.period_start}…${gaLife.period_end}` : '—'}).`);
     line();
   }
 
-  line('## Week over week');
+  line('## Week over week (latest 7 days per source)');
   line();
   line('| Metric | Last 7 days | Previous 7 | Change | Last window |');
   line('| --- | --- | --- | --- | --- |');
-  const wow = (label, a, b, w) => line(`| ${label} | ${fmt(a)} | ${fmt(b)} | ${pct(a, b)} | ${span(w)} |`);
-  wow('Cloudflare visits', cfSum('visits', 'last'), cfSum('visits', 'prev'), cf);
-  wow('Cloudflare page views', cfSum('page_views', 'last'), cfSum('page_views', 'prev'), cf);
-  wow('GA4 sessions', gaVal('sessions', 'last'), gaVal('sessions', 'prev'), ga);
-  wow('GA4 download clicks', gaVal('louppe_download_event_count', 'last'), gaVal('louppe_download_event_count', 'prev'), ga);
-  wow('Search clicks', scSum('clicks', 'last'), scSum('clicks', 'prev'), sc);
-  wow('Search impressions', scSum('impressions', 'last'), scSum('impressions', 'prev'), sc);
-  wow('Store impressions', ascSum('impressions_total', 'last'), ascSum('impressions_total', 'prev'), asc);
-  wow('Store page views', ascSum('page_view_count', 'last'), ascSum('page_view_count', 'prev'), asc);
-  wow('Store first-time downloads', ascSum('units', 'last'), ascSum('units', 'prev'), asc);
-  wow('GitHub repo views (app)', ghSum('views', 'last'), ghSum('views', 'prev'), gh);
-  wow('GitHub new stars (app)', ghSum('new_stars', 'last') ?? 0, ghSum('new_stars', 'prev') ?? 0, gh);
+  const wow = (label, a, b, w) => {
+    const change = complete(a) && complete(b) ? pct(a.value, b.value) : '—';
+    line(`| ${label} | ${fmtSum(a)} | ${fmtSum(b)} | ${change} | ${w ? span(w.last) : 'no data'} |`);
+  };
+  const gaWow = (label, metric) => {
+    const [a, b] = ['last', 'prev'].map((k) => gaIn(metric, ga?.[k]));
+    line(`| ${label} | ${fmt(a)} | ${fmt(b)} | ${pct(a, b)} | ${ga ? span(ga.last) : 'no data'} |`);
+  };
+  wow('Cloudflare visits', sum('cloudflare', 'visits', cf?.last), sum('cloudflare', 'visits', cf?.prev), cf);
+  wow('Cloudflare page views', sum('cloudflare', 'page_views', cf?.last), sum('cloudflare', 'page_views', cf?.prev), cf);
+  gaWow('GA4 sessions', 'sessions');
+  gaWow('GA4 download clicks', 'louppe_download_event_count');
+  wow('Search clicks', sum('search_console', 'clicks', sc?.last), sum('search_console', 'clicks', sc?.prev), sc);
+  wow('Search impressions', sum('search_console', 'impressions', sc?.last), sum('search_console', 'impressions', sc?.prev), sc);
+  wow('Store impressions', sum('app_store', 'impressions_total', asc?.last), sum('app_store', 'impressions_total', asc?.prev), asc);
+  wow('Store page views', sum('app_store', 'page_view_count', asc?.last), sum('app_store', 'page_view_count', asc?.prev), asc);
+  wow('Store first-time downloads', sum('app_store', 'units', asc?.last), sum('app_store', 'units', asc?.prev), asc);
+  wow('GitHub repo views (app)', sum(ghRepo, 'views', gh?.last), sum(ghRepo, 'views', gh?.prev), gh);
+  // Star dates cover all history, so a day without stars is a real zero.
+  const stars = (w) => w && { value: sumDays(rows, { source: ghRepo, metric: 'new_stars' }, ...w)?.value ?? 0, days: 7, of: 7 };
+  wow('GitHub new stars (app)', stars(gh?.last), stars(gh?.prev), gh);
   line();
 
   line('## Latest totals');
@@ -211,32 +235,34 @@ export function summarize(rows, envelopes, now = new Date()) {
     const r = pickRange(rows, { source, metric }, days);
     if (r) line(`| ${label} | ${fmt(r.value)} | ${r.period_start}…${r.period_end} | ${source} |`);
   };
-  total('Sessions', 'ga4', 'sessions', 28);
-  total('Sessions (all time)', 'ga4', 'sessions', 9999);
-  total('Download clicks', 'ga4', 'louppe_download_event_count', 28);
-  total('Download clicks (all time)', 'ga4', 'louppe_download_event_count', 9999);
-  total('Search clicks', 'search_console', 'clicks', 9999);
-  total('Search impressions', 'search_console', 'impressions', 9999);
-  total('Average search position', 'search_console', 'position', 9999);
-  total('Store first-time downloads', 'app_store', 'units', 9999);
-  total('Store redownloads', 'app_store', 'redownloads', 9999);
-  total('Store impressions', 'app_store', 'impressions_total', 9999);
-  total('Store page views', 'app_store', 'page_view_count', 9999);
-  total('Store app installs (sharing users)', 'app_store', 'installs', 9999);
-  total('Store app sessions (sharing users)', 'app_store', 'sessions', 9999);
-  total('Store app deletions (sharing users)', 'app_store', 'uninstalls', 9999);
-  total('Store app crashes (sharing users)', 'app_store', 'crashes', 9999);
-  total('Store tip purchases', 'app_store', 'iap', 9999);
-  total('Store tip proceeds', 'app_store', 'proceeds', 9999);
+  total('Sessions, 28 days', 'ga4', 'sessions', 28);
+  total('Sessions, all time', 'ga4', 'sessions', 9999);
+  total('Download clicks, 28 days', 'ga4', 'louppe_download_event_count', 28);
+  total('Download clicks, all time', 'ga4', 'louppe_download_event_count', 9999);
+  total('Search clicks, 3 months', 'search_console', 'clicks', 9999);
+  total('Search impressions, 3 months', 'search_console', 'impressions', 9999);
+  total('Average search position, 3 months', 'search_console', 'position', 9999);
+  total('Store first-time downloads, since release', 'app_store', 'units', 9999);
+  total('Store redownloads, since release', 'app_store', 'redownloads', 9999);
+  total('Store updates, since release', 'app_store', 'updates', 9999);
+  total('Store impressions, since release', 'app_store', 'impressions_total', 9999);
+  total('Store page views, since release', 'app_store', 'page_view_count', 9999);
+  total('Store app installs (sharing users), since release', 'app_store', 'installs', 9999);
+  total('Store app sessions (sharing users), since release', 'app_store', 'sessions', 9999);
+  total('Store app deletions (sharing users), since release', 'app_store', 'uninstalls', 9999);
+  total('Store app crashes (sharing users), since release', 'app_store', 'crashes', 9999);
+  total('Store tip purchases, since release', 'app_store', 'iap', 9999);
+  total('Store tip proceeds, since release', 'app_store', 'proceeds', 9999);
   const rolling = lastDataDay(rows, { source: 'app_store', metric: 'rolling_active_devices' });
   const rollingRow = rolling && match(rows, { source: 'app_store', granularity: 'day', dimension: '', metric: 'rolling_active_devices' }).find((r) => r.period_start === rolling);
   if (rollingRow) line(`| Store active devices, 30 days (sharing users) | ${fmt(rollingRow.value)} | 30 days to ${rolling} | app_store |`);
-  total('Cloudflare visits', 'cloudflare', 'visits', 28);
+  total('Cloudflare visits, up to 28 days', 'cloudflare', 'visits', 28);
   total('GitHub repo views, 14 days (app)', ghRepo, 'views', 14);
   const snap = (label, source, metric, dimension = '') => {
     const r = match(rows, { source, granularity: 'snapshot', metric, dimension }).sort((a, b) => a.period_start.localeCompare(b.period_start)).at(-1);
     if (r) line(`| ${label} | ${dimension ? r.dimension_value : fmt(r.value)} | ${r.period_start} | ${source} |`);
   };
+  snap('GitHub Louppe.zip downloads since v1.11 (include updates)', ghRepo, 'release_downloads');
   snap('GitHub stars (app)', ghRepo, 'stars');
   snap('GitHub stars (website)', 'github/louppe-website', 'stars');
   snap('Store ratings', 'itunes', 'user_rating_count');
@@ -272,7 +298,9 @@ export function summarize(rows, envelopes, now = new Date()) {
   list('Store downloads by campaign (ct)', { source: 'app_store', metric: 'units', dimension: 'campaign_id' }, 9999, 'downloads');
   list('Store downloads by storefront', { source: 'app_store', metric: 'units', dimension: 'storefront' }, 9999, 'downloads');
   list('GitHub referrers (app)', { source: ghRepo, metric: 'referrer_views', dimension: 'referrer' }, 14, 'views');
-  list('GitHub release downloads (app)', { source: ghRepo, metric: 'release_downloads', dimension: 'release' }, 9999, 'downloads');
+  const relDay = relSnaps.at(-1)?.period_start;
+  const rel = match(rows, { source: ghRepo, granularity: 'snapshot', metric: 'release_downloads', dimension: 'release', period_start: relDay });
+  if (rel.length) line(`**GitHub Louppe.zip downloads by release** (cumulative, ${relDay}): ${rel.sort((a, b) => b.dimension_value.localeCompare(a.dimension_value, 'en', { numeric: true })).map((r) => `${r.dimension_value} ${fmt(r.value)}`).join(' · ')}\n`);
 
   line('## Data quality');
   line();
@@ -280,13 +308,14 @@ export function summarize(rows, envelopes, now = new Date()) {
     'GA4 loads only after consent, so sessions and download clicks are a sample, not totals; Cloudflare counts all visitors without cookies and differs by design. Never sum the two.',
     "GA4 Denmark traffic includes Alex's own and verification visits; the 21–22 October consent tests generated page views.",
     'App Store Connect first-time downloads are the install figure; GA4 clicks are intent. Campaign (ct) tokens exist since 2026-11-04, so campaign rows start then.',
-    `App Store Connect lags 1–2 days; its windows end at the last day with data (${ascEnd || '—'}). Search Console lags 2–3 days (last day ${scEnd || '—'}).`,
+    `App Store Connect lags 1–2 days; days Apple has not processed are left out, not counted as zero (last processed day ${ascEnd || '—'}). Search Console lags 2–3 days (last day ${scEnd || '—'}).`,
     'Store app installs, sessions, deletions, crashes, and active devices count only users who share analytics with developers, so they undercount. Apple hides groups below its privacy threshold.',
-    'GitHub release downloads include Sparkle updates (the appcast points at the release ZIP), so the count for each release is new direct downloads plus updating installs. The direct build has no app analytics.',
-    'GitHub keeps traffic for 14 days and counts days in UTC; unique visitor counts per day cannot be summed into unique people.',
+    "GitHub Louppe.zip downloads count every fetch of the release ZIP: new direct and Homebrew installs, Sparkle auto-updates of existing installs (on by default, checked daily), and one fetch per release by the Homebrew workflow. They are not first-time installs. Assets of v1.0–v1.10 were deleted, so downloads before v1.11 (2026-10-15) are unknown. The direct build has no app analytics.",
+    'GitHub keeps traffic for 14 days and counts days in UTC; unique visitor counts per day cannot be summed into unique people. Referrer and path lists are GitHub\'s top 10.',
+    `Cloudflare figures are exact: each UTC day is queried separately because longer windows come back 10% sampled, and sampled days are rejected. The beacon went live on ${cloudflareSince} (about 05:50 CET), so earlier days are unknown.`,
     'Rows with granularity `approx_range` come from hand-written receipts whose exact window is unknown.',
   ];
-  if (!cfEnd) notes.push('Cloudflare Web Analytics returned no page loads yet (beacon added 2026-11-04).');
+  if (!cfEnd) notes.push('Cloudflare Web Analytics has no exact daily data yet.');
   const below = match(rows, { metric: /_below_threshold$/ });
   if (below.length) notes.push(`${below.length} App Store Connect groups are below Apple's privacy threshold.`);
   const sitemapBad = match(rows, { source: 'search_console', metric: 'sitemap_fetch_ok', value: 0 }).sort((a, b) => a.period_start.localeCompare(b.period_start)).at(-1);
@@ -299,12 +328,10 @@ export function summarize(rows, envelopes, now = new Date()) {
 
 if (import.meta.url === `file://${process.argv[1]}`) {
   const envelopes = readRaw();
-  const parsed = envelopes.flatMap(({ path, env }) => parseEnvelope(env, path));
+  const rows = merge(envelopes.flatMap(({ path, env }) => parseEnvelope(env, path)));
   const csvPath = join(dataDir, 'metrics.csv');
-  const existing = existsSync(csvPath) ? fromCsv(readFileSync(csvPath, 'utf8')) : [];
-  const rows = merge(existing, parsed);
-  writeFileSync(csvPath, toCsv(rows));
-  writeFileSync(join(dataDir, 'summary.md'), summarize(rows, envelopes));
-  console.log(`${envelopes.length} raw files, ${parsed.length} parsed rows, ${rows.length} rows in ${csvPath}`);
+  writeAtomic(csvPath, toCsv(rows));
+  writeAtomic(join(dataDir, 'summary.md'), summarize(rows, envelopes));
+  console.log(`${envelopes.length} raw files, ${rows.length} rows in ${csvPath}`);
   console.log(join(dataDir, 'summary.md'));
 }

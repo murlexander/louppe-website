@@ -6,15 +6,17 @@
 import { readFileSync, readdirSync, statSync } from 'node:fs';
 import { homedir } from 'node:os';
 import { join } from 'node:path';
-import { localDate, writeRaw } from './lib.mjs';
+import { localDate, normalizeStatus, writeRaw } from './lib.mjs';
 
 const downloadsRoot = process.env.T3_BROWSER_DOWNLOADS || join(homedir(), '.t3', 'userdata', 'server-browser', 'downloads');
 
-function save(payload) {
-  if (!payload?.source || !payload.collected_at) throw new Error('Expected a snippet envelope with source and collected_at');
-  if (payload.status === 'navigating') throw new Error('Snippet only navigated; run it again before saving');
+function save(raw) {
+  if (!raw?.source || !raw.collected_at) throw new Error('Expected a snippet envelope with source and collected_at');
+  if (raw.status === 'navigating') throw new Error('Snippet only navigated; run it again before saving');
+  const payload = normalizeStatus(raw);
   const file = writeRaw(payload, localDate(new Date(payload.collected_at)));
-  console.log(`${payload.source}: ${payload.status}${payload.remaining?.length ? ` (remaining ${payload.remaining.join(', ')})` : ''} -> ${file}`);
+  const note = [payload.error, payload.remaining?.length && `remaining ${payload.remaining.join(', ')}`].filter(Boolean).join('; ');
+  console.log(`${payload.name || payload.source}: ${payload.status}${note ? ` (${note})` : ''} -> ${file}`);
 }
 
 function* walk(dir) {
