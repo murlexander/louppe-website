@@ -5,7 +5,7 @@
 import { existsSync, readFileSync, readdirSync } from 'node:fs';
 import { join, relative } from 'node:path';
 import { addDays, dataDir, daysBetween, localDate, rawDir, writeAtomic } from './lib.mjs';
-import { cloudflareSince, columns, parseEnvelope } from './parsers.mjs';
+import { cloudflareSince, columns, finishStoreReports, parseEnvelope } from './parsers.mjs';
 
 export function toCsv(rows) {
   const cell = (v) => {
@@ -46,6 +46,11 @@ export function merge(...lists) {
   }
   return [...best.values()].sort((a, b) => a.source.localeCompare(b.source) || a.metric.localeCompare(b.metric)
     || a.dimension.localeCompare(b.dimension) || a.period_start.localeCompare(b.period_start) || String(a.dimension_value).localeCompare(String(b.dimension_value)));
+}
+
+// All raw envelopes -> the rows of metrics.csv.
+export function buildRows(envelopes) {
+  return merge(finishStoreReports(merge(envelopes.flatMap(({ path, env }) => parseEnvelope(env, path)))));
 }
 
 export function readRaw(dir = rawDir) {
@@ -113,6 +118,13 @@ const signIn = { 'app-store-connect': 'App Store Connect', ga4: 'Google Analytic
 export function summarize(rows, envelopes, now = new Date()) {
   const out = [];
   const line = (s = '') => out.push(s);
+  // App Store figures come from the dashboard snippet (app_store) or the API reports (app_store_reports),
+  // whichever has the later processed day; the dashboard wins a tie.
+  const storeEnd = (source) => lastDay(rows, { source, metric: 'units' });
+  const store = (storeEnd('app_store_reports') || '') > (storeEnd('app_store') || '') ? 'app_store_reports' : 'app_store';
+  const storeLabel = store === 'app_store' ? 'App Store Connect' : 'App Store Connect API';
+  // Fresh API reports make a browser sign-in to App Store Connect unnecessary.
+  const apiCovers = store === 'app_store_reports' && daysBetween(storeEnd(store), localDate(now)) <= 5;
   line('# Louppe usage and discovery summary');
   line();
   line(`Generated ${now.toISOString().replace(/\.\d+Z$/, 'Z')} by \`node scripts/analytics/ingest.mjs\` from ${envelopes.length} raw files (${rows.length} rows in \`metrics.csv\`). Private: never copy visitor data into tracked files.`);
@@ -136,9 +148,10 @@ export function summarize(rows, envelopes, now = new Date()) {
     const day = env.collected_at ? localDate(new Date(env.collected_at)) : '';
     const stale = day && daysBetween(day, localDate(now)) > 8;
     const note = [env.error, env.remaining?.length ? `remaining: ${env.remaining.join(', ')}` : '', env.truncated ? 'truncated pages' : '', stale ? 'stale (>8 days)' : ''].filter(Boolean).join('; ');
-    if (env.status !== 'ok' || env.truncated || stale) problems.push(`${name}: ${env.status}${note ? ` (${note})` : ''}`);
-    if (env.status === 'signed_out') signedOut.add(signIn[env.source] || env.source);
-    line(`| ${cell(name)} | ${day} | ${env.status} | ${cell(clip(note || '', 90))} |`);
+    const covered = apiCovers && env.source === 'app-store-connect';
+    if (!covered && (env.status !== 'ok' || env.truncated || stale)) problems.push(`${name}: ${env.status}${note ? ` (${note})` : ''}`);
+    if (!covered && env.status === 'signed_out') signedOut.add(signIn[env.source] || env.source);
+    line(`| ${cell(name)} | ${day} | ${env.status} | ${cell(clip([note, covered && 'not needed: API reports are fresh'].filter(Boolean).join('; '), 90))} |`);
   }
   line();
   if (signedOut.size) {
@@ -151,7 +164,7 @@ export function summarize(rows, envelopes, now = new Date()) {
   const gaLast = pickRange(rows, { source: 'ga4', metric: 'sessions' }, 7);
   const ga = gaLast && daysBetween(gaLast.period_start, gaLast.period_end) === 6 ? wk(gaLast.period_end) : null;
   const gaIn = (metric, w, extra = {}) => (w ? match(rows, { source: 'ga4', granularity: 'range', metric, dimension: '', ...extra }).find((r) => r.period_start === w[0] && r.period_end === w[1])?.value ?? null : null);
-  const ascEnd = lastDay(rows, { source: 'app_store', metric: 'units' });
+  const ascEnd = lastDay(rows, { source: store, metric: 'units' });
   const asc = wk(ascEnd);
   const scEnd = lastDay(rows, { source: 'search_console', metric: 'impressions' });
   const sc = wk(scEnd);
@@ -186,15 +199,15 @@ export function summarize(rows, envelopes, now = new Date()) {
     line(`| Website sessions (consented) | ${fmt(gaIn('sessions', fw))} | GA4 |`);
     line(`| Download clicks (consented) | ${fmt(gaIn('louppe_download_event_count', fw))} | GA4 \`louppe_download\` |`);
     line(`| – of which App Store clicks | ${fmt(gaIn('louppe_download_event_count', fw, { dimension: 'download_method', dimension_value: 'app_store' }))} | GA4 \`download_method\` |`);
-    line(`| Store product page views | ${fmtSum(sum('app_store', 'page_view_count', fw))} | App Store Connect |`);
-    line(`| Store first-time downloads | ${fmtSum(sum('app_store', 'units', fw))} | App Store Connect |`);
+    line(`| Store product page views | ${fmtSum(sum(store, 'page_view_count', fw))} | ${storeLabel} |`);
+    line(`| Store first-time downloads | ${fmtSum(sum(store, 'units', fw))} | ${storeLabel} |`);
     line(`| GitHub Louppe.zip downloads (include updates) | ${zipDelta(fw)} | GitHub release assets |`);
   }
   line();
 
-  const storeRange = pickRange(rows, { source: 'app_store', metric: 'units' }, 9999);
+  const storeRange = pickRange(rows, { source: store, metric: 'units' }, 9999);
   if (storeRange) {
-    const web = match(rows, { source: 'app_store', granularity: 'range', metric: 'units', dimension: 'domain_referrer', dimension_value: 'louppe.eu' }).find((r) => r.period_start === storeRange.period_start && r.period_end === storeRange.period_end);
+    const web = match(rows, { source: store, granularity: 'range', metric: 'units', dimension: 'domain_referrer', dimension_value: 'louppe.eu' }).find((r) => r.period_start === storeRange.period_start && r.period_end === storeRange.period_end);
     const gaLife = match(rows, { source: 'ga4', granularity: 'range', metric: 'louppe_download_event_count', dimension: 'download_method', dimension_value: 'app_store' }).sort((a, b) => b.period_end.localeCompare(a.period_end) || a.period_start.localeCompare(b.period_start))[0];
     line(`Since Store release (${storeRange.period_start}…${storeRange.period_end}, the last day Apple has processed): ${fmt(storeRange.value)} Store first-time downloads, ${fmt(web?.value ?? null)} of them referred by louppe.eu. GA4 recorded ${fmt(gaLife?.value ?? null)} consented App Store clicks (${gaLife ? `${gaLife.period_start}…${gaLife.period_end}` : '—'}).`);
     line();
@@ -218,9 +231,9 @@ export function summarize(rows, envelopes, now = new Date()) {
   gaWow('GA4 download clicks', 'louppe_download_event_count');
   wow('Search clicks', sum('search_console', 'clicks', sc?.last), sum('search_console', 'clicks', sc?.prev), sc);
   wow('Search impressions', sum('search_console', 'impressions', sc?.last), sum('search_console', 'impressions', sc?.prev), sc);
-  wow('Store impressions', sum('app_store', 'impressions_total', asc?.last), sum('app_store', 'impressions_total', asc?.prev), asc);
-  wow('Store page views', sum('app_store', 'page_view_count', asc?.last), sum('app_store', 'page_view_count', asc?.prev), asc);
-  wow('Store first-time downloads', sum('app_store', 'units', asc?.last), sum('app_store', 'units', asc?.prev), asc);
+  wow('Store impressions', sum(store, 'impressions_total', asc?.last), sum(store, 'impressions_total', asc?.prev), asc);
+  wow('Store page views', sum(store, 'page_view_count', asc?.last), sum(store, 'page_view_count', asc?.prev), asc);
+  wow('Store first-time downloads', sum(store, 'units', asc?.last), sum(store, 'units', asc?.prev), asc);
   wow('GitHub repo views (app)', sum(ghRepo, 'views', gh?.last), sum(ghRepo, 'views', gh?.prev), gh);
   // Star dates cover all history, so a day without stars is a real zero.
   const stars = (w) => w && { value: sumDays(rows, { source: ghRepo, metric: 'new_stars' }, ...w)?.value ?? 0, days: 7, of: 7 };
@@ -242,20 +255,21 @@ export function summarize(rows, envelopes, now = new Date()) {
   total('Search clicks, 3 months', 'search_console', 'clicks', 9999);
   total('Search impressions, 3 months', 'search_console', 'impressions', 9999);
   total('Average search position, 3 months', 'search_console', 'position', 9999);
-  total('Store first-time downloads, since release', 'app_store', 'units', 9999);
-  total('Store redownloads, since release', 'app_store', 'redownloads', 9999);
-  total('Store updates, since release', 'app_store', 'updates', 9999);
-  total('Store impressions, since release', 'app_store', 'impressions_total', 9999);
-  total('Store page views, since release', 'app_store', 'page_view_count', 9999);
-  total('Store app installs (sharing users), since release', 'app_store', 'installs', 9999);
-  total('Store app sessions (sharing users), since release', 'app_store', 'sessions', 9999);
-  total('Store app deletions (sharing users), since release', 'app_store', 'uninstalls', 9999);
-  total('Store app crashes (sharing users), since release', 'app_store', 'crashes', 9999);
-  total('Store tip purchases, since release', 'app_store', 'iap', 9999);
-  total('Store tip proceeds, since release', 'app_store', 'proceeds', 9999);
-  const rolling = lastDataDay(rows, { source: 'app_store', metric: 'rolling_active_devices' });
-  const rollingRow = rolling && match(rows, { source: 'app_store', granularity: 'day', dimension: '', metric: 'rolling_active_devices' }).find((r) => r.period_start === rolling);
-  if (rollingRow) line(`| Store active devices, 30 days (sharing users) | ${fmt(rollingRow.value)} | 30 days to ${rolling} | app_store |`);
+  total('Store first-time downloads, since release', store, 'units', 9999);
+  total('Store redownloads, since release', store, 'redownloads', 9999);
+  total('Store updates, since release', store, 'updates', 9999);
+  total('Store impressions, since release', store, 'impressions_total', 9999);
+  total('Store page views, since release', store, 'page_view_count', 9999);
+  total('Store app installs (sharing users), since release', store, 'installs', 9999);
+  total('Store app sessions (sharing users), since release', store, 'sessions', 9999);
+  total('Store app deletions (sharing users), since release', store, 'uninstalls', 9999);
+  total('Store app crashes (sharing users), since release', store, 'crashes', 9999);
+  total('Store tip purchases, since release', store, 'iap', 9999);
+  total('Store tip proceeds, since release', store, 'proceeds', 9999);
+  total('Store tip proceeds (USD), since release', store, 'proceeds_usd', 9999);
+  const rolling = lastDataDay(rows, { source: store, metric: 'rolling_active_devices' });
+  const rollingRow = rolling && match(rows, { source: store, granularity: 'day', dimension: '', metric: 'rolling_active_devices' }).find((r) => r.period_start === rolling);
+  if (rollingRow) line(`| Store active devices, 30 days (sharing users) | ${fmt(rollingRow.value)} | 30 days to ${rolling} | ${store} |`);
   total('Cloudflare visits, up to 28 days', 'cloudflare', 'visits', 28);
   total('GitHub repo views, 14 days (app)', ghRepo, 'views', 14);
   const snap = (label, source, metric, dimension = '') => {
@@ -293,10 +307,10 @@ export function summarize(rows, envelopes, now = new Date()) {
   list('Search queries', { source: 'search_console', metric: 'impressions', dimension: 'query' }, 9999, 'impressions');
   list('Search pages', { source: 'search_console', metric: 'impressions', dimension: 'page' }, 9999, 'impressions');
   list('Search countries', { source: 'search_console', metric: 'clicks', dimension: 'country' }, 9999, 'clicks');
-  list('Store downloads by source', { source: 'app_store', metric: 'units', dimension: 'source' }, 9999, 'downloads');
-  list('Store downloads by web referrer', { source: 'app_store', metric: 'units', dimension: 'domain_referrer' }, 9999, 'downloads');
-  list('Store downloads by campaign (ct)', { source: 'app_store', metric: 'units', dimension: 'campaign_id' }, 9999, 'downloads');
-  list('Store downloads by storefront', { source: 'app_store', metric: 'units', dimension: 'storefront' }, 9999, 'downloads');
+  list('Store downloads by source', { source: store, metric: 'units', dimension: 'source' }, 9999, 'downloads');
+  list('Store downloads by web referrer', { source: store, metric: 'units', dimension: 'domain_referrer' }, 9999, 'downloads');
+  list('Store downloads by campaign (ct)', { source: store, metric: 'units', dimension: 'campaign_id' }, 9999, 'downloads');
+  list('Store downloads by storefront', { source: store, metric: 'units', dimension: 'storefront' }, 9999, 'downloads');
   list('GitHub referrers (app)', { source: ghRepo, metric: 'referrer_views', dimension: 'referrer' }, 14, 'views');
   const relDay = relSnaps.at(-1)?.period_start;
   const rel = match(rows, { source: ghRepo, granularity: 'snapshot', metric: 'release_downloads', dimension: 'release', period_start: relDay });
@@ -315,6 +329,15 @@ export function summarize(rows, envelopes, now = new Date()) {
     `Cloudflare figures are exact: each UTC day is queried separately because longer windows come back 10% sampled, and sampled days are rejected. The beacon went live on ${cloudflareSince} (about 05:50 CET), so earlier days are unknown.`,
     'Rows with granularity `approx_range` come from hand-written receipts whose exact window is unknown.',
   ];
+  notes.push(store === 'app_store_reports'
+    ? `Store figures come from Apple's Analytics Reports through the App Store Connect API (source \`app_store_reports\`, newer than the dashboard's last day ${storeEnd('app_store') || '—'}). They can differ slightly from the dashboard; deletions, sessions, and crashes still count only users who share analytics.`
+    : `Store figures come from the App Store Connect dashboard (source \`app_store\`); API reports reach ${storeEnd('app_store_reports') || 'no day yet'}.`);
+  const both = [...new Set(match(rows, { source: 'app_store', granularity: 'day', dimension: '', metric: 'units' }).map((r) => r.period_start))]
+    .filter((d) => match(rows, { source: 'app_store_reports', granularity: 'day', dimension: '', metric: 'units', period_start: d }).length);
+  if (both.length) {
+    const tot = (source) => both.reduce((n, d) => n + (match(rows, { source, granularity: 'day', dimension: '', metric: 'units', period_start: d })[0]?.value || 0), 0);
+    notes.push(`First-time downloads on the ${both.length} day(s) both App Store sources cover: ${tot('app_store')} (dashboard) and ${tot('app_store_reports')} (API reports).`);
+  }
   if (!cfEnd) notes.push('Cloudflare Web Analytics has no exact daily data yet.');
   const below = match(rows, { metric: /_below_threshold$/ });
   if (below.length) notes.push(`${below.length} App Store Connect groups are below Apple's privacy threshold.`);
@@ -328,7 +351,7 @@ export function summarize(rows, envelopes, now = new Date()) {
 
 if (import.meta.url === `file://${process.argv[1]}`) {
   const envelopes = readRaw();
-  const rows = merge(envelopes.flatMap(({ path, env }) => parseEnvelope(env, path)));
+  const rows = buildRows(envelopes);
   const csvPath = join(dataDir, 'metrics.csv');
   writeAtomic(csvPath, toCsv(rows));
   writeAtomic(join(dataDir, 'summary.md'), summarize(rows, envelopes));

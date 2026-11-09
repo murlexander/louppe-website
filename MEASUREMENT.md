@@ -54,7 +54,7 @@ Download intent by source/medium and landing page comes from GA4 key events
 (`louppe_download` is the only key event that fires), listed in `summary.md`.
 
 ```sh
-node scripts/analytics/collect.mjs      # GitHub, Cloudflare, App Store lookup
+node scripts/analytics/collect.mjs      # GitHub, Cloudflare, App Store lookup, App Store Connect API reports
 node scripts/analytics/due.mjs          # browser sources missing, not ok, or 5+ days old
 node scripts/analytics/snippet.mjs ga4 '{"report":"traffic","ranges":["last7","prev7"]}'
 node scripts/analytics/save.mjs --downloads   # import browser snippet results
@@ -67,8 +67,8 @@ their result as JSON for `save.mjs`. A T3 schedule repeating every 48 hours (it
 catches up on wake after a missed run) runs the `louppe-stats` skill unattended:
 command-line sources every run (GitHub keeps traffic for only 14 days) and browser
 sources when `due.mjs` lists them, so they refresh every third run and failures
-retry on the next run. Only an expired Google or App Store Connect sign-in in the
-agent browser needs Alex; the snippet then saves status `signed_out`. A failed,
+retry on the next run. Only an expired Google sign-in in the agent browser, or an
+App Store Connect one while the API reports are stale, needs Alex; the snippet then saves status `signed_out`. A failed,
 partial, skipped, or signed-out source is saved with its reason and reported as
 unknown, never as zero. Earlier receipts were copied in as the first data points.
 
@@ -80,6 +80,13 @@ Metric definitions:
 - App Store Connect: first-time downloads (`units`) are Store installs. Days Apple
   has not processed yet (1–2 days) are left out, so ranges end at the last
   processed day.
+- App Store Connect API (`app-store-reports`, source `app_store_reports`): Apple's
+  Analytics Reports through a read-only team key (Sales and Reports) in Keychain
+  service `louppe-asc-api`. Each run downloads only daily report instances no
+  earlier raw file holds; ingest keeps the newest file per day and derives the
+  since-release totals. The summary uses it instead of the dashboard snippet when
+  it reaches a later day, and `due.mjs` skips the snippet while it is at most
+  5 days old.
 - GitHub release downloads count every fetch of `Louppe.zip`: new direct and
   Homebrew installs, Sparkle auto-updates, and one fetch per release by the
   Homebrew workflow. They are not first-time installs. Assets before v1.11 were

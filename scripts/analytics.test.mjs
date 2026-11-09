@@ -317,3 +317,117 @@ test('due.mjs refreshes after 5 local days and retries signed-out or truncated s
   assert.equal(reasons['ga4-pages-last28'], 'truncated');
   assert.ok(fresh.includes('ga4-events-last28'));
 });
+
+// ---------- App Store Connect API analytics reports ----------
+const tsv = (rows) => rows.map((r) => r.join('\t')).join('\n');
+const downloadsTsv = (date, rows) => tsv([
+  ['Date', 'App Name', 'App Apple Identifier', 'Download Type', 'App Version', 'Device', 'Platform Version', 'Source Type', 'Source Info', 'Campaign', 'Page Type', 'Page Title', 'Pre-Order', 'Territory', 'Counts'],
+  ...rows.map(([type, source, info, territory, n]) => [date, 'Louppe', '1', type, '1.13.1', 'Desktop', 'macOS 27', source, info, '', 'Product page', 'Default', '', territory, n]),
+]);
+
+test('appStoreReports downloads only new daily instances and drops app identifiers', async () => {
+  const { gzipSync } = await import('node:zlib');
+  const { createHash, generateKeyPairSync } = await import('node:crypto');
+  const { appStoreReports } = await import('./analytics/asc-reports.mjs');
+  const der = generateKeyPairSync('ec', { namedCurve: 'prime256v1' }).privateKey.export({ format: 'der', type: 'pkcs8' }).toString('base64');
+  const seg = gzipSync(downloadsTsv('2026-11-08', [['First-time download', 'Web referrer', 'louppe.eu', 'DK', '2']]));
+  const routes = {
+    '/v1/apps/6820131477/analyticsReportRequests': { data: [{ id: 'req', attributes: { accessType: 'ONGOING', stoppedDueToInactivity: false } }] },
+    '/v1/analyticsReportRequests/req/reports': { data: [{ id: 'rep', attributes: { name: 'App Downloads Standard' } }, { id: 'other', attributes: { name: 'Flashlight Usage' } }] },
+    '/v1/analyticsReports/rep/instances': { data: [{ id: 'old', attributes: { processingDate: '2026-11-07' } }, { id: 'new', attributes: { processingDate: '2026-11-08' } }] },
+    '/v1/analyticsReportInstances/new/segments': { data: [{ attributes: { url: 'https://signed.example/seg', checksum: createHash('md5').update(seg).digest('hex') } }] },
+  };
+  const calls = [];
+  const get = async (url, init) => {
+    calls.push(url);
+    if (url === 'https://signed.example/seg') {
+      assert.equal(init.headers, undefined);
+      return { ok: true, arrayBuffer: async () => seg };
+    }
+    assert.match(init.headers.Authorization, /^Bearer [\w-]+\.[\w-]+\.[\w-]+$/);
+    const body = routes[new URL(url).pathname];
+    return body ? { ok: true, json: async () => body } : { ok: false, status: 404, json: async () => ({}) };
+  };
+  const env = await appStoreReports({ key: { der, keyId: 'K', issuerId: 'I' }, get, known: new Set(['old']) });
+  assert.equal(env.status, 'ok');
+  assert.deepEqual(env.data.instances.map((i) => i.instance_id), ['new']);
+  assert.equal(env.data.already_saved, 1);
+  assert.deepEqual(Object.keys(env.data.instances[0].rows[0]).includes('App Name'), false);
+  assert.ok(!calls.some((u) => /other|segments.*old|instances\/old/.test(u)));
+
+  const empty = await appStoreReports({ key: { der, keyId: 'K', issuerId: 'I' }, known: new Set(), get: async (url, init) => {
+    const p = new URL(url).pathname;
+    const body = p.endsWith('instances') ? { data: [] } : routes[p];
+    return { ok: true, json: async () => body };
+  } });
+  assert.equal(empty.status, 'pending');
+  assert.equal((await appStoreReports({ key: null })).status, 'skipped');
+});
+
+const { parseTsv } = await import('./analytics/asc-reports.mjs');
+const { finishStoreReports, parseAppStoreReports } = await import('./analytics/parsers.mjs');
+const reportsEnv = (collected_at, instances) => ({ source: 'app-store-reports', name: 'app-store-reports', collected_at, status: 'ok', data: { instances } });
+const inst = (report, processing_date, text, access_type = 'ONGOING') => ({ report, access_type, instance_id: `${report}-${processing_date}-${access_type}`, processing_date, rows: parseTsv(text) });
+
+test('parseAppStoreReports maps report rows to Store metrics and fills processed days with zeros', () => {
+  const rows = parseAppStoreReports(reportsEnv(at, [
+    inst('App Downloads Standard', '2026-11-08', downloadsTsv('2026-11-08', [
+      ['First-time download', 'Web referrer', 'louppe.eu', 'DK', '2'],
+      ['First-time download', 'App Store search', '', 'NO', '1'],
+      ['Redownload', 'App Store search', '', 'NO', '1'],
+      ['Auto-update', 'Unavailable', '', 'NO', '3'],
+    ])),
+    inst('App Downloads Standard', '2026-11-07', ''),
+    inst('App Store Discovery and Engagement Standard', '2026-11-08', tsv([
+      ['Date', 'App Name', 'App Apple Identifier', 'Event', 'Page Type', 'Source Type', 'Engagement Type', 'Device', 'Platform Version', 'Territory', 'Counts', 'Unique Counts'],
+      ['2026-11-08', 'Louppe', '1', 'Impression', 'Search', 'App Store search', '', 'Desktop', 'macOS 27', 'DK', '40', '30'],
+      ['2026-11-08', 'Louppe', '1', 'Page view', 'Product page', 'Web referrer', '', 'Desktop', 'macOS 27', 'DK', '5', '4'],
+    ])),
+  ]), 'raw/x.json');
+  const day = (metric, date = '2026-11-08', dimension = '', dimension_value = '') => find(rows, { granularity: 'day', period_start: date, metric, dimension, dimension_value })[0]?.value;
+  assert.equal(day('units'), 3);
+  assert.equal(day('redownloads'), 1);
+  assert.equal(day('updates'), 3);
+  assert.equal(day('units', '2026-11-08', 'domain_referrer', 'louppe.eu'), 2);
+  assert.equal(day('units', '2026-11-08', 'storefront', 'Denmark'), 2);
+  assert.equal(day('units', '2026-11-08', 'source', 'App Store search'), 1);
+  assert.equal(day('units', '2026-11-07'), 0);
+  assert.equal(day('impressions_total'), 40);
+  assert.equal(day('page_view_count'), 5);
+  assert.ok(rows.every((r) => r.source === 'app_store_reports'));
+});
+
+test('finishStoreReports keeps the newest file per day and derives since-release ranges', () => {
+  const snapshot = parseAppStoreReports(reportsEnv('2026-11-10T00:00:00Z', [
+    inst('App Downloads Standard', '2026-11-07', downloadsTsv('2026-11-07', [['First-time download', 'App Store search', '', 'DK', '4']]), 'ONE_TIME_SNAPSHOT'),
+    inst('App Downloads Standard', '2026-11-08', downloadsTsv('2026-11-08', [['First-time download', 'App Store search', '', 'NO', '9']]), 'ONE_TIME_SNAPSHOT'),
+  ]), 'a');
+  const ongoing = parseAppStoreReports(reportsEnv('2026-11-11T00:00:00Z', [
+    inst('App Downloads Standard', '2026-11-08', downloadsTsv('2026-11-08', [['First-time download', 'App Store search', '', 'DK', '2']])),
+  ]), 'b');
+  const rows = merge(finishStoreReports(merge(snapshot, ongoing)));
+  const range = (dimension = '', dimension_value = '') => find(rows, { granularity: 'range', metric: 'units', dimension, dimension_value })[0];
+  assert.deepEqual([range().period_start, range().period_end, range().value], ['2026-11-07', '2026-11-08', 6]);
+  assert.equal(range('storefront', 'Denmark').value, 6);
+  assert.equal(range('storefront', 'Norway'), undefined);
+});
+
+test('summary and due.mjs use fresh API reports instead of an App Store Connect sign-in', async () => {
+  const { apiStoreLastDay, dueSources } = await import('./analytics/due.mjs');
+  const dashboard = parseAppStoreConnect({
+    source: 'app-store-connect', collected_at: at, status: 'ok', options: { start: '2026-11-01', end: '2026-11-04' },
+    data: [{ request: { measures: ['units'], frequency: 'day' }, results: [{ data: [['2026-11-01', 1], ['2026-11-02', 1], ['2026-11-03', 1]] }] }],
+  }, 'a');
+  const api = parseAppStoreReports(reportsEnv('2026-11-09T06:00:00Z', ['2026-11-02', '2026-11-08'].map((d) => inst('App Downloads Standard', d, downloadsTsv(d, [['First-time download', 'Web referrer', 'louppe.eu', 'DK', '2']])))), 'b');
+  const rows = merge(finishStoreReports(merge(dashboard, api)));
+  const signedOut = [{ path: 'raw/2026-11-09/app-store-connect.json', env: { source: 'app-store-connect', name: 'app-store-connect', collected_at: '2026-11-09T08:00:00Z', status: 'signed_out' } }];
+  const md = summarize(rows, signedOut, new Date('2026-11-09T12:00:00Z'));
+  assert.doesNotMatch(md, /Needs Alex/);
+  assert.match(md, /not needed: API reports are fresh/);
+  assert.match(md, /\| Store first-time downloads, since release \| 4 \| 2026-11-02…2026-11-08 \| app_store_reports \|/);
+  assert.match(md, /First-time downloads on the 1 day\(s\) both App Store sources cover: 1 \(dashboard\) and 2 \(API reports\)/);
+  const last = apiStoreLastDay(rows);
+  assert.equal(last, '2026-11-08');
+  assert.ok(dueSources([], '2026-11-09', 5, last).fresh.includes('app-store-connect'));
+  assert.ok(dueSources([], '2026-11-20', 5, last).due.some((d) => d.name === 'app-store-connect'));
+});

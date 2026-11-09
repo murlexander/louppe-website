@@ -1,9 +1,11 @@
 #!/usr/bin/env node
 // Collects the command-line sources into <analytics>/raw/<date>/<source>.json (see lib.mjs).
-// Usage: node scripts/analytics/collect.mjs [github] [cloudflare] [itunes]   (default: all)
+// Usage: node scripts/analytics/collect.mjs [github] [cloudflare] [itunes] [app-store-reports]   (default: all)
 // A failed or skipped source is still written, with its status and reason, so
 // ingest and the summary report it instead of treating it as zero.
 import { execFileSync } from 'node:child_process';
+import { appStoreReports, knownInstances } from './asc-reports.mjs';
+import { readRaw } from './ingest.mjs';
 import { addDays, envelope, utcDate, writeRaw } from './lib.mjs';
 import { cloudflareSince } from './parsers.mjs';
 
@@ -127,7 +129,7 @@ export async function cloudflare({ now = new Date(), days = 28, post = fetch, to
   return envelope('cloudflare', { status, options, ...(problems.length ? { error: problems.slice(0, 5).join('; ') } : {}), data: { days: ok } });
 }
 
-const collectors = { github, cloudflare, itunes };
+const collectors = { github, cloudflare, itunes, 'app-store-reports': () => appStoreReports({ known: knownInstances(readRaw()) }) };
 
 if (import.meta.url === `file://${process.argv[1]}`) {
   const names = process.argv.slice(2).length ? process.argv.slice(2) : Object.keys(collectors);

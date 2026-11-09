@@ -464,6 +464,131 @@ export function parseDiscoveryReview(json, origin) {
   return rows;
 }
 
+// ---------- App Store Connect API analytics reports (asc-reports.mjs) ----------
+// Source `app_store_reports`, kept apart from the dashboard's `app_store` so neither silently replaces
+// the other; the summary reads whichever has the later processed day. Day rows only; ingest derives
+// the since-release ranges with deriveStoreReportRanges, because each raw file holds only new days.
+const regionNames = new Intl.DisplayNames(['en'], { type: 'region' });
+const territory = (code) => { try { return /^[A-Z]{2}$/.test(code) ? regionNames.of(code) : code; } catch { return code; } };
+const count = (v) => { const n = Number(String(v ?? '').replaceAll(',', '')); return v !== '' && Number.isFinite(n) ? n : null; };
+const cellOf = (row, re) => { const k = Object.keys(row).find((h) => re.test(h)); return k ? row[k] : ''; };
+const isoDay = (s) => (/^\d{4}-\d{2}-\d{2}/.test(s || '') ? s.slice(0, 10) : parseShortDate(s || ''));
+
+const storeReports = {
+  'App Downloads Standard': {
+    zeros: ['units', 'redownloads', 'updates'],
+    metrics: (r) => [[{ first_time_download: 'units', redownload: 'redownloads', manual_update: 'updates', auto_update: 'updates', restore: 'restores' }[slug(r['Download Type'])] || `downloads_${slug(r['Download Type']) || 'unknown'}`, count(r.Counts)]],
+    split: ['units', 'redownloads'],
+  },
+  'App Store Discovery and Engagement Standard': {
+    zeros: ['impressions_total', 'page_view_count'],
+    metrics: (r) => [[{ impression: 'impressions_total', page_view: 'page_view_count' }[slug(r.Event)] || `${slug(r.Event) || 'unknown'}_count`, count(r.Counts)]],
+    split: ['impressions_total', 'page_view_count'],
+  },
+  'App Store Installation and Deletion Standard': {
+    zeros: ['installs', 'uninstalls'],
+    metrics: (r) => [[{ install: 'installs', delete: 'uninstalls' }[slug(r.Event)] || `${slug(r.Event) || 'unknown'}_count`, count(r.Counts)]],
+  },
+  'App Sessions Standard': {
+    zeros: ['sessions'],
+    metrics: (r) => [['sessions', count(r.Sessions)], ['session_duration_seconds', count(cellOf(r, /session duration/i))]],
+  },
+  'App Crashes': { zeros: ['crashes'], metrics: (r) => [['crashes', count(r.Crashes)]] },
+  'App Store Purchases Standard': {
+    zeros: ['iap'],
+    metrics: (r) => [['iap', count(cellOf(r, /^purchases$/i))], ['proceeds_usd', count(cellOf(r, /proceeds.*usd/i))]],
+  },
+};
+
+// Breakdowns kept for the split metrics, named like the dashboard's.
+function storeDimensions(r) {
+  const type = r['Source Type'] || '';
+  const info = r['Source Info'] || '';
+  return [
+    ['source', type],
+    ['storefront', territory(r.Territory || '')],
+    ['device', r.Device || ''],
+    ['campaign_id', r.Campaign || ''],
+    [/web/i.test(type) ? 'domain_referrer' : /app ref/i.test(type) ? 'app_referrer' : '', info],
+  ].filter(([d, v]) => d && v && !/^(none|null|unavailable)$/i.test(v));
+}
+
+export function parseAppStoreReports(env, origin) {
+  const make = rowMaker({ ...env, source: 'app_store_reports' }, origin);
+  // The newest instance per report and day wins (ONGOING over the one-time snapshot on the same date).
+  const order = (i) => `${i.processing_date}|${i.access_type === 'ONGOING' ? 1 : 0}`;
+  const instances = [...(env.data?.instances || [])].filter((i) => storeReports[i.report]).sort((a, b) => order(a).localeCompare(order(b)));
+  const owner = new Map();
+  const daysOf = (i) => {
+    const d = [...new Set(i.rows.map((r) => isoDay(r.Date)).filter(Boolean))];
+    // An empty daily instance is a processed day with nothing to count.
+    return d.length ? d : [i.processing_date].filter(Boolean);
+  };
+  for (const i of instances) for (const d of daysOf(i)) owner.set(`${i.report}|${d}`, i.instance_id);
+  const sums = new Map();
+  const add = (d, metric, dimension, dv, v) => {
+    const k = [d, metric, dimension, dv].join('\u0001');
+    sums.set(k, (sums.get(k) || 0) + v);
+  };
+  for (const i of instances) {
+    const spec = storeReports[i.report];
+    for (const d of daysOf(i)) {
+      if (owner.get(`${i.report}|${d}`) !== i.instance_id) continue;
+      for (const m of spec.zeros) add(d, m, '', '', 0);
+    }
+    for (const r of i.rows) {
+      const d = isoDay(r.Date);
+      if (!d || owner.get(`${i.report}|${d}`) !== i.instance_id) continue;
+      for (const [metric, v] of spec.metrics(r)) {
+        if (v == null) continue;
+        add(d, metric, '', '', v);
+        if (spec.split?.includes(metric)) for (const [dim, dv] of storeDimensions(r)) add(d, metric, dim, dv, v);
+      }
+    }
+  }
+  return [...sums].map(([k, value]) => {
+    const [d, metric, dimension, dv] = k.split('\u0001');
+    return make({ granularity: 'day', period_start: d, period_end: d, metric, dimension, dimension_value: dv, value });
+  });
+}
+
+// Two raw files can hold the same day (the snapshot and the ongoing feed); keep only the newest file's
+// rows for each metric and day, so a breakdown only the older file has is not counted twice. Then add
+// since-first-day totals.
+export function finishStoreReports(rows) {
+  const newest = new Map();
+  const key = (r) => `${r.metric}|${r.period_start}`;
+  for (const r of rows) if (r.source === 'app_store_reports' && r.granularity === 'day' && !(r.collected_at <= (newest.get(key(r)) || ''))) newest.set(key(r), r.collected_at);
+  const kept = rows.filter((r) => !(r.source === 'app_store_reports' && r.granularity === 'day' && r.collected_at !== newest.get(key(r))));
+  return [...kept, ...deriveStoreReportRanges(kept)];
+}
+
+// Since-first-day totals over the merged day rows, per metric and breakdown. A breakdown with no rows
+// on a day counted zero, so it sums over the same window as its metric's total.
+export function deriveStoreReportRanges(rows) {
+  const days = rows.filter((r) => r.source === 'app_store_reports' && r.granularity === 'day');
+  const span = new Map();
+  for (const r of days.filter((x) => !x.dimension)) {
+    const s = span.get(r.metric) || { start: r.period_start, end: r.period_start, days: 0 };
+    s.start = r.period_start < s.start ? r.period_start : s.start;
+    s.end = r.period_start > s.end ? r.period_start : s.end;
+    s.days++;
+    span.set(r.metric, s);
+  }
+  const sums = new Map();
+  for (const r of days) {
+    if (!span.has(r.metric)) continue;
+    const k = [r.metric, r.dimension, r.dimension_value].join('\u0001');
+    const prev = sums.get(k) || { value: 0, collected_at: '' };
+    sums.set(k, { value: prev.value + r.value, collected_at: r.collected_at > prev.collected_at ? r.collected_at : prev.collected_at });
+  }
+  return [...sums].map(([k, { value, collected_at }]) => {
+    const [metric, dimension, dimension_value] = k.split('\u0001');
+    const { start, end } = span.get(metric);
+    return { collected_at, source: 'app_store_reports', granularity: 'range', period_start: start, period_end: end, metric, dimension, dimension_value, value, origin: 'derived from app_store_reports day rows' };
+  });
+}
+
 export function parseEnvelope(env, origin) {
   if (env.recorded_at && (env.ga4 || env.search_console || env.app_store)) return parseDiscoveryReview(env, origin);
   if (env.recorded_at && env.repos) return parseGithub(env, origin);
@@ -472,6 +597,7 @@ export function parseEnvelope(env, origin) {
     case 'ga4': return parseGa4(env, origin);
     case 'search-console': return parseSearchConsole(env, origin);
     case 'app-store-connect': return parseAppStoreConnect(env, origin);
+    case 'app-store-reports': return parseAppStoreReports(env, origin);
     case 'github': return parseGithub(env, origin);
     case 'cloudflare': return parseCloudflare(env, origin);
     case 'itunes': return parseItunes(env, origin);
