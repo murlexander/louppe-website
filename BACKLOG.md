@@ -31,8 +31,11 @@ Website work ships independently. Claims must match the released app.
   in five languages, and ApolloOne in es/pt/hi until the daily quota ran out.
   Next: ar ApolloOne, then cull-raw ×5, blog indexes ×5, a-proper-hello ×5, and
   privacy ×5; a daily scheduled task continues until none remain. The sitemap
-  still shows "Couldn't fetch" on both properties although the live test passes;
-  a scheduled check on 9 November rechecks and resubmits it. Bing Webmaster Tools is set up
+  still shows "Couldn't fetch" on both properties although the live test passes.
+  On 11 November it still said "Couldn't fetch" (last read 4 November, 0
+  discovered) while the live file returned 200 XML with 54 URLs, so it was
+  removed and resubmitted; Search Console's page report showed 39 indexed and 10
+  not indexed (as of 6 November). Bing Webmaster Tools is set up
   (imported from Search Console, sitemap read with 44 URLs, all URLs submitted).
 
 ## Deferred media refresh
