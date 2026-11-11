@@ -521,8 +521,13 @@ export function parseAppStoreReports(env, origin) {
   const owner = new Map();
   const daysOf = (i) => {
     const d = [...new Set(i.rows.map((r) => isoDay(r.Date)).filter(Boolean))];
-    // An empty daily instance is a processed day with nothing to count.
-    return d.length ? d : [i.processing_date].filter(Boolean);
+    if (d.length || !i.processing_date) return d;
+    // An empty instance is a processed day with nothing to count. A daily (ONGOING) instance's rows end
+    // the day before its processing_date (it restates the last 2–3 days); a snapshot's include that day.
+    if (i.access_type !== 'ONGOING') return [i.processing_date];
+    const prev = new Date(`${i.processing_date}T00:00:00Z`);
+    prev.setUTCDate(prev.getUTCDate() - 1);
+    return [prev.toISOString().slice(0, 10)];
   };
   for (const i of instances) for (const d of daysOf(i)) owner.set(`${i.report}|${d}`, i.instance_id);
   const sums = new Map();

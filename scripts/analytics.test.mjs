@@ -391,7 +391,8 @@ test('parseAppStoreReports maps report rows to Store metrics and fills processed
   assert.equal(day('units', '2026-11-08', 'domain_referrer', 'louppe.eu'), 2);
   assert.equal(day('units', '2026-11-08', 'storefront', 'Denmark'), 2);
   assert.equal(day('units', '2026-11-08', 'source', 'App Store search'), 1);
-  assert.equal(day('units', '2026-11-07'), 0);
+  assert.equal(day('units', '2026-11-06'), 0);
+  assert.equal(day('units', '2026-11-07'), undefined);
   assert.equal(day('impressions_total'), 40);
   assert.equal(day('page_view_count'), 5);
   assert.ok(rows.every((r) => r.source === 'app_store_reports'));
