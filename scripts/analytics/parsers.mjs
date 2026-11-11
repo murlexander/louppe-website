@@ -482,7 +482,14 @@ const storeReports = {
   },
   'App Store Discovery and Engagement Standard': {
     zeros: ['impressions_total', 'page_view_count'],
-    metrics: (r) => [[{ impression: 'impressions_total', page_view: 'page_view_count' }[slug(r.Event)] || `${slug(r.Event) || 'unknown'}_count`, count(r.Counts)]],
+    // The dashboard's product page views are Page view events on the product page only; screenshot and
+    // video views (Page Type "Media view", source Unavailable) and other pages get their own metrics.
+    metrics: (r) => {
+      const event = slug(r.Event || '');
+      const page = slug(r['Page Type'] || '');
+      if (event === 'page_view' && page !== 'product_page') return [[`${page.replace(/_view$/, '') || 'unknown'}_view_count`, count(r.Counts)]];
+      return [[{ impression: 'impressions_total', page_view: 'page_view_count' }[event] || `${event || 'unknown'}_count`, count(r.Counts)]];
+    },
     split: ['impressions_total', 'page_view_count'],
   },
   'App Store Installation and Deletion Standard': {

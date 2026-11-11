@@ -382,6 +382,7 @@ test('parseAppStoreReports maps report rows to Store metrics and fills processed
       ['Date', 'App Name', 'App Apple Identifier', 'Event', 'Page Type', 'Source Type', 'Engagement Type', 'Device', 'Platform Version', 'Territory', 'Counts', 'Unique Counts'],
       ['2026-11-08', 'Louppe', '1', 'Impression', 'Search', 'App Store search', '', 'Desktop', 'macOS 27', 'DK', '40', '30'],
       ['2026-11-08', 'Louppe', '1', 'Page view', 'Product page', 'Web referrer', '', 'Desktop', 'macOS 27', 'DK', '5', '4'],
+      ['2026-11-08', 'Louppe', '1', 'Page view', 'Media view', 'Unavailable', '', 'Desktop', 'macOS 27', 'FR', '90', '3'],
     ])),
   ]), 'raw/x.json');
   const day = (metric, date = '2026-11-08', dimension = '', dimension_value = '') => find(rows, { granularity: 'day', period_start: date, metric, dimension, dimension_value })[0]?.value;
@@ -395,6 +396,7 @@ test('parseAppStoreReports maps report rows to Store metrics and fills processed
   assert.equal(day('units', '2026-11-07'), undefined);
   assert.equal(day('impressions_total'), 40);
   assert.equal(day('page_view_count'), 5);
+  assert.equal(day('media_view_count'), 90);
   assert.ok(rows.every((r) => r.source === 'app_store_reports'));
 });
 
