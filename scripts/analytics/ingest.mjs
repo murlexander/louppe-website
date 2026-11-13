@@ -5,7 +5,7 @@
 import { existsSync, readFileSync, readdirSync } from 'node:fs';
 import { join, relative } from 'node:path';
 import { addDays, dataDir, daysBetween, localDate, rawDir, writeAtomic } from './lib.mjs';
-import { cloudflareSince, columns, finishStoreReports, parseEnvelope } from './parsers.mjs';
+import { cloudflareSince, columns, finishCloudflare, finishStoreReports, parseEnvelope } from './parsers.mjs';
 
 export function toCsv(rows) {
   const cell = (v) => {
@@ -50,7 +50,7 @@ export function merge(...lists) {
 
 // All raw envelopes -> the rows of metrics.csv.
 export function buildRows(envelopes) {
-  return merge(finishStoreReports(merge(envelopes.flatMap(({ path, env }) => parseEnvelope(env, path)))));
+  return merge(finishCloudflare(finishStoreReports(merge(envelopes.flatMap(({ path, env }) => parseEnvelope(env, path))))));
 }
 
 export function readRaw(dir = rawDir) {

@@ -88,7 +88,21 @@ export function cloudflareQuery() {
 }`;
 }
 
-export async function cloudflare({ now = new Date(), days = 28, post = fetch, token = keychain('api-token'), siteTag = keychain('site-tag') } = {}) {
+// Days an earlier raw file already holds unsampled. Cloudflare samples older days even when queried alone,
+// so those days are not queried again.
+export function exactCloudflareDays(envelopes) {
+  const exact = new Set();
+  for (const { env } of envelopes) {
+    if (env.source !== 'cloudflare' || !Array.isArray(env.data?.days)) continue;
+    for (const d of env.data.days) {
+      const groups = Object.values(d).filter(Array.isArray).flat();
+      if (groups.length && groups.every((g) => g?.avg?.sampleInterval === 1)) exact.add(d.date);
+    }
+  }
+  return exact;
+}
+
+export async function cloudflare({ now = new Date(), days = 28, post = fetch, token = keychain('api-token'), siteTag = keychain('site-tag'), exact = new Set() } = {}) {
   if (!token || !siteTag) {
     return envelope('cloudflare', {
       status: 'skipped',
@@ -119,17 +133,17 @@ export async function cloudflare({ now = new Date(), days = 28, post = fetch, to
     }
   };
   const dates = [];
-  for (let day = start; day <= end; day = addDays(day, 1)) dates.push(day);
+  for (let day = start; day <= end; day = addDays(day, 1)) if (!exact.has(day)) dates.push(day);
   const all = [];
   for (let i = 0; i < dates.length; i += 7) all.push(...await Promise.all(dates.slice(i, i + 7).map(queryDay)));
   const ok = all.filter((d) => !d.error);
   const sampled = ok.filter((d) => Object.values(d).flat().some((g) => (g?.avg?.sampleInterval ?? 1) !== 1)).map((d) => d.date);
   const problems = [...all.filter((d) => d.error).map((d) => `${d.date}: ${d.error}`), ...sampled.map((d) => `${d}: sampled`)];
-  const status = !ok.length ? 'failed' : problems.length ? 'partial' : 'ok';
+  const status = dates.length && !ok.length ? 'failed' : problems.length ? 'partial' : 'ok';
   return envelope('cloudflare', { status, options, ...(problems.length ? { error: problems.slice(0, 5).join('; ') } : {}), data: { days: ok } });
 }
 
-const collectors = { github, cloudflare, itunes, 'app-store-reports': () => appStoreReports({ known: knownInstances(readRaw()) }) };
+const collectors = { github, cloudflare: () => cloudflare({ exact: exactCloudflareDays(readRaw()) }), itunes, 'app-store-reports': () => appStoreReports({ known: knownInstances(readRaw()) }) };
 
 if (import.meta.url === `file://${process.argv[1]}`) {
   const names = process.argv.slice(2).length ? process.argv.slice(2) : Object.keys(collectors);

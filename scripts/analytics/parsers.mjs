@@ -338,46 +338,59 @@ export const cloudflareSince = '2026-11-04';
 const cloudflareDims = [['byCountry', 'country', 'countryName'], ['byReferer', 'referrer', 'refererHost'], ['byPath', 'path', 'requestPath'], ['byDevice', 'device', 'deviceType']];
 
 // Envelopes from before 2026-11-09 held one 28-day query that Cloudflare answered with 10% sampled
-// estimates, so they are ignored; the per-day collector (data.days) supersedes them.
+// estimates, so they are ignored; the per-day collector (data.days) supersedes them. Day rows only, with
+// their breakdowns: Cloudflare later samples even single days, so each raw file holds only days not yet
+// collected exactly, and finishCloudflare derives the ranges from the merged days.
 export function parseCloudflare(env, origin) {
   if (!['ok', 'partial'].includes(env.status) || !Array.isArray(env.data?.days)) return [];
   const make = rowMaker({ ...env, source: 'cloudflare' }, origin);
   const start = [env.options.start, cloudflareSince].sort().at(-1);
   const { end } = env.options;
   const rows = [];
-  const totals = { page_views: 0, visits: 0 };
-  const byDim = new Map();
-  let covered = 0;
   for (const d of env.data.days) {
     if (d.date < start || d.date > end) continue;
     const groups = [d.byDate, ...cloudflareDims.map(([k]) => d[k])].flat().filter(Boolean);
     if (groups.some((g) => (g.avg?.sampleInterval ?? 0) !== 1)) continue; // sampled or unknown sampling
-    covered++;
     const day = { granularity: 'day', period_start: d.date, period_end: d.date };
     const pv = (d.byDate || []).reduce((n, g) => n + g.count, 0);
     const v = (d.byDate || []).reduce((n, g) => n + (g.sum?.visits ?? 0), 0);
     rows.push(make({ ...day, metric: 'page_views', value: pv }), make({ ...day, metric: 'visits', value: v }));
-    totals.page_views += pv;
-    totals.visits += v;
     for (const [key, dim, field] of cloudflareDims) {
+      const byValue = new Map();
       for (const g of d[key] || []) {
-        const k = `${dim}\u0001${g.dimensions[field] || '(none)'}`;
-        const t = byDim.get(k) || { page_views: 0, visits: 0 };
+        const k = g.dimensions[field] || '(none)';
+        const t = byValue.get(k) || { page_views: 0, visits: 0 };
         t.page_views += g.count;
         t.visits += g.sum?.visits ?? 0;
-        byDim.set(k, t);
+        byValue.set(k, t);
       }
+      for (const [dimension_value, t] of byValue) for (const [metric, value] of Object.entries(t)) rows.push(make({ ...day, metric, dimension: dim, dimension_value, value }));
     }
   }
-  // Range totals only when every day of the window is exact.
-  if (!covered || covered !== daysBetween(start, end) + 1) return rows;
-  const range = { granularity: 'range', period_start: start, period_end: end };
-  for (const [metric, value] of Object.entries(totals)) rows.push(make({ ...range, metric, value }));
-  for (const [k, t] of byDim) {
-    const [dimension, dimension_value] = k.split('\u0001');
-    for (const [metric, value] of Object.entries(t)) rows.push(make({ ...range, metric, dimension, dimension_value, value }));
-  }
   return rows;
+}
+
+// Range totals and breakdowns over the latest up-to-28 merged Cloudflare days, only when every day of the
+// window is exact; a gap ends the window just after it.
+export function finishCloudflare(rows) {
+  const totals = rows.filter((r) => r.source === 'cloudflare' && r.granularity === 'day' && !r.dimension && r.metric === 'visits');
+  const days = new Set(totals.map((r) => r.period_start));
+  const end = [...days].sort().at(-1);
+  if (!end) return rows;
+  let start = end;
+  while (daysBetween(start, end) < 27 && addDays(start, -1) >= cloudflareSince && days.has(addDays(start, -1))) start = addDays(start, -1);
+  const sums = new Map();
+  for (const r of rows) {
+    if (r.source !== 'cloudflare' || r.granularity !== 'day' || r.period_start < start || r.period_start > end) continue;
+    const k = [r.metric, r.dimension, r.dimension_value].join('\u0001');
+    const prev = sums.get(k) || { value: 0, collected_at: '' };
+    sums.set(k, { value: prev.value + r.value, collected_at: r.collected_at > prev.collected_at ? r.collected_at : prev.collected_at });
+  }
+  const derived = [...sums].map(([k, { value, collected_at }]) => {
+    const [metric, dimension, dimension_value] = k.split('\u0001');
+    return { collected_at, source: 'cloudflare', granularity: 'range', period_start: start, period_end: end, metric, dimension, dimension_value, value, origin: 'derived from cloudflare day rows' };
+  });
+  return [...rows, ...derived];
 }
 
 export function parseItunes(env, origin) {

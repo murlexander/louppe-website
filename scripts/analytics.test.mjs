@@ -4,10 +4,11 @@ import { mkdtempSync, readdirSync, rmSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import test from 'node:test';
-import { cloudflare } from './analytics/collect.mjs';
+import { cloudflare, exactCloudflareDays } from './analytics/collect.mjs';
 import { fromCsv, merge, summarize, toCsv } from './analytics/ingest.mjs';
 import { normalizeStatus, writeRaw } from './analytics/lib.mjs';
 import {
+  finishCloudflare,
   parseAppStoreConnect, parseCloudflare, parseDiscoveryReview, parseGa4, parseGa4EventDashboard,
   parseGa4Table, parseGithub, parseItunes, parseLongDate, parseNumber, parseSearchConsole,
 } from './analytics/parsers.mjs';
@@ -167,17 +168,31 @@ test('parseCloudflare keeps exact days, real zeros, and the beacon start', () =>
   env.options.start = '2026-11-04';
   env.options.end = '2026-11-06';
   const rows = parseCloudflare(env, 'x');
-  assert.deepEqual(find(rows, { granularity: 'day', metric: 'page_views' }).map((r) => [r.period_start, r.value]), [['2026-11-04', 5], ['2026-11-05', 0], ['2026-11-06', 3]], 'a day without page loads is zero; days before the beacon are unknown');
-  const range = find(rows, { granularity: 'range', metric: 'visits', dimension: '' })[0];
-  assert.deepEqual([range.period_start, range.period_end, range.value], ['2026-11-04', '2026-11-06', 6]);
+  assert.deepEqual(find(rows, { granularity: 'day', metric: 'page_views', dimension: '' }).map((r) => [r.period_start, r.value]), [['2026-11-04', 5], ['2026-11-05', 0], ['2026-11-06', 3]], 'a day without page loads is zero; days before the beacon are unknown');
+  assert.equal(find(rows, { granularity: 'range' }).length, 0, 'ranges come from finishCloudflare');
   assert.equal(find(rows, { dimension: 'country', dimension_value: 'NO', metric: 'page_views' })[0].value, 5);
   assert.equal(find(rows, { dimension: 'referrer', metric: 'page_views' })[0].dimension_value, '(none)');
+});
+
+test('finishCloudflare derives ranges from exact days merged across raw files', () => {
+  const file = (collected_at, start, end, days) => parseCloudflare({ source: 'cloudflare', collected_at, status: 'ok', options: { start, end }, data: { days } }, collected_at);
+  // The first file holds 4–5 November exactly; later Cloudflare samples them, so the second file only adds 6 November.
+  const first = file('2026-11-06T00:00:00Z', '2026-11-04', '2026-11-05', [cfDay('2026-11-04', 5), cfDay('2026-11-05', 2, { country: 'CL' })]);
+  const second = file('2026-11-07T00:00:00Z', '2026-11-04', '2026-11-06', [cfDay('2026-11-04', 20, { si: 10 }), cfDay('2026-11-06', 3)]);
+  const rows = merge(finishCloudflare(merge(first, second)));
+  const range = (dimension = '', dimension_value = '') => find(rows, { granularity: 'range', metric: 'visits', dimension, dimension_value })[0];
+  assert.deepEqual([range().period_start, range().period_end, range().value], ['2026-11-04', '2026-11-06', 7]);
+  assert.equal(range('country', 'NO').value, 6);
+  assert.equal(range('country', 'CL').value, 1);
+  const gap = merge(finishCloudflare(merge(file('a', '2026-11-04', '2026-11-04', [cfDay('2026-11-04', 5)]), file('b', '2026-11-06', '2026-11-07', [cfDay('2026-11-06', 3), cfDay('2026-11-07', 4)]))));
+  const g = find(gap, { granularity: 'range', metric: 'visits', dimension: '' })[0];
+  assert.deepEqual([g.period_start, g.period_end, g.value], ['2026-11-06', '2026-11-07', 5], 'a missing day ends the window');
 });
 
 test('parseCloudflare rejects sampled days and ignores old 28-day envelopes', () => {
   const env = { source: 'cloudflare', collected_at: at, status: 'partial', options: { start: '2026-11-04', end: '2026-11-05' }, data: { days: [cfDay('2026-11-04', 20, { si: 10 }), cfDay('2026-11-05', 2)] } };
   const rows = parseCloudflare(env, 'x');
-  assert.deepEqual(find(rows, { granularity: 'day', metric: 'page_views' }).map((r) => r.period_start), ['2026-11-05']);
+  assert.deepEqual(find(rows, { granularity: 'day', metric: 'page_views', dimension: '' }).map((r) => r.period_start), ['2026-11-05']);
   assert.equal(find(rows, { granularity: 'range' }).length, 0, 'no range total over a sampled day');
   const legacy = { source: 'cloudflare', collected_at: at, status: 'ok', options: { start: '2026-10-11', end: '2026-11-07' }, data: { viewer: { accounts: [{ byDate: [{ count: 20, sum: { visits: 20 }, dimensions: { date: '2026-11-04' } }] }] } } };
   assert.deepEqual(parseCloudflare(legacy, 'x'), []);
@@ -200,6 +215,14 @@ test('cloudflare collector queries each complete UTC day and flags sampling', as
   assert.equal(filters.length, 4);
   assert.equal(env.status, 'partial');
   assert.match(env.error, /2026-11-06: sampled/);
+  const known = exactCloudflareDays([{ env }]);
+  assert.deepEqual([...known].sort(), ['2026-11-04', '2026-11-05', '2026-11-07']);
+  filters.length = 0;
+  const again = await cloudflare({ now: new Date('2026-11-08T23:30:00Z'), post, token: 't', siteTag: 's', exact: known });
+  assert.deepEqual(filters.map(([a]) => a), ['2026-11-06'], 'days already held exactly are not queried again');
+  const done = await cloudflare({ now: new Date('2026-11-08T23:30:00Z'), post, token: 't', siteTag: 's', exact: new Set(['2026-11-04', '2026-11-05', '2026-11-06', '2026-11-07']) });
+  assert.equal(done.status, 'ok');
+  assert.equal(again.status, 'partial');
   const failing = await cloudflare({ now: new Date('2026-11-08T23:30:00Z'), post: async () => { throw new Error('offline'); }, token: 't', siteTag: 's' });
   assert.equal(failing.status, 'failed');
   assert.equal((await cloudflare({ token: null, siteTag: 's' })).status, 'skipped');
