@@ -80,10 +80,15 @@ Website work ships independently. Claims must match the released app.
   (2 November) list Louppe.
 - [ ] **Directory listings awaiting maintainers.**
   [awesome-mac #4173](https://github.com/jaywcjlove/awesome-mac/pull/4173) (body
-  corrected 4 November: all features free, optional tips unlock nothing) and
-  [open-source-mac-os-apps #1938](https://github.com/serhii-londar/open-source-mac-os-apps/pull/1938).
+  corrected 4 November; rebased with the new Portuguese README 14 November),
+  [open-source-mac-os-apps #1938](https://github.com/serhii-londar/open-source-mac-os-apps/pull/1938),
+  [AndrewSB/awesome-macOS #80](https://github.com/AndrewSB/awesome-macOS/pull/80) and
+  [awesome-native-macosx-apps #285](https://github.com/open-saas-directory/awesome-native-macosx-apps/pull/285)
+  (its rules exclude self-promoted apps; may be refused), both 14 November.
   Answer maintainer review; referrals appear by origin in GA4. Community posts
-  are Alex's to publish; the official Homebrew cask needs more GitHub stars.
+  are Alex's to publish; the official Homebrew cask needs about 75 stars.
+  iCHAIT/awesome-macOS accepts PRs from collaborators only (since 21 October);
+  awesome-OpenSourcePhotography, Best-App and guyzyl/awesome-macos-apps are inactive.
 - [x] **Guest article published.** [Kirill's PR #97](https://github.com/kirill-markin/kirill-markin-com/pull/97)
   merged on 28 October; the [live article](https://kirill-markin.com/articles/photo-culling-mac-louppe-folder-workflow/)
   links the homepage and the JPEG guide. Its 14- and 28-day reviews count from
