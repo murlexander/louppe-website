@@ -2,16 +2,11 @@
 // Lists the browser-collected sources that are missing, not ok (failed, partial, signed_out), truncated,
 // or at least --days old (default 5, in local days). The run every 48 h therefore refreshes them every
 // third run (about 6 days, never more than 7) and retries failures on the next run.
-// App Store Connect is skipped while the API reports (collect.mjs app-store-reports) reach a day at most
-// 5 days back, so the browser sign-in is needed only as a fallback.
+// App Store Connect stays on this cadence even while the API reports are fresh: only its dashboard
+// breaks Store traffic down by web referrer, app referrer, and campaign (ct).
 // Usage: node scripts/analytics/due.mjs [--days 5]   → JSON {due:[{name,reason,run}], fresh:[…]}
 import { daysBetween, localDate } from './lib.mjs';
-import { buildRows, readRaw } from './ingest.mjs';
-
-export function apiStoreLastDay(rows) {
-  return rows.filter((r) => r.source === 'app_store_reports' && r.granularity === 'day' && !r.dimension && r.metric === 'units')
-    .map((r) => r.period_start).sort().at(-1) || null;
-}
+import { readRaw } from './ingest.mjs';
 
 // Each expected raw file and the snippet call that produces it.
 export const browserSources = {
@@ -31,7 +26,7 @@ export const browserSources = {
   'search-console-indexing': ['search-console', { view: 'indexing' }],
 };
 
-export function dueSources(envelopes, today = localDate(), maxAge = 5, apiLastDay = null) {
+export function dueSources(envelopes, today = localDate(), maxAge = 5) {
   const latest = new Map();
   for (const { env } of envelopes) {
     const name = env.name || env.source;
@@ -43,7 +38,6 @@ export function dueSources(envelopes, today = localDate(), maxAge = 5, apiLastDa
     const env = latest.get(name);
     const run = `node scripts/analytics/snippet.mjs ${snippet} '${JSON.stringify(options)}'`;
     const age = env?.collected_at ? daysBetween(localDate(new Date(env.collected_at)), today) : null;
-    if (name === 'app-store-connect' && apiLastDay && daysBetween(apiLastDay, today) <= 5) { fresh.push(name); continue; }
     const reason = !env ? 'missing' : env.status !== 'ok' ? env.status : env.truncated ? 'truncated' : age >= maxAge ? `${age} days old` : null;
     (reason ? due : fresh).push(reason ? { name, reason, run } : name);
   }
@@ -53,6 +47,5 @@ export function dueSources(envelopes, today = localDate(), maxAge = 5, apiLastDa
 if (import.meta.url === `file://${process.argv[1]}`) {
   const i = process.argv.indexOf('--days');
   const maxAge = i > 0 ? Number(process.argv[i + 1]) : 5;
-  const envelopes = readRaw();
-  console.log(JSON.stringify(dueSources(envelopes, localDate(), maxAge, apiStoreLastDay(buildRows(envelopes))), null, 2));
+  console.log(JSON.stringify(dueSources(readRaw(), localDate(), maxAge), null, 2));
 }

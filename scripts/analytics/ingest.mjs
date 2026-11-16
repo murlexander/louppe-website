@@ -123,7 +123,7 @@ export function summarize(rows, envelopes, now = new Date()) {
   const storeEnd = (source) => lastDay(rows, { source, metric: 'units' });
   const store = (storeEnd('app_store_reports') || '') > (storeEnd('app_store') || '') ? 'app_store_reports' : 'app_store';
   const storeLabel = store === 'app_store' ? 'App Store Connect' : 'App Store Connect API';
-  // Fresh API reports make a browser sign-in to App Store Connect unnecessary.
+  // Fresh API reports cover the Store funnel; the dashboard is then needed only for referrers and campaigns.
   const apiCovers = store === 'app_store_reports' && daysBetween(storeEnd(store), localDate(now)) <= 5;
   line('# Louppe usage and discovery summary');
   line();
@@ -148,10 +148,10 @@ export function summarize(rows, envelopes, now = new Date()) {
     const day = env.collected_at ? localDate(new Date(env.collected_at)) : '';
     const stale = day && daysBetween(day, localDate(now)) > 8;
     const note = [env.error, env.remaining?.length ? `remaining: ${env.remaining.join(', ')}` : '', env.truncated ? 'truncated pages' : '', stale ? 'stale (>8 days)' : ''].filter(Boolean).join('; ');
-    const covered = apiCovers && env.source === 'app-store-connect';
-    if (!covered && (env.status !== 'ok' || env.truncated || stale)) problems.push(`${name}: ${env.status}${note ? ` (${note})` : ''}`);
-    if (!covered && env.status === 'signed_out') signedOut.add(signIn[env.source] || env.source);
-    line(`| ${cell(name)} | ${day} | ${env.status} | ${cell(clip([note, covered && 'not needed: API reports are fresh'].filter(Boolean).join('; '), 90))} |`);
+    const partOnly = apiCovers && env.source === 'app-store-connect';
+    if (env.status !== 'ok' || env.truncated || stale) problems.push(`${name}: ${env.status}${note ? ` (${note})` : ''}`);
+    if (env.status === 'signed_out') signedOut.add(`${signIn[env.source] || env.source}${partOnly ? ' (for Store referrers and campaigns; the API reports cover the rest)' : ''}`);
+    line(`| ${cell(name)} | ${day} | ${env.status} | ${cell(clip([note, partOnly && 'referrers and campaigns only; API reports are fresh'].filter(Boolean).join('; '), 90))} |`);
   }
   line();
   if (signedOut.size) {
@@ -308,8 +308,10 @@ export function summarize(rows, envelopes, now = new Date()) {
   list('Search pages', { source: 'search_console', metric: 'impressions', dimension: 'page' }, 9999, 'impressions');
   list('Search countries', { source: 'search_console', metric: 'clicks', dimension: 'country' }, 9999, 'clicks');
   list('Store downloads by source', { source: store, metric: 'units', dimension: 'source' }, 9999, 'downloads');
-  list('Store downloads by web referrer', { source: store, metric: 'units', dimension: 'domain_referrer' }, 9999, 'downloads');
-  list('Store downloads by campaign (ct)', { source: store, metric: 'units', dimension: 'campaign_id' }, 9999, 'downloads');
+  // The API reports carry no referrer or campaign, so these come from the dashboard.
+  list('Store downloads by web referrer', { source: 'app_store', metric: 'units', dimension: 'domain_referrer' }, 9999, 'downloads');
+  list('Store downloads by app referrer', { source: 'app_store', metric: 'units', dimension: 'app_referrer' }, 9999, 'downloads');
+  list('Store downloads by campaign (ct)', { source: 'app_store', metric: 'units', dimension: 'campaign_id' }, 9999, 'downloads');
   list('Store downloads by storefront', { source: store, metric: 'units', dimension: 'storefront' }, 9999, 'downloads');
   list('GitHub referrers (app)', { source: ghRepo, metric: 'referrer_views', dimension: 'referrer' }, 14, 'views');
   const relDay = relSnaps.at(-1)?.period_start;

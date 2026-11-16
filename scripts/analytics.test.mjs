@@ -438,8 +438,8 @@ test('finishStoreReports keeps the newest file per day and derives since-release
   assert.equal(range('storefront', 'Norway'), undefined);
 });
 
-test('summary and due.mjs use fresh API reports instead of an App Store Connect sign-in', async () => {
-  const { apiStoreLastDay, dueSources } = await import('./analytics/due.mjs');
+test('fresh API reports narrow the App Store Connect sign-in to referrers and campaigns', async () => {
+  const { dueSources } = await import('./analytics/due.mjs');
   const dashboard = parseAppStoreConnect({
     source: 'app-store-connect', collected_at: at, status: 'ok', options: { start: '2026-11-01', end: '2026-11-04' },
     data: [{ request: { measures: ['units'], frequency: 'day' }, results: [{ data: [['2026-11-01', 1], ['2026-11-02', 1], ['2026-11-03', 1]] }] }],
@@ -448,12 +448,9 @@ test('summary and due.mjs use fresh API reports instead of an App Store Connect 
   const rows = merge(finishStoreReports(merge(dashboard, api)));
   const signedOut = [{ path: 'raw/2026-11-09/app-store-connect.json', env: { source: 'app-store-connect', name: 'app-store-connect', collected_at: '2026-11-09T08:00:00Z', status: 'signed_out' } }];
   const md = summarize(rows, signedOut, new Date('2026-11-09T12:00:00Z'));
-  assert.doesNotMatch(md, /Needs Alex/);
-  assert.match(md, /not needed: API reports are fresh/);
+  assert.match(md, /\*\*Needs Alex:\*\* sign in to App Store Connect \(for Store referrers and campaigns; the API reports cover the rest\)/);
+  assert.match(md, /referrers and campaigns only; API reports are fresh/);
   assert.match(md, /\| Store first-time downloads, since release \| 4 \| 2026-11-02…2026-11-08 \| app_store_reports \|/);
   assert.match(md, /First-time downloads on the 1 day\(s\) both App Store sources cover: 1 \(dashboard\) and 2 \(API reports\)/);
-  const last = apiStoreLastDay(rows);
-  assert.equal(last, '2026-11-08');
-  assert.ok(dueSources([], '2026-11-09', 5, last).fresh.includes('app-store-connect'));
-  assert.ok(dueSources([], '2026-11-20', 5, last).due.some((d) => d.name === 'app-store-connect'));
+  assert.ok(dueSources(signedOut, '2026-11-09').due.some((d) => d.name === 'app-store-connect' && d.reason === 'signed_out'));
 });
