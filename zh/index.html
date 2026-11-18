@@ -63,7 +63,7 @@
   <main id="main">
     <section class="hero shell" aria-labelledby="hero-title">
       <h1 id="hero-title">照片查看器<br>与筛选工具，适用于 Mac</h1>
-      <p class="hero-copy">免费开源的照片筛选工具，无需导入照片图库或订阅。查看 JPEG 和 RAW 照片、视频和音频，再选择要保留的内容</p>
+      <p class="hero-copy">免费开源的照片筛选工具，无需导入或订阅。查看 RAW 和 JPEG 照片及视频，选出最好的</p>
       <a class="download-button" href="https://apps.apple.com/app/louppe/id6820131477?pt=128797295&amp;ct=home-hero&amp;mt=12">从 App Store 下载</a>
       <p class="requirements download-alternatives">或： <a href="https://github.com/murlexander/louppe-media-culler/releases/latest/download/Louppe.zip">github</a>、 <a href="https://github.com/murlexander/louppe-media-culler/blob/main/Docs/HOMEBREW.md">homebrew</a></p>
       <p class="requirements">Apple 芯片 <span aria-hidden="true">·</span> macOS 14 或更新版本</p>
@@ -108,7 +108,7 @@
     <section class="keyboard-section reading-width" aria-labelledby="keyboard-title">
       <div class="keyboard-intro">
         <div class="section-intro"><h2 id="keyboard-title">使用键盘<br>进行筛选</h2></div>
-        <p id="keyboard-hint">选择一个键可查看默认快捷键。试试 ⌘ 和 ⇧ 查看更多。在 Louppe 中前往设置 → 键盘快捷键，选择未分配的键，再点分配…</p>
+        <p id="keyboard-hint">选个键看看它的作用。试试 ⌘ 和 ⇧。可在设置中更改按键</p>
       </div>
       <div class="key-explorer">
         <div class="keyboard-layout" role="region" aria-label="交互式 Mac 键盘" tabindex="0" aria-describedby="keyboard-hint">
@@ -192,18 +192,18 @@
     <section class="features-section reading-width" aria-labelledby="features-title">
       <div class="section-intro"><h2 id="features-title">筛选工具<br>与文件操作</h2></div>
       <div class="feature-disclosures">
-        <details><summary>照片、视频、音频和文本</summary><div><p>在图库中查看照片、视频和音频，可用键盘控制播放。信息面板会显示受支持录制内容的音频电平，包括 iPhone 空间音频视频的电平</p><p>网格像印样一样排列照片，每张照片上直接显示决定、星级和颜色标签</p><p>无需导出即可审阅你的 Apple Photos 图库或相簿。iCloud 下载为可选项，只有在你选择“添加到相簿”时相簿才会改变</p><p>筛选时可拖入另一个文件夹。Louppe 会在切换前保存你的决定，并保留窗口大小</p><p>Louppe 支持常见相机 RAW 文件（包括哈苏 .3FR），以及 JPEG、JPEG XL (.jxl)、TIFF、PNG、HEIC/HEIF、WebP 和 AVIF。可将 RAW 与同名 JPEG 合并查看；没有 JPEG 时，也可与同一文件夹中的同名 HEIC/HEIF 或 JPEG XL 配对。每个文件仍保留自己的决定、星级和颜色标签</p><p>在 Info 中查看照片记录的 Fuji 胶片模拟，并按模拟筛选，包括 ACROS 和黑白变体。从包围拍摄系列中仅显示一种风格，不改变隐藏照片的保留决定</p><p><a href="/zh/blog/cull-raw-jpeg-pairs-mac/">在 Mac 上一起筛选 RAW + JPEG 照片</a></p><p>可在媒体旁阅读文本、Markdown 和结构化文件。文本预览只读，支持选择文本及打开网页和电子邮件链接</p></div></details>
-        <details><summary>放大与比较</summary><div><p>以 100% 检查照片，用浮动控件适应窗口或在 30–400% 之间缩放，也可使用手机尺寸预览。查看直方图与高光、阴影溢出</p><p>在 适合窗口 和 手机尺寸预览 模式下，加载指示器会显示照片预览是否仍在加载。请等待加载完成后再判断对焦</p><p>通过可选画质提示筛选高 ISO、慢快门以及接近纯白或纯黑的区域。在设置中调整规则；在筛选菜单中暂停后台检查</p><p>在本机查找完全相同和可能相似的照片。筛选 → 连拍组按拍摄时间分组；时间间隔可在设置中调整。分析不会自动更改评分或文件</p></div></details>
-        <details><summary>筛选、排序与整理</summary><div><p>在图库或网格中浏览归档文件夹树，用 [ 和 ] 在文件夹间切换。在欢迎页固定文件夹，下次可用缓存的预览快速打开。大文件夹加载文件详情时即可开始浏览，检查完成后可标记决定和操作文件</p><p>按决定、星级、标签、日期、文件夹、相机信息和文件类型筛选。日期可按范围、年份或指定日期筛选。筛选和排序即时生效，按 Esc 或点击外部即可关闭。计数遵循 Louppe 所用语言的单复数和数字分组规则。决定会自动保存</p><p>文件变更后仍可恢复已保存的筛选决定。经验证的相同副本和重新出现的原文件会自动恢复决定；文件 → 检查已保存的决定可查看其他恢复选项</p><p>整理源文件夹可在移动文件前预览目录。重命名文件可预览名称、调整名称各部分的顺序、使用 Mac 的日期格式，并为原本会重名的文件编号。扩展名保持不变，识别出的关联文件和 XMP 附属文件会一起处理。两项操作均可在当前会话中撤销</p></div></details>
-        <details><summary>导出与清理</summary><div><p>默认导出副本。也可选择同一磁盘内的 Move、将副本分送到多个文件夹，或写入兼容编辑软件的 XMP 附属文件</p><p>标记舍弃不会将文件移入废纸篓。Clean Up 是独立操作，将不需要的文件移入 macOS 废纸篓。当前会话中，只要文件仍在废纸篓，就可撤销</p></div></details>
-        <details><summary>本机运行、免费与开源</summary><div><p>Louppe 在本机处理媒体，无需账号，也不收集应用使用分析。所有功能免费，应用以 MIT 许可证开源。自愿打赏不会解锁任何功能</p><p>使用键盘或 VoiceOver 进行筛选。在 设置 中自定义筛选按键和支持的 Command 替代快捷键。对于 Dvorak 等布局，可使用物理按键位置，也可跟随键盘布局</p><a href="https://github.com/murlexander/louppe-media-culler" target="_blank" rel="noopener">查看源代码</a> · <a href="/zh/privacy/#app">应用隐私政策</a></div></details>
+        <details><summary>照片、视频和音频</summary><div><p>图库一次显示一张照片，网格像一张印样</p><p>支持 RAW、JPEG、HEIC、JPEG XL、TIFF、PNG、WebP 和 AVIF。RAW+JPEG 成对显示</p><p>播放视频和音频，可在信息面板查看音频电平</p><p>按胶片模拟筛选 Fuji 照片</p><p>无需导出即可查看 Apple Photos 图库或相簿</p><p><a href="/zh/blog/cull-raw-jpeg-pairs-mac/">在 Mac 上一起筛选 RAW + JPEG 照片</a></p></div></details>
+        <details><summary>放大与比较</summary><div><p>以 100% 检查对焦，查看直方图和溢出</p><p>标出高 ISO、慢快门及高光或阴影溢出</p><p>查找重复照片和连拍组，不会自动改动</p></div></details>
+        <details><summary>筛选、排序与整理</summary><div><p>浏览归档文件夹，固定后可快速重开</p><p>按决定、星级、标签、日期、相机和文件类型筛选</p><p>重命名和整理文件，支持预览和撤销</p></div></details>
+        <details><summary>导出与清理</summary><div><p>导出保留文件的副本，或为编辑软件写入 XMP</p><p>标记舍弃不会删除文件，需另用“清理”移入废纸篓</p></div></details>
+        <details><summary>本机运行、免费与开源</summary><div><p>无需账号，无应用使用分析。免费，采用 MIT 许可证</p><p>支持键盘和 VoiceOver</p><a href="https://github.com/murlexander/louppe-media-culler" target="_blank" rel="noopener">查看源代码</a> · <a href="/zh/privacy/#app">应用隐私政策</a></div></details>
       </div>
     </section>
 
     <section class="workflow reading-width" aria-label="照片排序与媒体管理">
-      <div><h2><a href="/zh/blog/cull-photos-mac-before-lightroom/">筛选 JPEG 和 RAW 照片</a></h2><p>照片筛选就是选择要保留的照片。标记保留或舍弃，再复制保留的文件，或使用独立的“清理”操作将舍弃的文件移入废纸篓</p></div>
-      <div><h2>浏览照片和媒体文件夹</h2><p>使用 Louppe 浏览 Mac、外置硬盘或存储卡中的照片文件夹。在同一处查看照片、视频、音频和只读文本</p></div>
-      <div><h2><a href="/zh/blog/apolloone-alternative-mac/">在找 ApolloOne 的替代软件？</a></h2><p>使用 Louppe 在 Mac 上浏览照片文件夹，选出要保留的照片。它无法替代 ApolloOne 的照片编辑、地图或双图同步比较功能</p></div>
+      <div><h2><a href="/zh/blog/cull-photos-mac-before-lightroom/">筛选 JPEG 和 RAW 照片</a></h2><p>标记保留或舍弃，再复制保留的文件</p></div>
+      <div><h2>浏览照片和媒体文件夹</h2><p>直接打开 Mac、外置硬盘或存储卡中的文件夹</p></div>
+      <div><h2><a href="/zh/blog/apolloone-alternative-mac/">在找 ApolloOne 的替代软件？</a></h2><p>浏览文件夹，选出要保留的照片。不提供编辑、地图或双图同步比较</p></div>
     </section>
 
     <section class="get-section reading-width" id="download" aria-labelledby="download-title">
