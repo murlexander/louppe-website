@@ -2606,5 +2606,173 @@
     "hi": "गैलरी / ग्रिड बदलें। macOS कीबोर्ड नेविगेशन चालू होने पर फ़ोकस बदलें",
     "pt": "alternar Galeria / Grade. com a navegação pelo teclado do macOS ativa, mover o foco",
     "ar": "التبديل بين المعرض والشبكة. عند تفعيل التنقّل بلوحة المفاتيح في macOS، ينتقل التركيز"
+  },
+  "free, open-source photo culling. no import, no subscription. review RAW and JPEG photos and video, then keep the best": {
+    "en": "free, open-source photo culling. no import, no subscription. review RAW and JPEG photos and video, then keep the best",
+    "es": "selección de fotos gratis y de código abierto. sin importar ni suscribirte. elige tus mejores RAW, JPEG y vídeos",
+    "zh-Hans": "免费开源的照片筛选工具，无需导入或订阅。查看 RAW 和 JPEG 照片及视频，选出最好的",
+    "hi": "मुफ़्त, ओपन सोर्स फ़ोटो छँटाई। न आयात, न सदस्यता। RAW और JPEG फ़ोटो और वीडियो देखें, फिर सबसे अच्छे चुनें",
+    "pt": "seleção de fotos grátis e de código aberto. sem importar nem assinar. veja RAW, JPEG e vídeos e guarde os melhores",
+    "ar": "فرز صور مجاني ومفتوح المصدر. بلا استيراد أو اشتراك. راجع صور RAW وJPEG والفيديو واحتفظ بالأفضل"
+  },
+  "choose a key to see what it does. try ⌘ and ⇧. change any key in Settings": {
+    "en": "choose a key to see what it does. try ⌘ and ⇧. change any key in Settings",
+    "es": "pulsa una tecla para ver su función. prueba ⌘ y ⇧. reasigna en Ajustes",
+    "zh-Hans": "选个键看看它的作用。试试 ⌘ 和 ⇧。可在设置中更改按键",
+    "hi": "कुंजी चुनकर उसका काम देखें। ⌘ और ⇧ आज़माएँ। सेटिंग्स में कुंजियाँ बदलें",
+    "pt": "aperte uma tecla para ver o que faz. teste ⌘ e ⇧. remapeie em Ajustes",
+    "ar": "اختر مفتاحًا لتعرف وظيفته. جرّب ⌘ و⇧. غيّر المفاتيح في الإعدادات"
+  },
+  "photos, video, and audio": {
+    "en": "photos, video, and audio",
+    "es": "fotos, vídeos y audio",
+    "zh-Hans": "照片、视频和音频",
+    "hi": "फ़ोटो, वीडियो और ऑडियो",
+    "pt": "fotos, vídeos e áudio",
+    "ar": "الصور والفيديو والصوت"
+  },
+  "Gallery shows one photo at a time; Grid is a contact sheet": {
+    "en": "Gallery shows one photo at a time; Grid is a contact sheet",
+    "es": "en Galería, una foto. en Cuadrícula, una hoja de contactos",
+    "zh-Hans": "图库一次显示一张照片，网格像一张印样",
+    "hi": "गैलरी में एक-एक फ़ोटो देखें। ग्रिड एक कॉन्टैक्ट शीट है",
+    "pt": "na Galeria, uma foto por vez. na Grade, uma folha de contato",
+    "ar": "يعرض المعرض صورة واحدة كل مرة، وتعرض الشبكة الصور كمصغّرات"
+  },
+  "RAW, JPEG, HEIC, JPEG XL, TIFF, PNG, WebP, and AVIF. RAW+JPEG pairs stay together": {
+    "en": "RAW, JPEG, HEIC, JPEG XL, TIFF, PNG, WebP, and AVIF. RAW+JPEG pairs stay together",
+    "es": "RAW, JPEG, HEIC, JPEG XL, TIFF, PNG, WebP, AVIF. los pares RAW+JPEG van juntos",
+    "zh-Hans": "支持 RAW、JPEG、HEIC、JPEG XL、TIFF、PNG、WebP 和 AVIF。RAW+JPEG 成对显示",
+    "hi": "RAW, JPEG, HEIC, JPEG XL, TIFF, PNG, WebP और AVIF। RAW+JPEG जोड़े साथ रहते हैं",
+    "pt": "RAW, JPEG, HEIC, JPEG XL, TIFF, PNG, WebP, AVIF. pares RAW+JPEG ficam juntos",
+    "ar": "RAW وJPEG وHEIC وJPEG XL وTIFF وPNG وWebP وAVIF. تبقى أزواج RAW وJPEG معًا"
+  },
+  "play video and audio, with audio levels in Info": {
+    "en": "play video and audio, with audio levels in Info",
+    "es": "reproduce vídeo y audio. niveles en Información",
+    "zh-Hans": "播放视频和音频，可在信息面板查看音频电平",
+    "hi": "वीडियो और ऑडियो चलाएँ। ऑडियो स्तर जानकारी पैनल में देखें",
+    "pt": "reproduza vídeo e áudio. níveis em Informações",
+    "ar": "شغّل الفيديو والصوت. تجد مستويات الصوت في لوحة المعلومات"
+  },
+  "filter Fuji photos by film simulation": {
+    "en": "filter Fuji photos by film simulation",
+    "es": "filtra fotos Fuji por simulación de película",
+    "zh-Hans": "按胶片模拟筛选 Fuji 照片",
+    "hi": "फ़िल्म सिमुलेशन से Fuji फ़ोटो फ़िल्टर करें",
+    "pt": "filtre fotos Fuji por simulação de filme",
+    "ar": "رشّح صور Fuji حسب محاكاة الأفلام"
+  },
+  "review an Apple Photos library or album without exporting": {
+    "en": "review an Apple Photos library or album without exporting",
+    "es": "revisa tu fototeca o un álbum de Apple Photos sin exportar",
+    "zh-Hans": "无需导出即可查看 Apple Photos 图库或相簿",
+    "hi": "Apple Photos लाइब्रेरी या ऐल्बम बिना एक्सपोर्ट किए देखें",
+    "pt": "revise a fototeca ou um álbum do Apple Photos sem exportar",
+    "ar": "راجع مكتبة Apple Photos أو ألبومًا دون تصدير"
+  },
+  "check focus at 100%, with histogram and clipping": {
+    "en": "check focus at 100%, with histogram and clipping",
+    "es": "enfoque al 100%, con histograma y recorte",
+    "zh-Hans": "以 100% 检查对焦，查看直方图和溢出",
+    "hi": "100% पर फ़ोकस जाँचें और हिस्टोग्राम व क्लिपिंग देखें",
+    "pt": "foco a 100%, com histograma e recorte tonal",
+    "ar": "افحص التركيز بتكبير 100% مع المدرج التكراري وفقدان التفاصيل"
+  },
+  "flag high ISO, slow shutter speeds, and clipped highlights or shadows": {
+    "en": "flag high ISO, slow shutter speeds, and clipped highlights or shadows",
+    "es": "marca ISO alto, obturación lenta y luces o sombras recortadas",
+    "zh-Hans": "标出高 ISO、慢快门及高光或阴影溢出",
+    "hi": "हाई ISO, धीमी शटर स्पीड और क्लिप हुए उजले या गहरे हिस्से चिह्नित करें",
+    "pt": "sinalize ISO alto, obturador lento e altas luzes ou sombras recortadas",
+    "ar": "ارصد ISO المرتفع وبطء الغالق وفقدان تفاصيل الإضاءة أو الظلال"
+  },
+  "find duplicates and bursts. nothing changes automatically": {
+    "en": "find duplicates and bursts. nothing changes automatically",
+    "es": "detecta duplicados y ráfagas. nada cambia automáticamente",
+    "zh-Hans": "查找重复照片和连拍组，不会自动改动",
+    "hi": "डुप्लिकेट और फ़ोटो बर्स्ट खोजें। कुछ भी अपने आप नहीं बदलता",
+    "pt": "ache duplicatas e sequências de fotos. nada muda automaticamente",
+    "ar": "اعثر على الصور المكرّرة وتتابعات الصور. لا شيء يتغيّر تلقائيًا"
+  },
+  "browse an archive’s folders and pin them for quick reopening": {
+    "en": "browse an archive’s folders and pin them for quick reopening",
+    "es": "explora las carpetas del archivo y fíjalas para reabrirlas rápido",
+    "zh-Hans": "浏览归档文件夹，固定后可快速重开",
+    "hi": "आर्काइव के फ़ोल्डर देखें और जल्दी दोबारा खोलने के लिए पिन करें",
+    "pt": "explore pastas do acervo e fixe-as para reabrir rápido",
+    "ar": "تصفّح مجلدات الأرشيف وثبّتها لإعادة فتحها بسرعة"
+  },
+  "filter by decision, stars, labels, date, camera, and file type": {
+    "en": "filter by decision, stars, labels, date, camera, and file type",
+    "es": "filtra por decisión, estrellas, etiquetas, fecha, cámara y tipo de archivo",
+    "zh-Hans": "按决定、星级、标签、日期、相机和文件类型筛选",
+    "hi": "फ़ैसले, सितारे, लेबल, तारीख, कैमरा और फ़ाइल प्रकार से फ़िल्टर करें",
+    "pt": "filtre por decisão, estrelas, etiquetas, data, câmera e tipo de arquivo",
+    "ar": "صفِّ حسب القرار والنجوم والتسميات والتاريخ والكاميرا ونوع الملف"
+  },
+  "rename and organize files with a preview and undo": {
+    "en": "rename and organize files with a preview and undo",
+    "es": "renombra y organiza. puedes previsualizar y deshacer",
+    "zh-Hans": "重命名和整理文件，支持预览和撤销",
+    "hi": "नाम बदलें, फ़ाइलें व्यवस्थित करें। पूर्वावलोकन और पूर्ववत",
+    "pt": "renomeie e organize com prévia e opção de desfazer",
+    "ar": "أعد تسمية الملفات ونظّمها مع المعاينة وإمكانية التراجع"
+  },
+  "export copies your keepers, or writes XMP for your editor": {
+    "en": "export copies your keepers, or writes XMP for your editor",
+    "es": "exporta copias de tus elegidas o escribe XMP para tu editor",
+    "zh-Hans": "导出保留文件的副本，或为编辑软件写入 XMP",
+    "hi": "चुनी फ़ाइलों की कॉपी निर्यात करें या एडिटर के लिए XMP लिखें",
+    "pt": "exporte cópias das escolhidas ou grave XMP para seu editor",
+    "ar": "صدّر نسخًا من مختاراتك أو اكتب XMP لبرنامج التحرير"
+  },
+  "marking no never deletes. Clean Up to Trash is a separate step": {
+    "en": "marking no never deletes. Clean Up to Trash is a separate step",
+    "es": "marcar «no» no borra. usa Clean Up para enviar a la papelera",
+    "zh-Hans": "标记舍弃不会删除文件，需另用“清理”移入废纸篓",
+    "hi": "न रखने का निशान फ़ाइल नहीं मिटाता। ट्रैश में भेजने के लिए अलग से Clean Up करें",
+    "pt": "marcar “não” não apaga. use Clean Up para enviar à lixeira",
+    "ar": "الاستبعاد لا يحذف الملفات. النقل إلى السلة عبر Clean Up خطوة منفصلة"
+  },
+  "no account and no app analytics. free, MIT licensed": {
+    "en": "no account and no app analytics. free, MIT licensed",
+    "es": "sin cuenta ni analítica de la app. gratis, licencia MIT",
+    "zh-Hans": "无需账号，无应用使用分析。免费，采用 MIT 许可证",
+    "hi": "न खाता, न ऐप एनालिटिक्स। मुफ़्त, MIT लाइसेंस के तहत",
+    "pt": "sem conta nem métricas do app. grátis, licença MIT",
+    "ar": "بلا حساب أو تحليلات استخدام. مجاني بترخيص MIT"
+  },
+  "works with the keyboard and VoiceOver": {
+    "en": "works with the keyboard and VoiceOver",
+    "es": "funciona con teclado y VoiceOver",
+    "zh-Hans": "支持键盘和 VoiceOver",
+    "hi": "कीबोर्ड और VoiceOver का समर्थन",
+    "pt": "funciona com teclado e VoiceOver",
+    "ar": "يدعم لوحة المفاتيح وVoiceOver"
+  },
+  "mark yes or no, then copy the keepers": {
+    "en": "mark yes or no, then copy the keepers",
+    "es": "marca sí o no y copia las elegidas",
+    "zh-Hans": "标记保留或舍弃，再复制保留的文件",
+    "hi": "हाँ या नहीं चुनें, फिर चुनी फ़ाइलें कॉपी करें",
+    "pt": "marque sim ou não e copie as escolhidas",
+    "ar": "حدّد الاحتفاظ أو الاستبعاد، ثم انسخ مختاراتك"
+  },
+  "open folders on your Mac, external drives, or memory cards as they are": {
+    "en": "open folders on your Mac, external drives, or memory cards as they are",
+    "es": "abre tal cual carpetas de tu Mac, discos externos o tarjetas de memoria",
+    "zh-Hans": "直接打开 Mac、外置硬盘或存储卡中的文件夹",
+    "hi": "Mac, बाहरी ड्राइव या मेमोरी कार्ड के फ़ोल्डर सीधे खोलें",
+    "pt": "abra pastas no Mac, em discos externos ou cartões de memória como estão",
+    "ar": "افتح مجلدات Mac أو الأقراص الخارجية أو بطاقات الذاكرة كما هي"
+  },
+  "browse folders and choose keepers. no editing, maps, or synced two-photo comparison": {
+    "en": "browse folders and choose keepers. no editing, maps, or synced two-photo comparison",
+    "es": "explora carpetas y elige. sin edición, mapas ni comparación sincronizada de dos fotos",
+    "zh-Hans": "浏览文件夹，选出要保留的照片。不提供编辑、地图或双图同步比较",
+    "hi": "फ़ोल्डर देखें और चुनें क्या रखें। संपादन, नक्शे या दो फ़ोटो की सिंक्रनाइज़्ड तुलना नहीं",
+    "pt": "veja pastas e escolha o que fica. sem edição, mapas ou comparação sincronizada de duas fotos",
+    "ar": "تصفّح المجلدات واختر ما تحتفظ به. بلا تحرير أو خرائط أو مقارنة متزامنة لصورتين"
   }
 }

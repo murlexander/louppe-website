@@ -103,7 +103,7 @@ export async function buildLocales({ root, out, published, drafts = [], preview,
         const schema = JSON.parse(json);
         if (schema['@type'] === 'SoftwareApplication') {
           schema.description = dictionary[schema.description][language.code];
-          schema.featureList = ['photos, video, audio, and text','zoom and compare','filter, sort, and organise','export and clean up','local, free, and open source'].map(key => dictionary[key][language.code]);
+          schema.featureList = ['photos, video, and audio','zoom and compare','filter, sort, and organise','export and clean up','local, free, and open source'].map(key => dictionary[key][language.code]);
           schema.offers = { '@type': 'Offer', price: '0', priceCurrency: 'USD' };
         } else if (schema['@type'] === 'BlogPosting') {
           schema.headline = dictionary[schema.headline]?.[language.code] ?? schema.headline;
