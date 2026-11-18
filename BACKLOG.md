@@ -92,10 +92,32 @@ Website work ships independently. Claims must match the released app.
 - [x] **Awesome Mac listing merged.** [awesome-mac #4173](https://github.com/jaywcjlove/awesome-mac/pull/4173)
   merged on 15 November in English, Chinese, Japanese, Korean and Portuguese.
 - [ ] **Directory listings awaiting maintainers.**
-  [open-source-mac-os-apps #1938](https://github.com/serhii-londar/open-source-mac-os-apps/pull/1938),
-  [AndrewSB/awesome-macOS #80](https://github.com/AndrewSB/awesome-macOS/pull/80) and
+  [open-source-mac-os-apps #1938](https://github.com/serhii-londar/open-source-mac-os-apps/pull/1938)
+  (2 November),
+  [AndrewSB/awesome-macOS #80](https://github.com/AndrewSB/awesome-macOS/pull/80), and
   [awesome-native-macosx-apps #285](https://github.com/open-saas-directory/awesome-native-macosx-apps/pull/285)
-  (its rules exclude self-promoted apps; may be refused), both 14 November.
+  (both 14 November). The last list excludes self-promoted apps.
+  - **Round two, 18 November.** Opened
+    [Does It ARM #1151](https://github.com/ThatGuySam/doesitarm/pull/1151),
+    [xyNNN/awesome-mac #95](https://github.com/xyNNN/awesome-mac/pull/95),
+    [sraodev/awesome-macOS #25](https://github.com/sraodev/awesome-macOS/pull/25),
+    [Awesome Photography #8](https://github.com/rogersilvasouza/awesome-photography/pull/8),
+    [mikeqle/awesome-macos-apps #9](https://github.com/mikeqle/awesome-macos-apps/pull/9),
+    [native-macos-apps/awesome-native-macos-apps #7](https://github.com/native-macos-apps/awesome-native-macos-apps/pull/7),
+    and [xlvisuals/awesome-macos #6](https://github.com/xlvisuals/awesome-macos/pull/6).
+    [LibHunt](https://www.libhunt.com/r/louppe-media-culler) accepted the free form
+    and published the listing. The Does It ARM preview needs Vercel authorization.
+  - **Skipped GitHub lists.** abordage/awesome-mac already includes Louppe in its
+    source list. matteocrippa/awesome-swift and onmyway133/awesome-open-source-mac-apps
+    require 15 and 100 app stars respectively (Louppe had 12). phmullins/awesome-macos
+    returns 404. tonnoz/super-awesome-mac has no published submission rules.
+    onnetvikash/best-macos-open-source-apps had no merged PRs and its latest change
+    was the license. Awesome Drone Photography & Cinematography focuses on drone workflows.
+  - **Skipped web directories.** OpenAlternative and MacUpdate gate submission
+    behind sign-in. European Alternatives requires an account and has no culling
+    category. OpenSourceAlternative.to requires self-hosting. Softpedia excludes
+    apps with AI-written code. MacMenuBar covers menu bar apps.
+
   Answer maintainer review; referrals appear by origin in GA4. Community posts
   are Alex's to publish; the official Homebrew cask needs about 75 stars.
   iCHAIT/awesome-macOS accepts PRs from collaborators only (since 21 October);
