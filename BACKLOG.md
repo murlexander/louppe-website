@@ -117,6 +117,7 @@ Website work ships independently. Claims must match the released app.
     behind sign-in. European Alternatives requires an account and has no culling
     category. OpenSourceAlternative.to requires self-hosting. Softpedia excludes
     apps with AI-written code. MacMenuBar covers menu bar apps.
+  - **18 November 2026.** MacUpdate (`markinmvv12@gmail.com`) is pending review, with an email reply promised within 10 days and no listing URL issued. OpenAlternative (`markinmvv12@gmail.com`) was blocked before submission and has no listing URL. Louppe has 12 stars against the 250 required for repositories under six months old.
 
   Answer maintainer review; referrals appear by origin in GA4. Community posts
   are Alex's to publish; the official Homebrew cask needs about 75 stars.
