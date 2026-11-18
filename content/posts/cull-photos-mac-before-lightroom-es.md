@@ -12,7 +12,7 @@ Copia la sesión de la tarjeta de memoria a una carpeta de tu Mac y guarda una c
 
 [Consigue Louppe en el Mac App Store](https://apps.apple.com/app/louppe/id6820131477). [También está disponible en GitHub y Homebrew](/#download). Abre una carpeta en Louppe o arrástrala a su icono del Dock o a la ventana de revisión. Puedes cambiar de carpeta mientras revisas; Louppe guarda tus decisiones y conserva el tamaño de la ventana
 
-Louppe revisa los archivos donde están. No hay que importarlos a una biblioteca aparte
+Louppe revisa los archivos donde están. No hay que importarlos a una biblioteca aparte. En carpetas grandes, puedes explorar en Galería o Cuadrícula mientras se cargan los detalles. Espera a que termine la carga para marcar decisiones o realizar acciones sobre los archivos
 
 ## Toma una decisión por foto
 

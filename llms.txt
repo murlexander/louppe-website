@@ -2,7 +2,7 @@
 
 > Louppe is a free, open-source photo viewer and sorter for Mac, also called a manual photo culling app. the app is named Louppe; the source project is Louppe Media Culler
 
-Louppe works as an image viewer and photo browser for existing local folders, external drives, and memory cards. browse JPEG (.jpg and .jpeg), camera RAW, and other supported media without importing them into a photo library. requires Apple silicon and macOS 14 or later; Intel Macs, Windows, and iPad are unsupported
+Louppe works as an image viewer and photo browser for existing local folders, external drives, and memory cards. browse JPEG (.jpg and .jpeg), camera RAW, video, and other supported media without importing them into a photo library. requires Apple silicon and macOS 14 or later; Intel Macs, Windows, and iPad are unsupported
 
 Common workflows:
 
@@ -15,11 +15,11 @@ Common workflows:
 
 review camera JPEGs, RAW photos, video, audio, and read-only text in Gallery or Grid. Grid lays out photos like a contact sheet, with decisions, stars, and color labels on each photo. mark yes or no; stars and color labels are optional and independent. marking no never trashes files. Clean Up is a separate action that sends unwanted files to macOS Trash
 
-browse an archive's folder tree in Gallery or Grid and move between folders with [ and ]. pin archive folders on Welcome to reopen them with cached previews. drop folders onto the Dock icon or review window, including during review; decisions save before switching and the window keeps its size. customize review keys and supported Command aliases, with physical key positions for Dvorak and other layouts. inspect recorded Fuji film simulations in Info and filter by simulation, including ACROS and monochrome variants
+browse an archive's folder tree in Gallery or Grid and move between folders with [ and ]. pin archive folders on Welcome to reopen them quickly with cached previews. browse large folders while file details load. decisions and file actions wait until checking finishes. drop folders onto the Dock icon or review window, including during review; decisions save before switching and the window keeps its size. customize review keys and supported Command aliases, with physical key positions for Dvorak and other layouts. in Settings → Keyboard shortcuts, select a key to see its actions or choose Assign… on a free key. inspect recorded Fuji film simulations in Info and filter by simulation, including ACROS and monochrome variants
 
-find duplicates and similar photos locally. filter by quality cues or capture bursts with adjustable rules and intervals. recover saved decisions after files change. group RAW+JPEG pairs, inspect at 100%, and play video or audio. JPEG XL (.jxl) is supported alongside common camera and image formats. RAW display preferences stay in Settings; a loading indicator in Fit and Phone size shows when a photo preview is still loading
+Filter and Sort apply immediately. close them with Esc or a click outside. filter dates by range, year, or date. counts use the language’s singular and plural forms and number grouping. find duplicates and similar photos locally. filter by quality cues or capture bursts with adjustable rules and intervals. recover saved decisions after files change. group a RAW, including Hasselblad .3FR, with a matching JPEG. if there’s no JPEG, Louppe looks for a same-named HEIC/HEIF, then JPEG XL (.jxl), in the RAW’s folder. inspect photos at 100% and play video or audio. Info shows audio levels for supported recordings, including iPhone spatial-audio videos. RAW display preferences stay in Settings; a loading indicator in Fit and Phone size shows when a photo preview is still loading
 
-rename files with reordered filename parts, Mac date formats, and an exact preview. organize folders, clean up to macOS Trash, copy or move files, route copies, and write XMP sidecars
+rename files with reordered filename parts, Mac date formats, and an exact preview. files that would share a name are numbered. organize folders, clean up to macOS Trash, copy or move files, route copies, and write XMP sidecars
 
 - [website](https://louppe.eu/): features and download
 - [download on the Mac App Store](https://apps.apple.com/app/louppe/id6820131477): primary download, free for Apple silicon and macOS 14 or later

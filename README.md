@@ -62,7 +62,7 @@ See [BLOG.md](BLOG.md) for drafting and publishing. Drafts stay local. The gener
 
 ## Readiness evidence
 
-Current feature copy follows [Louppe 1.13.0](https://github.com/murlexander/louppe-media-culler/releases/tag/v1.13.0): Apple Photos library review, pinned archives, folder-tree browsing with folder shortcuts, and the contact-sheet Grid, on top of the 1.12 features. Gallery and Grid stills are native 1.13 captures from `media-library/2026-11-04-store/`. The Demo video, the 1.9 introduction, and its media remain historical.
+Current feature copy follows the [Louppe 1.14.1 user guide](https://github.com/murlexander/louppe-media-culler/blob/v1.14.1/Docs/USER_GUIDE.md) and the changes shipped in [1.14.0 and 1.14.1](https://github.com/murlexander/louppe-media-culler/blob/v1.14.1/CHANGELOG.md). Gallery and Grid stills are native 1.13 captures from `media-library/2026-11-04-store/`. The Demo video, the 1.9 introduction, and its media remain historical.
 
 Dated reports stay in [Docs/Archive](Docs/Archive/); current work is in the backlog.
 

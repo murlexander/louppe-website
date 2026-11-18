@@ -1,7 +1,5 @@
 Louppe es un visor y organizador de fotos gratuito y de código abierto para Mac. Puede ser una alternativa a ApolloOne si quieres explorar carpetas de fotos y elegir tú cuáles conservar. Abre una carpeta con JPEG, archivos RAW, o ambos, revisa con el teclado, y elige qué conservar. Funciona sin conexión y sin cuenta en macOS 14 o posterior
 
-Estos pasos corresponden a Louppe 1.12. Si tu versión del App Store es anterior, [la versión de GitHub](https://github.com/murlexander/louppe-media-culler/releases/tag/v1.12.0) incluye estos cambios
-
 Creo Louppe para esa primera selección después de una sesión: recorrer las fotografías, decidir cuáles encajan, y conservar los archivos que quieres. Eso puede ser todo el trabajo, aunque nunca edites una fotografía
 
 Si eso es lo que buscas, estas son las diferencias entre Louppe y ApolloOne
@@ -28,7 +26,7 @@ Empieza con una copia de una sesión pequeña y guarda una copia de seguridad ap
 
 Usa la tecla predeterminada **F** para Sí y **D** para No. Recorre las fotografías con las teclas de flecha. Deja sin decidir las fotos que te generen dudas o añade estrellas con **1–5** para otra pasada. Las estrellas y las decisiones Sí/No son independientes
 
-En **Ajustes → Atajos de teclado**, puedes personalizar las teclas de revisión o usar posiciones físicas para distribuciones como Dvorak. Las teclas de esta guía son las predeterminadas
+En **Ajustes → Atajos de teclado**, selecciona una tecla en el mapa para ver sus acciones. Selecciona una tecla libre y elige **Asignar…** para vincularla a una acción. Puedes usar posiciones físicas para distribuciones como Dvorak. Las teclas de esta guía son las predeterminadas
 
 **Marcar No no elimina un archivo ni lo envía a la Papelera**. Limpiar es una acción independiente que envía archivos no deseados a la Papelera de macOS. Tus decisiones se guardan automáticamente para que puedas volver a abrir la carpeta y continuar
 
@@ -48,7 +46,7 @@ En Ajustar y vista de tamaño móvil, un indicador muestra si la vista previa de
 
 Para los archivos RAW, la visualización Rápido usa vistas previas por debajo del 100% y el revelado RAW de Apple al 100% o más. Ese revelado puede diferir del JPEG de la cámara o del de tu editor. Comprueba el propio JPEG cuando importe el aspecto terminado de la cámara
 
-Si disparas en RAW + JPEG, puedes agrupar los archivos correspondientes como un solo elemento de revisión o revisarlos por separado. La [guía de RAW + JPEG](/blog/cull-raw-jpeg-pairs-mac/) explica el emparejamiento, las decisiones independientes, y qué archivos se copian
+Puedes revisar juntos o por separado los archivos RAW + JPEG correspondientes. Si no hay un JPEG coincidente, Louppe puede emparejar el RAW con un HEIC/HEIF o JPEG XL del mismo nombre en esa carpeta. La [guía de RAW + JPEG](/blog/cull-raw-jpeg-pairs-mac/) explica qué archivos se copian
 
 Las fotos, el vídeo, el audio, y el texto de solo lectura pueden compartir una carpeta de revisión. Puede ser útil cuando una sesión contiene algo más que fotografías
 

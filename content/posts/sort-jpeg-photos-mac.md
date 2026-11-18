@@ -14,7 +14,7 @@ This guide starts with ordinary `.jpg` or `.jpeg` files in Finder. For photos in
 
 *A JPEG-only folder in Grid, captured in Louppe 1.10. The purple outline identifies the current photo; it doesn't mark a keeper*
 
-Here, “sort photos” means choosing which pictures to keep. Changing their order by filename or date is a separate choice in Sort
+Here, “sort photos” means choosing which pictures to keep. Changing their order by filename or date is a separate choice in Sort. Sort applies as soon as you make a choice. Press Esc or click outside to close it
 
 ## Choose keepers with Yes and No
 
@@ -30,7 +30,7 @@ Louppe saves decisions in `.louppe_session.json` in the opened folder. Wait for 
 
 ## Check the shortlist before copying
 
-Filter to Yes and look through the keepers in Grid. Check whether you kept several almost identical frames or missed a photo you still want
+In Filter, choose Yes to see your keepers immediately. Press Esc or click outside, then check the shortlist in Grid for near-identical frames or photos you missed
 
 Switch back to Gallery for a closer look. **S** toggles true 100% zoom with the default keys, which helps you inspect focus. Custom shortcuts can differ
 

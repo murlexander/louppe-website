@@ -415,13 +415,13 @@
     "pt": "fotos, vídeos, áudio e texto",
     "ar": "الصور والفيديو والصوت والنصوص"
   },
-  "review photos and play video and audio in Gallery, with keyboard playback controls": {
-    "en": "review photos and play video and audio in Gallery, with keyboard playback controls",
-    "es": "revisa fotos y reproduce vídeos y audio en la galería, con controles de reproducción por teclado",
-    "zh-Hans": "在图库查看照片、播放视频和音频，并用键盘控制播放",
-    "hi": "गैलरी में फ़ोटो देखें और वीडियो व ऑडियो चलाएँ, कीबोर्ड से प्लेबैक नियंत्रित करें",
-    "pt": "revise fotos e reproduza vídeos e áudio na galeria, com controles de reprodução pelo teclado",
-    "ar": "راجع الصور وشغّل الفيديو والصوت في المعرض مع التحكم بالتشغيل من لوحة المفاتيح"
+  "review photos and play video and audio in Gallery, with keyboard playback controls. Info shows audio levels for supported recordings, including iPhone spatial-audio videos": {
+    "en": "review photos and play video and audio in Gallery, with keyboard playback controls. Info shows audio levels for supported recordings, including iPhone spatial-audio videos",
+    "es": "revisa fotos y reproduce vídeos y audio en Galería, con controles de reproducción por teclado. Información muestra los niveles de audio de grabaciones compatibles, incluidos los de vídeos del iPhone con audio espacial",
+    "zh-Hans": "在图库中查看照片、视频和音频，可用键盘控制播放。信息面板会显示受支持录制内容的音频电平，包括 iPhone 空间音频视频的电平",
+    "hi": "गैलरी में फ़ोटो देखें और कीबोर्ड से वीडियो और ऑडियो चलाएँ। जानकारी पैनल में समर्थित रिकॉर्डिंग के ऑडियो स्तर दिखते हैं, जिनमें iPhone के स्पैशियल ऑडियो वाले वीडियो भी शामिल हैं",
+    "pt": "revise fotos e reproduza vídeos e áudio na Galeria, com controles de reprodução pelo teclado. Informações mostra os níveis de áudio de gravações compatíveis, inclusive em vídeos do iPhone com áudio espacial",
+    "ar": "راجع الصور وشغّل الفيديو والصوت في المعرض باستخدام لوحة المفاتيح. تعرض لوحة المعلومات مستويات الصوت للتسجيلات المدعومة، بما فيها مستويات فيديو iPhone ذي الصوت المكاني"
   },
   "common camera RAW files, JPEG, TIFF, PNG, HEIC, WebP, and AVIF are supported. optionally group matching RAW+JPEG files as one review item, with separate decisions, stars, and color labels": {
     "en": "common camera RAW files, JPEG, TIFF, PNG, HEIC, WebP, and AVIF are supported. optionally group matching RAW+JPEG files as one review item, with separate decisions, stars, and color labels",
@@ -471,13 +471,13 @@
     "pt": "filtre, ordene e organize",
     "ar": "رشّح ورتّب ونظّم"
   },
-  "filter by decisions, stars, labels, dates, folders, camera details, and file types. decisions save automatically for your next session": {
-    "en": "filter by decisions, stars, labels, dates, folders, camera details, and file types. decisions save automatically for your next session",
-    "es": "filtra por decisiones, estrellas, etiquetas, fechas, carpetas, datos de cámara y tipos de archivo. tus decisiones se guardan automáticamente para la próxima sesión",
-    "zh-Hans": "按保留决定、星级、标签、日期、文件夹、相机信息和文件类型筛选。决定自动保存，下次继续使用",
-    "hi": "निर्णय, सितारे, लेबल, तारीख, फ़ोल्डर, कैमरा जानकारी और फ़ाइल प्रकार से फ़िल्टर करें। अगले सत्र के लिए निर्णय अपने आप सहेजे जाते हैं",
-    "pt": "filtre por decisões, estrelas, etiquetas, datas, pastas, dados da câmera e tipos de arquivo. as decisões são salvas automaticamente para a próxima sessão",
-    "ar": "رشّح حسب القرارات والنجوم والتصنيفات والتواريخ والمجلدات وبيانات الكاميرا وأنواع الملفات. تُحفظ قراراتك تلقائيًا للجلسة التالية"
+  "filter by decisions, stars, labels, dates, folders, camera details, and file types. narrow dates by range, year, or date. Filter and Sort apply immediately. press Esc or click outside to close. counts use the language’s singular and plural forms and number grouping. decisions save automatically": {
+    "en": "filter by decisions, stars, labels, dates, folders, camera details, and file types. narrow dates by range, year, or date. Filter and Sort apply immediately. press Esc or click outside to close. counts use the language’s singular and plural forms and number grouping. decisions save automatically",
+    "es": "filtra por decisiones, estrellas, etiquetas, fechas, carpetas, datos de cámara y tipos de archivo. acota las fechas por intervalo, año o fecha concreta. los cambios en Filtrar y Ordenar se aplican al instante. pulsa Esc o haz clic fuera para cerrar. los recuentos usan el singular, el plural y la agrupación de cifras del idioma de Louppe. las decisiones se guardan automáticamente",
+    "zh-Hans": "按决定、星级、标签、日期、文件夹、相机信息和文件类型筛选。日期可按范围、年份或指定日期筛选。筛选和排序即时生效，按 Esc 或点击外部即可关闭。计数遵循 Louppe 所用语言的单复数和数字分组规则。决定会自动保存",
+    "hi": "फ़ैसलों, सितारों, लेबल, तारीखों, फ़ोल्डरों, कैमरा विवरण और फ़ाइल प्रकारों से फ़िल्टर करें। तारीख के लिए अवधि, साल या कोई तारीख चुनें। फ़िल्टर और क्रम के बदलाव तुरंत लागू होते हैं। बंद करने के लिए Esc दबाएँ या बाहर क्लिक करें। गिनती में Louppe की भाषा के एकवचन, बहुवचन और अंक-समूह के नियम लागू होते हैं। फ़ैसले अपने आप सेव होते हैं",
+    "pt": "filtre por decisões, estrelas, etiquetas, datas, pastas, dados da câmera e tipos de arquivo. restrinja as datas por intervalo, ano ou data específica. os ajustes de Filtrar e Ordenar valem na hora. pressione Esc ou clique fora para fechar. as contagens seguem o singular, o plural e o agrupamento de dígitos do idioma do Louppe. as decisões são salvas automaticamente",
+    "ar": "صفِّ حسب القرارات والنجوم والتسميات والتواريخ والمجلدات وتفاصيل الكاميرا وأنواع الملفات. حدّد التواريخ حسب نطاق أو سنة أو تاريخ بعينه. تسري تغييرات التصفية والترتيب فورًا. اضغط Esc أو انقر خارج القائمة لإغلاقها. تُعرض الأعداد وفق صيغ المفرد والجمع وتجميع الأرقام في لغة Louppe. تُحفظ القرارات تلقائيًا"
   },
   "Organize Source Folder previews a folder structure before moving files. Rename Files previews new names and keeps recognised RAW+JPEG/XMP families together. both support undo during the open session": {
     "en": "Organize Source Folder previews a folder structure before moving files. Rename Files previews new names and keeps recognised RAW+JPEG/XMP families together. both support undo during the open session",
@@ -815,13 +815,13 @@
     "pt": "decisões, estrelas, etiquetas de cor, nomes e identidades dos arquivos são salvos em",
     "ar": "تُحفظ القرارات والنجوم والتصنيفات اللونية وأسماء الملفات ومعرّفاتها في"
   },
-  "in the opened folder, with a backup in Louppe’s Application Support data. XMP sidecars and exports go to chosen locations": {
-    "en": "in the opened folder, with a backup in Louppe’s Application Support data. XMP sidecars and exports go to chosen locations",
-    "es": "en la carpeta abierta, con una copia de seguridad en los datos de Application Support de Louppe. los archivos auxiliares XMP y las exportaciones van a las ubicaciones elegidas",
-    "zh-Hans": "，位于打开的文件夹中，并在 Louppe 的 Application Support 数据中备份。XMP 附属文件和导出文件写入选定位置",
-    "hi": "में, खुले फ़ोल्डर में, और Louppe के Application Support डेटा में बैकअप रखा जाता है। XMP साइडकार और निर्यात चुने हुए स्थानों पर जाते हैं",
-    "pt": "na pasta aberta, com um backup nos dados de Application Support do Louppe. arquivos auxiliares XMP e exportações vão aos locais escolhidos",
-    "ar": "داخل المجلد المفتوح مع نسخة احتياطية في بيانات Application Support الخاصة بـ Louppe. تُكتب ملفات XMP الجانبية والتصديرات في الأماكن المختارة"
+  "in the opened folder. a local backup in Louppe’s Application Support data ties saved decisions to verified file content. XMP sidecars and exports go to chosen locations": {
+    "en": "in the opened folder. a local backup in Louppe’s Application Support data ties saved decisions to verified file content. XMP sidecars and exports go to chosen locations",
+    "es": "en la carpeta abierta. una copia de seguridad local en los datos de soporte de Louppe vincula las decisiones guardadas al contenido verificado de los archivos. los archivos auxiliares XMP y las exportaciones van a las ubicaciones elegidas",
+    "zh-Hans": "保存在打开的文件夹中。Louppe 的应用支持数据中有一份本地备份，将已保存的决定与验证过的文件内容关联。XMP 附属文件和导出文件写入你选择的位置",
+    "hi": "खुले फ़ोल्डर में सेव होते हैं। Louppe के Application Support डेटा में स्थानीय बैकअप सेव किए गए फ़ैसलों को सत्यापित फ़ाइल सामग्री से जोड़ता है। XMP साइडकार और एक्सपोर्ट चुनी गई जगहों पर जाते हैं",
+    "pt": "na pasta aberta. um backup local nos dados de suporte do Louppe vincula as decisões salvas ao conteúdo verificado dos arquivos. os arquivos auxiliares XMP e as exportações vão para os locais escolhidos",
+    "ar": "في المجلد المفتوح. تربط نسخة احتياطية محلية في بيانات دعم Louppe القرارات المحفوظة بمحتوى الملفات الذي جرى التحقّق منه. تُحفظ ملفات XMP المرافقة والصادرات في الأماكن التي تختارها"
   },
   "preferences and recent folder paths stay local. sandboxed builds retain macOS access bookmarks for chosen folders. thumbnail caches speed up review. local operation journals record paths and progress for recovery; destination access is retained while interrupted work may need it": {
     "en": "preferences and recent folder paths stay local. sandboxed builds retain macOS access bookmarks for chosen folders. thumbnail caches speed up review. local operation journals record paths and progress for recovery; destination access is retained while interrupted work may need it",
@@ -1327,21 +1327,21 @@
     "pt": "próximo item",
     "ar": "العنصر التالي"
   },
-  "previous / seek −0.5s": {
-    "en": "previous / seek −0.5s",
-    "es": "anterior / retroceder 0,5 s",
-    "zh-Hans": "上一个 / 后退 0.5 秒",
-    "hi": "पिछला / 0.5 सेकंड पीछे",
-    "pt": "anterior / voltar 0,5 s",
-    "ar": "السابق / رجوع 0.5 ثانية"
+  "previous item / back 0.5 s in Gallery video": {
+    "en": "previous item / back 0.5 s in Gallery video",
+    "es": "elemento anterior / retroceder 0,5 s en vídeos en Galería",
+    "zh-Hans": "上一项 / 图库视频后退 0.5 秒",
+    "hi": "पिछला आइटम / गैलरी वीडियो में 0.5 सेकंड पीछे",
+    "pt": "item anterior / voltar 0,5 s no vídeo na Galeria",
+    "ar": "العنصر السابق / الرجوع 0.5 ثانية في فيديو المعرض"
   },
-  "next / seek +0.5s": {
-    "en": "next / seek +0.5s",
-    "es": "siguiente / avanzar 0,5 s",
-    "zh-Hans": "下一个 / 前进 0.5 秒",
-    "hi": "अगला / 0.5 सेकंड आगे",
-    "pt": "próximo / avançar 0,5 s",
-    "ar": "التالي / تقدم 0.5 ثانية"
+  "next item / ahead 0.5 s in Gallery video": {
+    "en": "next item / ahead 0.5 s in Gallery video",
+    "es": "elemento siguiente / avanzar 0,5 s en vídeos en Galería",
+    "zh-Hans": "下一项 / 图库视频前进 0.5 秒",
+    "hi": "अगला आइटम / गैलरी वीडियो में 0.5 सेकंड आगे",
+    "pt": "próximo item / avançar 0,5 s no vídeo na Galeria",
+    "ar": "العنصر التالي / التقدّم 0.5 ثانية في فيديو المعرض"
   },
   "previous item / row": {
     "en": "previous item / row",
@@ -1423,13 +1423,13 @@
     "pt": "desfazer a última ação",
     "ar": "التراجع عن الإجراء الأخير"
   },
-  "cancel / deselect": {
-    "en": "cancel / deselect",
-    "es": "cancelar / quitar selección",
-    "zh-Hans": "取消 / 取消选择",
-    "hi": "रद्द करें / चयन हटाएँ",
-    "pt": "cancelar / desmarcar",
-    "ar": "إلغاء / إلغاء التحديد"
+  "clear selection / cancel folder scan": {
+    "en": "clear selection / cancel folder scan",
+    "es": "borrar selección / cancelar escaneo de carpeta",
+    "zh-Hans": "清除选择 / 取消扫描文件夹",
+    "hi": "चयन हटाएँ / फ़ोल्डर स्कैन रद्द करें",
+    "pt": "limpar seleção / cancelar leitura da pasta",
+    "ar": "إلغاء التحديد / إلغاء فحص المجلد"
   },
   "clear stars": {
     "en": "clear stars",
@@ -1463,13 +1463,13 @@
     "pt": "verificar a pasta novamente",
     "ar": "إعادة فحص المجلد"
   },
-  "filter / search": {
-    "en": "filter / search",
-    "es": "filtrar / buscar",
-    "zh-Hans": "筛选 / 搜索",
-    "hi": "फ़िल्टर / खोज",
-    "pt": "filtrar / buscar",
-    "ar": "ترشيح / بحث"
+  "open Filter and focus Search": {
+    "en": "open Filter and focus Search",
+    "es": "abrir Filtrar e ir a Buscar",
+    "zh-Hans": "打开筛选并聚焦搜索",
+    "hi": "फ़िल्टर खोलें और खोज पर जाएँ",
+    "pt": "abrir Filtrar e focar a busca",
+    "ar": "فتح التصفية ونقل التركيز إلى البحث"
   },
   "command palette": {
     "en": "command palette",
@@ -1527,21 +1527,21 @@
     "pt": "mais rápido / próximo",
     "ar": "أسرع / التالي"
   },
-  "seek back 5 seconds": {
-    "en": "seek back 5 seconds",
-    "es": "retroceder 5 segundos",
-    "zh-Hans": "后退 5 秒",
-    "hi": "5 सेकंड पीछे जाएँ",
-    "pt": "voltar 5 segundos",
-    "ar": "رجوع 5 ثوانٍ"
+  "back 5 seconds in Gallery video": {
+    "en": "back 5 seconds in Gallery video",
+    "es": "retroceder 5 segundos en vídeos en Galería",
+    "zh-Hans": "图库视频后退 5 秒",
+    "hi": "गैलरी वीडियो में 5 सेकंड पीछे",
+    "pt": "voltar 5 segundos no vídeo na Galeria",
+    "ar": "الرجوع 5 ثوانٍ في فيديو المعرض"
   },
-  "seek ahead 5 seconds": {
-    "en": "seek ahead 5 seconds",
-    "es": "avanzar 5 segundos",
-    "zh-Hans": "前进 5 秒",
-    "hi": "5 सेकंड आगे जाएँ",
-    "pt": "avançar 5 segundos",
-    "ar": "تقدم 5 ثوانٍ"
+  "ahead 5 seconds in Gallery video": {
+    "en": "ahead 5 seconds in Gallery video",
+    "es": "avanzar 5 segundos en vídeos en Galería",
+    "zh-Hans": "图库视频前进 5 秒",
+    "hi": "गैलरी वीडियो में 5 सेकंड आगे",
+    "pt": "avançar 5 segundos no vídeo na Galeria",
+    "ar": "التقدّم 5 ثوانٍ في فيديو المعرض"
   },
   "select to first item": {
     "en": "select to first item",
@@ -1967,13 +1967,13 @@
     "hi": "Mac पर RAW + JPEG फ़ोटो एक साथ छाँटें",
     "ar": "فرز أزواج RAW + JPEG على Mac باستخدام Louppe"
   },
-  "common camera RAW files, JPEG, JPEG XL (.jxl), TIFF, PNG, HEIC, WebP, and AVIF are supported. optionally group matching RAW+JPEG files as one review item, with separate decisions, stars, and color labels": {
-    "en": "common camera RAW files, JPEG, JPEG XL (.jxl), TIFF, PNG, HEIC, WebP, and AVIF are supported. optionally group matching RAW+JPEG files as one review item, with separate decisions, stars, and color labels",
-    "es": "admite archivos RAW de cámaras habituales, JPEG, JPEG XL (.jxl), TIFF, PNG, HEIC, WebP y AVIF. puedes agrupar pares RAW+JPEG como un solo elemento, con decisiones, estrellas y etiquetas de color independientes",
-    "zh-Hans": "支持常见相机 RAW、JPEG、JPEG XL (.jxl)、TIFF、PNG、HEIC、WebP 和 AVIF。可将匹配的 RAW+JPEG 合并显示为一个项目，并分别设置保留决定、星级和颜色标签",
-    "hi": "सामान्य कैमरा RAW फ़ाइलें, JPEG, JPEG XL (.jxl), TIFF, PNG, HEIC, WebP और AVIF समर्थित हैं। चाहें तो मिलते RAW+JPEG को एक समीक्षा आइटम में रखें, हर फ़ाइल के लिए अलग निर्णय, सितारे और रंग लेबल बनाए रखें",
-    "pt": "aceita arquivos RAW de câmeras comuns, JPEG, JPEG XL (.jxl), TIFF, PNG, HEIC, WebP e AVIF. agrupe pares RAW+JPEG em um só item, com decisões, estrelas e etiquetas de cor independentes",
-    "ar": "يدعم ملفات RAW الشائعة للكاميرات وJPEG، JPEG XL (.jxl) وTIFF وPNG وHEIC وWebP وAVIF. يمكنك جمع ملفات RAW+JPEG المتطابقة في عنصر مراجعة واحد مع قرارات ونجوم وتصنيفات لونية مستقلة"
+  "Louppe supports common camera RAW files, including Hasselblad .3FR, plus JPEG, JPEG XL (.jxl), TIFF, PNG, HEIC/HEIF, WebP, and AVIF. group a RAW with a same-named JPEG, or with a same-named HEIC/HEIF or JPEG XL in the same folder if there’s no JPEG. each file keeps its own decisions, stars, and color labels": {
+    "en": "Louppe supports common camera RAW files, including Hasselblad .3FR, plus JPEG, JPEG XL (.jxl), TIFF, PNG, HEIC/HEIF, WebP, and AVIF. group a RAW with a same-named JPEG, or with a same-named HEIC/HEIF or JPEG XL in the same folder if there’s no JPEG. each file keeps its own decisions, stars, and color labels",
+    "es": "Louppe admite RAW habituales de cámara, incluidos los .3FR de Hasselblad, además de JPEG, JPEG XL (.jxl), TIFF, PNG, HEIC/HEIF, WebP y AVIF. agrupa un RAW con un JPEG del mismo nombre o, si no hay JPEG, con un HEIC/HEIF o JPEG XL del mismo nombre en la misma carpeta. cada archivo conserva sus decisiones, estrellas y etiquetas de color",
+    "zh-Hans": "Louppe 支持常见相机 RAW 文件（包括哈苏 .3FR），以及 JPEG、JPEG XL (.jxl)、TIFF、PNG、HEIC/HEIF、WebP 和 AVIF。可将 RAW 与同名 JPEG 合并查看；没有 JPEG 时，也可与同一文件夹中的同名 HEIC/HEIF 或 JPEG XL 配对。每个文件仍保留自己的决定、星级和颜色标签",
+    "hi": "Louppe आम कैमरा RAW फ़ाइलें खोलता है, जिनमें Hasselblad .3FR भी है। JPEG, JPEG XL (.jxl), TIFF, PNG, HEIC/HEIF, WebP और AVIF भी समर्थित हैं। RAW को उसी नाम की JPEG के साथ जोड़ें। JPEG न हो तो उसी फ़ोल्डर की उसी नाम वाली HEIC/HEIF या JPEG XL के साथ जोड़ें। हर फ़ाइल के फ़ैसले, सितारे और रंग लेबल अलग रहते हैं",
+    "pt": "o Louppe aceita arquivos RAW comuns de câmera, incluindo .3FR da Hasselblad, além de JPEG, JPEG XL (.jxl), TIFF, PNG, HEIC/HEIF, WebP e AVIF. agrupe um RAW com um JPEG de mesmo nome ou, na falta dele, com um HEIC/HEIF ou JPEG XL de mesmo nome na mesma pasta. cada arquivo mantém suas decisões, estrelas e etiquetas de cor",
+    "ar": "يدعم Louppe ملفات RAW الشائعة في الكاميرات، ومنها ملفات .3FR من Hasselblad، وكذلك JPEG وJPEG XL ‏(.jxl) وTIFF وPNG وHEIC/HEIF وWebP وAVIF. اجمع ملف RAW مع ملف JPEG يحمل الاسم نفسه، أو مع HEIC/HEIF أو JPEG XL بالاسم نفسه في المجلد نفسه عند عدم وجود JPEG. يحتفظ كل ملف بقراراته ونجومه وتسميات ألوانه"
   },
   "drop a folder onto the Dock icon or review window. no catalog import": {
     "en": "drop a folder onto the Dock icon or review window. no catalog import",
@@ -1991,13 +1991,13 @@
     "pt": "marque sim ou não. adicione estrelas e etiquetas de cor quando precisar",
     "ar": "حدّد الاحتفاظ أو الاستبعاد. أضف النجوم والتصنيفات اللونية عند الحاجة"
   },
-  "default shortcuts shown here. choose a key, or try ⌘ and ⇧ for more shortcuts": {
-    "en": "default shortcuts shown here. choose a key, or try ⌘ and ⇧ for more shortcuts",
-    "es": "aquí se muestran los atajos predeterminados. elige una tecla o prueba ⌘ y ⇧ para ver más atajos",
-    "zh-Hans": "这里显示默认快捷键，选择一个按键，或试试 ⌘ 和 ⇧ 查看更多快捷键",
-    "hi": "यहाँ डिफ़ॉल्ट शॉर्टकट दिखाए गए हैं। कोई कुंजी चुनें या और शॉर्टकट के लिए ⌘ और ⇧ आज़माएँ",
-    "pt": "os atalhos padrão estão aqui. escolha uma tecla ou experimente ⌘ e ⇧ para ver mais atalhos",
-    "ar": "تظهر هنا الاختصارات الافتراضية. اختر مفتاحًا أو جرّب ⌘ و⇧ لعرض مزيد من الاختصارات"
+  "choose a key to see its default shortcut. try ⌘ and ⇧ for more. in Louppe, go to Settings → Keyboard shortcuts, select a free key, and choose Assign…": {
+    "en": "choose a key to see its default shortcut. try ⌘ and ⇧ for more. in Louppe, go to Settings → Keyboard shortcuts, select a free key, and choose Assign…",
+    "es": "elige una tecla para ver su atajo predeterminado. prueba ⌘ y ⇧ para ver más. en Louppe, ve a Ajustes → Atajos de teclado, selecciona una tecla libre y elige Asignar…",
+    "zh-Hans": "选择一个键可查看默认快捷键。试试 ⌘ 和 ⇧ 查看更多。在 Louppe 中前往设置 → 键盘快捷键，选择未分配的键，再点分配…",
+    "hi": "किसी कुंजी का डिफ़ॉल्ट शॉर्टकट देखने के लिए उसे चुनें। और शॉर्टकट के लिए ⌘ और ⇧ आज़माएँ। Louppe में सेटिंग्स → कीबोर्ड शॉर्टकट खोलें, खाली कुंजी चुनें और असाइन करें… दबाएँ",
+    "pt": "escolha uma tecla para ver o atalho padrão. experimente ⌘ e ⇧ para ver mais. no Louppe, abra Ajustes → Atalhos de teclado, selecione uma tecla livre e escolha Atribuir…",
+    "ar": "اختر مفتاحًا لرؤية اختصاره الافتراضي. جرّب ⌘ و⇧ لرؤية المزيد. في Louppe، افتح الإعدادات ← اختصار لوحة المفاتيح، وحدّد مفتاحًا غير مستخدم، واختر تعيين…"
   },
   "drop another folder while reviewing. Louppe saves your decisions before switching and keeps the window size": {
     "en": "drop another folder while reviewing. Louppe saves your decisions before switching and keeps the window size",
@@ -2023,13 +2023,13 @@
     "pt": "em Ajustar e prévia do tamanho de um celular, um indicador mostra quando a prévia da foto ainda está carregando. espere terminar antes de avaliar o foco",
     "ar": "في ملاءمة ومعاينة بحجم الهاتف، يوضّح مؤشر أن معاينة الصورة لا تزال قيد التحميل. انتظر اكتمالها قبل تقييم التركيز البؤري"
   },
-  "Organize Source Folder previews folders before moving files. Rename Files lets you reorder filename parts and use dates in your Mac's preferred format. names are previewed, extensions stay unchanged, and recognised RAW+JPEG/XMP families stay together. both actions support undo during the open session": {
-    "en": "Organize Source Folder previews folders before moving files. Rename Files lets you reorder filename parts and use dates in your Mac's preferred format. names are previewed, extensions stay unchanged, and recognised RAW+JPEG/XMP families stay together. both actions support undo during the open session",
-    "es": "Organizar carpeta de origen previsualiza las carpetas antes de mover archivos. Cambiar nombres de archivos permite reordenar las partes del nombre y usar fechas con el formato preferido de tu Mac. los nombres se previsualizan, las extensiones no cambian y las familias RAW+JPEG/XMP reconocidas se mantienen juntas. ambas acciones permiten deshacer durante la sesión abierta",
-    "zh-Hans": "整理源文件夹 在移动文件前预览文件夹。重命名文件 可重新排列文件名组成部分，并使用 Mac 偏好的日期格式。新名称会先预览，扩展名保持不变，识别出的 RAW+JPEG/XMP 文件组一同处理。两项操作均可在当前会话中撤销",
-    "hi": "स्रोत फ़ोल्डर व्यवस्थित करें फ़ाइलें ले जाने से पहले फ़ोल्डरों का पूर्वावलोकन दिखाता है। फ़ाइलों के नाम बदलें से फ़ाइलनाम के हिस्सों का क्रम बदल सकते हैं और अपने Mac के पसंदीदा प्रारूप में तारीखें इस्तेमाल कर सकते हैं। नाम पहले दिखाए जाते हैं, एक्सटेंशन नहीं बदलते और पहचाने गए RAW+JPEG/XMP समूह साथ रहते हैं। खुले सत्र में दोनों कार्रवाइयाँ पूर्ववत कर सकते हैं",
-    "pt": "Organizar pasta de origem mostra as pastas antes de mover arquivos. Renomear arquivos permite reordenar as partes do nome e usar datas no formato preferido do Mac. os nomes são mostrados antes, as extensões não mudam e as famílias RAW+JPEG/XMP reconhecidas ficam juntas. ambas as ações permitem desfazer durante a sessão aberta",
-    "ar": "يعاين تنظيم المجلد المصدر المجلدات قبل نقل الملفات. يتيح إعادة تسمية الملفات إعادة ترتيب أجزاء أسماء الملفات واستخدام التواريخ بالتنسيق المفضّل على Mac. تُعاين الأسماء، وتبقى الامتدادات دون تغيير، وتظل مجموعات RAW+JPEG/XMP المعروفة معًا. يمكن التراجع عن الإجراءين أثناء الجلسة المفتوحة"
+  "Organize Source Folder previews folders before moving files. Rename Files previews names, lets you reorder their parts and use your Mac’s date format, and numbers files that would share a name. extensions stay unchanged, and recognized companions and XMP sidecars stay together. both actions support undo during the open session": {
+    "en": "Organize Source Folder previews folders before moving files. Rename Files previews names, lets you reorder their parts and use your Mac’s date format, and numbers files that would share a name. extensions stay unchanged, and recognized companions and XMP sidecars stay together. both actions support undo during the open session",
+    "es": "Organizar carpeta de origen muestra la estructura antes de mover archivos. Renombrar archivos muestra los nombres, permite reordenar sus partes y usar el formato de fecha del Mac, y numera los archivos que tendrían el mismo nombre. las extensiones se conservan y los archivos asociados y auxiliares XMP reconocidos se mantienen juntos. ambas acciones se pueden deshacer durante la sesión",
+    "zh-Hans": "整理源文件夹可在移动文件前预览目录。重命名文件可预览名称、调整名称各部分的顺序、使用 Mac 的日期格式，并为原本会重名的文件编号。扩展名保持不变，识别出的关联文件和 XMP 附属文件会一起处理。两项操作均可在当前会话中撤销",
+    "hi": "स्रोत फ़ोल्डर व्यवस्थित करने से पहले फ़ोल्डर संरचना का पूर्वावलोकन देखें। फ़ाइलों का नाम बदलते समय नए नाम देखें, उनके हिस्सों का क्रम बदलें, अपने Mac का तारीख फ़ॉर्मैट इस्तेमाल करें और एक जैसे नाम वाली फ़ाइलों को नंबर दें। एक्सटेंशन वही रहते हैं और पहचानी गई साथी फ़ाइलें और XMP साइडकार साथ रहते हैं। खुले सत्र में दोनों कार्रवाइयाँ पूर्ववत कर सकते हैं",
+    "pt": "Organizar pasta de origem mostra a estrutura antes de mover os arquivos. Renomear arquivos mostra os nomes, permite reordenar suas partes e usar o formato de data do Mac, e numera os arquivos que teriam o mesmo nome. as extensões permanecem iguais e os arquivos associados e auxiliares XMP reconhecidos ficam juntos. as duas ações podem ser desfeitas durante a sessão",
+    "ar": "تتيح ميزة تنظيم المجلد المصدر معاينة المجلدات قبل نقل الملفات. وتعرض ميزة إعادة تسمية الملفات الأسماء مسبقًا، وتتيح ترتيب أجزائها واستخدام تنسيق التاريخ في Mac، وترقّم الملفات التي كانت ستأخذ الاسم نفسه. تبقى الامتدادات كما هي وتبقى الملفات المرافقة وملفات XMP المعروفة معًا. يمكنك التراجع عن الإجراءين خلال الجلسة المفتوحة"
   },
   "review with the keyboard or VoiceOver. customize review keys and supported Command aliases in Settings. use physical key positions for layouts such as Dvorak, or follow your keyboard layout": {
     "en": "review with the keyboard or VoiceOver. customize review keys and supported Command aliases in Settings. use physical key positions for layouts such as Dvorak, or follow your keyboard layout",
@@ -2055,13 +2055,13 @@
     "pt": "Louppe — visualizador e organizador de fotos gratuito para Mac",
     "ar": "Louppe — تطبيق مجاني لعرض الصور وفرزها على Mac"
   },
-  "Free photo viewer and culling app for Mac. Browse JPEG and RAW folders without importing, choose keepers, and move rejects to Trash. Open source.": {
-    "en": "Free photo viewer and culling app for Mac. Browse JPEG and RAW folders without importing, choose keepers, and move rejects to Trash. Open source.",
-    "es": "Visor y aplicación de selección de fotos gratis para Mac. Explora carpetas JPEG y RAW sin importar, elige qué conservar y mueve los descartes a la papelera. Código abierto.",
-    "zh-Hans": "免费的 Mac 照片查看与筛选应用。无需导入即可浏览 JPEG 和 RAW 文件夹，选出要保留的照片，将舍弃的文件移入废纸篓。开源。",
-    "hi": "Mac के लिए मुफ़्त फ़ोटो व्यूअर और छँटाई ऐप। आयात किए बिना JPEG और RAW फ़ोल्डर देखें, रखने वाली फ़ोटो चुनें और बाकी को ट्रैश में भेजें। ओपन सोर्स।",
-    "pt": "Visualizador e aplicativo de seleção de fotos gratuito para Mac. Explore pastas JPEG e RAW sem importar, escolha o que manter e envie as rejeitadas à lixeira. Código aberto.",
-    "ar": "تطبيق مجاني لعرض الصور وفرزها على Mac. تصفّح مجلدات JPEG وRAW دون استيراد، واختر الصور التي تريد الاحتفاظ بها، وانقل الصور المستبعدة إلى سلة المهملات. مفتوح المصدر."
+  "Free, open-source photo viewer and culling app for Mac. Browse JPEG and RAW photos and review video without importing. Copy keepers or send rejects to Trash.": {
+    "en": "Free, open-source photo viewer and culling app for Mac. Browse JPEG and RAW photos and review video without importing. Copy keepers or send rejects to Trash.",
+    "es": "Visor y selector de fotos gratuito y de código abierto para Mac. Explora fotos JPEG y RAW, y revisa vídeos sin importarlos. Copia lo que quieras conservar o envía los descartes a la papelera.",
+    "zh-Hans": "免费开源的 Mac 照片查看与筛选应用。无需导入即可浏览 JPEG、RAW 照片和视频。复制要保留的文件，或将舍弃的文件移入废纸篓。",
+    "hi": "Mac के लिए मुफ़्त, ओपन सोर्स फ़ोटो व्यूअर और छँटाई ऐप। बिना इम्पोर्ट किए JPEG और RAW फ़ोटो तथा वीडियो देखें। चुनी हुई फ़ाइलें कॉपी करें या बाकी को ट्रैश में भेजें।",
+    "pt": "Visualizador e seletor de fotos gratuito e de código aberto para Mac. Veja fotos JPEG e RAW, e revise vídeos sem importar. Copie os arquivos escolhidos ou envie os rejeitados à lixeira.",
+    "ar": "تطبيق مجاني ومفتوح المصدر لعرض الصور وفرزها على Mac. تصفّح صور JPEG وRAW وراجع الفيديو دون استيراد. انسخ الملفات المختارة أو انقل المستبعدة إلى سلة المهملات."
   },
   "photo viewer": {
     "en": "photo viewer",
@@ -2335,13 +2335,13 @@
     "pt": "o Louppe revisa a mídia localmente. o Google Analytics neste site é opcional",
     "ar": "يراجع Louppe الوسائط محليًا. Google Analytics على هذا الموقع اختيارية"
   },
-  "updated 4 November 2026 · Alex Markin ·": {
-    "en": "updated 4 November 2026 · Alex Markin ·",
-    "es": "actualizado el 4 de noviembre de 2026 · Alex Markin ·",
-    "zh-Hans": "更新于 2026 年 11 月 4 日 · Alex Markin ·",
-    "hi": "अपडेट: 4 नवंबर 2026 · Alex Markin ·",
-    "pt": "atualizado em 4 de novembro de 2026 · Alex Markin ·",
-    "ar": "آخر تحديث 4 نوفمبر 2026 · Alex Markin ·"
+  "updated 18 November 2026 · Alex Markin ·": {
+    "en": "updated 18 November 2026 · Alex Markin ·",
+    "es": "actualizado el 18 de noviembre de 2026 · Alex Markin ·",
+    "zh-Hans": "更新于 2026 年 11 月 18 日 · Alex Markin ·",
+    "hi": "18 नवंबर 2026 को अपडेट किया गया · Alex Markin ·",
+    "pt": "atualizado em 18 de novembro de 2026 · Alex Markin ·",
+    "ar": "حُدّث في 18 نوفمبر 2026 · Alex Markin ·"
   },
   "this site uses GitHub Pages and counts visits with Cloudflare Web Analytics, without cookies. Google Analytics is off unless you allow it. change your choice anytime through “analytics” in the footer": {
     "en": "this site uses GitHub Pages and counts visits with Cloudflare Web Analytics, without cookies. Google Analytics is off unless you allow it. change your choice anytime through “analytics” in the footer",
@@ -2407,13 +2407,13 @@
     "pt": "decisões Sim/Não, estrelas e cores dos itens do Photos são salvas pelo ID do recurso do Photos nos dados de Application Support do Louppe, não na fototeca. o seletor lembra sua origem, datas e ordem",
     "ar": "تُحفظ قرارات نعم/لا والنجوم والألوان لعناصر Photos حسب معرّف العنصر في Photos ضمن بيانات Application Support الخاصة بـ Louppe، لا في المكتبة. يتذكر المنتقي المصدر والتواريخ والترتيب"
   },
-  "with Allow iCloud Review Images or Allow iCloud Originals in Settings → General, Photos may download items from iCloud as you view, open original detail, or copy them. originals are staged temporarily, up to 5 GB, and deleted when released": {
-    "en": "with Allow iCloud Review Images or Allow iCloud Originals in Settings → General, Photos may download items from iCloud as you view, open original detail, or copy them. originals are staged temporarily, up to 5 GB, and deleted when released",
-    "es": "con Permitir imágenes de revisión de iCloud o Permitir originales de iCloud en Ajustes → General, Photos puede descargar elementos de iCloud cuando los ves, abres el detalle original o los copias. los originales se preparan temporalmente, hasta 5 GB, y se eliminan al liberarse",
-    "zh-Hans": "在“设置 → 通用”中开启“允许下载 iCloud 审阅图像”或“允许下载 iCloud 原片”后，你查看、打开原片细节或复制项目时，Photos 可能会从 iCloud 下载这些项目。原片会临时暂存，最多 5 GB，释放后即删除",
-    "hi": "सेटिंग्स → सामान्य में iCloud समीक्षा छवियों की अनुमति दें या iCloud मूल की अनुमति दें चालू होने पर, जब आप आइटम देखते हैं, मूल विवरण खोलते हैं या कॉपी करते हैं, Photos उन्हें iCloud से डाउनलोड कर सकता है। मूल फ़ाइलें 5 GB तक अस्थायी रूप से रखी जाती हैं और छोड़ने पर हटा दी जाती हैं",
-    "pt": "com Permitir imagens de revisão do iCloud ou Permitir originais do iCloud em Ajustes → Geral, o Photos pode baixar itens do iCloud quando você os vê, abre o detalhe original ou os copia. os originais ficam temporariamente preparados, até 5 GB, e são apagados ao serem liberados",
-    "ar": "عند تفعيل السماح بصور المراجعة من iCloud أو السماح بأصول iCloud في الإعدادات ← عام، قد ينزّل Photos العناصر من iCloud عند عرضها أو فتح تفاصيلها الأصلية أو نسخها. تُجهَّز الأصول مؤقتًا بحد أقصى 5 GB وتُحذف عند تحريرها"
+  "under Settings → General, Allow iCloud Review Images lets Photos download data for previews. Allow iCloud Originals separately allows downloads to open original detail, play original video, or copy. Louppe stages up to 5 GB of originals and removes them when no longer needed. interrupted copies can keep staged originals for recovery": {
+    "en": "under Settings → General, Allow iCloud Review Images lets Photos download data for previews. Allow iCloud Originals separately allows downloads to open original detail, play original video, or copy. Louppe stages up to 5 GB of originals and removes them when no longer needed. interrupted copies can keep staged originals for recovery",
+    "es": "en Ajustes → General, Permitir imágenes de revisión de iCloud permite que Fotos descargue datos para las vistas previas. Permitir originales de iCloud activa por separado las descargas para abrir el detalle original, reproducir el vídeo original o copiar. Louppe guarda temporalmente hasta 5 GB de originales y los elimina cuando dejan de ser necesarios. las copias interrumpidas pueden conservar originales temporales para recuperarse",
+    "zh-Hans": "在设置 → 通用中，允许 iCloud 审阅图像可让照片 App 下载预览所需的数据。允许 iCloud 原件是独立选项，可在打开原件详情、播放原始视频或复制时下载原件。Louppe 最多临时保存 5 GB 原件，在不再需要时移除。复制中断后，可能会保留临时原件以便恢复",
+    "hi": "सेटिंग्स → सामान्य में iCloud समीक्षा छवियों की अनुमति देने पर Photos पूर्वावलोकन के लिए डेटा डाउनलोड कर सकता है। iCloud मूल फ़ाइलों की अलग अनुमति से मूल विवरण खोलने, मूल वीडियो चलाने या कॉपी करने के लिए डाउनलोड हो सकते हैं। Louppe 5 GB तक मूल फ़ाइलें अस्थायी रूप से रखता है और ज़रूरत पूरी होने पर उन्हें हटा देता है। रुकी हुई कॉपी की रिकवरी के लिए अस्थायी मूल फ़ाइलें रखी जा सकती हैं",
+    "pt": "em Ajustes → Geral, Permitir imagens de revisão do iCloud deixa o Fotos baixar dados para as prévias. Permitir originais do iCloud autoriza separadamente downloads para abrir o original em detalhe, reproduzir o vídeo original ou copiar. o Louppe guarda temporariamente até 5 GB de originais e os remove quando deixam de ser necessários. cópias interrompidas podem manter originais temporários para a recuperação",
+    "ar": "في الإعدادات ← عام، يتيح السماح بصور المراجعة من iCloud لتطبيق الصور تنزيل بيانات المعاينة. ويتيح السماح بالأصول من iCloud، وهو خيار مستقل، تنزيل الأصول لفتح تفاصيلها أو تشغيل الفيديو الأصلي أو النسخ. يحتفظ Louppe مؤقتًا بما يصل إلى 5 غيغابايت من الأصول ويحذفها بعد زوال الحاجة إليها. قد تبقى الأصول المؤقتة لاستعادة عمليات النسخ المتوقفة"
   },
   "Louppe changes your library only when you choose File → Add to Album… and confirm. it adds items to an existing or new album. existing albums and originals stay intact": {
     "en": "Louppe changes your library only when you choose File → Add to Album… and confirm. it adds items to an existing or new album. existing albums and originals stay intact",
@@ -2463,13 +2463,13 @@
     "pt": "revise sua fototeca do Apple Photos ou um álbum sem exportá-los. downloads do iCloud são opcionais, e os álbuns só mudam quando você escolhe Adicionar ao álbum",
     "ar": "راجع مكتبة Apple Photos أو ألبومًا دون تصديرهما. تنزيلات iCloud اختيارية، ولا تتغيّر الألبومات إلا عندما تختار إضافة إلى ألبوم"
   },
-  "browse an archive’s folder tree in Gallery or Grid, and move between folders with [ and ]. pin archives on Welcome to reopen them with cached previews": {
-    "en": "browse an archive’s folder tree in Gallery or Grid, and move between folders with [ and ]. pin archives on Welcome to reopen them with cached previews",
-    "es": "explora el árbol de carpetas de un archivo en la galería o la cuadrícula, y pasa de una carpeta a otra con [ y ]. fija archivos en la bienvenida para reabrirlos con vistas previas guardadas",
-    "zh-Hans": "在图库或网格中浏览归档的文件夹树，用 [ 和 ] 在文件夹之间切换。在欢迎窗口固定归档，再次打开时可直接显示缓存的预览",
-    "hi": "गैलरी या ग्रिड में किसी आर्काइव का फ़ोल्डर ट्री देखें, और [ व ] से फ़ोल्डरों के बीच जाएँ। स्वागत विंडो में आर्काइव पिन करें ताकि वे कैश किए गए प्रीव्यू के साथ फिर खुलें",
-    "pt": "navegue pela árvore de pastas de um arquivo na galeria ou na grade, e passe de uma pasta a outra com [ e ]. fixe arquivos na tela de boas-vindas para reabri-los com pré-visualizações em cache",
-    "ar": "تصفّح شجرة مجلدات الأرشيف في المعرض أو الشبكة، وانتقل بين المجلدات باستخدام [ و ]. ثبّت الأرشيفات في نافذة الترحيب لإعادة فتحها مع المعاينات المخزّنة"
+  "browse an archive’s folder tree in Gallery or Grid, and move between folders with [ and ]. pin folders on Welcome for quick reopening with cached previews. in large folders, start browsing while file details load. decisions and file actions wait until checking finishes": {
+    "en": "browse an archive’s folder tree in Gallery or Grid, and move between folders with [ and ]. pin folders on Welcome for quick reopening with cached previews. in large folders, start browsing while file details load. decisions and file actions wait until checking finishes",
+    "es": "explora el árbol de carpetas de un archivo en Galería o Cuadrícula y cambia de carpeta con [ y ]. fija carpetas en Bienvenida para reabrirlas rápido con vistas previas guardadas. en carpetas grandes, empieza a explorar mientras se cargan los detalles. las decisiones y las acciones sobre archivos esperan a que termine la comprobación",
+    "zh-Hans": "在图库或网格中浏览归档文件夹树，用 [ 和 ] 在文件夹间切换。在欢迎页固定文件夹，下次可用缓存的预览快速打开。大文件夹加载文件详情时即可开始浏览，检查完成后可标记决定和操作文件",
+    "hi": "गैलरी या ग्रिड में आर्काइव की फ़ोल्डर संरचना देखें और [ व ] से फ़ोल्डर बदलें। सेव किए गए पूर्वावलोकनों से तेज़ी से दोबारा खोलने के लिए स्वागत स्क्रीन पर फ़ोल्डर पिन करें। बड़े फ़ोल्डर में विवरण लोड होते समय ब्राउज़ करें। जाँच पूरी होने पर फ़ैसले और फ़ाइल कार्रवाइयाँ उपलब्ध होती हैं",
+    "pt": "navegue pela árvore de pastas do acervo na Galeria ou na Grade e troque de pasta com [ e ]. fixe pastas nas boas-vindas para reabri-las rapidamente com prévias salvas. em pastas grandes, comece a navegar enquanto os detalhes carregam. as decisões e ações sobre arquivos ficam disponíveis ao fim da verificação",
+    "ar": "تصفّح شجرة مجلدات الأرشيف في المعرض أو الشبكة، وتنقّل بينها بالمفتاحين [ و]. ثبّت المجلدات في شاشة الترحيب لإعادة فتحها بسرعة بالمعاينات المخزّنة. ابدأ التصفّح في المجلدات الكبيرة أثناء تحميل تفاصيل الملفات. تتاح القرارات وإجراءات الملفات بعد اكتمال التحقّق"
   },
   "gallery / grid": {
     "en": "gallery / grid",
@@ -2559,13 +2559,13 @@
     "pt": "sair do louppe",
     "ar": "إنهاء louppe"
   },
-  "move to trash": {
-    "en": "move to trash",
-    "es": "enviar a la papelera",
-    "zh-Hans": "移入废纸篓",
-    "hi": "ट्रैश में भेजें",
-    "pt": "mover para a lixeira",
-    "ar": "نقل إلى سلة المهملات"
+  "trash selected items without a dialog": {
+    "en": "trash selected items without a dialog",
+    "es": "enviar la selección a la papelera sin diálogo",
+    "zh-Hans": "将所选项目移入废纸篓，无需确认",
+    "hi": "चुने हुए आइटम बिना डायलॉग के ट्रैश में भेजें",
+    "pt": "enviar a seleção à lixeira sem diálogo",
+    "ar": "نقل العناصر المحدّدة إلى سلة المهملات دون نافذة تأكيد"
   },
   "enclosing folder": {
     "en": "enclosing folder",
@@ -2598,5 +2598,13 @@
     "hi": "अल्पविराम",
     "pt": "vírgula",
     "ar": "الفاصلة"
+  },
+  "switch Gallery / Grid. with macOS Keyboard Navigation on, move focus": {
+    "en": "switch Gallery / Grid. with macOS Keyboard Navigation on, move focus",
+    "es": "alternar Galería / Cuadrícula. con la navegación por teclado de macOS activada, mover el foco",
+    "zh-Hans": "切换图库 / 网格。启用 macOS 键盘导航时移动焦点",
+    "hi": "गैलरी / ग्रिड बदलें। macOS कीबोर्ड नेविगेशन चालू होने पर फ़ोकस बदलें",
+    "pt": "alternar Galeria / Grade. com a navegação pelo teclado do macOS ativa, mover o foco",
+    "ar": "التبديل بين المعرض والشبكة. عند تفعيل التنقّل بلوحة المفاتيح في macOS، ينتقل التركيز"
   }
 }

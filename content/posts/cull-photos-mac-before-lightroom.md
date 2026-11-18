@@ -12,7 +12,7 @@ Copy the shoot from your memory card to a folder on your Mac, and keep a backup 
 
 [Get Louppe on the Mac App Store](https://apps.apple.com/app/louppe/id6820131477). [GitHub and Homebrew are also available](/#download). Open a folder in Louppe, or drop one onto its Dock icon or review window. You can switch folders while reviewing; Louppe saves your decisions and keeps the window size
 
-Louppe reviews the files where they are. There's no separate library to import them into
+Louppe reviews the files where they are. There's no separate library to import them into. In large folders, you can browse in Gallery or Grid while file details load. Wait for loading to finish before marking decisions or running file actions
 
 ## Make one decision per frame
 

@@ -14,7 +14,7 @@ Este guia começa com arquivos `.jpg` ou `.jpeg` comuns no Finder. Para fotos no
 
 *Uma pasta só de JPEGs na Grade, capturada no Louppe 1.10. O contorno roxo identifica a foto atual; ele não marca uma foto como aprovada*
 
-Aqui, “selecionar fotos” significa escolher quais imagens manter. Mudar a ordem por nome de arquivo ou data é uma escolha separada em Ordenar
+Aqui, “selecionar fotos” significa escolher quais imagens manter. Mudar a ordem por nome de arquivo ou data é uma escolha separada em Ordenar. A ordem muda assim que você escolhe uma opção. Pressione Esc ou clique fora para fechar o menu
 
 ## Escolha as fotos que quer manter com Sim e Não
 
@@ -30,7 +30,7 @@ O Louppe salva as decisões em `.louppe_session.json` na pasta aberta. Espere a 
 
 ## Confira a seleção antes de copiar
 
-Filtre por Sim e confira as fotos escolhidas na Grade. Veja se manteve várias imagens quase idênticas ou deixou de fora alguma foto que ainda quer
+Em Filtrar, escolha Sim para ver as fotos escolhidas na hora. Pressione Esc ou clique fora e confira na Grade se há fotos quase idênticas ou alguma foto que ficou de fora
 
 Volte à Galeria para olhar de perto. Com as teclas padrão, **S** alterna o zoom real de 100%, o que ajuda a conferir o foco. Atalhos personalizados podem ser diferentes
 

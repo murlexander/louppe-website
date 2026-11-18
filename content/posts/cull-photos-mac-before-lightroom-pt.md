@@ -12,7 +12,7 @@ Copie o ensaio do cartão de memória para uma pasta no Mac e mantenha um backup
 
 [Obtenha o Louppe na Mac App Store](https://apps.apple.com/app/louppe/id6820131477). [Também está disponível no GitHub e no Homebrew](/#download). Abra uma pasta no Louppe ou arraste-a para o ícone no Dock ou para a janela de revisão. Você pode trocar de pasta durante a revisão; o Louppe salva suas decisões e mantém o tamanho da janela
 
-O Louppe revisa os arquivos onde eles estão. Não há uma biblioteca separada para a qual importá-los
+O Louppe revisa os arquivos onde eles estão. Não há uma biblioteca separada para a qual importá-los. Em pastas grandes, você pode navegar na Galeria ou na Grade enquanto os detalhes carregam. Aguarde o fim do carregamento para marcar decisões ou executar ações sobre os arquivos
 
 ## Tome uma decisão por foto
 

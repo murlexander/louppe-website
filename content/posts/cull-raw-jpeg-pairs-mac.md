@@ -6,7 +6,7 @@ Louppe is a free, open-source media culler for Apple silicon Macs running macOS 
 
 A camera might produce `DSCF0123.RAF` and `DSCF0123.JPG`: a RAW file and a JPEG with the same filename stem. These are two versions of one shot, rather than two copies of the same file
 
-Louppe groups unambiguous matching RAW + JPEG files. It doesn't pair photographs by how similar they look. When more than one RAW or JPEG could match, the files stay separate
+Louppe pairs files by their filename stem. If there’s no matching JPEG, it looks in the RAW’s folder for a same-named HEIC/HEIF, then JPEG XL. Hasselblad .3FR files can pair too. If the match is ambiguous, the files stay separate. The pair shows its formats, such as RAW + HEIC
 
 Start with a folder copied from your camera card, with a backup kept separately. Keeping the camera filenames makes the relationship easier to follow
 
@@ -15,7 +15,7 @@ Start with a folder copied from your camera card, with a backup kept separately.
 The shortcuts in this guide are the defaults. In Settings → Keyboard shortcuts, you can customise review keys and choose physical positions for layouts such as Dvorak
 
 1. Open the folder in Louppe
-2. Open **Filter** and enable **Treat matching RAW + JPEG as one photo** when matching pairs are available
+2. Open **Filter** and enable **Treat matching RAW + JPEG as one photo**. This also groups eligible HEIC/HEIF and JPEG XL pairs. The change applies immediately
 3. Review in Gallery, or press **G** for Grid
 4. Press **F** for Yes or **D** for No as you move through the shoot
 
@@ -47,7 +47,7 @@ If you want to keep independent decisions, continue in separate mode. Applying a
 
 A RAW file and its camera JPEG can look different. The JPEG contains the camera's rendering; a RAW decoder makes its own rendering
 
-In Louppe's Fast display, RAW photos use previews below 100% and Apple RAW rendering at 100% and above. Press **S** to inspect at centred 100%; press it again for Fit. RAW display preferences are in Settings → RAW display. in Fit and Phone size, a loading indicator shows when the photo preview is still loading
+In Louppe's Fast display, RAW photos use previews below 100% and Apple RAW rendering at 100% and above. Press **S** to inspect at centred 100%; press it again for Fit. RAW display preferences are in Settings → General → RAW display. In Fit and Phone size, a loading indicator shows when the photo preview is still loading
 
 For a decision about the camera JPEG's colour or look, switch to separate mode and open the JPEG itself. Leave the final RAW edit for your editor, whose rendering may differ from Louppe's
 

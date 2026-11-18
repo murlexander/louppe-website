@@ -1,7 +1,5 @@
 O Louppe é um visualizador e organizador de fotos gratuito e de código aberto para Mac. Pode ser uma alternativa ao ApolloOne quando você quer explorar pastas de fotos e escolher quais manter por conta própria. Abra uma pasta com JPEGs, arquivos RAW, ou ambos, revise com o teclado, e escolha o que manter. Funciona offline, sem conta, no macOS 14 ou posterior
 
-Estes passos usam o Louppe 1.12. Se sua versão da App Store for anterior, [a versão no GitHub](https://github.com/murlexander/louppe-media-culler/releases/tag/v1.12.0) inclui estas mudanças
-
 Eu faço o Louppe para aquela primeira seleção depois de um ensaio: olhar as fotografias, decidir quais entram na seleção, e manter os arquivos que você quer. Esse pode ser o trabalho inteiro, mesmo que você nunca edite uma fotografia
 
 Se é isso que você procura, veja como o Louppe e o ApolloOne diferem
@@ -28,7 +26,7 @@ Comece com uma cópia de um ensaio pequeno e mantenha um backup separado. [Baixe
 
 Use a tecla padrão **F** para Sim e **D** para Não. Percorra as fotografias com as teclas de seta. Deixe sem decisão as fotos que gerarem dúvida ou adicione estrelas com **1–5** para outra revisão. Estrelas e decisões Sim/Não são independentes
 
-Em **Ajustes → Atalhos de teclado**, você pode personalizar as teclas de revisão ou usar posições físicas para layouts como Dvorak. Os atalhos deste guia são os padrões
+Em **Ajustes → Atalhos de teclado**, selecione uma tecla no mapa para ver suas ações. Selecione uma tecla livre e escolha **Atribuir…** para associá-la a uma ação. Você pode usar posições físicas para layouts como Dvorak. Os atalhos deste guia são os padrões
 
 **Marcar Não não exclui um arquivo nem o envia à Lixeira**. Limpar é uma ação separada que envia arquivos indesejados à Lixeira do macOS. Suas decisões são salvas automaticamente para que você possa reabrir a pasta e continuar
 
@@ -48,7 +46,7 @@ Em Ajustar e prévia do tamanho de um celular, um indicador mostra quando a pré
 
 Para arquivos RAW, o modo de exibição Rápido usa prévias abaixo de 100% e a renderização RAW da Apple em 100% ou mais. Essa renderização pode diferir do JPEG da câmera ou da renderização do seu editor. Confira o próprio JPEG quando a aparência finalizada da câmera importar
 
-Se você fotografa em RAW + JPEG, pode agrupar arquivos correspondentes como um só item de revisão ou revisá-los separadamente. O [guia de RAW + JPEG](/blog/cull-raw-jpeg-pairs-mac/) explica o agrupamento em pares, as decisões separadas, e quais arquivos são copiados
+Você pode revisar arquivos RAW + JPEG correspondentes juntos ou separadamente. Se não houver um JPEG correspondente, o Louppe pode agrupar o RAW com um HEIC/HEIF ou JPEG XL de mesmo nome na mesma pasta. O [guia de RAW + JPEG](/blog/cull-raw-jpeg-pairs-mac/) explica quais arquivos são copiados
 
 Fotos, vídeo, áudio, e texto somente para leitura podem compartilhar uma pasta de revisão. Isso pode ser útil quando um ensaio contém mais do que fotografias
 

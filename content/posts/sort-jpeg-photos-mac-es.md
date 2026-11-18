@@ -14,7 +14,7 @@ Esta guía parte de archivos `.jpg` o `.jpeg` normales en Finder. Para las fotos
 
 *Una carpeta que solo contiene JPEG en Cuadrícula, capturada en Louppe 1.10. El contorno morado identifica la foto actual; no indica que esté marcada para conservar*
 
-Aquí, «seleccionar fotos» significa elegir qué imágenes conservar. Cambiar su orden por nombre de archivo o fecha es una opción aparte en Ordenar
+Aquí, «seleccionar fotos» significa elegir qué imágenes conservar. Cambiar su orden por nombre de archivo o fecha es una opción aparte en Ordenar. El orden se aplica en cuanto eliges una opción. Pulsa Esc o haz clic fuera para cerrar el menú
 
 ## Elige qué fotos conservar con Sí y No
 
@@ -30,7 +30,7 @@ Louppe guarda las decisiones en `.louppe_session.json` dentro de la carpeta abie
 
 ## Comprueba la selección antes de copiarla
 
-Filtra por Sí y revisa las fotos elegidas en Cuadrícula. Comprueba si has conservado varias tomas casi idénticas o si te has dejado alguna foto que aún quieras conservar
+En Filtrar, elige Sí para ver al instante las fotos elegidas. Pulsa Esc o haz clic fuera y revisa la selección en Cuadrícula por si hay tomas casi idénticas o fotos que has dejado fuera
 
 Vuelve a Galería para mirarlas de cerca. Con las teclas predeterminadas, **S** activa o desactiva el zoom real al 100%, que ayuda a comprobar el enfoque. Los atajos personalizados pueden ser distintos
 

@@ -12,7 +12,7 @@ Si te gusta el aspecto terminado de un JPEG de cámara, revisa ese JPEG directam
 
 ## ¿Qué cambia al 100% en Louppe?
 
-En [Louppe 1.13](https://github.com/murlexander/louppe-media-culler/releases/tag/v1.13.0), **Rápido** usa vistas previas por debajo del 100% y el revelado RAW de Apple al 100% o más. Cuadrícula y Explorador siguen usando vistas previas rápidas
+En Louppe, **Rápido** usa vistas previas por debajo del 100% y el revelado RAW de Apple al 100% o más. Cuadrícula y Explorador siguen usando vistas previas rápidas
 
 Con las teclas predeterminadas, **S** activa o desactiva el zoom real al 100% en Galería. Si la imagen cambia al cruzar ese umbral, comprueba **Ajustes → General → Visualización RAW**. Puedes elegir RAW en todos los niveles de zoom para que Galería mantenga una fuente de revelado constante
 

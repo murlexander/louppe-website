@@ -47,13 +47,13 @@
 <p>Louppe es una aplicación gratuita y de código abierto para seleccionar medios en Mac con Apple silicon y macOS 14 o posterior. La revisión se queda en tu Mac y funciona sin conexión</p>
 <h2>¿Qué se considera un par RAW + JPEG?</h2>
 <p>Una cámara puede generar <code>DSCF0123.RAF</code> y <code>DSCF0123.JPG</code>: un archivo RAW y un JPEG con el mismo nombre base. Son dos versiones de una toma, no dos copias del mismo archivo</p>
-<p>Louppe agrupa los archivos RAW + JPEG correspondientes cuando no hay ambigüedad. No empareja fotografías por su parecido visual. Cuando puede haber más de un RAW o JPEG correspondiente, los archivos permanecen separados</p>
+<p>Louppe empareja archivos por su nombre base. Si no hay un JPEG coincidente, busca en la carpeta del RAW un HEIC/HEIF del mismo nombre y, después, un JPEG XL. También admite los .3FR de Hasselblad. Si el emparejamiento es ambiguo, los archivos quedan separados. El par muestra sus formatos, por ejemplo, RAW + HEIC</p>
 <p>Empieza con una carpeta copiada de la tarjeta de la cámara y guarda una copia de seguridad aparte. Conservar los nombres de archivo de la cámara facilita seguir la relación</p>
 <h2>Revisa cada toma una sola vez</h2>
 <p>Los atajos de esta guía son los predeterminados. En Ajustes → Atajos de teclado, puedes personalizar las teclas de revisión y elegir posiciones físicas para distribuciones como Dvorak</p>
 <ol>
 <li>Abre la carpeta en Louppe</li>
-<li>Abre <strong>Filtrar</strong> y activa <strong>Trate de combinar RAW + JPEG como una foto (Treat matching RAW + JPEG as one photo)</strong> cuando haya pares correspondientes</li>
+<li>Abre <strong>Filtrar</strong> y activa <strong>Tratar los RAW + JPEG coincidentes como una sola foto</strong>. También agrupa los pares HEIC/HEIF y JPEG XL que coincidan. El cambio se aplica al instante</li>
 <li>Revisa en Galería o pulsa <strong>G</strong> para ir a Cuadrícula</li>
 <li>Pulsa <strong>F</strong> para Sí o <strong>D</strong> para No mientras recorres la sesión</li>
 </ol>
@@ -70,7 +70,7 @@
 <p><em>Agrupación desactivada: una miniatura por archivo, capturada en Louppe 1.9</em></p>
 <h2>Comprueba el enfoque y el origen de la vista previa</h2>
 <p>Un archivo RAW y el JPEG de su cámara pueden verse distintos. El JPEG contiene el revelado de la cámara; un decodificador RAW crea su propio revelado</p>
-<p>En la visualización Rápido de Louppe, las fotos RAW usan vistas previas por debajo del 100% y el revelado RAW de Apple al 100% o más. Pulsa <strong>S</strong> para examinar al 100% centrado; púlsala de nuevo para volver a Fit, el ajuste a la ventana. las preferencias de visualización RAW están en Ajustes → Visualización RAW. en Ajustar y vista de tamaño móvil, un indicador muestra si la vista previa de la foto sigue cargando</p>
+<p>En la visualización Rápido de Louppe, las fotos RAW usan vistas previas por debajo del 100% y el revelado RAW de Apple al 100% o más. Pulsa <strong>S</strong> para examinar al 100% centrado; púlsala de nuevo para volver a Fit, el ajuste a la ventana. las preferencias de visualización RAW están en Ajustes → General → Visualización RAW. En Ajustar y vista de tamaño móvil, un indicador muestra si la vista previa de la foto sigue cargando</p>
 <p>Para decidir sobre el color o el aspecto del JPEG de la cámara, cambia al modo separado y abre el propio JPEG. Deja la edición final del RAW para tu editor, cuyo revelado puede diferir del de Louppe</p>
 <h2>Copia los archivos que realmente quieras</h2>
 <p>Abre Exportar con <strong>E</strong> o <strong>⌘E</strong>, elige <strong>Copiar</strong>, y comprueba el alcance, las decisiones, y el número de coincidencias</p>

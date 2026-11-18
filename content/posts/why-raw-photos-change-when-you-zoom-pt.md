@@ -12,7 +12,7 @@ Se você gosta da aparência finalizada de um JPEG da câmera, revise esse JPEG 
 
 ## O que muda em 100% no Louppe?
 
-No [Louppe 1.13](https://github.com/murlexander/louppe-media-culler/releases/tag/v1.13.0), **Rápido (Fast)** usa prévias abaixo de 100% e a renderização RAW da Apple em 100% ou mais. A Grade e o Navegador mantêm as prévias rápidas
+No Louppe, **Rápido (Fast)** usa prévias abaixo de 100% e a renderização RAW da Apple em 100% ou mais. A Grade e o Navegador mantêm as prévias rápidas
 
 Com as teclas padrão, **S** alterna o zoom real de 100% na Galeria. Se a imagem mudar ao cruzar esse limite, confira **Ajustes → Geral → Visualização RAW**. Você pode escolher a renderização RAW em todos os níveis de zoom para manter a Galeria com a mesma fonte de renderização
 

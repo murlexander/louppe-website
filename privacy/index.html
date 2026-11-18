@@ -43,7 +43,7 @@
       <header class="post-header">
         <h1>privacy policy</h1>
         <p class="post-deck">Louppe reviews media locally. Google Analytics on this website is optional</p>
-        <p class="article-author">updated 4 November 2026 · Alex Markin · <a href="mailto:a@alex-markin.com">a@alex-markin.com</a></p>
+        <p class="article-author">updated 18 November 2026 · Alex Markin · <a href="mailto:a@alex-markin.com">a@alex-markin.com</a></p>
       </header>
       <div class="article-body">
         <h2 id="app">the Louppe app</h2>
@@ -54,7 +54,7 @@
             <summary>your files and review data</summary>
             <div>
               <p>Louppe reads chosen folders for previews, playback, metadata, and review. duplicate and similarity analysis runs on your Mac. no media is uploaded to Alex or a cloud analysis service</p>
-              <p>decisions, star ratings, color labels, filenames, and file identities are saved in <code>.louppe_session.json</code> in the opened folder, with a backup in Louppe’s Application Support data. XMP sidecars and exports go to chosen locations</p>
+              <p>decisions, star ratings, color labels, filenames, and file identities are saved in <code>.louppe_session.json</code> in the opened folder. a local backup in Louppe’s Application Support data ties saved decisions to verified file content. XMP sidecars and exports go to chosen locations</p>
               <p>preferences and recent folder paths stay local. sandboxed builds retain macOS access bookmarks for chosen folders. thumbnail caches speed up review. local operation journals record paths and progress for recovery; destination access is retained while interrupted work may need it</p>
 
               <p>session sidecars, backups, preferences, and cached previews may survive closing or uninstalling Louppe. sidecars and exports remain until you remove them. deleting local app data through macOS may erase review decisions or recovery information. Louppe prunes thumbnails and removes completed operation journals</p>
@@ -66,7 +66,7 @@
             <div>
               <p>File → Open Apple Photos… asks macOS for access to your Photos library. Louppe reads the library or album you choose to show previews and play media, and doesn’t change photos, edits, or Favorites</p>
               <p>Yes/No decisions, stars, and colors for Photos items are saved by Photos asset ID in Louppe’s Application Support data, not in the library. the chooser remembers your source, dates, and order</p>
-              <p>with Allow iCloud Review Images or Allow iCloud Originals in Settings → General, Photos may download items from iCloud as you view, open original detail, or copy them. originals are staged temporarily, up to 5 GB, and deleted when released</p>
+              <p>under Settings → General, Allow iCloud Review Images lets Photos download data for previews. Allow iCloud Originals separately allows downloads to open original detail, play original video, or copy. Louppe stages up to 5 GB of originals and removes them when no longer needed. interrupted copies can keep staged originals for recovery</p>
               <p>Louppe changes your library only when you choose File → Add to Album… and confirm. it adds items to an existing or new album. existing albums and originals stay intact</p>
             </div>
           </details>

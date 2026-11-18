@@ -6,7 +6,7 @@ Louppe es una aplicación gratuita y de código abierto para seleccionar medios 
 
 Una cámara puede generar `DSCF0123.RAF` y `DSCF0123.JPG`: un archivo RAW y un JPEG con el mismo nombre base. Son dos versiones de una toma, no dos copias del mismo archivo
 
-Louppe agrupa los archivos RAW + JPEG correspondientes cuando no hay ambigüedad. No empareja fotografías por su parecido visual. Cuando puede haber más de un RAW o JPEG correspondiente, los archivos permanecen separados
+Louppe empareja archivos por su nombre base. Si no hay un JPEG coincidente, busca en la carpeta del RAW un HEIC/HEIF del mismo nombre y, después, un JPEG XL. También admite los .3FR de Hasselblad. Si el emparejamiento es ambiguo, los archivos quedan separados. El par muestra sus formatos, por ejemplo, RAW + HEIC
 
 Empieza con una carpeta copiada de la tarjeta de la cámara y guarda una copia de seguridad aparte. Conservar los nombres de archivo de la cámara facilita seguir la relación
 
@@ -15,7 +15,7 @@ Empieza con una carpeta copiada de la tarjeta de la cámara y guarda una copia d
 Los atajos de esta guía son los predeterminados. En Ajustes → Atajos de teclado, puedes personalizar las teclas de revisión y elegir posiciones físicas para distribuciones como Dvorak
 
 1. Abre la carpeta en Louppe
-2. Abre **Filtrar** y activa **Trate de combinar RAW + JPEG como una foto (Treat matching RAW + JPEG as one photo)** cuando haya pares correspondientes
+2. Abre **Filtrar** y activa **Tratar los RAW + JPEG coincidentes como una sola foto**. También agrupa los pares HEIC/HEIF y JPEG XL que coincidan. El cambio se aplica al instante
 3. Revisa en Galería o pulsa **G** para ir a Cuadrícula
 4. Pulsa **F** para Sí o **D** para No mientras recorres la sesión
 
@@ -47,7 +47,7 @@ Si quieres mantener decisiones independientes, sigue en el modo separado. Aplica
 
 Un archivo RAW y el JPEG de su cámara pueden verse distintos. El JPEG contiene el revelado de la cámara; un decodificador RAW crea su propio revelado
 
-En la visualización Rápido de Louppe, las fotos RAW usan vistas previas por debajo del 100% y el revelado RAW de Apple al 100% o más. Pulsa **S** para examinar al 100% centrado; púlsala de nuevo para volver a Fit, el ajuste a la ventana. las preferencias de visualización RAW están en Ajustes → Visualización RAW. en Ajustar y vista de tamaño móvil, un indicador muestra si la vista previa de la foto sigue cargando
+En la visualización Rápido de Louppe, las fotos RAW usan vistas previas por debajo del 100% y el revelado RAW de Apple al 100% o más. Pulsa **S** para examinar al 100% centrado; púlsala de nuevo para volver a Fit, el ajuste a la ventana. las preferencias de visualización RAW están en Ajustes → General → Visualización RAW. En Ajustar y vista de tamaño móvil, un indicador muestra si la vista previa de la foto sigue cargando
 
 Para decidir sobre el color o el aspecto del JPEG de la cámara, cambia al modo separado y abre el propio JPEG. Deja la edición final del RAW para tu editor, cuyo revelado puede diferir del de Louppe
 

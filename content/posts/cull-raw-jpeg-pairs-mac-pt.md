@@ -6,7 +6,7 @@ O Louppe é um aplicativo gratuito e de código aberto para selecionar mídia em
 
 Uma câmera pode gerar `DSCF0123.RAF` e `DSCF0123.JPG`: um arquivo RAW e um JPEG com o mesmo nome base. São duas versões de uma tomada, em vez de duas cópias do mesmo arquivo
 
-O Louppe agrupa arquivos RAW + JPEG correspondentes sem ambiguidade. Ele não forma pares de fotografias pela semelhança visual. Quando mais de um RAW ou JPEG pode corresponder, os arquivos continuam separados
+O Louppe agrupa arquivos pelo nome base. Se não houver um JPEG correspondente, procura na pasta do RAW um HEIC/HEIF de mesmo nome e depois um JPEG XL. Arquivos .3FR da Hasselblad também podem ser agrupados. Se a correspondência for ambígua, os arquivos ficam separados. O par mostra os formatos, como RAW + HEIC
 
 Comece com uma pasta copiada do cartão da câmera, com um backup mantido separadamente. Preservar os nomes de arquivo da câmera facilita acompanhar a relação
 
@@ -15,7 +15,7 @@ Comece com uma pasta copiada do cartão da câmera, com um backup mantido separa
 Os atalhos deste guia são os padrões. Em Ajustes → Atalhos de teclado, você pode personalizar as teclas de revisão e escolher posições físicas para layouts como Dvorak
 
 1. Abra a pasta no Louppe
-2. Abra **Filtrar** e ative **Tratar RAW + JPEG correspondentes como uma única foto (Treat matching RAW + JPEG as one photo)** quando houver pares correspondentes
+2. Abra **Filtrar** e ative **Tratar RAW + JPEG correspondentes como uma única foto**. A opção também agrupa pares HEIC/HEIF e JPEG XL compatíveis. A mudança vale na hora
 3. Revise na Galeria, ou pressione **G** para a Grade
 4. Pressione **F** para Sim ou **D** para Não enquanto percorre o ensaio
 
@@ -47,7 +47,7 @@ Se quiser manter decisões independentes, continue no modo separado. Aplicar uma
 
 Um arquivo RAW e o JPEG da câmera podem parecer diferentes. O JPEG contém a renderização da câmera; um decodificador RAW faz sua própria renderização
 
-No modo de exibição Rápido (Fast) do Louppe, as fotos RAW usam prévias abaixo de 100% e a renderização RAW da Apple em 100% ou mais. Pressione **S** para examinar em 100% centralizado; pressione novamente para Ajustar. as preferências de exibição RAW ficam em Ajustes → Visualização RAW. em Ajustar e prévia do tamanho de um celular, um indicador mostra quando a prévia da foto ainda está carregando
+No modo de exibição Rápido (Fast) do Louppe, as fotos RAW usam prévias abaixo de 100% e a renderização RAW da Apple em 100% ou mais. Pressione **S** para examinar em 100% centralizado; pressione novamente para Ajustar. as preferências de exibição RAW ficam em Ajustes → Geral → Visualização RAW. Em Ajustar e prévia do tamanho de um celular, um indicador mostra quando a prévia da foto ainda está carregando
 
 Para decidir sobre a cor ou a aparência do JPEG da câmera, mude para o modo separado e abra o próprio JPEG. Deixe a edição final do RAW para seu editor, cuja renderização pode diferir da do Louppe
 

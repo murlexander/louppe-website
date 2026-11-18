@@ -102,7 +102,7 @@ export async function buildLocales({ root, out, published, drafts = [], preview,
       html = html.replace(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g, (_, json) => {
         const schema = JSON.parse(json);
         if (schema['@type'] === 'SoftwareApplication') {
-          schema.description = dictionary["Free photo viewer and culling app for Mac. Browse JPEG and RAW folders without importing, choose keepers, and move rejects to Trash. Open source."][language.code];
+          schema.description = dictionary[schema.description][language.code];
           schema.featureList = ['photos, video, audio, and text','zoom and compare','filter, sort, and organise','export and clean up','local, free, and open source'].map(key => dictionary[key][language.code]);
           schema.offers = { '@type': 'Offer', price: '0', priceCurrency: 'USD' };
         } else if (schema['@type'] === 'BlogPosting') {

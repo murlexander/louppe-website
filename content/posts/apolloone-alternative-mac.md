@@ -1,7 +1,5 @@
 Louppe is a free, open-source photo viewer and sorter for Mac. It can be an ApolloOne alternative when you want to browse photo folders and choose keepers yourself. Open a folder of JPEGs, RAW files, or both, review with the keyboard, and choose what to keep. It works offline, without an account, on macOS 14 or later
 
-These steps use Louppe 1.12. If your App Store version is older, [the GitHub release](https://github.com/murlexander/louppe-media-culler/releases/tag/v1.12.0) includes these changes
-
 I make Louppe for that first selection after a shoot: look through the photographs, decide what belongs, and keep the files you want. That can be the whole job, even if you never edit a photograph
 
 If that's what you're looking for, here's how Louppe and ApolloOne differ
@@ -28,7 +26,7 @@ Start with a backed-up copy of a small shoot. [Download Louppe](/#download), ope
 
 Use the default **F** key for Yes and **D** for No. Move between photographs with the arrow keys. Leave uncertain frames undecided, or add stars with **1–5** for another pass. Stars and Yes/No are independent
 
-In **Settings → Keyboard shortcuts**, you can customise review keys or use physical key positions for layouts such as Dvorak. The keys in this guide are the defaults
+In **Settings → Keyboard shortcuts**, select a key on the map to see its actions. Select a free key and choose **Assign…** to bind it to an action. You can use physical key positions for layouts such as Dvorak. The keys in this guide are the defaults
 
 **Marking No doesn't delete or trash a file**. Clean Up is a separate action that sends unwanted files to the macOS Trash. Your decisions save automatically so you can reopen the folder and continue
 
@@ -48,7 +46,7 @@ In Fit and Phone size, a loading indicator shows when the photo preview is still
 
 For RAW files, Fast display uses previews below 100% and Apple RAW rendering at 100% and above. That rendering can differ from your camera JPEG or editor. Check the JPEG itself when the camera's finished look matters
 
-If you shoot RAW + JPEG, you can group matching files as one review item, or review them separately. The [RAW + JPEG guide](/blog/cull-raw-jpeg-pairs-mac/) explains pairing, separate decisions, and which files are copied
+You can review matching RAW + JPEG files together or separately. If there’s no matching JPEG, Louppe can pair the RAW with a same-named HEIC/HEIF or JPEG XL in the same folder. The [RAW + JPEG guide](/blog/cull-raw-jpeg-pairs-mac/) explains which files are copied
 
 Photos, video, audio, and read-only text can share a review folder. That can be useful when a shoot contains more than still photographs
 

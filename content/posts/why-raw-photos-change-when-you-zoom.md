@@ -12,7 +12,7 @@ If you like the finished appearance of a camera JPEG, review that JPEG directly.
 
 ## What changes at 100% in Louppe?
 
-In [Louppe 1.13](https://github.com/murlexander/louppe-media-culler/releases/tag/v1.13.0), **Fast** uses previews below 100% and Apple RAW rendering at 100% and above. Grid and Browser keep fast previews
+In Louppe, **Fast** uses previews below 100% and Apple RAW rendering at 100% and above. Grid and Browser keep fast previews
 
 With the default keys, **S** toggles true 100% in Gallery. If the image changes as you cross that threshold, check **Settings → General → RAW display**. You can choose RAW rendering at all zoom levels to keep Gallery on a consistent rendering source
 
