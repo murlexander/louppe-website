@@ -74,6 +74,17 @@ Website work ships independently. Claims must match the released app.
 
 ## Release and publicity follow-up
 
+- [ ] **Louppe 1.15 copy — Alex, 18 November 2026.** Publish with the 1.15 release,
+  not before: claims must match the released app.
+  - Change "undecided" to **Unmarked** in `apolloone-alternative-mac`,
+    `cull-raw-jpeg-pairs-mac` and `cull-photos-mac-before-lightroom`, all six
+    languages each, and anywhere else the site names the review states.
+  - Draft in `.drafts/` the fastest-culling article: picks only (Yes, leave the rest
+    Unmarked, Clean Up), with decisions for culling and stars/labels for the
+    archive. Write for search and AI parsing: question headings, the answer in the
+    first sentence, numbered steps, a shortcut table, real limits. Translations
+    follow Alex's approval of the English text.
+
 - [x] **Directory listings merged and live.**
   [awesome-swift-macos-apps #203](https://github.com/jaywcjlove/awesome-swift-macos-apps/pull/203)
   (3 November) and [awesome-swiftui #86](https://github.com/onmyway133/awesome-swiftui/pull/86)
