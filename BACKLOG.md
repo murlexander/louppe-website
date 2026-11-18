@@ -89,9 +89,9 @@ Website work ships independently. Claims must match the released app.
   [awesome-swift-macos-apps #203](https://github.com/jaywcjlove/awesome-swift-macos-apps/pull/203)
   (3 November) and [awesome-swiftui #86](https://github.com/onmyway133/awesome-swiftui/pull/86)
   (2 November) list Louppe.
+- [x] **Awesome Mac listing merged.** [awesome-mac #4173](https://github.com/jaywcjlove/awesome-mac/pull/4173)
+  merged on 15 November in English, Chinese, Japanese, Korean and Portuguese.
 - [ ] **Directory listings awaiting maintainers.**
-  [awesome-mac #4173](https://github.com/jaywcjlove/awesome-mac/pull/4173) (body
-  corrected 4 November; rebased with the new Portuguese README 14 November),
   [open-source-mac-os-apps #1938](https://github.com/serhii-londar/open-source-mac-os-apps/pull/1938),
   [AndrewSB/awesome-macOS #80](https://github.com/AndrewSB/awesome-macOS/pull/80) and
   [awesome-native-macosx-apps #285](https://github.com/open-saas-directory/awesome-native-macosx-apps/pull/285)
