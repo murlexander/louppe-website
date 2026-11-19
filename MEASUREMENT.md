@@ -169,3 +169,5 @@ keyword repetition don't establish original value or guarantee ranking. See
 [Google's content guidance](https://developers.google.com/search/docs/fundamentals/creating-helpful-content)
 and [AI search guidance](https://developers.google.com/search/docs/appearance/ai-features):
 Google's AI features require no special optimization beyond search eligibility.
+
+Day-28 review (19 November 2026): both guides stay indexed but remain low-sample and are inconclusive, not continued. The JPEG guide drew a few dozen non-brand impressions across English and translations (average position about 8) and no organic clicks. The RAW guide drew a handful of impressions and no clicks, and neither showed article download intent. Neither threshold for a title or product-connection review was reached, and no query overlap with older guides was observed. Write no new variant of these angles yet.
