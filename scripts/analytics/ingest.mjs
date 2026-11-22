@@ -146,7 +146,9 @@ export function summarize(rows, envelopes, now = new Date()) {
   const signedOut = new Set();
   for (const [name, { env }] of [...latest].sort()) {
     const day = env.collected_at ? localDate(new Date(env.collected_at)) : '';
-    const stale = day && daysBetween(day, localDate(now)) > 8;
+    // One-off custom-range collections (a review's dates in the name) are never refreshed, so they can't go stale.
+    const oneOff = /\d{4}-\d{2}-\d{2}_\d{4}-\d{2}-\d{2}/.test(name);
+    const stale = day && !oneOff && daysBetween(day, localDate(now)) > 8;
     const note = [env.error, env.remaining?.length ? `remaining: ${env.remaining.join(', ')}` : '', env.truncated ? 'truncated pages' : '', stale ? 'stale (>8 days)' : ''].filter(Boolean).join('; ');
     const partOnly = apiCovers && env.source === 'app-store-connect';
     if (env.status !== 'ok' || env.truncated || stale) problems.push(`${name}: ${env.status}${note ? ` (${note})` : ''}`);

@@ -306,6 +306,13 @@ test('summarize reports collection problems instead of zeros', () => {
   assert.match(md, /Collection problem — cloudflare: skipped \(no token\)\. Missing data is unknown, not zero\./);
 });
 
+test('summary flags stale recurring sources but not one-off custom ranges', () => {
+  const env = (name) => ({ path: `raw/2026-11-01/${name}.json`, env: { source: 'ga4', name, collected_at: '2026-11-01T08:00:00Z', status: 'ok' } });
+  const md = summarize([], [env('ga4-traffic-last28+lifetime'), env('ga4-traffic-2026-10-28_2026-11-10')], new Date('2026-11-22T08:00:00Z'));
+  assert.match(md, /\| ga4-traffic-last28\+lifetime \| 2026-11-01 \| ok \| stale \(>8 days\) \|/);
+  assert.match(md, /\| ga4-traffic-2026-10-28_2026-11-10 \| 2026-11-01 \| ok \|  \|/);
+});
+
 test('due.mjs lists missing, failed, and stale browser sources', async () => {
   const { dueSources, browserSources } = await import('./analytics/due.mjs');
   const env = (name, day, status = 'ok') => ({ env: { name, status, collected_at: `${day}T08:00:00Z` } });
