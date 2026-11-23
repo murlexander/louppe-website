@@ -1,4 +1,4 @@
-# Louppe website — Quiet darkroom
+# Louppe website design system: quiet darkroom
 
 Static HTML, CSS, and JavaScript; Markdown-generated blog. Approved 26 September 2026.
 

@@ -1,4 +1,4 @@
-# Interface covers — 22 October 2026
+# Interface covers, 22 October 2026
 
 Three covers add app context to the existing photography-led blog. The
 ApolloOne streetcar and before-Lightroom garden covers remain photographs.

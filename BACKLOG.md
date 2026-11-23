@@ -8,7 +8,7 @@ Website work ships independently. Claims must match the released app.
 
 ## Completed browser acceptance
 
-- [x] **WEB-AUD-01 — Consent reconciliation.** Passed in two production tabs on
+- [x] **WEB-AUD-01: consent reconciliation.** Passed in two production tabs on
   22 October: no Google requests before consent; opt-in loaded the real tag in
   both tabs; withdrawal, removed storage, and expired consent disabled collection
   and cleared analytics cookies. Download-intent probes after removal and expiry
@@ -19,7 +19,7 @@ Website work ships independently. Claims must match the released app.
   VM tests retain quota-failure and delayed-event coverage. If both storage writes
   and removal fail, refusal lasts only for the current visit.
 
-## Deferred by Alex — 6 October 2026
+## Deferred by Alex on 6 October 2026
 
 - [x] Report traffic sources and landing pages leading to `louppe_download` in
   the separate Louppe property. Done 4 November: `louppe_download` is the only
@@ -74,7 +74,7 @@ Website work ships independently. Claims must match the released app.
 
 ## Release and publicity follow-up
 
-- [ ] **Louppe 1.15 copy — Alex, 18 November 2026.** Publish with the 1.15 release,
+- [ ] **Louppe 1.15 copy, from Alex on 18 November 2026.** Publish with the 1.15 release,
   not before: claims must match the released app.
   - Change "undecided" to **Unmarked** in `apolloone-alternative-mac`,
     `cull-raw-jpeg-pairs-mac` and `cull-photos-mac-before-lightroom`, all six

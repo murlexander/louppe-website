@@ -14,7 +14,7 @@ Use GA4 **Louppe Media Culler**, property `555464552`, measurement ID `G-9P9KKLZ
 
 `download_method` is `app_store`, `github`, or `homebrew`. Placements distinguish homepage hero/footer, article body/end, blog index, navigation, and other links. Query strings and fragments are excluded from configured page locations; referrers retain only their origin. Custom labels use bounded public paths or fixed values, never arbitrary link text.
 
-Event-scoped custom dimensions are configured for `page_language`, `download_method`, `download_placement`, `article_path`, and `link_placement`. Page path, landing page, source/medium, and content group use GA4's built-in dimensions. New custom dimensions are not retrospective and can take 24–48 hours to appear in reports. See [GA4 custom dimensions](https://support.google.com/analytics/answer/14240153) and [page views](https://developers.google.com/analytics/devguides/collection/ga4/views).
+Event-scoped custom dimensions are configured for `page_language`, `download_method`, `download_placement`, `article_path`, and `link_placement`. Page path, landing page, source/medium, and content group use GA4's built-in dimensions. New custom dimensions are not retrospective and can take 24 to 48 hours to appear in reports. See [GA4 custom dimensions](https://support.google.com/analytics/answer/14240153) and [page views](https://developers.google.com/analytics/devguides/collection/ga4/views).
 
 ## Cloudflare Web Analytics
 
@@ -78,7 +78,7 @@ Metric definitions:
   because longer windows come back 10% sampled; sampled days are rejected. The
   beacon went live on 2026-11-04, so earlier days are unknown.
 - App Store Connect: first-time downloads (`units`) are Store installs. Days Apple
-  has not processed yet (1–2 days) are left out, so ranges end at the last
+  has not processed yet (one to two days) are left out, so ranges end at the last
   processed day.
 - App Store Connect API (`app-store-reports`, source `app_store_reports`): Apple's
   Analytics Reports through a read-only team key (Sales and Reports) in Keychain

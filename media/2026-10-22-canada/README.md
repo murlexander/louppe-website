@@ -1,4 +1,4 @@
-# Blog illustrations — 22 October 2026
+# Blog illustrations, 22 October 2026
 
 Five Canada photographs: 800px and 1600px WebP covers and 1200 × 630 JPEG sharing
 crops. These are camera-preview derivatives from Alex Markin's RAF archive.

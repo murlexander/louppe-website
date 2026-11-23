@@ -1,4 +1,4 @@
-# Article media — 22 October 2026
+# Article media, 22 October 2026
 
 Four distinct WebP deliveries from preserved native captures. No UI, ratings,
 photo content, or counts were generated or changed. Conversion used `cwebp -q 85`
