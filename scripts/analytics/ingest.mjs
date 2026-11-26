@@ -75,11 +75,19 @@ const pct = (a, b) => (a == null || b == null ? '—' : b === 0 ? (a === 0 ? '0%
 const match = (rows, q) => rows.filter((r) => Object.entries(q).every(([k, v]) => (v instanceof RegExp ? v.test(r[k]) : r[k] === v)));
 
 // Range row whose window ends latest, preferring a length near `days`.
+// The newest range exactly `days` long; without one, the newest end and the closest length.
+// A review's one-off custom range must not displace the recurring 7- or 28-day windows.
+function bestRange(c, days) {
+  const len = (r) => daysBetween(r.period_start, r.period_end) + 1;
+  const exact = c.filter((r) => len(r) === days);
+  const pool = exact.length ? exact : c;
+  const end = pool.reduce((m, r) => (r.period_end > m ? r.period_end : m), '');
+  return pool.filter((r) => r.period_end === end).sort((a, b) => Math.abs(len(a) - days) - Math.abs(len(b) - days))[0];
+}
+
 export function pickRange(rows, q, days) {
   const c = match(rows, { granularity: 'range', dimension: '', ...q });
-  if (!c.length) return null;
-  const end = c.reduce((m, r) => (r.period_end > m ? r.period_end : m), '');
-  return c.filter((r) => r.period_end === end).sort((a, b) => Math.abs(daysBetween(a.period_start, a.period_end) + 1 - days) - Math.abs(daysBetween(b.period_start, b.period_end) + 1 - days))[0];
+  return c.length ? bestRange(c, days) : null;
 }
 
 // Sum of day rows in [start, end] → { value, days, of }, or null when no day in the window has data.
@@ -103,10 +111,9 @@ function lastDataDay(rows, q) {
 function top(rows, q, days, n = 8) {
   const c = match(rows, { granularity: 'range', ...q }).filter((r) => r.dimension);
   if (!c.length) return { rows: [] };
-  const end = c.reduce((m, r) => (r.period_end > m ? r.period_end : m), '');
-  const atEnd = c.filter((r) => r.period_end === end);
-  const best = atEnd.sort((a, b) => Math.abs(daysBetween(a.period_start, a.period_end) + 1 - days) - Math.abs(daysBetween(b.period_start, b.period_end) + 1 - days))[0];
-  const list = atEnd.filter((r) => r.period_start === best.period_start).sort((a, b) => b.value - a.value || String(a.dimension_value).localeCompare(String(b.dimension_value)));
+  const best = bestRange(c, days);
+  const end = best.period_end;
+  const list = c.filter((r) => r.period_start === best.period_start && r.period_end === end).sort((a, b) => b.value - a.value || String(a.dimension_value).localeCompare(String(b.dimension_value)));
   return { start: best.period_start, end, rows: list.slice(0, n), more: Math.max(0, list.length - n) };
 }
 

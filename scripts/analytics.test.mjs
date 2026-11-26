@@ -5,7 +5,7 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import test from 'node:test';
 import { cloudflare, exactCloudflareDays } from './analytics/collect.mjs';
-import { fromCsv, merge, summarize, toCsv } from './analytics/ingest.mjs';
+import { fromCsv, merge, pickRange, summarize, toCsv } from './analytics/ingest.mjs';
 import { normalizeStatus, writeRaw } from './analytics/lib.mjs';
 import {
   finishCloudflare,
@@ -304,6 +304,14 @@ test('summarize reports collection problems instead of zeros', () => {
   assert.match(md, /## Funnel/);
   assert.match(md, /\| cloudflare \| 2026-11-04 \| skipped \| no token \|/);
   assert.match(md, /Collection problem — cloudflare: skipped \(no token\)\. Missing data is unknown, not zero\./);
+});
+
+test('a newer one-off custom range does not displace the 7-day GA4 window', () => {
+  const r = (start, end, value) => ({ collected_at: at, source: 'ga4', granularity: 'range', period_start: start, period_end: end, metric: 'sessions', dimension: '', dimension_value: '', value, origin: 'a' });
+  const rows = [r('2026-11-15', '2026-11-21', 7), r('2026-11-08', '2026-11-14', 9), r('2026-10-28', '2026-11-25', 32)];
+  assert.equal(pickRange(rows, { source: 'ga4', metric: 'sessions' }, 7).value, 7);
+  assert.equal(pickRange(rows, { source: 'ga4', metric: 'sessions' }, 9999).value, 32);
+  assert.match(summarize(rows, [], new Date('2026-11-26T08:00:00Z')), /\| Website sessions \(consented\) \| 7 \|/);
 });
 
 test('summary flags stale recurring sources but not one-off custom ranges', () => {
