@@ -125,8 +125,9 @@ Website work ships independently. Claims must match the released app.
   awesome-OpenSourcePhotography, Best-App and guyzyl/awesome-macos-apps are inactive.
 - [x] **Guest article published.** [Kirill's PR #97](https://github.com/kirill-markin/kirill-markin-com/pull/97)
   merged on 28 October; the [live article](https://kirill-markin.com/articles/photo-culling-mac-louppe-folder-workflow/)
-  links the homepage and the JPEG guide. Its 14- and 28-day reviews count from
-  that date.
+  links the homepage and the JPEG guide. Reviews on 11 and 26 November found
+  the article live with both links but no referrals from it in 28 days: no GA4
+  sessions or download intent, and no Cloudflare, GitHub or App Store web referrals.
 - [x] **1.13 release alignment, 4 November.** Homepage, llms.txt, privacy policy
   (Apple Photos access, asset-ID decisions, on-demand iCloud downloads, explicit
   album additions, Settings → General → Updates, Store rating prompt), keyboard
